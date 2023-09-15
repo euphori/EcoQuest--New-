@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwp0js47mowbp"]
+
+[ext_resource type="PackedScene" uid="uid://bgmuxkgejf2o6" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_beam_a.prefab.tscn" id="1_m7kj8"]
+[ext_resource type="PackedScene" uid="uid://ctjcwk6srhdw" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_01a.prefab.tscn" id="2_ivts2"]
+[ext_resource type="PackedScene" uid="uid://nc1l457w4gy1" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_01b.prefab.tscn" id="3_epcrs"]
+[ext_resource type="PackedScene" uid="uid://cotyc8gc7qnxy" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_02a.prefab.tscn" id="4_77j2a"]
+[ext_resource type="PackedScene" uid="uid://2su4aaq5suex" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_02b.prefab.tscn" id="5_qtuxp"]
+[ext_resource type="PackedScene" uid="uid://cbv02wdtqwjsj" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_03a.prefab.tscn" id="6_t8i2w"]
+[ext_resource type="PackedScene" uid="uid://ip3jd3sownxh" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_04a.prefab.tscn" id="7_vb25u"]
+[ext_resource type="PackedScene" uid="uid://drfs62ofjivij" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_beam_a.prefab.tscn" id="8_5doce"]
+[ext_resource type="PackedScene" uid="uid://bfp70eqkuqkln" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_beam_b.prefab.tscn" id="9_tj84c"]
+[ext_resource type="PackedScene" uid="uid://c3nlggp78an75" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_beam_c.prefab.tscn" id="10_yqele"]
+[ext_resource type="PackedScene" uid="uid://cc360ntolknpu" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_beam_d.prefab.tscn" id="11_cs7sg"]
+[ext_resource type="PackedScene" uid="uid://bv1okjkfpjf8i" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Ends/rpgpp_av_roof_end_01_6x3_wall_beam_e.prefab.tscn" id="12_il1r6"]
+
+[node name="rpgpp_av_roof_end_6x3_wall" type="Node3D"]
+
+[node name="rpgpp_av_roof_end_01_6x3_beam_a" parent="." instance=ExtResource("1_m7kj8")]
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_01a" parent="walls" instance=ExtResource("2_ivts2")]
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_01b" parent="walls" instance=ExtResource("3_epcrs")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_02a" parent="walls" instance=ExtResource("4_77j2a")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_02b" parent="walls" instance=ExtResource("5_qtuxp")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_03a" parent="walls" instance=ExtResource("6_t8i2w")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_04a" parent="walls" instance=ExtResource("7_vb25u")]
+visible = false
+
+[node name="beams" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_beam_a" parent="beams" instance=ExtResource("8_5doce")]
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_beam_b" parent="beams" instance=ExtResource("9_tj84c")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_beam_c" parent="beams" instance=ExtResource("10_yqele")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_beam_d" parent="beams" instance=ExtResource("11_cs7sg")]
+visible = false
+
+[node name="rpgpp_av_roof_end_01_6x3_wall_beam_e" parent="beams" instance=ExtResource("12_il1r6")]
+visible = false
+
+[editable path="rpgpp_av_roof_end_01_6x3_beam_a"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_01a"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_01b"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_02a"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_02b"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_03a"]
+[editable path="walls/rpgpp_av_roof_end_01_6x3_wall_04a"]
+[editable path="beams/rpgpp_av_roof_end_01_6x3_wall_beam_a"]
+[editable path="beams/rpgpp_av_roof_end_01_6x3_wall_beam_b"]
+[editable path="beams/rpgpp_av_roof_end_01_6x3_wall_beam_c"]
+[editable path="beams/rpgpp_av_roof_end_01_6x3_wall_beam_d"]
+[editable path="beams/rpgpp_av_roof_end_01_6x3_wall_beam_e"]

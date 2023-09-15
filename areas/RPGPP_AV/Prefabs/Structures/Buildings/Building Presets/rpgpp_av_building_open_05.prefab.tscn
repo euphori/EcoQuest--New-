@@ -1,0 +1,1896 @@
+[gd_scene load_steps=39 format=3 uid="uid://khu3iutxnwxm"]
+
+[ext_resource type="PackedScene" uid="uid://bkktikikh415g" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_end_01.prefab.tscn" id="1_7igxr"]
+[ext_resource type="PackedScene" uid="uid://cj6aw4aja24pc" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Presets/rpgpp_av_roof_9x4x3.prefab.tscn" id="2_oxunp"]
+[ext_resource type="PackedScene" uid="uid://co8e73e32ewmn" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Presets/rpgpp_av_wall_3x3.prefab.tscn" id="3_bljho"]
+[ext_resource type="PackedScene" uid="uid://di7mwdynuip6h" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Presets/rpgpp_av_wall_3x3_window_01.prefab.tscn" id="4_r1d12"]
+[ext_resource type="PackedScene" uid="uid://cucfmmabks5m5" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Presets/rpgpp_av_wall_door.prefab.tscn" id="5_galaf"]
+[ext_resource type="PackedScene" uid="uid://dnp7af8mk5675" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_bottom_01a_3m.prefab.tscn" id="6_ki14g"]
+[ext_resource type="PackedScene" uid="uid://dhki3j3thswq0" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_bottom_01b_3m.prefab.tscn" id="7_bi1x2"]
+[ext_resource type="PackedScene" uid="uid://ba5ah5nsaa41k" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_between_01_3m.prefab.tscn" id="8_o18xx"]
+[ext_resource type="PackedScene" uid="uid://dbfhnlgajxi6c" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_bottom_corner_01a_3x3.prefab.tscn" id="9_78lgp"]
+[ext_resource type="PackedScene" uid="uid://dxj3kwnqncsoh" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_corner_03_3m.prefab.tscn" id="10_t3ur7"]
+[ext_resource type="PackedScene" uid="uid://d1jwqgvdgvv36" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_corner_01a_3m.prefab.tscn" id="11_g3goo"]
+[ext_resource type="PackedScene" uid="uid://d2o76hrwt1ip" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_bottom_01c_3m.prefab.tscn" id="12_45keh"]
+[ext_resource type="PackedScene" uid="uid://uskjj7nlwdff" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_bottom_01d_3m.prefab.tscn" id="13_xni63"]
+[ext_resource type="PackedScene" uid="uid://1j2d538r433e" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/Presets/rpgpp_av_floor_3x3.prefab.tscn" id="14_jh2ux"]
+[ext_resource type="PackedScene" uid="uid://txhrmtw8rib5" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Presets/rpgpp_av_roof_end_9x4_wall_window.prefab.tscn" id="15_80mr7"]
+[ext_resource type="PackedScene" uid="uid://bgstgv68a1d0e" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Presets/rpgpp_av_wall_3x1.prefab.tscn" id="16_6q2xs"]
+[ext_resource type="PackedScene" uid="uid://bvts57rgu28e5" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/Wall Connectors/rpgpp_av_wall_connector_corner_01a_1m.prefab.tscn" id="17_tp1mt"]
+[ext_resource type="PackedScene" uid="uid://coxrfddvqtd0o" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Shelves/rpgpp_av_shelf_wall_04.prefab.tscn" id="18_2njkl"]
+[ext_resource type="PackedScene" uid="uid://be5oehubibfun" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Shelves/rpgpp_av_shelf_wood_03a.prefab.tscn" id="19_lsswk"]
+[ext_resource type="PackedScene" uid="uid://ds61r6epoxt8n" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Barrels/rpgpp_av_barrel_03a.prefab.tscn" id="20_c0ppc"]
+[ext_resource type="PackedScene" uid="uid://bb3j8p81ed4gr" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Barrels/rpgpp_av_barrel_03c.prefab.tscn" id="21_w1wcs"]
+[ext_resource type="PackedScene" uid="uid://132lxny86dl3" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Bathtubs/rpgpp_av_bathtub_wood_01c.prefab.tscn" id="22_uak10"]
+[ext_resource type="PackedScene" uid="uid://c6bpjmf864lkx" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Crates/rpgpp_av_crate_05.prefab.tscn" id="23_vklqf"]
+[ext_resource type="PackedScene" uid="uid://dikjm1kve0f5d" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Crates/rpgpp_av_crate_04.prefab.tscn" id="24_fgpih"]
+[ext_resource type="PackedScene" uid="uid://boah62ktagv7t" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Cages/rpgpp_av_cage_01.prefab.tscn" id="25_cgyj6"]
+[ext_resource type="PackedScene" uid="uid://bqngcq13gqlgk" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Cages/rpgpp_av_cage_02b.prefab.tscn" id="26_igeq3"]
+[ext_resource type="PackedScene" uid="uid://dqvuwv7eagleg" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Jugs/rpgpp_av_jug_02b.prefab.tscn" id="27_eepd4"]
+[ext_resource type="PackedScene" uid="uid://b36v37vs73vw1" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Jugs/rpgpp_av_jug_01b.prefab.tscn" id="28_8twei"]
+[ext_resource type="PackedScene" uid="uid://r1qkhkcdnfg2" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Pots/rpgpp_av_pot_01b.prefab.tscn" id="29_6ipij"]
+[ext_resource type="PackedScene" uid="uid://2wke2nudrysd" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Vases/rpgpp_av_vase_01b.prefab.tscn" id="30_a1ifp"]
+[ext_resource type="PackedScene" uid="uid://ds6u87potgkqo" path="res://Assets/RPGPP_AV/Prefabs/Props/Containers/Food_Containers/rpgpp_av_food_container_01a.prefab.tscn" id="31_b5l5d"]
+[ext_resource type="PackedScene" uid="uid://d0hmqnsn2jdrm" path="res://Assets/RPGPP_AV/Prefabs/Structures/Exterior/Stairs Entrance/rpgpp_av_stairs_entrance_01b.prefab.tscn" id="32_p2a3k"]
+[ext_resource type="PackedScene" uid="uid://di7mmfpye3w4h" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Tables/rpgpp_av_table_03b.prefab.tscn" id="33_rnq75"]
+[ext_resource type="PackedScene" uid="uid://buopvxvi8ajve" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Chairs/rpgpp_av_chair_04a.prefab.tscn" id="34_6apb0"]
+[ext_resource type="PackedScene" uid="uid://bngtc6ue07c8q" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Chairs/rpgpp_av_chair_04b.prefab.tscn" id="35_3dxbb"]
+[ext_resource type="PackedScene" uid="uid://de5vdtejw4ada" path="res://Assets/RPGPP_AV/Prefabs/Props/Wood/rpgpp_av_planks_01e.prefab.tscn" id="36_1u3s3"]
+[ext_resource type="PackedScene" uid="uid://4hhmi5qbmjk0" path="res://Assets/RPGPP_AV/Prefabs/Props/Furniture/Tables/rpgpp_av_table_04a.prefab.tscn" id="37_cbbhj"]
+[ext_resource type="PackedScene" uid="uid://dio27tci5mefp" path="res://Assets/RPGPP_AV/Prefabs/Props/Misc/Wagons/rpgpp_av_wheel_01b.prefab.tscn" id="38_7l83s"]
+
+[node name="rpgpp_av_building_open_05" type="Node3D"]
+
+[node name="roofs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="rpgpp_av_roof_02_9x4x3_end_01" parent="roofs" instance=ExtResource("1_7igxr")]
+
+[node name="rpgpp_av_roof_9x4x3" parent="roofs" instance=ExtResource("2_oxunp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
+[node name="rpgpp_av_roof_01_9x4x3_a" parent="roofs/rpgpp_av_roof_9x4x3/roof" index="0"]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_b" parent="roofs/rpgpp_av_roof_9x4x3/roof" index="4"]
+visible = true
+
+[node name="rpgpp_av_roof_9x4x3 (1)" parent="roofs" instance=ExtResource("2_oxunp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3)
+
+[node name="rpgpp_av_roof_01_9x4x3_a" parent="roofs/rpgpp_av_roof_9x4x3 (1)/roof" index="0"]
+visible = false
+
+[node name="rpgpp_av_roof_9x4x3 (2)" parent="roofs" instance=ExtResource("2_oxunp")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -1.5, 0, -9)
+
+[node name="rpgpp_av_roof_01_9x4x3_a" parent="roofs/rpgpp_av_roof_9x4x3 (2)/roof" index="0"]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_c" parent="roofs/rpgpp_av_roof_9x4x3 (2)/roof" index="5"]
+visible = true
+
+[node name="rpgpp_av_roof_support_01_9x4x3_a" parent="roofs/rpgpp_av_roof_9x4x3 (2)/support" index="0"]
+visible = false
+
+[node name="rpgpp_av_roof_support_01_9x4x3_c" parent="roofs/rpgpp_av_roof_9x4x3 (2)/support" index="2"]
+visible = true
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="rpgpp_av_wall_3x3 (1)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, 3, 0, -4.5)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_06_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (1)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (1)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_c" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3_window_01 (2)" parent="walls" instance=ExtResource("4_r1d12")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, 3, 0, -1.5)
+
+[node name="rpgpp_av_wall_01_3x3_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (2)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_window_01b" parent="walls/rpgpp_av_wall_3x3_window_01 (2)/walls" index="6"]
+visible = true
+
+[node name="rpgpp_av_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_window_01c" parent="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_3x3 (3)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1, 0, 8.34465e-07, 0, 1, 0, -8.34465e-07, 0, -1, -4.5, 0, -9)
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (3)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_d" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01" index="3"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (5)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_07_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (5)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (5)/walls" index="0"]
+visible = false
+
+[node name="wall_02" parent="walls/rpgpp_av_wall_3x3 (5)/walls" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_a" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_b" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_c" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_d" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_f" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_g" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_a" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_b" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_c" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_e" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_f" parent="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (7)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(1.19209e-06, 0, 1, 0, 1, 0, -1, 0, 1.19209e-06, -6, 0, -7.5)
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (7)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_d" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01" index="3"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_door" parent="walls" instance=ExtResource("5_galaf")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, -6, 0, -4.5)
+
+[node name="rpgpp_av_door_01a" parent="walls/rpgpp_av_wall_door/doors/door_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_door_01b" parent="walls/rpgpp_av_wall_door/doors/door_01" index="1"]
+visible = true
+
+[node name="door_02" parent="walls/rpgpp_av_wall_door/doors" index="1"]
+visible = false
+
+[node name="door_03" parent="walls/rpgpp_av_wall_door/doors" index="2"]
+visible = false
+
+[node name="door_04" parent="walls/rpgpp_av_wall_door/doors" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_door_a" parent="walls/rpgpp_av_wall_door/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_door_a" parent="walls/rpgpp_av_wall_door/walls" index="3"]
+visible = true
+
+[node name="rpgpp_av_wall_3x3 (2)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1, 0, -8.34465e-07, 0, 1, 0, 8.34465e-07, 0, -1, 1.5, 0, -6)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_06_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_07_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (2)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (2)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_c" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (6)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (6)/walls" index="0"]
+visible = false
+
+[node name="wall_02" parent="walls/rpgpp_av_wall_3x3 (6)/walls" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_a" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_b" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_c" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_d" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_f" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_g" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03" index="5"]
+visible = false
+
+[node name="wall_04" parent="walls/rpgpp_av_wall_3x3 (6)/walls" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_a" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_b" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_c" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_e" parent="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3_window_01 (3)" parent="walls" instance=ExtResource("4_r1d12")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, 3, 0, -7.5)
+
+[node name="rpgpp_av_wall_01_3x3_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (3)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (3)/walls" index="2"]
+visible = true
+
+[node name="rpgpp_av_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_window_01b" parent="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01" index="1"]
+visible = true
+
+[node name="rpgpp_av_wall_3x3_window_01 (4)" parent="walls" instance=ExtResource("4_r1d12")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, -6, 0, -1.5)
+
+[node name="rpgpp_av_wall_01_3x3_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (4)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (4)/walls" index="2"]
+visible = true
+
+[node name="rpgpp_av_window_01a" parent="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_window_01b" parent="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01" index="1"]
+visible = true
+
+[node name="rpgpp_av_wall_3x3 (8)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1, 0, 8.34465e-07, 0, 1, 0, -8.34465e-07, 0, -1, 1.5, 0, -9)
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (8)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_d" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01" index="3"]
+visible = true
+
+[node name="wall_03" parent="walls/rpgpp_av_wall_3x3 (8)/walls" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_a" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_b" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_c" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_d" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_e" parent="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (9)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(1, 0, -8.34465e-07, 0, 1, 0, 8.34465e-07, 0, 1, -1.5, 0, -9)
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (9)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_d" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01" index="3"]
+visible = true
+
+[node name="wall_03" parent="walls/rpgpp_av_wall_3x3 (9)/walls" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_a" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_b" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_c" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_d" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_f" parent="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (10)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1.19209e-06, 0, 1, 0, 1, 0, -1, 0, -1.19209e-06, 0, 0, -4.5)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_06_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_07_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (10)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (10)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_c" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_c" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (12)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1, 0, -8.34465e-07, 0, 1, 0, 8.34465e-07, 0, -1, -4.5, 0, 0)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_06_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_07_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (12)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (12)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_c" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_3x3 (13)" parent="walls" instance=ExtResource("3_bljho")]
+transform = Transform3D(-1, 0, -8.34465e-07, 0, 1, 0, 8.34465e-07, 0, -1, -4.5, 0, -3)
+
+[node name="rpgpp_av_wall_beam_01_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_02_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_03_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="2"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_04_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_05_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_06_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="5"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_07_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="6"]
+visible = false
+
+[node name="rpgpp_av_wall_beam_08_3x3" parent="walls/rpgpp_av_wall_3x3 (13)/beams" index="7"]
+visible = false
+
+[node name="wall_01" parent="walls/rpgpp_av_wall_3x3 (13)/walls" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_a" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_c" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_wall_03_3x3_a" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_b" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03" index="1"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_d" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03" index="3"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_e" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03" index="4"]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_f" parent="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03" index="5"]
+visible = false
+
+[node name="wall_connectors" type="Node3D" parent="."]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m2" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m2" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m3" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m3" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m4" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m4" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_between_01_3m" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_between_01_3m2" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m5" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m5" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m6" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m6" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m7" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m8" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x3" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x4" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x5" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x6" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x7" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_corner_03_3m" parent="wall_connectors" instance=ExtResource("10_t3ur7")]
+
+[node name="rpgpp_av_wall_connector_corner_03_3m2" parent="wall_connectors" instance=ExtResource("10_t3ur7")]
+
+[node name="rpgpp_av_wall_connector_corner_03_3m3" parent="wall_connectors" instance=ExtResource("10_t3ur7")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m9" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_corner_01_3m" parent="wall_connectors" instance=ExtResource("11_g3goo")]
+
+[node name="rpgpp_av_wall_connector_bottom_01b_3m10" parent="wall_connectors" instance=ExtResource("7_bi1x2")]
+
+[node name="rpgpp_av_wall_connector_bottom_01c_3m" parent="wall_connectors" instance=ExtResource("12_45keh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, -9)
+
+[node name="rpgpp_av_wall_connector_between_01_3m3" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_between_01_3m4" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_between_01_3m5" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x8" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x9" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x10" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x11" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x12" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x13" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x14" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_01d_3m" parent="wall_connectors" instance=ExtResource("13_xni63")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.5, 3, -9)
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x15" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x16" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x17" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x18" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x19" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x20" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x21" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x22" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m7" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m8" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x23" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x24" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x25" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m9" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_bottom_01a_3m10" parent="wall_connectors" instance=ExtResource("6_ki14g")]
+
+[node name="rpgpp_av_wall_connector_between_01_3m6" parent="wall_connectors" instance=ExtResource("8_o18xx")]
+
+[node name="rpgpp_av_wall_connector_bottom_corner_01_3x26" parent="wall_connectors" instance=ExtResource("9_78lgp")]
+
+[node name="rpgpp_av_wall_connector_corner_01_3m2" parent="wall_connectors" instance=ExtResource("11_g3goo")]
+
+[node name="rpgpp_av_wall_connector_corner_01_3m3" parent="wall_connectors" instance=ExtResource("11_g3goo")]
+
+[node name="floors" type="Node3D" parent="."]
+
+[node name="rpgpp_av_floor_3x3 (2)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (2)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01c_3x3" parent="floors/rpgpp_av_floor_3x3 (2)/floor_01" index="2"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (3)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (3)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01f_3x3" parent="floors/rpgpp_av_floor_3x3 (3)/floor_01" index="5"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3" parent="floors" instance=ExtResource("14_jh2ux")]
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01f_3x3" parent="floors/rpgpp_av_floor_3x3/floor_01" index="5"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (1)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 0, 0, -3)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (1)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01e_3x3" parent="floors/rpgpp_av_floor_3x3 (1)/floor_01" index="4"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (4)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (4)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01e_3x3" parent="floors/rpgpp_av_floor_3x3 (4)/floor_01" index="4"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (5)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="rpgpp_av_floor_3x3 (6)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (6)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01e_3x3" parent="floors/rpgpp_av_floor_3x3 (6)/floor_01" index="4"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (7)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="rpgpp_av_floor_01a_3x3" parent="floors/rpgpp_av_floor_3x3 (7)/floor_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_floor_01f_3x3" parent="floors/rpgpp_av_floor_3x3 (7)/floor_01" index="5"]
+visible = true
+
+[node name="rpgpp_av_floor_3x3 (8)" parent="floors" instance=ExtResource("14_jh2ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="roof_ends" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_end_9x4_wall_window" parent="roof_ends" instance=ExtResource("15_80mr7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 0)
+
+[node name="rpgpp_av_window_01a" parent="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01" index="0"]
+visible = false
+
+[node name="rpgpp_av_window_01d" parent="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01" index="3"]
+visible = true
+
+[node name="basement" type="Node3D" parent="."]
+
+[node name="rpgpp_av_wall_3x1 (2)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, -9)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (2)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_b" parent="basement/rpgpp_av_wall_3x1 (2)" index="10"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (3)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -9)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (3)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (3)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (5)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, -6, -1, -7.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (5)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (5)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (7)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, 3, -1, -7.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (7)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (7)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (8)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, 3, -1, -1.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (8)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_b" parent="basement/rpgpp_av_wall_3x1 (8)" index="10"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (10)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 0)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (10)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_b" parent="basement/rpgpp_av_wall_3x1 (10)" index="10"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (4)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, -6, -1, -4.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (4)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_b" parent="basement/rpgpp_av_wall_3x1 (4)" index="10"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (9)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, 3, 1, -4.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (9)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_c" parent="basement/rpgpp_av_wall_3x1 (9)" index="11"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (6)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, -6, 1, -1.5)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (6)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_c" parent="basement/rpgpp_av_wall_3x1 (6)" index="11"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (11)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 0)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (11)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (11)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (12)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1, -9)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (12)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (12)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_3x1 (13)" parent="basement" instance=ExtResource("16_6q2xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1, 0)
+
+[node name="rpgpp_av_wall_01_3x1_a" parent="basement/rpgpp_av_wall_3x1 (13)" index="0"]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x1_a" parent="basement/rpgpp_av_wall_3x1 (13)" index="9"]
+visible = true
+
+[node name="rpgpp_av_wall_connector_corner_01_1m" parent="basement" instance=ExtResource("17_tp1mt")]
+
+[node name="rpgpp_av_wall_connector_corner_01_1m2" parent="basement" instance=ExtResource("17_tp1mt")]
+
+[node name="rpgpp_av_wall_connector_corner_01_1m3" parent="basement" instance=ExtResource("17_tp1mt")]
+
+[node name="rpgpp_av_wall_connector_corner_01_1m4" parent="basement" instance=ExtResource("17_tp1mt")]
+
+[node name="props" type="Node3D" parent="."]
+
+[node name="rpgpp_av_shelf_wall_04" parent="props" instance=ExtResource("18_2njkl")]
+
+[node name="rpgpp_av_shelf_wood_03a" parent="props" instance=ExtResource("19_lsswk")]
+
+[node name="rpgpp_av_shelf_wood_03a2" parent="props" instance=ExtResource("19_lsswk")]
+
+[node name="rpgpp_av_barrel_03a" parent="props" instance=ExtResource("20_c0ppc")]
+
+[node name="rpgpp_av_barrel_03c" parent="props" instance=ExtResource("21_w1wcs")]
+
+[node name="rpgpp_av_bathtub_wood_01c" parent="props" instance=ExtResource("22_uak10")]
+
+[node name="rpgpp_av_crate_05" parent="props" instance=ExtResource("23_vklqf")]
+
+[node name="rpgpp_av_crate_06" parent="props" instance=ExtResource("23_vklqf")]
+
+[node name="rpgpp_av_crate_07" parent="props" instance=ExtResource("23_vklqf")]
+
+[node name="rpgpp_av_crate_04" parent="props" instance=ExtResource("24_fgpih")]
+
+[node name="rpgpp_av_cage_01" parent="props" instance=ExtResource("25_cgyj6")]
+
+[node name="rpgpp_av_cage_02b" parent="props" instance=ExtResource("26_igeq3")]
+
+[node name="rpgpp_av_jug_02b" parent="props" instance=ExtResource("27_eepd4")]
+
+[node name="rpgpp_av_jug_01b" parent="props" instance=ExtResource("28_8twei")]
+
+[node name="rpgpp_av_pot_01b" parent="props" instance=ExtResource("29_6ipij")]
+
+[node name="rpgpp_av_vase_01b" parent="props" instance=ExtResource("30_a1ifp")]
+
+[node name="rpgpp_av_food_container_01a" parent="props" instance=ExtResource("31_b5l5d")]
+
+[node name="rpgpp_av_stairs_entrance_01b" parent="props" instance=ExtResource("32_p2a3k")]
+transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, -6.25, -0.826, -4.67)
+
+[node name="rpgpp_av_table_03b" parent="props" instance=ExtResource("33_rnq75")]
+
+[node name="rpgpp_av_chair_04a" parent="props" instance=ExtResource("34_6apb0")]
+
+[node name="rpgpp_av_chair_04b" parent="props" instance=ExtResource("35_3dxbb")]
+
+[node name="rpgpp_av_planks_01e" parent="props" instance=ExtResource("36_1u3s3")]
+
+[node name="rpgpp_av_table_04a" parent="props" instance=ExtResource("37_cbbhj")]
+
+[node name="rpgpp_av_wheel_01b" parent="props" instance=ExtResource("38_7l83s")]
+
+[editable path="roofs/rpgpp_av_roof_02_9x4x3_end_01"]
+[editable path="roofs/rpgpp_av_roof_9x4x3"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_01_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_02_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_02_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/roof/rpgpp_av_roof_02_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/support/rpgpp_av_roof_support_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/support/rpgpp_av_roof_support_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3/support/rpgpp_av_roof_support_01_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_01_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_02_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_02_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/roof/rpgpp_av_roof_02_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/support/rpgpp_av_roof_support_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/support/rpgpp_av_roof_support_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (1)/support/rpgpp_av_roof_support_01_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_01_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_02_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_02_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/roof/rpgpp_av_roof_02_9x4x3_c"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/support/rpgpp_av_roof_support_01_9x4x3_a"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/support/rpgpp_av_roof_support_01_9x4x3_b"]
+[editable path="roofs/rpgpp_av_roof_9x4x3 (2)/support/rpgpp_av_roof_support_01_9x4x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (1)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_01_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_02_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_03_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_04_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_01_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_02_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_03_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/walls/rpgpp_av_wall_04_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01/rpgpp_av_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01/rpgpp_av_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01/rpgpp_av_window_01c"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (2)/windows_01/rpgpp_av_window_01d"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (3)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (5)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (7)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_door"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_01/rpgpp_av_door_01a"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_01/rpgpp_av_door_01b"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_01/rpgpp_av_door_frame_01"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_02/rpgpp_av_door_02a"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_02/rpgpp_av_door_02b"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_02/rpgpp_av_door_frame_02"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_03/rpgpp_av_door_03a"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_03/rpgpp_av_door_03b"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_03/rpgpp_av_door_frame_03"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_04/rpgpp_av_door_frame_04"]
+[editable path="walls/rpgpp_av_wall_door/doors/door_04/rpgpp_av_door_04a"]
+[editable path="walls/rpgpp_av_wall_door/walls/rpgpp_av_wall_01_3x3_door_a"]
+[editable path="walls/rpgpp_av_wall_door/walls/rpgpp_av_wall_02_3x3_door_a"]
+[editable path="walls/rpgpp_av_wall_door/walls/rpgpp_av_wall_03_3x3_door_a"]
+[editable path="walls/rpgpp_av_wall_door/walls/rpgpp_av_wall_04_3x3_door_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (2)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (6)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_01_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_02_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_03_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_04_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_01_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_02_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_03_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/walls/rpgpp_av_wall_04_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01/rpgpp_av_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01/rpgpp_av_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01/rpgpp_av_window_01c"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (3)/windows_01/rpgpp_av_window_01d"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_01_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_02_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_03_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_04_3x3_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_01_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_02_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_03_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/walls/rpgpp_av_wall_04_3x3_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01/rpgpp_av_window_01a"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01/rpgpp_av_window_01b"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01/rpgpp_av_window_01c"]
+[editable path="walls/rpgpp_av_wall_3x3_window_01 (4)/windows_01/rpgpp_av_window_01d"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (8)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (9)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (10)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (12)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_01_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_02_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_03_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_04_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_05_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_06_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_07_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/beams/rpgpp_av_wall_beam_08_3x3"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_01/rpgpp_av_wall_01_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_02/rpgpp_av_wall_02_3x3_g"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_03/rpgpp_av_wall_03_3x3_f"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_a"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_b"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_c"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_d"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_e"]
+[editable path="walls/rpgpp_av_wall_3x3 (13)/walls/wall_04/rpgpp_av_wall_04_3x3_f"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m2"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m2"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m3"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m3"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m4"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m4"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m2"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m5"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m5"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m6"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m6"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m7"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m8"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x3"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x4"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x5"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x6"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x7"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_03_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_03_3m2"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_03_3m3"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m9"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_01_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01b_3m10"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01c_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m3"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m4"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m5"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x8"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x9"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x10"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x11"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x12"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x13"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x14"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01d_3m"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x15"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x16"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x17"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x18"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x19"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x20"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x21"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x22"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m7"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m8"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x23"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x24"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x25"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m9"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_01a_3m10"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_between_01_3m6"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_bottom_corner_01_3x26"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_01_3m2"]
+[editable path="wall_connectors/rpgpp_av_wall_connector_corner_01_3m3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (2)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (3)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (1)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (4)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (5)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (6)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (7)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_01/rpgpp_av_floor_01f_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02a_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02b_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02c_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02d_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02e_3x3"]
+[editable path="floors/rpgpp_av_floor_3x3 (8)/floor_02/rpgpp_av_floor_02f_3x3"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/rpgpp_av_roof_end_01_9x4_beam_a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_01/rpgpp_av_roof_end_01_9x4_wall_window_01a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_01/rpgpp_av_roof_end_01_9x4_wall_window_02a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_01/rpgpp_av_roof_end_01_9x4_wall_window_03a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_01/rpgpp_av_roof_end_01_9x4_wall_window_04a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_02/rpgpp_av_roof_end_01_9x4_wall_window_01b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_02/rpgpp_av_roof_end_01_9x4_wall_window_02b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_02/rpgpp_av_roof_end_01_9x4_wall_window_03b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_02/rpgpp_av_roof_end_01_9x4_wall_window_04b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_03/rpgpp_av_roof_end_01_9x4_wall_window_02c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_03/rpgpp_av_roof_end_01_9x4_wall_window_03c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/walls/window_03/rpgpp_av_roof_end_01_9x4_wall_window_04c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01/rpgpp_av_window_01a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01/rpgpp_av_window_01b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01/rpgpp_av_window_01c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_01/rpgpp_av_window_01d"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02d"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02a2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02b2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02c2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_02/rpgpp_av_window_02d2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03a"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03b"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03c"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03a2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03b2"]
+[editable path="roof_ends/rpgpp_av_roof_end_9x4_wall_window/windows/window_03/rpgpp_av_window_03c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (2)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (3)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (5)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (7)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (8)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (10)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (4)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (9)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (6)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (11)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (12)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_01_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_01_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_01_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_02_3x1_c"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_02_3x1_d"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_02_3x1_c2"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_02_3x1_d2"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_03_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_03_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_04_3x1_a"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_04_3x1_b"]
+[editable path="basement/rpgpp_av_wall_3x1 (13)/rpgpp_av_wall_04_3x1_c"]
+[editable path="basement/rpgpp_av_wall_connector_corner_01_1m"]
+[editable path="basement/rpgpp_av_wall_connector_corner_01_1m2"]
+[editable path="basement/rpgpp_av_wall_connector_corner_01_1m3"]
+[editable path="basement/rpgpp_av_wall_connector_corner_01_1m4"]
+[editable path="props/rpgpp_av_shelf_wall_04"]
+[editable path="props/rpgpp_av_shelf_wood_03a"]
+[editable path="props/rpgpp_av_shelf_wood_03a2"]
+[editable path="props/rpgpp_av_barrel_03a"]
+[editable path="props/rpgpp_av_barrel_03c"]
+[editable path="props/rpgpp_av_bathtub_wood_01c"]
+[editable path="props/rpgpp_av_crate_05"]
+[editable path="props/rpgpp_av_crate_06"]
+[editable path="props/rpgpp_av_crate_07"]
+[editable path="props/rpgpp_av_crate_04"]
+[editable path="props/rpgpp_av_cage_01"]
+[editable path="props/rpgpp_av_cage_02b"]
+[editable path="props/rpgpp_av_jug_02b"]
+[editable path="props/rpgpp_av_jug_01b"]
+[editable path="props/rpgpp_av_pot_01b"]
+[editable path="props/rpgpp_av_vase_01b"]
+[editable path="props/rpgpp_av_food_container_01a"]
+[editable path="props/rpgpp_av_stairs_entrance_01b"]
+[editable path="props/rpgpp_av_table_03b"]
+[editable path="props/rpgpp_av_chair_04a"]
+[editable path="props/rpgpp_av_chair_04b"]
+[editable path="props/rpgpp_av_planks_01e"]
+[editable path="props/rpgpp_av_table_04a"]
+[editable path="props/rpgpp_av_wheel_01b"]

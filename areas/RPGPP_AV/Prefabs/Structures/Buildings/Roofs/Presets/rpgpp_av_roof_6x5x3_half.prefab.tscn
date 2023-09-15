@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://nsprf5gylk4c"]
+
+[ext_resource type="PackedScene" uid="uid://b54yt44fasg03" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_6x5x3_half_a.prefab.tscn" id="1_gm5qe"]
+[ext_resource type="PackedScene" uid="uid://deb866c38wwgi" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_6x5x3_half_b.prefab.tscn" id="2_rpwsh"]
+[ext_resource type="PackedScene" uid="uid://cvm3echjn5v8e" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_6x5x3_half_c.prefab.tscn" id="3_qg5i4"]
+[ext_resource type="PackedScene" uid="uid://cf8u617hkjx21" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_6x5x3_half_d.prefab.tscn" id="4_jrjt7"]
+[ext_resource type="PackedScene" uid="uid://bw8qhwku5283d" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_6x5x3_half_a.prefab.tscn" id="5_rdc66"]
+[ext_resource type="PackedScene" uid="uid://oq8x5yd1uqch" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_6x5x3_half_b.prefab.tscn" id="6_pd6r0"]
+[ext_resource type="PackedScene" uid="uid://bdn6jun47q8gd" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_6x5x3_half_c.prefab.tscn" id="7_wd5f6"]
+[ext_resource type="PackedScene" uid="uid://bcqyyykjeld81" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_6x5x3_half_d.prefab.tscn" id="8_vcxbv"]
+[ext_resource type="PackedScene" uid="uid://6mts8mlobgna" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_6x5x3_half_a.prefab.tscn" id="9_h1dt4"]
+[ext_resource type="PackedScene" uid="uid://cibhb5rahi37s" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_6x5x3_half_b.prefab.tscn" id="10_x5kn4"]
+[ext_resource type="PackedScene" uid="uid://dl34dapuwcg2b" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_6x5x3_half_c.prefab.tscn" id="11_sdiiy"]
+[ext_resource type="PackedScene" uid="uid://dh6uqxsh8dpfd" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_6x5x3_half_d.prefab.tscn" id="12_qm0tl"]
+
+[node name="rpgpp_av_roof_6x5x3_half" type="Node3D"]
+
+[node name="roof_01" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_01_6x5x3_half_a" parent="roof_01" instance=ExtResource("1_gm5qe")]
+
+[node name="rpgpp_av_roof_01_6x5x3_half_b" parent="roof_01" instance=ExtResource("2_rpwsh")]
+visible = false
+
+[node name="rpgpp_av_roof_01_6x5x3_half_c" parent="roof_01" instance=ExtResource("3_qg5i4")]
+visible = false
+
+[node name="rpgpp_av_roof_01_6x5x3_half_d" parent="roof_01" instance=ExtResource("4_jrjt7")]
+visible = false
+
+[node name="rpgpp_av_roof_02_6x5x3_half_a" parent="roof_01" instance=ExtResource("5_rdc66")]
+visible = false
+
+[node name="rpgpp_av_roof_02_6x5x3_half_b" parent="roof_01" instance=ExtResource("6_pd6r0")]
+visible = false
+
+[node name="rpgpp_av_roof_02_6x5x3_half_c" parent="roof_01" instance=ExtResource("7_wd5f6")]
+visible = false
+
+[node name="rpgpp_av_roof_02_6x5x3_half_d" parent="roof_01" instance=ExtResource("8_vcxbv")]
+visible = false
+
+[node name="support" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_support_01_6x5x3_half_a" parent="support" instance=ExtResource("9_h1dt4")]
+
+[node name="rpgpp_av_roof_support_01_6x5x3_half_b" parent="support" instance=ExtResource("10_x5kn4")]
+visible = false
+
+[node name="rpgpp_av_roof_support_01_6x5x3_half_c" parent="support" instance=ExtResource("11_sdiiy")]
+visible = false
+
+[node name="rpgpp_av_roof_support_01_6x5x3_half_d" parent="support" instance=ExtResource("12_qm0tl")]
+visible = false
+
+[editable path="roof_01/rpgpp_av_roof_01_6x5x3_half_a"]
+[editable path="roof_01/rpgpp_av_roof_01_6x5x3_half_b"]
+[editable path="roof_01/rpgpp_av_roof_01_6x5x3_half_c"]
+[editable path="roof_01/rpgpp_av_roof_01_6x5x3_half_d"]
+[editable path="roof_01/rpgpp_av_roof_02_6x5x3_half_a"]
+[editable path="roof_01/rpgpp_av_roof_02_6x5x3_half_b"]
+[editable path="roof_01/rpgpp_av_roof_02_6x5x3_half_c"]
+[editable path="roof_01/rpgpp_av_roof_02_6x5x3_half_d"]
+[editable path="support/rpgpp_av_roof_support_01_6x5x3_half_a"]
+[editable path="support/rpgpp_av_roof_support_01_6x5x3_half_b"]
+[editable path="support/rpgpp_av_roof_support_01_6x5x3_half_c"]
+[editable path="support/rpgpp_av_roof_support_01_6x5x3_half_d"]

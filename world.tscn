@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0hq0wpxgkhq7"]
+
+[ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="1_xcf7p"]
+
+[node name="World" type="Node3D"]
+
+[node name="CharacterManager" parent="." instance=ExtResource("1_xcf7p")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8mwaaiqbm7qd"]
+
+[ext_resource type="PackedScene" uid="uid://c4bg80lfbionp" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_stairs_interior_01c_4m.gltf" id="1_nem0u"]
+[ext_resource type="PackedScene" uid="uid://c7bj5whvlqif6" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Stairs/rpgpp_av_stairs_interior_01c_4m_handrail_01.prefab.tscn" id="2_smje8"]
+
+[node name="rpgpp_av_stairs_interior_01c_4m" instance=ExtResource("1_nem0u")]
+
+[node name="rpgpp_av_stairs_interior_01c_4m_handrail_01" parent="." index="1" instance=ExtResource("2_smje8")]
+
+[editable path="rpgpp_av_stairs_interior_01c_4m_handrail_01"]

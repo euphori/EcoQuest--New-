@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjfvvkm7ykpdu"]
+
+[ext_resource type="PackedScene" uid="uid://dfj2atchab4l4" path="res://Assets/RPGPP_AV/Models/Nature/Terrain/rpgpp_av_terrain_path_05_10x10m_corner_a.gltf" id="1_hl4pa"]
+
+[node name="rpgpp_av_terrain_path_05_10x10m_corner_a" instance=ExtResource("1_hl4pa")]

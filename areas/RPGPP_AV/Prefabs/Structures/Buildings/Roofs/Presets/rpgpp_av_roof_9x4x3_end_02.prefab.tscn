@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ivvgk7lqth"]
+
+[ext_resource type="PackedScene" uid="uid://cf1omw5uilkro" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_9x4x3_end_02a.prefab.tscn" id="1_qahmg"]
+[ext_resource type="PackedScene" uid="uid://wstwb63nc2b8" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_9x4x3_end_02.prefab.tscn" id="2_pbxdn"]
+[ext_resource type="PackedScene" uid="uid://bos5kractux4c" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_end_02.prefab.tscn" id="3_ld1ps"]
+
+[node name="rpgpp_av_roof_9x4x3_end_02" type="Node3D"]
+
+[node name="rpgpp_av_roof_support_01_9x4x3_end_02a" parent="." instance=ExtResource("1_qahmg")]
+
+[node name="roof" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_01_9x4x3_end_02" parent="roof" instance=ExtResource("2_pbxdn")]
+
+[node name="rpgpp_av_roof_02_9x4x3_end_02" parent="roof" instance=ExtResource("3_ld1ps")]
+visible = false
+
+[editable path="rpgpp_av_roof_support_01_9x4x3_end_02a"]
+[editable path="roof/rpgpp_av_roof_01_9x4x3_end_02"]
+[editable path="roof/rpgpp_av_roof_02_9x4x3_end_02"]

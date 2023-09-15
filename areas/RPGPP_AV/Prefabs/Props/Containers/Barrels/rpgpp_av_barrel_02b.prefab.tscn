@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://jh78wuk17tm2"]
+
+[ext_resource type="PackedScene" uid="uid://d2r4w71sj3em0" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_barrel_02b.gltf" id="1_oobgl"]
+
+[node name="rpgpp_av_barrel_02b" instance=ExtResource("1_oobgl")]

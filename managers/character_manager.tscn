@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqnpbbdix25h"]
+
+[ext_resource type="PackedScene" uid="uid://dwu7lr44bcav5" path="res://characters/robot.tscn" id="1_6voqy"]
+[ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
+
+[node name="CharacterManager" type="Node3D"]
+
+[node name="Kid" parent="." instance=ExtResource("1_idrav")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Robot" parent="." instance=ExtResource("1_6voqy")]

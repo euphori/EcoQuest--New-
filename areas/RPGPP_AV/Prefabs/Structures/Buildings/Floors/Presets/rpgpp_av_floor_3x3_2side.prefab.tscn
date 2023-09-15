@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://boyk78gcloume"]
+
+[ext_resource type="PackedScene" uid="uid://cl4fex1ax5vtf" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01a_3x3_2side.prefab.tscn" id="1_0g6yn"]
+[ext_resource type="PackedScene" uid="uid://0i71sf5niqpc" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01b_3x3_2side.prefab.tscn" id="2_gf4tu"]
+[ext_resource type="PackedScene" uid="uid://1alyinndjai4" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01c_3x3_2side.prefab.tscn" id="3_in70y"]
+[ext_resource type="PackedScene" uid="uid://tkxpgvroiiea" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01d_3x3_2side.prefab.tscn" id="4_87l2c"]
+[ext_resource type="PackedScene" uid="uid://t47c2faahqxp" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01e_3x3_2side.prefab.tscn" id="5_gja68"]
+[ext_resource type="PackedScene" uid="uid://d2jqwbyl3b1up" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01f_3x3_2side.prefab.tscn" id="6_otels"]
+[ext_resource type="PackedScene" uid="uid://byuwunkw16u7" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02a_3x3_2side.prefab.tscn" id="7_ioxp1"]
+[ext_resource type="PackedScene" uid="uid://cui4lines30p4" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02b_3x3_2side.prefab.tscn" id="8_hnccn"]
+[ext_resource type="PackedScene" uid="uid://oh4obqdodnlv" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02c_3x3_2side.prefab.tscn" id="9_tmleq"]
+[ext_resource type="PackedScene" uid="uid://cdyesnuhmqeeo" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02d_3x3_2side.prefab.tscn" id="10_jtear"]
+[ext_resource type="PackedScene" uid="uid://b5nmcwl14qisy" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02e_3x3_2side.prefab.tscn" id="11_usmtl"]
+[ext_resource type="PackedScene" uid="uid://c3qxnys0d0k0x" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02f_3x3_2side.prefab.tscn" id="12_t1c6g"]
+
+[node name="rpgpp_av_floor_3x3_2side" type="Node3D"]
+
+[node name="floor_01" type="Node3D" parent="."]
+
+[node name="rpgpp_av_floor_01a_3x3_2side" parent="floor_01" instance=ExtResource("1_0g6yn")]
+
+[node name="rpgpp_av_floor_01b_3x3_2side" parent="floor_01" instance=ExtResource("2_gf4tu")]
+visible = false
+
+[node name="rpgpp_av_floor_01c_3x3_2side" parent="floor_01" instance=ExtResource("3_in70y")]
+visible = false
+
+[node name="rpgpp_av_floor_01d_3x3_2side" parent="floor_01" instance=ExtResource("4_87l2c")]
+visible = false
+
+[node name="rpgpp_av_floor_01e_3x3_2side" parent="floor_01" instance=ExtResource("5_gja68")]
+visible = false
+
+[node name="rpgpp_av_floor_01f_3x3_2side" parent="floor_01" instance=ExtResource("6_otels")]
+visible = false
+
+[node name="floor_02" type="Node3D" parent="."]
+
+[node name="rpgpp_av_floor_02a_3x3_2side" parent="floor_02" instance=ExtResource("7_ioxp1")]
+visible = false
+
+[node name="rpgpp_av_floor_02b_3x3_2side" parent="floor_02" instance=ExtResource("8_hnccn")]
+visible = false
+
+[node name="rpgpp_av_floor_02c_3x3_2side" parent="floor_02" instance=ExtResource("9_tmleq")]
+visible = false
+
+[node name="rpgpp_av_floor_02d_3x3_2side" parent="floor_02" instance=ExtResource("10_jtear")]
+visible = false
+
+[node name="rpgpp_av_floor_02e_3x3_2side" parent="floor_02" instance=ExtResource("11_usmtl")]
+visible = false
+
+[node name="rpgpp_av_floor_02f_3x3_2side" parent="floor_02" instance=ExtResource("12_t1c6g")]
+visible = false
+
+[editable path="floor_01/rpgpp_av_floor_01a_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01b_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01c_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01d_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01e_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01f_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02a_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02b_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02c_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02d_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02e_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02f_3x3_2side"]

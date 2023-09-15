@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds6u87potgkqo"]
+
+[ext_resource type="PackedScene" uid="uid://laouu3m0opb6" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_food_container_01a.gltf" id="1_afgfy"]
+
+[node name="rpgpp_av_food_container_01a" instance=ExtResource("1_afgfy")]
