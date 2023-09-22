@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export_category("STATS")
 @export var SPEED = 5.0
-@export var JUMP_VELOCITY = 4.5
+@export var JUMP_VELOCITY = 10
 @export var ACCELERATION = 200
 @export var MAX_SPEED = 5.0
 
@@ -50,6 +50,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active:
 		jumping = true
+		velocity.y += JUMP_VELOCITY
 		$AnimationPlayer.play("jump")
 		await $AnimationPlayer.animation_finished
 		$AnimationPlayer.play("falling")
