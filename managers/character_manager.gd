@@ -1,7 +1,11 @@
 extends Node3D
 
 
+@export var camera_offset = 3
+
 @onready var camera = $Camera3D
+@onready var robot = $Robot
+@onready var kid = $Kid
 @onready var z_slider = $CameraController/ZSlider
 @onready var y_slider = $CameraController/YSlider
 @onready var x_slider = $CameraController/XSlider
@@ -21,8 +25,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	if kid.active:
+		camera.global_position.x = kid.global_position.x
+		camera.global_position.y = kid.global_position.y + camera_offset
+	else:
+		camera.global_position.x = robot.global_position.x
+		camera.global_position.y = robot.global_position.y + camera_offset
 
 
 

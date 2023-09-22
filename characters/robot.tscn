@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwu7lr44bcav5"]
+[gd_scene load_steps=5 format=3 uid="uid://dwu7lr44bcav5"]
 
 [ext_resource type="Script" path="res://characters/robot.gd" id="1_m0ngl"]
 [ext_resource type="Texture2D" uid="uid://bwiqypqnkj4p4" path="res://assets/player/rb_sheet.png" id="1_qqj2r"]
+[ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_ygj6e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfflu"]
 
@@ -21,3 +22,5 @@ hframes = 6
 vframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="HitDetection" parent="." instance=ExtResource("3_ygj6e")]
