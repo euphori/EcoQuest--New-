@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://52r2qlohqi2o"]
-
-[ext_resource type="PackedScene" uid="uid://c0hhrgxlg5tre" path="res://Assets/RPGPP_AV/Models/Nature/Terrain/rpgpp_av_terrain_path_06_crossing_a.gltf" id="1_w0ofk"]
-
-[node name="rpgpp_av_terrain_path_06_crossing_a" instance=ExtResource("1_w0ofk")]

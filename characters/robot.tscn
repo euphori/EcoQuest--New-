@@ -1,7 +1,23 @@
-[gd_scene format=3 uid="uid://dwu7lr44bcav5"]
+[gd_scene load_steps=4 format=3 uid="uid://dwu7lr44bcav5"]
+
+[ext_resource type="Script" path="res://characters/robot.gd" id="1_m0ngl"]
+[ext_resource type="Texture2D" uid="uid://bwiqypqnkj4p4" path="res://assets/player/rb_sheet.png" id="1_qqj2r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfflu"]
 
 [node name="Robot" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_m0ngl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.34246, 1.8097, 0)
+shape = SubResource("CapsuleShape3D_sfflu")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803052, 2.18055, 0)
+alpha_cut = 2
+texture = ExtResource("1_qqj2r")
+hframes = 6
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl1xi3gd3k1u8"]
-
-[ext_resource type="PackedScene" uid="uid://buejsbgl506cg" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_chair_02a.gltf" id="1_givjf"]
-
-[node name="rpgpp_av_chair_02a" instance=ExtResource("1_givjf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

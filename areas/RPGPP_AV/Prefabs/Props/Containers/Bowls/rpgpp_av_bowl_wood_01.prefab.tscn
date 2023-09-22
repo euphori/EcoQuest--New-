@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://qxqm8qtmuxa"]
-
-[ext_resource type="PackedScene" uid="uid://d0p0udvkag5ky" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_bowl_wood_01.gltf" id="1_21onh"]
-
-[node name="rpgpp_av_bowl_wood_01" instance=ExtResource("1_21onh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06684e-07, 0, 1.27257e-08)

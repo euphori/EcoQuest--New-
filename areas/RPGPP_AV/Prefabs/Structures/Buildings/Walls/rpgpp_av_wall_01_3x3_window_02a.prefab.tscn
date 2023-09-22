@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl5rnylrtxuka"]
-
-[ext_resource type="PackedScene" uid="uid://dj0ojebkt06v8" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_wall_01_3x3_window_02a.gltf" id="1_hotqa"]
-
-[node name="rpgpp_av_wall_01_3x3_window_02a" instance=ExtResource("1_hotqa")]

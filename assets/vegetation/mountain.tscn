@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://budmwe2dse7lu"]
+
+[ext_resource type="PackedScene" uid="uid://dbuxc270urqdk" path="res://assets/vegetation/Meshes/Mountain.fbx" id="1_w8ydn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgoay"]
+albedo_color = Color(0.819608, 0.603922, 0.333333, 1)
+
+[node name="Mountain" instance=ExtResource("1_w8ydn")]
+
+[node name="Mountain" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rgoay")

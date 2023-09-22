@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cui4lines30p4"]
-
-[ext_resource type="PackedScene" uid="uid://bxlr0ux7s5jxg" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_floor_02b_3x3_2side.gltf" id="1_is34g"]
-
-[node name="rpgpp_av_floor_02b_3x3_2side" instance=ExtResource("1_is34g")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3p8s5ghp3whu"]
-
-[ext_resource type="PackedScene" uid="uid://cn3ynd15k7sku" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_hanger_wood_02a.gltf" id="1_g4npb"]
-
-[node name="rpgpp_av_hanger_wood_02a" instance=ExtResource("1_g4npb")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7bj5whvlqif6"]
-
-[ext_resource type="PackedScene" uid="uid://y64gfamohsra" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_stairs_interior_01c_4m_handrail_01.gltf" id="1_pjksj"]
-
-[node name="rpgpp_av_stairs_interior_01c_4m_handrail_01" instance=ExtResource("1_pjksj")]
