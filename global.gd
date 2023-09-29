@@ -18,3 +18,7 @@ var questFive_complete = false
 
 #Point System
 var dialogue_points = 0
+
+#Item
+var multiplier = 0.5
+var items = {"Plastic": 0}

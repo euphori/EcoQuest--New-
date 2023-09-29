@@ -49,8 +49,11 @@ if global.questStart == true and global.question1_complete == false
 	set global.question1_complete = true
 
 #Task 1
-if global.question1_complete == true and global.questOne_complete == false
+if global.question1_complete == true and global.questOne_complete == false and global.items["Plastic"] < 5
 	Quest Master: For your first quest, help me clean out the place by throwing the trash in their perspective bins.
+
+if global.items["Plastic"] == 5:
+	set global.questOne_complete = true
 
 #Question 2	
 if global.questOne_complete == true and global.question2_complete == false

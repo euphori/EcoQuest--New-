@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkbtdid8f7c1"]
+
+[ext_resource type="Script" path="res://interactable/item.gd" id="1_3vssh"]
+[ext_resource type="Texture2D" uid="uid://dny7wgdbs7uo6" path="res://assets/items/bottle.png" id="1_oofui"]
+[ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="2_4f6es"]
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_3vssh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0631, 0)
+texture = ExtResource("1_oofui")
+
+[node name="InteractUI" parent="." instance=ExtResource("2_4f6es")]
+text_label = "Pick Up (F)"
+type = "pickable"
