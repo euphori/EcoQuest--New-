@@ -83,7 +83,7 @@ transform = Transform3D(0.999998, -0.00138205, -0.00167378, 0.000279418, -0.6827
 shadow_enabled = true
 
 [node name="Sand" type="Node3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.761288, 0)
 
 [node name="Environment_1" type="MeshInstance3D" parent="Sand"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0, 0)
@@ -97,7 +97,7 @@ collision_mask = 11
 shape = SubResource("ConcavePolygonShape3D_3j8op")
 
 [node name="Water" parent="." instance=ExtResource("3_x7yjr")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 16.6479, -1.23403, 3)
+transform = Transform3D(10, 0, 0, 0, 6, 0, 0, 0, 6, 16.6479, -1.60553, 3)
 
 [node name="MovableBox" parent="." instance=ExtResource("4_fmsjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5888, 5.25097, 0)

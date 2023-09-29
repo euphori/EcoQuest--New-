@@ -1,4 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://swij4ali5aam"]
+[gd_scene load_steps=41 format=3 uid="uid://swij4ali5aam"]
+
+[ext_resource type="Script" path="res://shaders/Water.gd" id="1_5ej42"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_lqsql"]
 
@@ -368,8 +370,15 @@ subdivide_depth = 20
 
 [node name="Water" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000913143, 0.0149341, 0.000696421)
+script = ExtResource("1_5ej42")
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00630689, 0.0171337, -0.00416851)
 gi_mode = 0
 mesh = SubResource("PlaneMesh_au8eh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

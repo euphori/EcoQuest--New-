@@ -31,8 +31,7 @@ var platform = null
 func _ready():
 	if default_char:
 		active = true
-	if !active:
-		$CollisionShape3D.disabled = true
+
 
 
 func jump():
