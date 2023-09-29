@@ -17,4 +17,4 @@ var questFour_complete = false
 var questFive_complete = false
 
 #Point System
-var points = 0
+var dialogue_points = 0
