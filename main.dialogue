@@ -13,17 +13,38 @@ if global.questStart == false
 if global.questStart == true and global.question1_complete == false
 	Quest Master: Before I give your first quest...I want to hear your opinions first.
 	Quest Master: Would you be willing to use easily-soluble bags instead of plastic?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you willing to switch to reusable alternatives like water bottles and shopping bags?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you willing to throw plastics, metals, and paper into separate recycling bins?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Great, you are now ready for your first quest.
 	set global.question1_complete = true
 
@@ -36,18 +57,39 @@ if global.questOne_complete == true and global.question2_complete == false
 	Quest Master: Congratulations on completing your first quest!
 	Quest Master: Before I give your second quest...I want to hear your opinions first.
 	Quest Master: Would you consider using public transportation, walking, or biking instead of driving your own vehicle?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Would you support policies and initiatives that promote the reduction of greenhouse gas emissions from factories?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you open to advocating for the adoption of cleaner technologies in factories?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
-		Quest Master: Great, you are now ready for your second quest.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
+	Quest Master: Great, you are now ready for your second quest.
 	set global.question2_complete = true
 
 #Task 2
@@ -59,17 +101,38 @@ if global.questTwo_complete == true and global.question3_complete == false
 	Quest Master: Congratulations on completing your second quest!
 	Quest Master: Before I give your third quest...I want to hear your opinions first.
 	Quest Master: Are you willing to reduce water consumption, like taking shorter showers and turning off faucets when not in use?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you willing to install water-saving devices in your home?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you willing to avoid leaving the water running for too long while rinsing dishes?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 		Quest Master: Great, you are now ready for your third quest.
 	set global.question3_complete = true
 
@@ -82,18 +145,39 @@ if global.questThree_complete == true and global.question4_complete == false
 	Quest Master: Congratulations on completing your third quest!
 	Quest Master: Before I give your fourth quest...I want to hear your opinions first.
 	Quest Master: Are you willing to use light and electric devices only when necessary?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Are you willing to install energy-efficient appliances in your home?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Would you consider using things like solar panels for electricity?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
-		Quest Master: Great, you are now ready for your fourth quest.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
+	Quest Master: Great, you are now ready for your fourth quest.
 	set global.question4_complete = true
 
 #Task 4
@@ -105,18 +189,39 @@ if global.questFour_complete == true and global.question5_complete == false
 	Quest Master: Congratulations on completing your fourth quest!
 	Quest Master: Before I give your final quest...I want to hear your opinions first.
 	Quest Master: Are you willing to report illegal logging activities to the authorities or environmental organizations?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Would you join in to restore affected areas through reforestation?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
 	Quest Master: Would you consider gardening as a hobby to grow more plants?
-	- Definetly!
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
 	- Sure, I will try.
+		set global.dialogue_points += 4
+	- Maybe.
+		set global.dialogue_points += 3
 	- Not really.
-		Quest Master: Great, you are now ready for your final quest.
+		set global.dialogue_points += 2
+	- Now way, I don't have time to do such thing.
+		set global.dialogue_points += 1
+	Quest Master: Great, you are now ready for your final quest.
 	set global.question5_complete = true
 
 #Task 5
