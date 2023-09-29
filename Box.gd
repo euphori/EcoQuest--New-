@@ -5,7 +5,7 @@ extends RigidBody3D
 @onready var player = get_node(path_to_player)
 
 var speed = .3  # Adjust this to control the movement speed
-var can_move
+var can_move = false
 
 
 func _ready():
@@ -19,8 +19,10 @@ func _physics_process(_delta):
 # Apply a force to the RigidBody3D in its local space
 	var force = direction * speed
 	if can_move:
+		
 		player.pushing = true
 		apply_central_impulse(force)
 	else:
+		
 		player.pushing = false
 

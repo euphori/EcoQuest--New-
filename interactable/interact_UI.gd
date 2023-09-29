@@ -48,21 +48,6 @@ func _on_player_detection_body_exited(_body):
 
 
 
-
-func _on_player_detection_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	visible = true
-	player_near = true
-	
-
-
-func _on_player_detection_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	visible = false
-	player_near = false
-	parent.can_move = false
-	
-
-
-
 func _on_detection_area_body_entered(body):
 	visible = true
 	player_near = true

@@ -1,7 +1,9 @@
 extends Node3D
 
 
-@export var camera_offset = 3
+@export var new_camera_offset = {"x":4,"y":3,"z":3}
+@export var old_camera_offset = {"x":4,"y":3,"z":3}
+@export var player_num = 1
 
 @onready var camera = $Camera3D
 @onready var robot = $Robot
@@ -15,35 +17,52 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	if player_num == 1:
+		robot.queue_free()
+	
 	z_slider.value = camera.position.z
-	x_slider.value = camera.position.x
-	y_slider.value = camera.position.y
+	x_slider.value = old_camera_offset["x"]
+	y_slider.value = old_camera_offset["y"]
 	z_label.text = str(camera.position.z)
-	x_label.text = str(camera.position.x)
-	y_label.text = str(camera.position.y)
+	x_label.text = str(old_camera_offset["x"])
+	y_label.text = str(old_camera_offset["y"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	if kid.active:
-		camera.global_position.x = kid.global_position.x
-		camera.global_position.y = kid.global_position.y + camera_offset
+		camera.global_position.x = kid.global_position.x + old_camera_offset["x"]
+		camera.global_position.y = kid.global_position.y + old_camera_offset["y"]
 	else:
 		camera.global_position.x = robot.global_position.x
-		camera.global_position.y = robot.global_position.y + camera_offset
+		camera.global_position.y = robot.global_position.y + old_camera_offset["y"]
 
 
 
-func _on_h_slider_value_changed(value):
+func _on_z_slider_value_changed(value):
 	camera.position.z = value
 	z_label.text = str(camera.position.z)
 
 
 func _on_x_slider_value_changed(value):
-	camera.position.x = value
-	x_label.text = str(camera.position.x)
+	new_camera_offset["x"] = value
+	
+
 
 func _on_y_slider_value_changed(value):
-	camera.position.y = value
-	y_label.text = str(camera.position.y)
+	new_camera_offset["y"] = value
+	
+
+
+func _on_x_slider_drag_ended(value_changed):
+	if value_changed:
+		old_camera_offset["x"] = new_camera_offset["x"]
+		x_label.text = str(old_camera_offset["x"])
+
+
+func _on_y_slider_drag_ended(value_changed):
+	if value_changed:
+		old_camera_offset["y"] = new_camera_offset["y"]
+		y_label.text = str(old_camera_offset["y"])
