@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://d36uyp0lwm6ff"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxrhoj3u52faa" path="res://Assets/RPGPP_AV/Models/Nature/Background/rpgpp_av_hill_background_01.rpgpp_av_hill_background_01.mesh" id="1_skymw"]
+[ext_resource type="Material" uid="uid://dhmlsh4hw5p0f" path="res://Assets/RPGPP_AV/Materials/rpgpp_av_mat_a.mat.tres" id="2_e3kcj"]
+
+[node name="rpgpp_av_hill_background_01" type="Node3D"]
+
+[node name="MeshRenderer" type="MeshInstance3D" parent="."]
+editor_description = "[MeshRenderer 23::962983c1683df6d488f12a9851d49003:8663038864614076110]"
+mesh = ExtResource("1_skymw")
+surface_material_override/0 = ExtResource("2_e3kcj")
+metadata/unidot_keys = {
+"m_AutoUVMaxAngle": 89,
+"m_AutoUVMaxDistance": 0.5,
+"m_CastShadows": 1,
+"m_CorrespondingSourceObject": [null, 0, null, null],
+"m_DynamicOccludee": 1,
+"m_Enabled": 1,
+"m_GameObject": [null, 7149947656395427611, null, null],
+"m_IgnoreNormalsForChartDetection": 0,
+"m_ImportantGI": 0,
+"m_LightProbeUsage": 1,
+"m_LightProbeVolumeOverride": [null, 0, null, null],
+"m_LightmapParameters": [null, 0, null, null],
+"m_Materials": [[null, 2100000, "be35d629e10b3a043ba1be60e2d87293", 2]],
+"m_MinimumChartSize": 4,
+"m_MotionVectors": 1,
+"m_ObjectHideFlags": 0,
+"m_PrefabAsset": [null, 0, null, null],
+"m_PrefabInstance": [null, 0, null, null],
+"m_PreserveUVs": 0,
+"m_ProbeAnchor": [null, 0, null, null],
+"m_RayTracingMode": 2,
+"m_ReceiveGI": 1,
+"m_ReceiveShadows": 1,
+"m_ReflectionProbeUsage": 1,
+"m_RendererPriority": 0,
+"m_RenderingLayerMask": 1,
+"m_ScaleInLightmap": 1,
+"m_SelectedEditorRenderState": 3,
+"m_SortingLayer": 0,
+"m_SortingLayerID": 0,
+"m_SortingOrder": 0,
+"m_StaticBatchInfo": {
+"firstSubMesh": 0,
+"subMeshCount": 0
+},
+"m_StaticBatchRoot": [null, 0, null, null],
+"m_StitchLightmapSeams": 1
+}

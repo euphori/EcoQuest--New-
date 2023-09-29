@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://j141tl23601b"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_52lpt"]
+[ext_resource type="Texture2D" uid="uid://cm45qfqqofb3e" path="res://assets/player/npc.png" id="2_ed8wu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6swl0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_au1de"]
+
+[node name="npc" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+collision_layer = 2
+script = ExtResource("1_52lpt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_6swl0")
+
+[node name="detection_area" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detection_area"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("SphereShape3D_au1de")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0.7, 0, 0, 0)
+texture = ExtResource("2_ed8wu")

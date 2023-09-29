@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwli81f0dpg8e"]
+
+[ext_resource type="PackedScene" uid="uid://cs5q28qt4gcqq" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_roof_support_01_9x4x3_half_b.gltf" id="1_cjfnv"]
+
+[node name="rpgpp_av_roof_support_01_9x4x3_half_b" instance=ExtResource("1_cjfnv")]

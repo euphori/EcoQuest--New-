@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b33s6q3utjsis"]
+
+[ext_resource type="PackedScene" uid="uid://r073gjelqboh" path="res://Assets/RPGPP_AV/Models/Nature/Terrain/rpgpp_av_terrain_hill_01d_10x10m_1-2-1-0m.gltf" id="1_xiy4u"]
+
+[node name="rpgpp_av_terrain_hill_01d_10x10m_1-2-1-0m" instance=ExtResource("1_xiy4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 7.54979e-07)

@@ -21,6 +21,7 @@ var jumping = false
 var busy = false
 var active = false
 var pushing = false
+var npc_in_range = false
 
 var is_on_platform = false
 var platform = null
@@ -43,6 +44,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
+	if npc_in_range == true:
+		if Input.is_action_just_pressed("talk"):
+			DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
 	
 	
 	if Input.is_action_just_pressed("attack") and active and !attacking:

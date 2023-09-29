@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ri18ftx08vdp"]
+
+[ext_resource type="PackedScene" uid="uid://bwha7oti3nwqw" path="res://Assets/RPGPP_AV/Models/Nature/Foliage/rpgpp_av_tree_dead_02.gltf" id="1_gnxx6"]
+
+[node name="rpgpp_av_tree_dead_02" instance=ExtResource("1_gnxx6")]

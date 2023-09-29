@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://n3gonqylcw02"]
+
+[ext_resource type="PackedScene" uid="uid://c5yd2nf4dx426" path="res://Assets/RPGPP_AV/Models/Nature/Foliage/rpgpp_av_tree_pine_01b.gltf" id="1_isge8"]
+
+[node name="rpgpp_av_tree_pine_01b" instance=ExtResource("1_isge8")]

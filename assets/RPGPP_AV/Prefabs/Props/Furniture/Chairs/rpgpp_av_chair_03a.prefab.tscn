@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn01n7u18htsx"]
+
+[ext_resource type="PackedScene" uid="uid://cn0hdaku2kail" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_chair_03a.gltf" id="1_4loua"]
+
+[node name="rpgpp_av_chair_03a" instance=ExtResource("1_4loua")]

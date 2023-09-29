@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3kexlx0knsew"]
+
+[ext_resource type="PackedScene" uid="uid://b8o2rrv233hux" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01a_3x3_2side.prefab.tscn" id="1_0g6yn"]
+[ext_resource type="PackedScene" uid="uid://citqregt3a8n3" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01b_3x3_2side.prefab.tscn" id="2_gf4tu"]
+[ext_resource type="PackedScene" uid="uid://dbipy4yd7ij1m" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01c_3x3_2side.prefab.tscn" id="3_in70y"]
+[ext_resource type="PackedScene" uid="uid://dl1f6yan8x1a5" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01e_3x3_2side.prefab.tscn" id="5_gja68"]
+[ext_resource type="PackedScene" uid="uid://fj81urwlasjs" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_01f_3x3_2side.prefab.tscn" id="6_otels"]
+[ext_resource type="PackedScene" uid="uid://boya7k76ifein" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02a_3x3_2side.prefab.tscn" id="7_ioxp1"]
+[ext_resource type="PackedScene" uid="uid://bg3eg17akf66r" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02b_3x3_2side.prefab.tscn" id="7_xa07h"]
+[ext_resource type="PackedScene" uid="uid://dmkiehcos3dwp" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02c_3x3_2side.prefab.tscn" id="8_2qsdt"]
+[ext_resource type="PackedScene" uid="uid://7mjrnh5td76p" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02d_3x3_2side.prefab.tscn" id="10_jtear"]
+[ext_resource type="PackedScene" uid="uid://o5hk2wwgl1h1" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02e_3x3_2side.prefab.tscn" id="11_usmtl"]
+[ext_resource type="PackedScene" uid="uid://digki51u03an7" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Floors/rpgpp_av_floor_02f_3x3_2side.prefab.tscn" id="12_t1c6g"]
+
+[node name="rpgpp_av_floor_3x3_2side" type="Node3D"]
+
+[node name="floor_01" type="Node3D" parent="."]
+
+[node name="rpgpp_av_floor_01a_3x3_2side" parent="floor_01" instance=ExtResource("1_0g6yn")]
+
+[node name="rpgpp_av_floor_01b_3x3_2side" parent="floor_01" instance=ExtResource("2_gf4tu")]
+visible = false
+
+[node name="rpgpp_av_floor_01c_3x3_2side" parent="floor_01" instance=ExtResource("3_in70y")]
+visible = false
+
+[node name="rpgpp_av_floor_01e_3x3_2side" parent="floor_01" instance=ExtResource("5_gja68")]
+visible = false
+
+[node name="rpgpp_av_floor_01f_3x3_2side" parent="floor_01" instance=ExtResource("6_otels")]
+visible = false
+
+[node name="floor_02" type="Node3D" parent="."]
+
+[node name="rpgpp_av_floor_02a_3x3_2side" parent="floor_02" instance=ExtResource("7_ioxp1")]
+visible = false
+
+[node name="rpgpp_av_floor_02b_3x3_2side" parent="floor_02" instance=ExtResource("7_xa07h")]
+visible = false
+
+[node name="rpgpp_av_floor_02c_3x3_2side" parent="floor_02" instance=ExtResource("8_2qsdt")]
+visible = false
+
+[node name="rpgpp_av_floor_02d_3x3_2side" parent="floor_02" instance=ExtResource("10_jtear")]
+visible = false
+
+[node name="rpgpp_av_floor_02e_3x3_2side" parent="floor_02" instance=ExtResource("11_usmtl")]
+visible = false
+
+[node name="rpgpp_av_floor_02f_3x3_2side" parent="floor_02" instance=ExtResource("12_t1c6g")]
+visible = false
+
+[editable path="floor_01/rpgpp_av_floor_01a_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01b_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01c_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01e_3x3_2side"]
+[editable path="floor_01/rpgpp_av_floor_01f_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02a_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02b_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02c_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02d_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02e_3x3_2side"]
+[editable path="floor_02/rpgpp_av_floor_02f_3x3_2side"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://c6ls7c0cno0an"]
+
+[ext_resource type="PackedScene" uid="uid://r6004hux20r5" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_9x4x3_half_a.prefab.tscn" id="1_is8di"]
+[ext_resource type="PackedScene" uid="uid://y15k0n6142ih" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_9x4x3_half_b.prefab.tscn" id="2_wa1b6"]
+[ext_resource type="PackedScene" uid="uid://bwtjni2hucdyi" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 01/rpgpp_av_roof_01_9x4x3_half_d.prefab.tscn" id="3_nsfws"]
+[ext_resource type="PackedScene" uid="uid://dofoulykwnbt" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_half_a.prefab.tscn" id="4_0yd67"]
+[ext_resource type="PackedScene" uid="uid://ccgoa7w8r0757" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_half_b.prefab.tscn" id="5_6d183"]
+[ext_resource type="PackedScene" uid="uid://c22r3dveyusq0" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_half_c.prefab.tscn" id="6_j10yx"]
+[ext_resource type="PackedScene" uid="uid://blvcrvl6uo86h" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof 02/rpgpp_av_roof_02_9x4x3_half_d.prefab.tscn" id="7_nd6u2"]
+[ext_resource type="PackedScene" uid="uid://c6rxmqjw1vt1g" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_9x4x3_half_a.prefab.tscn" id="8_0gsuy"]
+[ext_resource type="PackedScene" uid="uid://dwli81f0dpg8e" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_9x4x3_half_b.prefab.tscn" id="9_dh42v"]
+[ext_resource type="PackedScene" uid="uid://c6mvkrb1oxl18" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_9x4x3_half_c.prefab.tscn" id="10_wls37"]
+[ext_resource type="PackedScene" uid="uid://dw4fxvuhaq6ej" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Roofs/Roof Support/rpgpp_av_roof_support_01_9x4x3_half_d.prefab.tscn" id="11_iexhm"]
+
+[node name="rpgpp_av_roof_9x4x3_half" type="Node3D"]
+
+[node name="roof" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_01_9x4x3_half_a" parent="roof" instance=ExtResource("1_is8di")]
+
+[node name="rpgpp_av_roof_01_9x4x3_half_b" parent="roof" instance=ExtResource("2_wa1b6")]
+visible = false
+
+[node name="rpgpp_av_roof_01_9x4x3_half_d" parent="roof" instance=ExtResource("3_nsfws")]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_half_a" parent="roof" instance=ExtResource("4_0yd67")]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_half_b" parent="roof" instance=ExtResource("5_6d183")]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_half_c" parent="roof" instance=ExtResource("6_j10yx")]
+visible = false
+
+[node name="rpgpp_av_roof_02_9x4x3_half_d" parent="roof" instance=ExtResource("7_nd6u2")]
+visible = false
+
+[node name="support" type="Node3D" parent="."]
+
+[node name="rpgpp_av_roof_support_01_9x4x3_half_a" parent="support" instance=ExtResource("8_0gsuy")]
+
+[node name="rpgpp_av_roof_support_01_9x4x3_half_b" parent="support" instance=ExtResource("9_dh42v")]
+visible = false
+
+[node name="rpgpp_av_roof_support_01_9x4x3_half_c" parent="support" instance=ExtResource("10_wls37")]
+visible = false
+
+[node name="rpgpp_av_roof_support_01_9x4x3_half_d" parent="support" instance=ExtResource("11_iexhm")]
+visible = false
+
+[editable path="roof/rpgpp_av_roof_01_9x4x3_half_a"]
+[editable path="roof/rpgpp_av_roof_01_9x4x3_half_b"]
+[editable path="roof/rpgpp_av_roof_01_9x4x3_half_d"]
+[editable path="roof/rpgpp_av_roof_02_9x4x3_half_a"]
+[editable path="roof/rpgpp_av_roof_02_9x4x3_half_b"]
+[editable path="roof/rpgpp_av_roof_02_9x4x3_half_c"]
+[editable path="roof/rpgpp_av_roof_02_9x4x3_half_d"]
+[editable path="support/rpgpp_av_roof_support_01_9x4x3_half_a"]
+[editable path="support/rpgpp_av_roof_support_01_9x4x3_half_b"]
+[editable path="support/rpgpp_av_roof_support_01_9x4x3_half_c"]
+[editable path="support/rpgpp_av_roof_support_01_9x4x3_half_d"]

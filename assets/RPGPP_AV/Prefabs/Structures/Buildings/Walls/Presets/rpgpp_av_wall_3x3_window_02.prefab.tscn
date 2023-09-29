@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7ght42n85ads"]
+
+[ext_resource type="PackedScene" uid="uid://dovcxjwsqho1o" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Windows/rpgpp_av_window_02a.prefab.tscn" id="1_i2sri"]
+[ext_resource type="PackedScene" uid="uid://c3vs6cvqdir1k" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Windows/rpgpp_av_window_02b.prefab.tscn" id="2_n7ery"]
+[ext_resource type="PackedScene" uid="uid://5fti8deakqn0" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Windows/rpgpp_av_window_02c.prefab.tscn" id="3_dtgrx"]
+[ext_resource type="PackedScene" uid="uid://dmskhgc4swh2x" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Windows/rpgpp_av_window_02d.prefab.tscn" id="4_xqpcs"]
+[ext_resource type="PackedScene" uid="uid://bv3xo1w7xe76o" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_01_3x3_window_02a.prefab.tscn" id="5_jdd5a"]
+[ext_resource type="PackedScene" uid="uid://q2nqreww08aq" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_02_3x3_window_02a.prefab.tscn" id="6_ihwle"]
+[ext_resource type="PackedScene" uid="uid://cyt161a7uec2h" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_03_3x3_window_02a.prefab.tscn" id="7_lay1y"]
+[ext_resource type="PackedScene" uid="uid://u5o8pidataf6" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_04_3x3_window_02a.prefab.tscn" id="8_4ennc"]
+[ext_resource type="PackedScene" uid="uid://rhyciff5ixxj" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_01_3x3_window_02b.prefab.tscn" id="9_8sluy"]
+[ext_resource type="PackedScene" uid="uid://nv6r40gamw4e" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_02_3x3_window_02b.prefab.tscn" id="10_nb547"]
+[ext_resource type="PackedScene" uid="uid://bpqn1vbf0ak3a" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_03_3x3_window_02b.prefab.tscn" id="11_ett4q"]
+[ext_resource type="PackedScene" uid="uid://b635yv682d5vs" path="res://Assets/RPGPP_AV/Prefabs/Structures/Buildings/Walls/rpgpp_av_wall_04_3x3_window_02b.prefab.tscn" id="12_gevwd"]
+
+[node name="rpgpp_av_wall_3x3_window_02" type="Node3D"]
+
+[node name="windows" type="Node3D" parent="."]
+
+[node name="rpgpp_av_window_02a" parent="windows" instance=ExtResource("1_i2sri")]
+
+[node name="rpgpp_av_window_02b" parent="windows" instance=ExtResource("2_n7ery")]
+visible = false
+
+[node name="rpgpp_av_window_02c" parent="windows" instance=ExtResource("3_dtgrx")]
+visible = false
+
+[node name="rpgpp_av_window_02d" parent="windows" instance=ExtResource("4_xqpcs")]
+visible = false
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="rpgpp_av_wall_01_3x3_window_02a" parent="walls" instance=ExtResource("5_jdd5a")]
+
+[node name="rpgpp_av_wall_02_3x3_window_02a" parent="walls" instance=ExtResource("6_ihwle")]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_window_02a" parent="walls" instance=ExtResource("7_lay1y")]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_window_02a" parent="walls" instance=ExtResource("8_4ennc")]
+visible = false
+
+[node name="rpgpp_av_wall_01_3x3_window_02b" parent="walls" instance=ExtResource("9_8sluy")]
+visible = false
+
+[node name="rpgpp_av_wall_02_3x3_window_02b" parent="walls" instance=ExtResource("10_nb547")]
+visible = false
+
+[node name="rpgpp_av_wall_03_3x3_window_02b" parent="walls" instance=ExtResource("11_ett4q")]
+visible = false
+
+[node name="rpgpp_av_wall_04_3x3_window_02b" parent="walls" instance=ExtResource("12_gevwd")]
+visible = false
+
+[editable path="windows/rpgpp_av_window_02a"]
+[editable path="windows/rpgpp_av_window_02b"]
+[editable path="windows/rpgpp_av_window_02c"]
+[editable path="windows/rpgpp_av_window_02d"]
+[editable path="walls/rpgpp_av_wall_01_3x3_window_02a"]
+[editable path="walls/rpgpp_av_wall_02_3x3_window_02a"]
+[editable path="walls/rpgpp_av_wall_03_3x3_window_02a"]
+[editable path="walls/rpgpp_av_wall_04_3x3_window_02a"]
+[editable path="walls/rpgpp_av_wall_01_3x3_window_02b"]
+[editable path="walls/rpgpp_av_wall_02_3x3_window_02b"]
+[editable path="walls/rpgpp_av_wall_03_3x3_window_02b"]
+[editable path="walls/rpgpp_av_wall_04_3x3_window_02b"]

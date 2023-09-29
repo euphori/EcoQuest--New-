@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dksu2kh8lfqaw"]
+
+[ext_resource type="PackedScene" uid="uid://dsjkm10fjo2ru" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_water_platform_01a.gltf" id="1_xlswf"]
+
+[node name="rpgpp_av_water_platform_01a" instance=ExtResource("1_xlswf")]

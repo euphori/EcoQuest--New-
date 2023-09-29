@@ -15,3 +15,6 @@ var questTwo_complete = true
 var questThree_complete = true
 var questFour_complete = true
 var questFive_complete = false
+
+#Point System
+var points = 0
