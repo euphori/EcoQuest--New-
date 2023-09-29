@@ -360,7 +360,7 @@ nodes/fragment/connections = PackedInt32Array(5, 0, 3, 0, 6, 0, 5, 2, 9, 0, 7, 0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ss84j"]
 render_priority = 0
 shader = SubResource("VisualShader_6uwr5")
-shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+shader_parameter/ColorParameter = Color(0.0784314, 0.243137, 0.270588, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_au8eh"]
 material = SubResource("ShaderMaterial_ss84j")

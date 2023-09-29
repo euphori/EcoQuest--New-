@@ -25,6 +25,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if kid.active:
 		camera.global_position.x = kid.global_position.x
 		camera.global_position.y = kid.global_position.y + camera_offset
