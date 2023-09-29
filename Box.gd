@@ -19,10 +19,8 @@ func _physics_process(_delta):
 # Apply a force to the RigidBody3D in its local space
 	var force = direction * speed
 	if can_move:
-		
 		player.pushing = true
 		apply_central_impulse(force)
 	else:
-		
 		player.pushing = false
 

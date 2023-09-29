@@ -26,6 +26,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Rectangle3" type="Sprite2D" parent="Menu"]
+modulate = Color(1, 1, 1, 0.670588)
+position = Vector2(961, 539)
+scale = Vector2(1.21113, 1.22437)
+texture = ExtResource("10_spyue")
+
 [node name="Test" type="Sprite2D" parent="Menu"]
 position = Vector2(537, 503.5)
 texture = ExtResource("2_g653g")
@@ -63,12 +69,6 @@ texture_focused = ExtResource("7_j11nw")
 [node name="Whitetranspa1" type="Sprite2D" parent="Menu"]
 position = Vector2(295, 404)
 texture = ExtResource("9_qsiq4")
-
-[node name="Rectangle3" type="Sprite2D" parent="Menu"]
-modulate = Color(1, 1, 1, 0.670588)
-position = Vector2(961, 539)
-scale = Vector2(1.21113, 1.22437)
-texture = ExtResource("10_spyue")
 
 [node name="OptionsTab" parent="." instance=ExtResource("10_na6p2")]
 visible = false
