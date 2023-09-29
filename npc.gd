@@ -16,6 +16,7 @@ func _physics_process(delta):
 	
 	if npc_in_range == true:
 		if Input.is_action_just_pressed("talk"):
+			print("TALK")
 			DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
 
 
@@ -25,3 +26,7 @@ func _physics_process(delta):
 func npc():
 	pass
 
+
+
+func _on_detection_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	npc_in_range = true

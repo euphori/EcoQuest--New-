@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://j141tl23601b"]
+[gd_scene load_steps=6 format=3 uid="uid://c6e678nuxcyf5"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_52lpt"]
 [ext_resource type="Texture2D" uid="uid://cm45qfqqofb3e" path="res://assets/player/npc.png" id="2_ed8wu"]
+[ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="3_2ugsp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6swl0"]
 
@@ -26,3 +27,7 @@ shape = SubResource("SphereShape3D_au1de")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0.7, 0, 0, 0)
 texture = ExtResource("2_ed8wu")
+
+[node name="InteractUI" parent="." instance=ExtResource("3_2ugsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.676745, 2.45174, 0)
+text_label = "Talk(T)"

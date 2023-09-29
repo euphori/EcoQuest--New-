@@ -59,3 +59,9 @@ func _on_player_detection_body_shape_exited(body_rid, body, body_shape_index, lo
 	box.can_move = false
 	
 
+
+
+func _on_detection_area_body_entered(body):
+	visible = true
+	player_near = true
+	
