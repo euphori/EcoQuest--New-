@@ -3,4 +3,4 @@
 [resource]
 resource_name = "Orange.3"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.0705882, 0.247059, 0.137255, 1)
+albedo_color = Color(0.235294, 0.211765, 0.027451, 1)

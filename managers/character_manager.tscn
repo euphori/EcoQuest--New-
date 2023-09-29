@@ -122,6 +122,7 @@ offset_bottom = 39.0
 text = "Camera Y-Axis"
 
 [node name="Journal" parent="." instance=ExtResource("4_5p540")]
+visible = false
 
 [connection signal="drag_ended" from="CameraController/ZSlider" to="." method="_on_z_slider_drag_ended"]
 [connection signal="value_changed" from="CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]

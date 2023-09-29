@@ -18,12 +18,14 @@ func _input(event):
 	if event.is_action_pressed("esc"):
 		if menu.visible:
 			menu.visible = false
+		elif menu.visible == false:
+			menu.visible = true
 		elif options.visible:
 			menu.visible = true
 			options.visible = false
 
 func _on_start_pressed():
-	self.visible = false
+	menu.visible = false
 
 
 func _on_quit_pressed():
