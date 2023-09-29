@@ -55,4 +55,5 @@ position = Vector2(295, 404)
 texture = ExtResource("8_exo62")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

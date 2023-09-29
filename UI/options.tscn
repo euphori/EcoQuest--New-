@@ -1,0 +1,184 @@
+[gd_scene load_steps=27 format=3 uid="uid://dqdbd53sscrn1"]
+
+[ext_resource type="Texture2D" uid="uid://b6lybmcvqfsy7" path="res://assets/ui/controller/Line 1.png" id="1_4yb0e"]
+[ext_resource type="Script" path="res://UI/options.gd" id="1_54rg3"]
+[ext_resource type="Texture2D" uid="uid://lvluooagxp4g" path="res://assets/ui/controller/Rectangle 3.png" id="2_e668g"]
+[ext_resource type="Texture2D" uid="uid://d2dgkkh3qn6cw" path="res://assets/ui/controller/Controller group.png" id="3_2hcp5"]
+[ext_resource type="Texture2D" uid="uid://dj0n8205ounxo" path="res://assets/ui/controller/Options_EcoQuest2.png" id="4_23nxx"]
+[ext_resource type="Texture2D" uid="uid://jo6sywcw52hn" path="res://assets/ui/controller/Property 1=Controller-3.png" id="5_o4uob"]
+[ext_resource type="Texture2D" uid="uid://bf70l7ekjrr4i" path="res://assets/ui/controller/Property 1=Controller-2.png" id="6_17dad"]
+[ext_resource type="Texture2D" uid="uid://b2ddw50hrugl7" path="res://assets/ui/controller/Property 1=Controller-1.png" id="7_4h22d"]
+[ext_resource type="Texture2D" uid="uid://disbctc3eryy4" path="res://assets/ui/controller/R1.png" id="8_fj0fp"]
+[ext_resource type="Texture2D" uid="uid://m8dupthtxrsc" path="res://assets/ui/controller/L1.png" id="9_0j23x"]
+[ext_resource type="Texture2D" uid="uid://dpwiwnwf4ugk7" path="res://assets/ui/controller/Ellipse 3.png" id="10_fp4hh"]
+[ext_resource type="Texture2D" uid="uid://dtal44goxfveh" path="res://assets/ui/controller/Ellipse 2.png" id="11_d5ruh"]
+[ext_resource type="Texture2D" uid="uid://c2g76x8yb07nv" path="res://assets/ui/controller/Close.png" id="12_rph5k"]
+[ext_resource type="Texture2D" uid="uid://d0juwhw45enkw" path="res://assets/ui/controller/Group 2.png" id="13_pohrd"]
+[ext_resource type="Texture2D" uid="uid://cbdlh7tus7syw" path="res://assets/ui/controller/Back.png" id="13_t51v1"]
+[ext_resource type="Texture2D" uid="uid://b4m4xlycmuak" path="res://assets/ui/controller/Select.png" id="14_kux8q"]
+[ext_resource type="Texture2D" uid="uid://dc5h2tnwevpy" path="res://assets/ui/controller/Property 1=Controller.png" id="15_acerq"]
+[ext_resource type="Texture2D" uid="uid://6wbnyxex1kit" path="res://assets/ui/controller/Property 1=Control Hover.png" id="16_coktq"]
+[ext_resource type="Texture2D" uid="uid://cmlhgf734k4t" path="res://assets/ui/controller/Property 1=Control Hover-1.png" id="16_up350"]
+[ext_resource type="Texture2D" uid="uid://c4b0rwccftvx2" path="res://assets/ui/controller/Group 2 A.png" id="17_4hx3q"]
+[ext_resource type="Texture2D" uid="uid://gukgiwhu8jl7" path="res://assets/ui/controller/Property 1=Control Hover-2.png" id="18_w1jey"]
+[ext_resource type="Texture2D" uid="uid://2p3hy0jjiwwp" path="res://assets/ui/controller/Property 1=Control Hover-3.png" id="20_420kn"]
+[ext_resource type="Texture2D" uid="uid://c3mwetnfqhv7m" path="res://assets/ui/controller/Group 2 V.png" id="20_h6l8o"]
+[ext_resource type="Texture2D" uid="uid://dfbpc5mxiwnyt" path="res://assets/ui/controller/Group 2 M.png" id="23_20i11"]
+[ext_resource type="Texture2D" uid="uid://bf6ndkk6bsols" path="res://assets/ui/controller/Music.png" id="25_emu14"]
+[ext_resource type="Texture2D" uid="uid://7wbrgo0cgk04" path="res://assets/ui/controller/SFX.png" id="26_3rbdq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54rg3")
+
+[node name="Controller" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rectangle3" type="Sprite2D" parent="Controller"]
+modulate = Color(1, 1, 1, 0.780392)
+position = Vector2(961, 539)
+scale = Vector2(1.21113, 1.22437)
+texture = ExtResource("2_e668g")
+
+[node name="Controller" type="TextureButton" parent="Controller"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 216.0
+offset_right = 721.0
+offset_bottom = 283.0
+texture_normal = ExtResource("15_acerq")
+texture_hover = ExtResource("16_coktq")
+texture_focused = ExtResource("13_pohrd")
+
+[node name="Audio" type="TextureButton" parent="Controller"]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 216.0
+offset_right = 963.0
+offset_bottom = 283.0
+texture_normal = ExtResource("7_4h22d")
+texture_hover = ExtResource("16_up350")
+texture_focused = ExtResource("17_4hx3q")
+
+[node name="Video" type="TextureButton" parent="Controller"]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 216.0
+offset_right = 1198.0
+offset_bottom = 283.0
+texture_normal = ExtResource("6_17dad")
+texture_hover = ExtResource("18_w1jey")
+texture_focused = ExtResource("20_h6l8o")
+
+[node name="Mechanics" type="TextureButton" parent="Controller"]
+layout_mode = 0
+offset_left = 1222.0
+offset_top = 216.0
+offset_right = 1410.0
+offset_bottom = 283.0
+texture_normal = ExtResource("5_o4uob")
+texture_hover = ExtResource("20_420kn")
+texture_focused = ExtResource("23_20i11")
+
+[node name="Line2" type="Sprite2D" parent="Controller"]
+position = Vector2(980, 214)
+scale = Vector2(1.2, 5)
+texture = ExtResource("1_4yb0e")
+
+[node name="Line3" type="Sprite2D" parent="Controller"]
+position = Vector2(980, 287)
+scale = Vector2(1.2, 5)
+texture = ExtResource("1_4yb0e")
+
+[node name="Line5" type="Sprite2D" parent="Controller"]
+position = Vector2(980, 966)
+scale = Vector2(1.2, 5)
+texture = ExtResource("1_4yb0e")
+
+[node name="OptionsEcoQuest2" type="Sprite2D" parent="Controller"]
+position = Vector2(982, 126)
+texture = ExtResource("4_23nxx")
+
+[node name="R1" type="Sprite2D" parent="Controller"]
+position = Vector2(1590, 247)
+texture = ExtResource("8_fj0fp")
+
+[node name="L1" type="Sprite2D" parent="Controller"]
+position = Vector2(377, 247)
+texture = ExtResource("9_0j23x")
+
+[node name="Ellipse4" type="Sprite2D" parent="Controller"]
+position = Vector2(479, 1019)
+texture = ExtResource("10_fp4hh")
+
+[node name="Ellipse5" type="Sprite2D" parent="Controller"]
+position = Vector2(378, 1019)
+texture = ExtResource("10_fp4hh")
+
+[node name="Ellipse2" type="Sprite2D" parent="Controller"]
+position = Vector2(378, 1019)
+texture = ExtResource("11_d5ruh")
+
+[node name="Close" type="Sprite2D" parent="Controller"]
+position = Vector2(479, 1019)
+texture = ExtResource("12_rph5k")
+
+[node name="Back" type="Sprite2D" parent="Controller"]
+position = Vector2(430, 1019)
+texture = ExtResource("13_t51v1")
+
+[node name="Select" type="Sprite2D" parent="Controller"]
+position = Vector2(529, 1018)
+texture = ExtResource("14_kux8q")
+
+[node name="ControllerGroup" type="Sprite2D" parent="."]
+position = Vector2(978, 576)
+texture = ExtResource("3_2hcp5")
+
+[node name="AudioGroup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Music2" type="Sprite2D" parent="AudioGroup"]
+position = Vector2(625, 526)
+scale = Vector2(1, 0.97619)
+texture = ExtResource("25_emu14")
+
+[node name="Sfx" type="Sprite2D" parent="AudioGroup"]
+position = Vector2(618, 623)
+texture = ExtResource("26_3rbdq")
+
+[node name="Music" type="HSlider" parent="AudioGroup"]
+layout_mode = 2
+offset_left = 762.0
+offset_top = 518.0
+offset_right = 1461.0
+offset_bottom = 534.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SFX" type="HSlider" parent="AudioGroup"]
+layout_mode = 2
+offset_left = 763.0
+offset_top = 616.0
+offset_right = 1462.0
+offset_bottom = 632.0
+grow_horizontal = 2
+
+[connection signal="pressed" from="Controller/Controller" to="." method="_on_controller_pressed"]
+[connection signal="pressed" from="Controller/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Controller/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Controller/Mechanics" to="." method="_on_mechanics_pressed"]
