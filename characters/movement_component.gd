@@ -96,7 +96,7 @@ func _physics_process(delta):
 	if !active:
 		var destination = self.global_position.direction_to(other_player.global_position)
 		var distance = self.global_position - other_player.global_position
-		if abs(distance.x) > 4:
+		if abs(distance.x) > 4 and is_on_floor():
 			velocity.x += destination.x * ACCELERATION * delta 
 			velocity = velocity.limit_length(MAX_SPEED)
 			if abs(velocity.x) != 0:

@@ -1,10 +1,11 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dhmlsh4hw5p0f"]
 
-[ext_resource type="Texture2D" uid="uid://cuuenxqqvii73" path="res://Assets/RPGPP_AV/Textures/rpgpp_av_tex_a.png" id="1_btqi4"]
+[ext_resource type="Texture2D" uid="uid://cuuenxqqvii73" path="res://assets/RPGPP_AV/Textures/rpgpp_av_tex_a.png" id="1_btqi4"]
 
 [resource]
 resource_name = "rpgpp_av_mat_a"
 depth_draw_mode = 1
+albedo_color = Color(0.4, 0.4, 0.4, 1)
 albedo_texture = ExtResource("1_btqi4")
 roughness = 0.75
 uv1_scale = Vector3(1, 1, 0)

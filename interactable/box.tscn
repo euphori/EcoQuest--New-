@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq3u1mryd64hm"]
+[gd_scene load_steps=9 format=3 uid="uid://cq3u1mryd64hm"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_f6hmq"]
 [ext_resource type="Texture2D" uid="uid://dmq517emrnqs3" path="res://assets/props/Textures/T_Box_Albedo.png" id="2_4th4v"]
-[ext_resource type="PackedScene" uid="uid://d4jukjjk8qioe" path="res://areas/player_detection.tscn" id="3_f63sk"]
 [ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="4_pfb4l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kksfg"]
@@ -44,15 +43,17 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tolkg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu07j"]
+albedo_color = Color(0.670588, 0.670588, 0.670588, 1)
 albedo_texture = ExtResource("2_4th4v")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t3hkx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pe8h"]
 
 [node name="Box" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.30451)
 collision_layer = 8
 collision_mask = 3
 axis_lock_linear_z = true
+freeze_mode = 1
 script = ExtResource("1_f6hmq")
 
 [node name="SM_Box_LOD3" type="MeshInstance3D" parent="."]
@@ -62,20 +63,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_nu07j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.893513, 0)
-shape = SubResource("BoxShape3D_t3hkx")
-
-[node name="PlayerDetection" parent="." instance=ExtResource("3_f63sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09709, 0)
-collision_layer = 16
-collision_mask = 2
-
-[node name="CollisionShape3D" parent="PlayerDetection" index="0"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.0352039, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.01665, 0)
+shape = SubResource("BoxShape3D_0pe8h")
 
 [node name="InteractUI" parent="." instance=ExtResource("4_pfb4l")]
-
-[connection signal="body_shape_entered" from="PlayerDetection" to="InteractUI" method="_on_player_detection_body_shape_entered"]
-[connection signal="body_shape_exited" from="PlayerDetection" to="InteractUI" method="_on_player_detection_body_shape_exited"]
-
-[editable path="PlayerDetection"]
