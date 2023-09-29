@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://wiyfvqhus6ir"]
+[gd_scene load_steps=7 format=3 uid="uid://wiyfvqhus6ir"]
 
 [ext_resource type="Script" path="res://UI/journal.gd" id="1_bqxhi"]
 [ext_resource type="Texture2D" uid="uid://cy331m5ab61mh" path="res://assets/ui/journal/Book.png" id="1_jobr6"]
-[ext_resource type="FontFile" uid="uid://cjc61gc7s00xa" path="res://assets/fonts/Thin-Pencil-Handwriting.otf" id="2_jj5wj"]
 [ext_resource type="Texture2D" uid="uid://cbg1k0lt1h2ua" path="res://assets/ui/InvBookmark (1).png" id="4_ehjvu"]
 [ext_resource type="Texture2D" uid="uid://d1npfc0a8i2ce" path="res://assets/ui/QuestBookmark (1).png" id="5_rcts0"]
 [ext_resource type="Texture2D" uid="uid://bvh5nchavn3ad" path="res://assets/ui/InvBookmark(Toggled).png" id="5_v0ddu"]
@@ -15,7 +14,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_bqxhi")
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(989.55, 546.45)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_jobr6")
 
 [node name="Quest" type="Control" parent="."]
 layout_mode = 1
@@ -31,11 +36,6 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Book" type="Sprite2D" parent="Quest"]
-position = Vector2(991.55, 544.45)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("1_jobr6")
-
 [node name="CurrentQuestTitle" type="Label" parent="Quest"]
 layout_mode = 0
 offset_left = 579.55
@@ -43,7 +43,6 @@ offset_top = 283.45
 offset_right = 774.55
 offset_bottom = 343.45
 theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
-theme_override_fonts/font = ExtResource("2_jj5wj")
 theme_override_font_sizes/font_size = 30
 text = "Quest Title"
 
@@ -54,9 +53,83 @@ offset_top = 362.45
 offset_right = 547.55
 offset_bottom = 389.45
 theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
-theme_override_fonts/font = ExtResource("2_jj5wj")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "Quest Info"
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 330.0
+offset_right = 905.0
+offset_bottom = 762.0
+theme_override_constants/h_separation = 150
+columns = 2
+
+[node name="ItemName1" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity1" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName2" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity2" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName3" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity3" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName4" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity4" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName5" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity5" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 287.0
+offset_right = 698.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Items"
 
 [node name="InvButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -67,7 +140,6 @@ offset_bottom = 367.0
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("4_ehjvu")
 texture_hover = ExtResource("5_v0ddu")
-texture_focused = ExtResource("5_v0ddu")
 
 [node name="QuestButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -78,4 +150,6 @@ offset_bottom = 323.0
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("5_rcts0")
 texture_hover = ExtResource("6_8njp2")
-texture_focused = ExtResource("6_8njp2")
+
+[connection signal="pressed" from="InvButton" to="." method="_on_inv_button_pressed"]
+[connection signal="pressed" from="QuestButton" to="." method="_on_quest_button_pressed"]

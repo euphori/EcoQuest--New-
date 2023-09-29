@@ -26,5 +26,6 @@ var questFive_complete = false
 var dialogue_points = 0
 
 #Item
+
 var multiplier = 0.5
-var items = {"Plastic": 0}
+var items = {"Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0}

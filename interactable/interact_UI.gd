@@ -7,6 +7,7 @@ extends Node3D
 @export_enum ("npc","object","movable","pickable") var type: String
 
 
+
 var player_near = false
 
 signal talk
@@ -27,6 +28,7 @@ func _input(event):
 			emit_signal("talk")
 		elif type == "pickable":
 			global.items[parent.item_name] += 1
+			emit_signal("item_added")
 			parent.queue_free()
 
 func _ready():

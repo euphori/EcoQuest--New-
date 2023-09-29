@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=5 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://dwu7lr44bcav5" path="res://characters/robot.tscn" id="1_6voqy"]
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
+[ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -119,6 +120,8 @@ offset_top = 13.0
 offset_right = 120.0
 offset_bottom = 39.0
 text = "Camera Y-Axis"
+
+[node name="Journal" parent="." instance=ExtResource("4_5p540")]
 
 [connection signal="drag_ended" from="CameraController/ZSlider" to="." method="_on_z_slider_drag_ended"]
 [connection signal="value_changed" from="CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
