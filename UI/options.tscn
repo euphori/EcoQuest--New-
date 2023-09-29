@@ -140,11 +140,11 @@ position = Vector2(529, 1018)
 texture = ExtResource("14_kux8q")
 
 [node name="ControllerGroup" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(978, 576)
 texture = ExtResource("3_2hcp5")
 
 [node name="AudioGroup" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,6 +163,7 @@ position = Vector2(618, 623)
 texture = ExtResource("26_3rbdq")
 
 [node name="Music" type="HSlider" parent="AudioGroup"]
+modulate = Color(0, 0.47, 0.0626667, 1)
 layout_mode = 2
 offset_left = 762.0
 offset_top = 518.0
@@ -172,6 +173,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SFX" type="HSlider" parent="AudioGroup"]
+modulate = Color(0, 0.470588, 0.0627451, 1)
 layout_mode = 2
 offset_left = 763.0
 offset_top = 616.0
