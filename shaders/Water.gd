@@ -9,6 +9,8 @@ var t = 0.0
 var rising = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if rising_enabled:
+		$Timer.start(time)
 	old_pos = global_position
 
 

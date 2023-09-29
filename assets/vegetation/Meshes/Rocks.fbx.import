@@ -29,6 +29,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"Color Pallet": {
+"use_external/enabled": true,
+"use_external/path": ""
+}
+},
 "nodes": {
 "PATH:RootNode/Big Rock 4": {
 "generate/navmesh": 2,

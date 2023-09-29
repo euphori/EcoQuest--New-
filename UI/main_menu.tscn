@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfsiue5kmi83"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_8pel1"]
+[ext_resource type="Texture2D" uid="uid://bujfx8phds48k" path="res://assets/ui/Test.png" id="1_nr1nh"]
+[ext_resource type="Texture2D" uid="uid://dcmh8qvsdhr42" path="res://assets/ui/START.png" id="2_5ksq8"]
+[ext_resource type="Texture2D" uid="uid://deig0een18nrm" path="res://assets/ui/Property 1=Start Game_EcoQuest2.png" id="3_1g44j"]
+[ext_resource type="Texture2D" uid="uid://cb4xy3bmess4e" path="res://assets/ui/Component 1.png" id="4_rvfmb"]
+[ext_resource type="Texture2D" uid="uid://b00qvg7cxodj2" path="res://assets/ui/Property 1=Options_EcoQuest2.png" id="5_ysuky"]
+[ext_resource type="Texture2D" uid="uid://bilp8ls8a54km" path="res://assets/ui/QUIT GAME.png" id="6_60q5v"]
+[ext_resource type="Texture2D" uid="uid://b1qembo58l2x" path="res://assets/ui/Property 1=Quit Game_EcoQuest2.png" id="7_ojybh"]
+[ext_resource type="Texture2D" uid="uid://bierwkh3obusn" path="res://assets/ui/whitetranspa 1.png" id="8_exo62"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8pel1")
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(537, 503.5)
+texture = ExtResource("1_nr1nh")
+
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 365.0
+offset_right = 1595.0
+offset_bottom = 432.0
+texture_normal = ExtResource("2_5ksq8")
+texture_hover = ExtResource("3_1g44j")
+
+[node name="Options" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1311.0
+offset_top = 466.0
+offset_right = 1599.0
+offset_bottom = 553.0
+texture_normal = ExtResource("4_rvfmb")
+texture_hover = ExtResource("5_ysuky")
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1315.0
+offset_top = 576.0
+offset_right = 1603.0
+offset_bottom = 643.0
+texture_normal = ExtResource("6_60q5v")
+texture_hover = ExtResource("7_ojybh")
+
+[node name="Whitetranspa1" type="Sprite2D" parent="."]
+position = Vector2(295, 404)
+texture = ExtResource("8_exo62")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
