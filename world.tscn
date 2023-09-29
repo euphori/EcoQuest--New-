@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cq3u1mryd64hm" path="res://interactable/box.tscn" id="1_3oc6e"]
 [ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="1_xcf7p"]
-[ext_resource type="Material" path="res://assets/environment/Orange.3.tres" id="2_kx8ty"]
+[ext_resource type="Material" uid="uid://0bmvhn61d7pb" path="res://assets/environment/Orange.3.tres" id="2_kx8ty"]
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="3_x7yjr"]
 [ext_resource type="PackedScene" uid="uid://mp1wewkqioxd" path="res://interactable/movable_box.tscn" id="4_fmsjt"]
 [ext_resource type="PackedScene" uid="uid://bt2ibacl7er2u" path="res://assets/environment/Rock_6.fbx" id="6_hjift"]
