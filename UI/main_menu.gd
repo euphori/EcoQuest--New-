@@ -1,6 +1,9 @@
 extends Control
 
 
+@onready var menu = $Menu
+@onready var options = $OptionsTab
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,6 +14,14 @@ func _process(delta):
 	pass
 
 
+func _input(event):
+	if event.is_action_pressed("esc"):
+		if menu.visible:
+			menu.visible = false
+		elif options.visible:
+			menu.visible = true
+			options.visible = false
+
 func _on_start_pressed():
 	self.visible = false
 
@@ -20,4 +31,5 @@ func _on_quit_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://UI/options.tscn")
+	$Menu.visible = false
+	$OptionsTab.visible = true

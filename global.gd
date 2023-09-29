@@ -1,6 +1,12 @@
 extends Node
 
 var questStart = false
+var game_started = false
+
+var quest_title = ["Plastic Collection","Sample2","Sample3"]
+var quest_info = ["Get 10 Plastic Bottles"]
+var active_quests = {0:true,1:false,2:false,3:false}
+var completed_quests = {0:false,1:false,2:false,3:false}
 
 #Questions
 var question1_complete = false
