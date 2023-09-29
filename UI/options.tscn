@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dqdbd53sscrn1"]
+[gd_scene load_steps=28 format=3 uid="uid://dqdbd53sscrn1"]
 
 [ext_resource type="Texture2D" uid="uid://b6lybmcvqfsy7" path="res://assets/ui/controller/Line 1.png" id="1_4yb0e"]
 [ext_resource type="Script" path="res://UI/options.gd" id="1_54rg3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dfbpc5mxiwnyt" path="res://assets/ui/controller/Group 2 M.png" id="23_20i11"]
 [ext_resource type="Texture2D" uid="uid://bf6ndkk6bsols" path="res://assets/ui/controller/Music.png" id="25_emu14"]
 [ext_resource type="Texture2D" uid="uid://7wbrgo0cgk04" path="res://assets/ui/controller/SFX.png" id="26_3rbdq"]
+[ext_resource type="Texture2D" uid="uid://5t61dmim1tnq" path="res://assets/ui/controller/Group 5.png" id="27_c0yi4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -177,6 +178,11 @@ offset_top = 616.0
 offset_right = 1462.0
 offset_bottom = 632.0
 grow_horizontal = 2
+
+[node name="Mechanics" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(979, 592)
+texture = ExtResource("27_c0yi4")
 
 [connection signal="pressed" from="Controller/Controller" to="." method="_on_controller_pressed"]
 [connection signal="pressed" from="Controller/Audio" to="." method="_on_audio_pressed"]
