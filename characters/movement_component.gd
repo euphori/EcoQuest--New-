@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export_category("STATS")
 @export var SPEED = 5.0
-@export var JUMP_VELOCITY = 10
+@export var JUMP_VELOCITY = 7
 @export var ACCELERATION = 200
 @export var MAX_SPEED = 5.0
 
@@ -19,14 +19,19 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var jumping = false
 var busy = false
-var active
+var active = false
 var pushing = false
+
+var is_on_platform = false
+var platform = null
 
 
 
 func _ready():
 	if default_char:
 		active = true
+	if !active:
+		$CollisionShape3D.disabled = true
 
 
 func jump():
@@ -46,7 +51,16 @@ func _physics_process(delta):
 			attacking = true
 			can_move = false
 		
-
+	
+	if is_on_platform:
+		pass
+	
+	if pushing:
+		print("X")
+		busy = true
+		$AnimationPlayer.play("pushing")
+	else:
+		busy = false
 
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active:
 		jumping = true

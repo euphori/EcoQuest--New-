@@ -40,3 +40,4 @@ interact={
 3d_physics/layer_3="Enemy"
 3d_physics/layer_4="Objects"
 3d_physics/layer_5="Area"
+3d_physics/layer_6="Platform"

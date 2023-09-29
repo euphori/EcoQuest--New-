@@ -34,11 +34,11 @@ func _ready():
 
 
 
-func _on_player_detection_body_entered(body):
+func _on_player_detection_body_entered(_body):
 	visible = true
 	player_near = true
 
-func _on_player_detection_body_exited(body):
+func _on_player_detection_body_exited(_body):
 	visible = false
 	player_near = false
 	if type == "movable":

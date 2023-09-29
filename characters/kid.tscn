@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=13 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
@@ -19,6 +19,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ce25x"]
+resource_name = "falling"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
 }
 
 [sub_resource type="Animation" id="Animation_bym58"]
@@ -87,22 +103,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_ce25x"]
-resource_name = "falling"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [15]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fijb5"]
 _data = {
 "RESET": SubResource("Animation_vgvm5"),
@@ -112,6 +112,8 @@ _data = {
 "pushing": SubResource("Animation_c00x2"),
 "run": SubResource("Animation_jwhoy")
 }
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oow21"]
 
 [node name="Kid" type="CharacterBody3D"]
 collision_layer = 2
@@ -135,3 +137,17 @@ libraries = {
 }
 
 [node name="HitDetection" parent="." instance=ExtResource("3_5wiq4")]
+
+[node name="PlatformDetection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610454, 0)
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformDetection"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0565729, 0.357337, 0)
+shape = SubResource("SphereShape3D_oow21")
+
+[connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
+[connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
+[connection signal="body_entered" from="PlatformDetection" to="." method="_on_platform_detection_body_entered"]
+[connection signal="body_exited" from="PlatformDetection" to="." method="_on_platform_detection_body_exited"]
