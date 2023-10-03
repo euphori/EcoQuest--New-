@@ -11,6 +11,7 @@ extends Node3D
 var player_near = false
 
 signal talk
+signal item_added
 
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:

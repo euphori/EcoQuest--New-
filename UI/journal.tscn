@@ -23,6 +23,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_jobr6")
 
 [node name="Quest" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,18 +47,49 @@ theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
 theme_override_font_sizes/font_size = 30
 text = "Quest Title"
 
+[node name="DoneLabel" type="Label" parent="Quest"]
+layout_mode = 0
+offset_left = 1258.0
+offset_top = 240.0
+offset_right = 1342.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
+theme_override_font_sizes/font_size = 30
+text = "Done!"
+
 [node name="QuestInfo" type="Label" parent="Quest"]
 layout_mode = 0
 offset_left = 419.55
 offset_top = 362.45
 offset_right = 547.55
-offset_bottom = 389.45
+offset_bottom = 399.45
 theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
 theme_override_font_sizes/font_size = 24
 text = "Quest Info"
 
-[node name="Inventory" type="Control" parent="."]
+[node name="FinishedQuests" type="Label" parent="Quest"]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 301.0
+offset_right = 1163.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
+theme_override_font_sizes/font_size = 24
+text = "
+"
+
+[node name="QuestRequirements" type="Label" parent="Quest"]
 visible = false
+layout_mode = 0
+offset_left = 727.0
+offset_top = 362.45
+offset_right = 855.0
+offset_bottom = 399.45
+theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
+theme_override_font_sizes/font_size = 24
+text = "0/10"
+
+[node name="Inventory" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

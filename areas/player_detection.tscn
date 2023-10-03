@@ -3,6 +3,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_p1n6r"]
 
 [node name="PlayerDetection" type="Area3D"]
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

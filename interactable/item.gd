@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if hide:
-		if global.question1_complete:
+		if global.active_quest["q1"]:
 			collision.disabled = false
 			self.visible = true 
 		else:

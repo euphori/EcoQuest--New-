@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd5pn0q81bwnf"]
+
+[ext_resource type="Script" path="res://UI/console.gd" id="1_v7gy8"]
+
+[node name="Console" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7gy8")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1031.0
+offset_right = 680.0
+offset_bottom = 1079.0
+select_all_on_focus = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 674.0
+offset_right = 679.0
+offset_bottom = 1032.0
+theme_override_colors/background_color = Color(0.027451, 0.0588235, 0.0156863, 0.329412)
+editable = false
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

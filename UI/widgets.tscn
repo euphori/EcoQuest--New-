@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7gpy0skdatgh"]
+
+[ext_resource type="Script" path="res://managers/widgets.gd" id="1_8wgp6"]
+
+[node name="Widgets" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8wgp6")
+
+[node name="CameraController" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ZSlider" type="HSlider" parent="CameraController"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 332.0
+offset_bottom = 104.0
+min_value = -100.0
+
+[node name="Camera" type="Label" parent="CameraController/ZSlider"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 120.0
+offset_bottom = 39.0
+text = "Camera Z-Axis"
+
+[node name="Label" type="Label" parent="CameraController/ZSlider"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 39.0
+offset_right = 391.0
+offset_bottom = 65.0
+text = "100"
+
+[node name="XSlider" type="HSlider" parent="CameraController"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 135.0
+offset_right = 327.0
+offset_bottom = 237.0
+min_value = -100.0
+
+[node name="Camera" type="Label" parent="CameraController/XSlider"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 120.0
+offset_bottom = 39.0
+text = "Camera X-Axis"
+
+[node name="Label2" type="Label" parent="CameraController/XSlider"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 38.0
+offset_right = 393.0
+offset_bottom = 64.0
+text = "100"
+
+[node name="YSlider" type="HSlider" parent="CameraController"]
+layout_mode = 0
+offset_top = 63.0
+offset_right = 326.0
+offset_bottom = 165.0
+min_value = -100.0
+
+[node name="Label3" type="Label" parent="CameraController/YSlider"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 40.0
+offset_right = 394.0
+offset_bottom = 66.0
+text = "100"
+
+[node name="Camera" type="Label" parent="CameraController/YSlider"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 120.0
+offset_bottom = 39.0
+text = "Camera Y-Axis"
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 30.0
+offset_top = 1.0
+offset_right = 250.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 36
+text = "fps"
+
+[node name="Stats" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1464.0
+offset_top = 2.0
+offset_right = 1504.0
+offset_bottom = 42.0
+
+[node name="Kid" type="Label" parent="Stats"]
+visible = false
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 26.0
+text = "Speed"
+
+[node name="Robot" type="Label" parent="Stats"]
+visible = false
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 26.0
+text = "Speed"

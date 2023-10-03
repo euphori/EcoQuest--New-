@@ -10,7 +10,7 @@ if global.questStart == false
 	- No thanks. => END
 
 #Question 1
-if global.questStart == true and global.question1_complete == false
+if global.questStart == true and global.active_quest["q1"] == false and global.completed_quest["q1"] == false
 	Quest Master: Before I give your first quest...I want to hear your opinions first.
 	Quest Master: Would you be willing to use easily-soluble bags instead of plastic?
 	- Definitely, it is very important!
@@ -46,17 +46,18 @@ if global.questStart == true and global.question1_complete == false
 	- Now way, I don't have time to do such thing.
 		set global.dialogue_points += 1
 	Quest Master: Great, you are now ready for your first quest.
-	set global.question1_complete = true
+	set global.active_quest["q1"] = true
 
 #Task 1
-if global.question1_complete == true and global.questOne_complete == false and global.items["Plastic"] < 5
+if global.active_quest["q1"] == true and global.completed_quest["q1"] == false and global.items["Plastic"] < 5
 	Quest Master: For your first quest, help me clean out the place by throwing the trash in their perspective bins.
-
-if global.items["Plastic"] == 5:
-	set global.questOne_complete = true
+	=> END
+if global.items["Plastic"] >= 5:
+	set global.completed_quest["q1"] = true
+	set global.active_quest["q1"] = false
 
 #Question 2	
-if global.questOne_complete == true and global.question2_complete == false
+if global.active_quest["q2"] == false and global.completed_quest["q1"] == true 
 	Quest Master: Congratulations on completing your first quest!
 	Quest Master: Before I give your second quest...I want to hear your opinions first.
 	Quest Master: Would you consider using public transportation, walking, or biking instead of driving your own vehicle?
@@ -93,14 +94,14 @@ if global.questOne_complete == true and global.question2_complete == false
 	- Now way, I don't have time to do such thing.
 		set global.dialogue_points += 1
 	Quest Master: Great, you are now ready for your second quest.
-	set global.question2_complete = true
+	set global.active_quest["q2"] = true
 
 #Task 2
-if global.question2_complete == true and global.questTwo_complete == false
+if global.active_quest["q2"] == true and global.completed_quest["q2"] == false
 	Quest Master: For your second quest, help me turn off the all the switches in order to shut down the fatory that is producing too much green house gasses.
 
 #Question 3
-if global.questTwo_complete == true and global.question3_complete == false
+if global.completed_quest["q2"] == true and global.active_quest["q3"] == false
 	Quest Master: Congratulations on completing your second quest!
 	Quest Master: Before I give your third quest...I want to hear your opinions first.
 	Quest Master: Are you willing to reduce water consumption, like taking shorter showers and turning off faucets when not in use?

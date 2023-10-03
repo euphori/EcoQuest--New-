@@ -34,6 +34,38 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://assets/Color Pallet.tres"
 }
+},
+"meshes": {
+"Root Scene_Big Terrain 1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/terrain/big_flat.res"
+},
+"Root Scene_Big Terrain 4": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/terrain/lake.res"
+},
+"Root Scene_Terrain 5": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/terrain/bump.res"
+}
 }
 }
 gltf/embedded_image_handling=1

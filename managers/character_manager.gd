@@ -8,12 +8,12 @@ extends Node3D
 @onready var camera = $Camera3D
 @onready var robot = $Robot
 @onready var kid = $Kid
-@onready var z_slider = $CameraController/ZSlider
-@onready var y_slider = $CameraController/YSlider
-@onready var x_slider = $CameraController/XSlider
-@onready var z_label = $CameraController/ZSlider/Label
-@onready var x_label = $CameraController/XSlider/Label2
-@onready var y_label = $CameraController/YSlider/Label3
+@onready var z_slider = $Widgets/CameraController/ZSlider
+@onready var y_slider = $Widgets/CameraController/YSlider
+@onready var x_slider = $Widgets/CameraController/XSlider
+@onready var z_label = $Widgets/CameraController/ZSlider/Label
+@onready var x_label = $Widgets/CameraController/XSlider/Label2
+@onready var y_label = $Widgets/CameraController/YSlider/Label3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

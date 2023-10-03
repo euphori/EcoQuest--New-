@@ -20,7 +20,7 @@ func _input(event):
 			menu.visible = false
 		elif menu.visible == false:
 			menu.visible = true
-		elif options.visible:
+		if options.visible:
 			menu.visible = true
 			options.visible = false
 

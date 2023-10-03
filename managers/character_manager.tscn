@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=7 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://dwu7lr44bcav5" path="res://characters/robot.tscn" id="1_6voqy"]
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
+[ext_resource type="PackedScene" uid="uid://cd5pn0q81bwnf" path="res://UI/console.tscn" id="2_1vulv"]
 [ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
+[ext_resource type="PackedScene" uid="uid://c7gpy0skdatgh" path="res://UI/widgets.tscn" id="6_78c4s"]
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -18,6 +20,11 @@ old_camera_offset = {
 "z": 3
 }
 
+[node name="Console" parent="." instance=ExtResource("2_1vulv")]
+visible = false
+path_to_kid = NodePath("../Kid")
+path_to_robot = NodePath("../Robot")
+
 [node name="Kid" parent="." instance=ExtResource("1_idrav")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
 axis_lock_linear_z = true
@@ -29,7 +36,7 @@ top_level = true
 current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99004, -0.595273, -5.54068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99004, -5.24848, -9.93929)
 visible = false
 light_energy = 3.0
 spot_range = 20.0
@@ -40,93 +47,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0829248, 0)
 axis_lock_linear_z = true
 path_to_other = NodePath("../Kid")
 
-[node name="CameraController" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ZSlider" type="HSlider" parent="CameraController"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 2.0
-offset_right = 332.0
-offset_bottom = 104.0
-min_value = -100.0
-
-[node name="Camera" type="Label" parent="CameraController/ZSlider"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 13.0
-offset_right = 120.0
-offset_bottom = 39.0
-text = "Camera Z-Axis"
-
-[node name="Label" type="Label" parent="CameraController/ZSlider"]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 39.0
-offset_right = 391.0
-offset_bottom = 65.0
-text = "100"
-
-[node name="XSlider" type="HSlider" parent="CameraController"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 135.0
-offset_right = 327.0
-offset_bottom = 237.0
-min_value = -100.0
-
-[node name="Camera" type="Label" parent="CameraController/XSlider"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 13.0
-offset_right = 120.0
-offset_bottom = 39.0
-text = "Camera X-Axis"
-
-[node name="Label2" type="Label" parent="CameraController/XSlider"]
-layout_mode = 0
-offset_left = 335.0
-offset_top = 38.0
-offset_right = 393.0
-offset_bottom = 64.0
-text = "100"
-
-[node name="YSlider" type="HSlider" parent="CameraController"]
-layout_mode = 0
-offset_top = 63.0
-offset_right = 326.0
-offset_bottom = 165.0
-min_value = -100.0
-
-[node name="Label3" type="Label" parent="CameraController/YSlider"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 40.0
-offset_right = 394.0
-offset_bottom = 66.0
-text = "100"
-
-[node name="Camera" type="Label" parent="CameraController/YSlider"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 13.0
-offset_right = 120.0
-offset_bottom = 39.0
-text = "Camera Y-Axis"
-
 [node name="Journal" parent="." instance=ExtResource("4_5p540")]
 visible = false
 
-[connection signal="drag_ended" from="CameraController/ZSlider" to="." method="_on_z_slider_drag_ended"]
-[connection signal="value_changed" from="CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
-[connection signal="drag_ended" from="CameraController/XSlider" to="." method="_on_x_slider_drag_ended"]
-[connection signal="value_changed" from="CameraController/XSlider" to="." method="_on_x_slider_value_changed"]
-[connection signal="drag_ended" from="CameraController/YSlider" to="." method="_on_y_slider_drag_ended"]
-[connection signal="value_changed" from="CameraController/YSlider" to="." method="_on_y_slider_value_changed"]
+[node name="Widgets" parent="." instance=ExtResource("6_78c4s")]
+
+[editable path="Console"]

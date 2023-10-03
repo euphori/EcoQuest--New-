@@ -4,7 +4,7 @@ extends RigidBody3D
 
 @onready var player = get_node(path_to_player)
 
-var speed = .3  # Adjust this to control the movement speed
+var speed = 1  # Adjust this to control the movement speed
 var can_move = false
 
 

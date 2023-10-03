@@ -126,6 +126,7 @@ shape = SubResource("CapsuleShape3D_7sbix")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38423, 4.01749, 0)
+flip_h = true
 shaded = true
 alpha_cut = 2
 texture = ExtResource("1_pm3dr")
@@ -147,6 +148,14 @@ collision_mask = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformDetection"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0565729, 0.357337, 0)
 shape = SubResource("SphereShape3D_oow21")
+
+[node name="RightMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56147, 3.65073, 0.416451)
+
+[node name="LeftMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33226, 3.65073, 0.767242)
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
 [connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
