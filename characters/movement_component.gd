@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export_category("STATS")
 @export var SPEED = 5.0
-@export var JUMP_VELOCITY = 6
+@export var JUMP_VELOCITY = 7
 @export var ACCELERATION = 150
 @export var MAX_SPEED = 5.0
 @export var DASH_SPEED = 50

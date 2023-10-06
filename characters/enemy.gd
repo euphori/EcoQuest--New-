@@ -51,7 +51,7 @@ func _physics_process(delta):
 	match state:
 		IDLE:
 			if !GlobalbgMusic.playing:
-				GlobalbgMusic.play()			
+				GlobalbgMusic.play()
 			GlobalbgMusicAttack.stop()
 			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -127,6 +127,8 @@ func hurt():
 	health -= 1
 	knockback()
 	if health <= 0:
+		GlobalbgMusicAttack.stop()
+		GlobalbgMusic.play()
 		queue_free()
 		
 		

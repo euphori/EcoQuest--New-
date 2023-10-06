@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dg0k8j7ox7n20"
+path="res://.godot/imported/CommonTree_Dead_5.obj-1d77e15c1fde2fe44346eceb5785ed06.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Dead_5.obj-1d77e15c1fde2fe44346eceb5785ed06.mesh"]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/OBJ/CommonTree_Dead_5.obj"
+dest_files=["res://.godot/imported/CommonTree_Dead_5.obj-1d77e15c1fde2fe44346eceb5785ed06.mesh", "res://.godot/imported/CommonTree_Dead_5.obj-1d77e15c1fde2fe44346eceb5785ed06.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

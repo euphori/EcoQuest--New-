@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpqcs6s8d1fck"
+path="res://.godot/imported/Willow_Dead_5.obj-60d7dbd98d7d940aa467a312cca999fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Willow_Dead_5.obj-60d7dbd98d7d940aa467a312cca999fa.mesh"]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/OBJ/Willow_Dead_5.obj"
+dest_files=["res://.godot/imported/Willow_Dead_5.obj-60d7dbd98d7d940aa467a312cca999fa.mesh", "res://.godot/imported/Willow_Dead_5.obj-60d7dbd98d7d940aa467a312cca999fa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byuhjrs3cjm2g"
+path="res://.godot/imported/CommonTree_Snow_5.obj-ac211f03a85b12e8bd1e235e36405b99.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Snow_5.obj-ac211f03a85b12e8bd1e235e36405b99.mesh"]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/OBJ/CommonTree_Snow_5.obj"
+dest_files=["res://.godot/imported/CommonTree_Snow_5.obj-ac211f03a85b12e8bd1e235e36405b99.mesh", "res://.godot/imported/CommonTree_Snow_5.obj-ac211f03a85b12e8bd1e235e36405b99.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dglm1e0btr7pc"
+path="res://.godot/imported/Corn_2.obj-534d032f4b75dc06d154616c69a15da0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Corn_2.obj-534d032f4b75dc06d154616c69a15da0.mesh"]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/OBJ/Corn_2.obj"
+dest_files=["res://.godot/imported/Corn_2.obj-534d032f4b75dc06d154616c69a15da0.mesh", "res://.godot/imported/Corn_2.obj-534d032f4b75dc06d154616c69a15da0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

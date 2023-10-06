@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c66s1qj1fluhi"
+path="res://.godot/imported/PineTree_4.fbx-afaab408434d91d53c4e27a79327494e.scn"
+
+[deps]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/FBX/PineTree_4.fbx"
+dest_files=["res://.godot/imported/PineTree_4.fbx-afaab408434d91d53c4e27a79327494e.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1

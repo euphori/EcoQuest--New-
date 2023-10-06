@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwj86jxckru1u"
+path="res://.godot/imported/PineTree_5.obj-1e13f598acc9db688360f4e0f0fa372f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PineTree_5.obj-1e13f598acc9db688360f4e0f0fa372f.mesh"]
+
+source_file="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_5.obj"
+dest_files=["res://.godot/imported/PineTree_5.obj-1e13f598acc9db688360f4e0f0fa372f.mesh", "res://.godot/imported/PineTree_5.obj-1e13f598acc9db688360f4e0f0fa372f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
