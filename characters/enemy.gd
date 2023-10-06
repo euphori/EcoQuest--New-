@@ -7,6 +7,8 @@ const ACCELERATION = 150
 const MAX_SPEED = 7
 const AGGRO_RANGE = 15
 
+
+
 @export var path_to_player:NodePath
 
 @onready var player = get_node(path_to_player)
@@ -43,6 +45,10 @@ func _physics_process(delta):
 		jumping = false
 	match state:
 		IDLE:
+			if !GlobalbgMusic.playing:
+				GlobalbgMusic.play()			
+			GlobalbgMusicAttack.stop()
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			$AnimationPlayer.play("idle")
 			$Label3D.text = str("State: IDLE ")
@@ -108,7 +114,9 @@ func jump():
 		can_jump = false
 
 func _on_player_detection_body_entered(body):
-	
+	GlobalbgMusic.stop()
+	if !GlobalbgMusicAttack.playing:
+		GlobalbgMusicAttack.play()
 	if body == player:
 		state = CHASE
  
