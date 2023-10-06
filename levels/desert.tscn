@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl6cxo66hnvic"]
+[gd_scene load_steps=16 format=3 uid="uid://bl6cxo66hnvic"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="2_3lgwb"]
 [ext_resource type="Material" uid="uid://ci3j4u5fxnucs" path="res://assets/environment/Orange.3.tres" id="3_5k2la"]
 [ext_resource type="PackedScene" uid="uid://ctnp1344ru48c" path="res://assets/environment/Mounting_2.fbx" id="4_jkqio"]
 [ext_resource type="PackedScene" uid="uid://by2s6n7do1cgl" path="res://assets/EmaceArt - raft on the desert/Meshes/EA04_Env_Rocks_Gray_01c.fbx" id="5_fk7g1"]
+[ext_resource type="PackedScene" uid="uid://b82rmw4fqro17" path="res://assets/low_poly_pipe/scene.gltf" id="6_ax6t1"]
+[ext_resource type="PackedScene" uid="uid://da2jih15ufs7n" path="res://assets/low_poly_bend_pipe/scene.gltf" id="7_03rxo"]
+[ext_resource type="PackedScene" uid="uid://dch08lwywoub8" path="res://assets/CastleRuins.fbx" id="8_d8mvq"]
+[ext_resource type="Texture2D" uid="uid://34ojs1m0hwv1" path="res://assets/palette color.png" id="9_ca5u4"]
 
 [sub_resource type="Environment" id="Environment_akhtm"]
 ambient_light_color = Color(0.462745, 0.462745, 0.462745, 1)
@@ -50,10 +54,14 @@ shadow_mesh = SubResource("ArrayMesh_4ekh6")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f6h2m"]
 data = PackedVector3Array(-0.1807, 0.0517, 0.0227, -0.1945, 0.0415, -0.0224, -0.1805, 0.0564, -0.0461, -0.1068, 0.0512, -0.198, -0.0485, 0.0284, -0.2016, -0.0421, 0.0429, -0.18, -0.0421, 0.0429, -0.18, -0.0202, 0.0231, -0.1851, -0.0086, 0.0363, -0.1729, -0.1805, 0.0564, -0.0461, -0.1822, 0.0633, -0.0924, -0.1746, 0.0722, -0.0778, 0.1578, 0.0324, -0.178, 0.1239, 0.0093, -0.1758, 0.1846, 0.0169, -0.199, -0.1807, 0.0517, 0.0227, -0.1834, 0.0231, 0.0598, -0.2094, 0.0378, 0.027, -0.1832, 0.0176, 0.2673, -0.1928, 0.019, 0.2593, -0.1677, 0.0322, 0.2084, -0.1712, 0.0587, -0.1984, -0.1713, 0.0438, -0.2171, -0.1465, 0.0637, -0.1995, 0.2606, 0.0338, -0.1071, 0.2723, 0.0213, -0.0836, 0.2576, 0.0337, -0.014, 0.2576, 0.0337, -0.014, 0.2754, 0.0283, 0.0768, 0.2475, 0.0341, 0.079, -0.1677, 0.0322, 0.2084, -0.2018, 0.0202, 0.193, -0.1848, 0.0329, 0.1751, 0.2428, 0.0329, -0.1811, 0.2682, 0.017, -0.2035, 0.2806, 0.0213, -0.1889, 0.2576, 0.0337, -0.014, 0.2873, 0.0287, -0.0264, 0.2883, 0.0205, 0.0195, -0.0086, 0.0363, -0.1729, -0.0202, 0.0231, -0.1851, 0.0085, 0.018, -0.1901, -0.1805, 0.0564, -0.0461, -0.1945, 0.0415, -0.0224, -0.2026, 0.0416, -0.0558, -0.1848, 0.0329, 0.1751, -0.1755, 0.0181, 0.0923, -0.1654, 0.0348, 0.0882, -0.1746, 0.0722, -0.0778, -0.1799, 0.0685, -0.1165, -0.1704, 0.0943, -0.1035, -0.1465, 0.0637, -0.1995, -0.1274, 0.0358, -0.2228, -0.1068, 0.0512, -0.198, -0.1822, 0.0633, -0.0924, -0.1878, 0.0047, -0.1099, -0.1799, 0.0685, -0.1165, -0.1885, 0.0289, -0.2149, -0.1969, -0.0002, -0.2171, -0.1929, -0.0002, -0.2254, -0.1885, 0.0289, -0.2149, -0.1905, -0.0002, -0.1798, -0.1969, -0.0002, -0.2171, -0.1846, 0.0583, -0.1719, -0.2019, -0.0004, -0.1664, -0.1905, -0.0002, -0.1798, 0.2567, 0.0176, 0.261, 0.2526, -0.0002, 0.2718, 0.2179, 0.0285, 0.2704, -0.1928, 0.019, 0.2593, -0.1938, -0.0002, 0.219, -0.1884, 0.0163, 0.2125, 0.1239, 0.0093, -0.1758, 0.1063, -0.0002, -0.1815, 0.1333, -0.0002, -0.1827, 0.2806, 0.0213, -0.1889, 0.2826, -0.0002, -0.2146, 0.2929, -0.0002, -0.1991, 0.2883, 0.0205, 0.0195, 0.2897, -0.0002, 0.0569, 0.2754, 0.0283, 0.0768, 0.2825, 0.0185, 0.2627, 0.3036, -0.0002, 0.1442, 0.3057, -0.0002, 0.2586, 0.2825, 0.0185, 0.2627, 0.3057, -0.0002, 0.2586, 0.2902, -0.0002, 0.2727, -0.1274, 0.0358, -0.2228, -0.1061, -0.0002, -0.2281, -0.1068, 0.0512, -0.198, 0.2179, 0.0285, 0.2704, 0.1847, -0.0002, 0.295, 0.1744, 0.0259, 0.278, -0.1799, 0.0685, -0.1165, -0.1878, 0.0047, -0.1099, -0.1965, 0.0047, -0.1292, 0.1239, 0.0093, -0.1758, 0.0801, -0.0002, -0.1863, 0.1063, -0.0002, -0.1815, -0.2094, 0.0378, 0.027, -0.2179, -0.0002, 0.002, -0.1945, 0.0415, -0.0224, -0.1807, 0.0517, 0.0227, -0.2094, 0.0378, 0.027, -0.1945, 0.0415, -0.0224, -0.0421, 0.0429, -0.18, -0.0485, 0.0284, -0.2016, -0.0202, 0.0231, -0.1851, -0.1805, 0.0564, -0.0461, -0.2026, 0.0416, -0.0558, -0.1822, 0.0633, -0.0924, -0.1807, 0.0517, 0.0227, -0.1675, 0.0412, 0.0555, -0.1834, 0.0231, 0.0598, 0.2428, 0.0329, -0.1811, 0.1578, 0.0324, -0.178, 0.1846, 0.0169, -0.199, 0.2428, 0.0329, -0.1811, 0.1846, 0.0169, -0.199, 0.2682, 0.017, -0.2035, 0.2428, 0.0329, -0.1811, 0.2879, 0.0224, -0.1319, 0.2606, 0.0338, -0.1071, 0.2428, 0.0329, -0.1811, 0.2806, 0.0213, -0.1889, 0.2879, 0.0224, -0.1319, -0.1627, 0.0186, 0.2612, 0.009, 0.0329, 0.2552, -0.0652, 0.017, 0.2816, 0.2576, 0.0337, -0.014, 0.2723, 0.0213, -0.0836, 0.2873, 0.0287, -0.0264, 0.2606, 0.0338, -0.1071, 0.2879, 0.0224, -0.1319, 0.2723, 0.0213, -0.0836, 0.2475, 0.0341, 0.079, 0.2754, 0.0283, 0.0768, 0.2884, 0.0208, 0.1396, 0.2537, 0.0321, 0.2446, 0.2884, 0.0208, 0.1396, 0.2825, 0.0185, 0.2627, 0.2537, 0.0321, 0.2446, 0.2475, 0.0341, 0.079, 0.2884, 0.0208, 0.1396, 0.2537, 0.0321, 0.2446, 0.2825, 0.0185, 0.2627, 0.2567, 0.0176, 0.261, 0.2576, 0.0337, -0.014, 0.2883, 0.0205, 0.0195, 0.2754, 0.0283, 0.0768, -0.1677, 0.0322, 0.2084, -0.1884, 0.0163, 0.2125, -0.2018, 0.0202, 0.193, -0.1677, 0.0322, 0.2084, -0.1928, 0.019, 0.2593, -0.1884, 0.0163, 0.2125, 0.2537, 0.0321, 0.2446, 0.2567, 0.0176, 0.261, 0.2179, 0.0285, 0.2704, -0.1465, 0.0637, -0.1995, -0.1713, 0.0438, -0.2171, -0.1274, 0.0358, -0.2228, -0.1654, 0.0348, 0.0882, -0.1755, 0.0181, 0.0923, -0.1834, 0.0231, 0.0598, -0.1654, 0.0348, 0.0882, -0.1834, 0.0231, 0.0598, -0.1675, 0.0412, 0.0555, -0.1712, 0.0587, -0.1984, -0.1732, 0.1008, -0.1377, -0.1846, 0.0583, -0.1719, -0.1712, 0.0587, -0.1984, -0.1846, 0.0583, -0.1719, -0.1885, 0.0289, -0.2149, -0.1712, 0.0587, -0.1984, -0.1885, 0.0289, -0.2149, -0.1713, 0.0438, -0.2171, -0.1848, 0.0329, 0.1751, -0.2018, 0.0202, 0.193, -0.1755, 0.0181, 0.0923, -0.1746, 0.0722, -0.0778, -0.1822, 0.0633, -0.0924, -0.1799, 0.0685, -0.1165, 0.1058, 0.0323, 0.2459, 0.1744, 0.0259, 0.278, 0.1181, 0.0175, 0.279, 0.009, 0.0329, 0.2552, 0.1058, 0.0323, 0.2459, 0.1181, 0.0175, 0.279, 0.009, 0.0329, 0.2552, 0.0212, 0.0209, 0.2833, -0.0652, 0.017, 0.2816, 0.009, 0.0329, 0.2552, 0.1181, 0.0175, 0.279, 0.0212, 0.0209, 0.2833, -0.0086, 0.0363, -0.1729, 0.0085, 0.018, -0.1901, 0.0368, 0.0204, -0.1756, 0.0085, 0.018, -0.1901, 0.0091, -0.0002, -0.2006, 0.0344, -0.0002, -0.1894, 0.0085, 0.018, -0.1901, 0.0344, -0.0002, -0.1894, 0.0368, 0.0204, -0.1756, -0.1274, 0.0358, -0.2228, -0.1571, -0.0002, -0.2338, -0.1374, -0.0002, -0.2389, -0.2018, 0.0202, 0.193, -0.2112, -0.0002, 0.2023, -0.2035, -0.0002, 0.1567, -0.2018, 0.0202, 0.193, -0.2035, -0.0002, 0.1567, -0.1755, 0.0181, 0.0923, -0.1885, 0.0289, -0.2149, -0.1846, 0.0583, -0.1719, -0.1905, -0.0002, -0.1798, -0.1755, 0.0181, 0.0923, -0.2035, -0.0002, 0.1567, -0.1812, -0.0002, 0.0961, -0.1755, 0.0181, 0.0923, -0.1914, -0.0002, 0.0626, -0.1834, 0.0231, 0.0598, -0.1755, 0.0181, 0.0923, -0.1812, -0.0002, 0.0961, -0.1914, -0.0002, 0.0626, -0.1713, 0.0438, -0.2171, -0.1571, -0.0002, -0.2338, -0.1274, 0.0358, -0.2228, -0.1713, 0.0438, -0.2171, -0.1822, 0.0002, -0.2314, -0.1571, -0.0002, -0.2338, -0.2026, 0.0416, -0.0558, -0.1945, 0.0415, -0.0224, -0.2081, -0.0002, -0.0286, -0.2026, 0.0416, -0.0558, -0.2081, -0.0002, -0.0286, -0.2168, -0.0002, -0.0591, 0.2754, 0.0283, 0.0768, 0.2897, -0.0002, 0.0569, 0.291, -0.0002, 0.1, 0.2884, 0.0208, 0.1396, 0.2754, 0.0283, 0.0768, 0.291, -0.0002, 0.1, 0.2884, 0.0208, 0.1396, 0.291, -0.0002, 0.1, 0.3036, -0.0002, 0.1442, 0.2567, 0.0176, 0.261, 0.2674, -0.0002, 0.2705, 0.2526, -0.0002, 0.2718, -0.1928, 0.019, 0.2593, -0.2039, -0.0002, 0.2622, -0.1938, -0.0002, 0.219, 0.0085, 0.018, -0.1901, -0.0202, 0.0231, -0.1851, -0.0217, -0.0002, -0.1976, 0.0085, 0.018, -0.1901, -0.0217, -0.0002, -0.1976, 0.0091, -0.0002, -0.2006, -0.1832, 0.0176, 0.2673, -0.1896, -0.0002, 0.2757, -0.1987, -0.0002, 0.2715, -0.1832, 0.0176, 0.2673, -0.1987, -0.0002, 0.2715, -0.1928, 0.019, 0.2593, 0.2873, 0.0287, -0.0264, 0.3035, -0.0002, 0.0211, 0.2883, 0.0205, 0.0195, 0.2873, 0.0287, -0.0264, 0.3097, -0.0002, -0.0272, 0.3035, -0.0002, 0.0211, 0.2806, 0.0213, -0.1889, 0.2682, 0.017, -0.2035, 0.2826, -0.0002, -0.2146, -0.1884, 0.0163, 0.2125, -0.1938, -0.0002, 0.219, -0.2112, -0.0002, 0.2023, -0.1884, 0.0163, 0.2125, -0.2112, -0.0002, 0.2023, -0.2018, 0.0202, 0.193, 0.2883, 0.0205, 0.0195, 0.3035, -0.0002, 0.0211, 0.2897, -0.0002, 0.0569, 0.2825, 0.0185, 0.2627, 0.2902, -0.0002, 0.2727, 0.2674, -0.0002, 0.2705, 0.2825, 0.0185, 0.2627, 0.2674, -0.0002, 0.2705, 0.2567, 0.0176, 0.261, 0.2825, 0.0185, 0.2627, 0.2884, 0.0208, 0.1396, 0.3036, -0.0002, 0.1442, 0.2879, 0.0224, -0.1319, 0.3037, -0.0002, -0.1383, 0.2861, -0.0002, -0.0884, 0.2879, 0.0224, -0.1319, 0.2861, -0.0002, -0.0884, 0.2723, 0.0213, -0.0836, -0.1832, 0.0176, 0.2673, -0.1627, 0.0186, 0.2612, -0.1728, -0.0002, 0.27, -0.1832, 0.0176, 0.2673, -0.1728, -0.0002, 0.27, -0.1896, -0.0002, 0.2757, -0.1732, 0.1008, -0.1377, -0.1799, 0.0685, -0.1165, -0.1965, 0.0047, -0.1292, -0.1732, 0.1008, -0.1377, -0.1704, 0.0943, -0.1035, -0.1799, 0.0685, -0.1165, -0.1732, 0.1008, -0.1377, -0.1965, 0.0047, -0.1292, -0.2049, 0.0005, -0.1547, 0.0212, 0.0209, 0.2833, 0.0807, -0.0002, 0.2898, 0.0218, -0.0002, 0.2989, 0.0212, 0.0209, 0.2833, 0.1181, 0.0175, 0.279, 0.0807, -0.0002, 0.2898, 0.0212, 0.0209, 0.2833, -0.0649, -0.0002, 0.2913, -0.0652, 0.017, 0.2816, 0.0212, 0.0209, 0.2833, 0.0218, -0.0002, 0.2989, -0.0649, -0.0002, 0.2913, 0.1744, 0.0259, 0.278, 0.1255, -0.0002, 0.2891, 0.1181, 0.0175, 0.279, 0.1744, 0.0259, 0.278, 0.1847, -0.0002, 0.295, 0.1255, -0.0002, 0.2891, 0.2873, 0.0287, -0.0264, 0.2861, -0.0002, -0.0884, 0.3097, -0.0002, -0.0272, 0.2873, 0.0287, -0.0264, 0.2723, 0.0213, -0.0836, 0.2861, -0.0002, -0.0884, -0.1885, 0.0289, -0.2149, -0.1822, 0.0002, -0.2314, -0.1713, 0.0438, -0.2171, -0.1885, 0.0289, -0.2149, -0.1929, -0.0002, -0.2254, -0.1822, 0.0002, -0.2314, -0.1627, 0.0186, 0.2612, -0.1549, -0.0002, 0.2714, -0.1728, -0.0002, 0.27, -0.1627, 0.0186, 0.2612, -0.0652, 0.017, 0.2816, -0.0649, -0.0002, 0.2913, -0.1627, 0.0186, 0.2612, -0.0649, -0.0002, 0.2913, -0.1549, -0.0002, 0.2714, 0.1239, 0.0093, -0.1758, 0.0344, -0.0002, -0.1894, 0.0801, -0.0002, -0.1863, 0.1239, 0.0093, -0.1758, 0.0368, 0.0204, -0.1756, 0.0344, -0.0002, -0.1894, -0.1822, 0.0633, -0.0924, -0.2084, -0.0002, -0.0809, -0.194, 0.001, -0.0993, -0.1822, 0.0633, -0.0924, -0.194, 0.001, -0.0993, -0.1878, 0.0047, -0.1099, 0.2806, 0.0213, -0.1889, 0.3037, -0.0002, -0.1383, 0.2879, 0.0224, -0.1319, 0.2806, 0.0213, -0.1889, 0.2929, -0.0002, -0.1991, 0.3037, -0.0002, -0.1383, -0.1945, 0.0415, -0.0224, -0.2179, -0.0002, 0.002, -0.2081, -0.0002, -0.0286, -0.1274, 0.0358, -0.2228, -0.1374, -0.0002, -0.2389, -0.1061, -0.0002, -0.2281, -0.1928, 0.019, 0.2593, -0.1987, -0.0002, 0.2715, -0.2039, -0.0002, 0.2622, 0.2682, 0.017, -0.2035, 0.2605, -0.0002, -0.2107, 0.2826, -0.0002, -0.2146, 0.2682, 0.017, -0.2035, 0.2142, -0.0002, -0.2118, 0.2605, -0.0002, -0.2107, 0.2682, 0.017, -0.2035, 0.1846, 0.0169, -0.199, 0.2142, -0.0002, -0.2118, 0.2179, 0.0285, 0.2704, 0.2526, -0.0002, 0.2718, 0.1847, -0.0002, 0.295, -0.2094, 0.0378, 0.027, -0.1914, -0.0002, 0.0626, -0.2325, -0.0002, 0.0297, -0.2094, 0.0378, 0.027, -0.1834, 0.0231, 0.0598, -0.1914, -0.0002, 0.0626, 0.1846, 0.0169, -0.199, 0.1333, -0.0002, -0.1827, 0.1748, -0.0002, -0.2019, 0.1846, 0.0169, -0.199, 0.1748, -0.0002, -0.2019, 0.2142, -0.0002, -0.2118, 0.1846, 0.0169, -0.199, 0.1239, 0.0093, -0.1758, 0.1333, -0.0002, -0.1827, -0.1846, 0.0583, -0.1719, -0.2049, 0.0005, -0.1547, -0.2019, -0.0004, -0.1664, -0.1846, 0.0583, -0.1719, -0.1732, 0.1008, -0.1377, -0.2049, 0.0005, -0.1547, -0.2026, 0.0416, -0.0558, -0.2168, -0.0002, -0.0591, -0.2084, -0.0002, -0.0809, -0.2026, 0.0416, -0.0558, -0.2084, -0.0002, -0.0809, -0.1822, 0.0633, -0.0924, 0.1181, 0.0175, 0.279, 0.1255, -0.0002, 0.2891, 0.0807, -0.0002, 0.2898, -0.0485, 0.0284, -0.2016, -0.0509, -0.0002, -0.2147, -0.0217, -0.0002, -0.1976, -0.0485, 0.0284, -0.2016, -0.0217, -0.0002, -0.1976, -0.0202, 0.0231, -0.1851, -0.1712, 0.0587, -0.1984, -0.1465, 0.0637, -0.1995, -0.1285, 0.065, -0.1726, 0.0731, 0.0383, 0.0406, 0.1052, 0.0356, 0.0165, 0.1033, 0.0342, 0.0338, -0.0997, 0.0676, -0.1239, -0.0864, 0.0592, -0.1181, -0.0654, 0.0593, -0.0993, -0.0571, 0.0669, -0.0568, -0.0369, 0.0515, -0.0637, -0.0376, 0.0433, -0.0207, -0.0571, 0.0669, -0.0568, -0.045, 0.0547, -0.0855, -0.0369, 0.0515, -0.0637, -0.0712, 0.0733, -0.0747, -0.045, 0.0547, -0.0855, -0.0571, 0.0669, -0.0568, -0.1627, 0.0186, 0.2612, -0.1175, 0.0346, 0.1702, -0.0269, 0.0348, 0.1299, -0.1627, 0.0186, 0.2612, -0.1832, 0.0176, 0.2673, -0.1175, 0.0346, 0.1702, -0.1168, 0.0861, -0.1104, -0.0997, 0.0676, -0.1239, -0.0654, 0.0593, -0.0993, -0.1168, 0.0861, -0.1104, -0.0654, 0.0593, -0.0993, -0.0712, 0.0733, -0.0747, -0.0997, 0.0676, -0.1239, -0.1285, 0.065, -0.1726, -0.0864, 0.0592, -0.1181, 0.1044, 0.0336, -0.0886, 0.044, 0.0341, -0.0957, 0.0871, 0.0286, -0.1061, -0.1068, 0.0512, -0.198, -0.0509, -0.0002, -0.2147, -0.0485, 0.0284, -0.2016, -0.1068, 0.0512, -0.198, -0.1061, -0.0002, -0.2281, -0.0509, -0.0002, -0.2147, 0.1033, 0.0342, 0.0338, 0.1052, 0.0356, 0.0165, 0.2475, 0.0341, 0.079, -0.071, 0.0484, -0.0048, -0.0729, 0.0481, -0.0211, -0.0361, 0.0386, 0.0129, -0.0421, 0.0429, -0.18, -0.0086, 0.0363, -0.1729, 0.0205, 0.0388, -0.0893, 0.1264, 0.0359, -0.0407, 0.2606, 0.0338, -0.1071, 0.2576, 0.0337, -0.014, -0.1175, 0.0346, 0.1702, -0.1832, 0.0176, 0.2673, -0.1677, 0.0322, 0.2084, 0.2537, 0.0321, 0.2446, 0.2179, 0.0285, 0.2704, 0.1058, 0.0323, 0.2459, 0.1058, 0.0323, 0.2459, 0.2179, 0.0285, 0.2704, 0.1744, 0.0259, 0.278, 0.0842, 0.0347, 0.1727, 0.1544, 0.0348, 0.1151, 0.2537, 0.0321, 0.2446, 0.0842, 0.0347, 0.1727, 0.2537, 0.0321, 0.2446, 0.1058, 0.0323, 0.2459, 0.0842, 0.0347, 0.1727, 0.0198, 0.0356, 0.0959, 0.1544, 0.0348, 0.1151, -0.1848, 0.0329, 0.1751, -0.0697, 0.0396, 0.0462, -0.0242, 0.0357, 0.0454, 0.009, 0.0329, 0.2552, 0.0842, 0.0347, 0.1727, 0.1058, 0.0323, 0.2459, 0.009, 0.0329, 0.2552, -0.0269, 0.0348, 0.1299, 0.0198, 0.0356, 0.0959, 0.009, 0.0329, 0.2552, 0.0198, 0.0356, 0.0959, 0.0842, 0.0347, 0.1727, 0.044, 0.0341, -0.0957, 0.0368, 0.0204, -0.1756, 0.1239, 0.0093, -0.1758, -0.0217, 0.0415, -0.0482, -0.0369, 0.0515, -0.0637, 0.0029, 0.0386, -0.0571, -0.0205, 0.048, -0.1022, -0.1068, 0.0512, -0.198, -0.0421, 0.0429, -0.18, -0.0369, 0.0515, -0.0637, -0.0205, 0.048, -0.1022, 0.0029, 0.0386, -0.0571, -0.0369, 0.0515, -0.0637, -0.045, 0.0547, -0.0855, -0.0205, 0.048, -0.1022, -0.0571, 0.0669, -0.0568, -0.1204, 0.0823, -0.0786, -0.0712, 0.0733, -0.0747, -0.1329, 0.0687, -0.1507, -0.1285, 0.065, -0.1726, -0.0997, 0.0676, -0.1239, -0.1329, 0.0687, -0.1507, -0.1712, 0.0587, -0.1984, -0.1285, 0.065, -0.1726, -0.1204, 0.0823, -0.0786, -0.1746, 0.0722, -0.0778, -0.1704, 0.0943, -0.1035, -0.1746, 0.0722, -0.0778, -0.1204, 0.0823, -0.0786, -0.0571, 0.0669, -0.0568, 0.0205, 0.0388, -0.0893, 0.0368, 0.0204, -0.1756, 0.044, 0.0341, -0.0957, 0.0205, 0.0388, -0.0893, -0.0086, 0.0363, -0.1729, 0.0368, 0.0204, -0.1756, -0.0205, 0.048, -0.1022, -0.0421, 0.0429, -0.18, 0.0079, 0.0399, -0.0845, -0.1285, 0.065, -0.1726, -0.1068, 0.0512, -0.198, -0.0806, 0.0504, -0.1637, -0.1285, 0.065, -0.1726, -0.1465, 0.0637, -0.1995, -0.1068, 0.0512, -0.198, -0.0806, 0.0504, -0.1637, -0.1068, 0.0512, -0.198, -0.0205, 0.048, -0.1022, 0.0439, 0.0367, -0.011, 0.0834, 0.0352, -0.0458, 0.0864, 0.0382, -0.0029, 0.0439, 0.0367, -0.011, 0.0055, 0.0361, 0.0072, -0.0081, 0.0365, -0.0301, 0.1052, 0.0356, 0.0165, 0.0864, 0.0382, -0.0029, 0.0834, 0.0352, -0.0458, 0.1052, 0.0356, 0.0165, 0.1264, 0.0359, -0.0407, 0.2576, 0.0337, -0.014, 0.1052, 0.0356, 0.0165, 0.2576, 0.0337, -0.014, 0.2475, 0.0341, 0.079, -0.0361, 0.0386, 0.0129, -0.0729, 0.0481, -0.0211, -0.0376, 0.0433, -0.0207, -0.0361, 0.0386, 0.0129, -0.0376, 0.0433, -0.0207, -0.0081, 0.0365, -0.0301, -0.1805, 0.0564, -0.0461, -0.1746, 0.0722, -0.0778, -0.0729, 0.0481, -0.0211, -0.1805, 0.0564, -0.0461, -0.0729, 0.0481, -0.0211, -0.071, 0.0484, -0.0048, -0.1805, 0.0564, -0.0461, -0.071, 0.0484, -0.0048, -0.0972, 0.0506, 0.0222, -0.1807, 0.0517, 0.0227, -0.1805, 0.0564, -0.0461, -0.0972, 0.0506, 0.0222, -0.1712, 0.0587, -0.1984, -0.144, 0.0933, -0.1218, -0.1732, 0.1008, -0.1377, -0.144, 0.0933, -0.1218, -0.1329, 0.0687, -0.1507, -0.0997, 0.0676, -0.1239, -0.144, 0.0933, -0.1218, -0.1712, 0.0587, -0.1984, -0.1329, 0.0687, -0.1507, -0.144, 0.0933, -0.1218, -0.0997, 0.0676, -0.1239, -0.1168, 0.0861, -0.1104, -0.144, 0.0933, -0.1218, -0.1168, 0.0861, -0.1104, -0.0712, 0.0733, -0.0747, -0.144, 0.0933, -0.1218, -0.1204, 0.0823, -0.0786, -0.1732, 0.1008, -0.1377, -0.1204, 0.0823, -0.0786, -0.144, 0.0933, -0.1218, -0.0712, 0.0733, -0.0747, -0.1204, 0.0823, -0.0786, -0.1704, 0.0943, -0.1035, -0.1732, 0.1008, -0.1377, -0.0654, 0.0593, -0.0993, -0.0806, 0.0504, -0.1637, -0.045, 0.0547, -0.0855, -0.045, 0.0547, -0.0855, -0.0806, 0.0504, -0.1637, -0.0205, 0.048, -0.1022, -0.0712, 0.0733, -0.0747, -0.0654, 0.0593, -0.0993, -0.045, 0.0547, -0.0855, -0.1675, 0.0412, 0.0555, -0.0972, 0.0506, 0.0222, -0.0697, 0.0396, 0.0462, -0.1675, 0.0412, 0.0555, -0.1807, 0.0517, 0.0227, -0.0972, 0.0506, 0.0222, -0.1675, 0.0412, 0.0555, -0.0697, 0.0396, 0.0462, -0.1654, 0.0348, 0.0882, 0.1264, 0.0359, -0.0407, 0.1578, 0.0324, -0.178, 0.2428, 0.0329, -0.1811, 0.1264, 0.0359, -0.0407, 0.0834, 0.0352, -0.0458, 0.1044, 0.0336, -0.0886, 0.1264, 0.0359, -0.0407, 0.2428, 0.0329, -0.1811, 0.2606, 0.0338, -0.1071, 0.1264, 0.0359, -0.0407, 0.1044, 0.0336, -0.0886, 0.1578, 0.0324, -0.178, 0.1544, 0.0348, 0.1151, 0.0731, 0.0383, 0.0406, 0.1186, 0.0359, 0.0487, 0.1544, 0.0348, 0.1151, 0.0311, 0.0383, 0.075, 0.0731, 0.0383, 0.0406, 0.1544, 0.0348, 0.1151, 0.1186, 0.0359, 0.0487, 0.2475, 0.0341, 0.079, 0.1544, 0.0348, 0.1151, 0.2475, 0.0341, 0.079, 0.2537, 0.0321, 0.2446, 0.1186, 0.0359, 0.0487, 0.0731, 0.0383, 0.0406, 0.1033, 0.0342, 0.0338, 0.1186, 0.0359, 0.0487, 0.1033, 0.0342, 0.0338, 0.2475, 0.0341, 0.079, -0.1746, 0.0722, -0.0778, -0.0571, 0.0669, -0.0568, -0.0582, 0.0577, -0.0392, 0.0834, 0.0352, -0.0458, 0.0329, 0.0363, -0.0461, 0.044, 0.0341, -0.0957, 0.0834, 0.0352, -0.0458, 0.044, 0.0341, -0.0957, 0.1044, 0.0336, -0.0886, 0.0834, 0.0352, -0.0458, 0.1264, 0.0359, -0.0407, 0.1052, 0.0356, 0.0165, 0.1578, 0.0324, -0.178, 0.1044, 0.0336, -0.0886, 0.0871, 0.0286, -0.1061, 0.0439, 0.0367, -0.011, -0.0081, 0.0365, -0.0301, 0.0329, 0.0363, -0.0461, 0.0439, 0.0367, -0.011, 0.0329, 0.0363, -0.0461, 0.0834, 0.0352, -0.0458, 0.0311, 0.0383, 0.075, 0.0198, 0.0356, 0.0959, -0.0242, 0.0357, 0.0454, 0.0311, 0.0383, 0.075, -0.0242, 0.0357, 0.0454, 0.0499, 0.0366, 0.0175, 0.0499, 0.0366, 0.0175, 0.0439, 0.0367, -0.011, 0.0864, 0.0382, -0.0029, 0.0499, 0.0366, 0.0175, 0.0864, 0.0382, -0.0029, 0.1052, 0.0356, 0.0165, 0.0499, 0.0366, 0.0175, 0.0055, 0.0361, 0.0072, 0.0439, 0.0367, -0.011, 0.0731, 0.0383, 0.0406, 0.0499, 0.0366, 0.0175, 0.1052, 0.0356, 0.0165, 0.0731, 0.0383, 0.0406, 0.0311, 0.0383, 0.075, 0.0499, 0.0366, 0.0175, 0.0055, 0.0361, 0.0072, -0.0361, 0.0386, 0.0129, -0.0081, 0.0365, -0.0301, -0.0242, 0.0357, 0.0454, 0.0055, 0.0361, 0.0072, 0.0499, 0.0366, 0.0175, -0.0242, 0.0357, 0.0454, -0.0361, 0.0386, 0.0129, 0.0055, 0.0361, 0.0072, 0.1578, 0.0324, -0.178, 0.0871, 0.0286, -0.1061, 0.1239, 0.0093, -0.1758, 0.0871, 0.0286, -0.1061, 0.044, 0.0341, -0.0957, 0.1239, 0.0093, -0.1758, 0.0198, 0.0356, 0.0959, -0.0167, 0.0376, 0.0713, -0.0242, 0.0357, 0.0454, 0.0198, 0.0356, 0.0959, 0.0311, 0.0383, 0.075, 0.1544, 0.0348, 0.1151, 0.0329, 0.0363, -0.0461, 0.0205, 0.0388, -0.0893, 0.044, 0.0341, -0.0957, 0.0329, 0.0363, -0.0461, 0.0079, 0.0399, -0.0845, 0.0205, 0.0388, -0.0893, -0.0081, 0.0365, -0.0301, 0.0029, 0.0386, -0.0571, 0.0329, 0.0363, -0.0461, -0.0081, 0.0365, -0.0301, -0.0217, 0.0415, -0.0482, 0.0029, 0.0386, -0.0571, 0.0079, 0.0399, -0.0845, -0.0421, 0.0429, -0.18, 0.0205, 0.0388, -0.0893, 0.0029, 0.0386, -0.0571, -0.0205, 0.048, -0.1022, 0.0079, 0.0399, -0.0845, 0.0029, 0.0386, -0.0571, 0.0079, 0.0399, -0.0845, 0.0329, 0.0363, -0.0461, -0.0376, 0.0433, -0.0207, -0.0217, 0.0415, -0.0482, -0.0081, 0.0365, -0.0301, -0.0376, 0.0433, -0.0207, -0.0369, 0.0515, -0.0637, -0.0217, 0.0415, -0.0482, -0.0697, 0.0396, 0.0462, -0.0361, 0.0386, 0.0129, -0.0242, 0.0357, 0.0454, -0.0697, 0.0396, 0.0462, -0.071, 0.0484, -0.0048, -0.0361, 0.0386, 0.0129, -0.0697, 0.0396, 0.0462, -0.1848, 0.0329, 0.1751, -0.1654, 0.0348, 0.0882, -0.0972, 0.0506, 0.0222, -0.071, 0.0484, -0.0048, -0.0697, 0.0396, 0.0462, -0.0729, 0.0481, -0.0211, -0.0582, 0.0577, -0.0392, -0.0376, 0.0433, -0.0207, -0.0729, 0.0481, -0.0211, -0.1746, 0.0722, -0.0778, -0.0582, 0.0577, -0.0392, -0.0582, 0.0577, -0.0392, -0.0571, 0.0669, -0.0568, -0.0376, 0.0433, -0.0207, -0.0864, 0.0592, -0.1181, -0.1285, 0.065, -0.1726, -0.0806, 0.0504, -0.1637, -0.0654, 0.0593, -0.0993, -0.0864, 0.0592, -0.1181, -0.0806, 0.0504, -0.1637, -0.2094, 0.0378, 0.027, -0.2325, -0.0002, 0.0297, -0.2179, -0.0002, 0.002, -0.1175, 0.0346, 0.1702, -0.1677, 0.0322, 0.2084, -0.1848, 0.0329, 0.1751, -0.0167, 0.0376, 0.0713, -0.1848, 0.0329, 0.1751, -0.0242, 0.0357, 0.0454, -0.0167, 0.0376, 0.0713, -0.1175, 0.0346, 0.1702, -0.1848, 0.0329, 0.1751, -0.0269, 0.0348, 0.1299, -0.0167, 0.0376, 0.0713, 0.0198, 0.0356, 0.0959, -0.0269, 0.0348, 0.1299, -0.1175, 0.0346, 0.1702, -0.0167, 0.0376, 0.0713, -0.0269, 0.0348, 0.1299, 0.009, 0.0329, 0.2552, -0.1627, 0.0186, 0.2612)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t5un"]
+albedo_texture = ExtResource("9_ca5u4")
+
 [node name="Desert" type="Node3D"]
 
 [node name="CharacterManager" parent="." instance=ExtResource("2_3lgwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.9767, 14.6394, 8.41964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8622, 11.2191, 5.97149)
+metadata/_edit_group_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_akhtm")
@@ -95,10 +103,10 @@ visible = false
 metadata/_edit_group_ = true
 
 [node name="Water" parent="Terraint" instance=ExtResource("1_heupx")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -90.44, 5.75445, -15.7224)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -90.44, 7.0137, -14.023)
 
 [node name="Water2" parent="Terraint" instance=ExtResource("1_heupx")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -90.44, 5.75445, -115.512)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -90.44, 7.0137, -113.813)
 
 [node name="DesertTerrain" type="MeshInstance3D" parent="Terraint"]
 transform = Transform3D(-1.31134e-05, 0, -300, 0, 300, 0, 300, 0, -1.31134e-05, 0, 1, 0)
@@ -137,6 +145,689 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 2.32831e-09, 0, 2.32831e-09, 1, -1.07102e-08, 2.98023e-08, 8.3819e-09, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_f6h2m")
 
+[node name="Pipes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6266, -7.00445, 0)
+
+[node name="Pipe" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.0589899, 0, 3.99956, 0, 4, 0, -3.99956, 0, -0.0589899, -54.4092, 16.5277, 5.18951)
+
+[node name="Pipe9" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.0589899, 0, 3.99956, 0, 4, 0, -3.99956, 0, -0.0589899, -57.7271, 16.5277, 5.18951)
+
+[node name="Pipe10" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.00263996, -3.99599, 0.178991, -0.0589308, 0.179011, 3.99556, -3.99956, 0, -0.0589899, -63.5051, 14.7564, 5.18951)
+
+[node name="Pipe6" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -44.1903, 19.7093, 5.18951)
+
+[node name="Pipe7" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -40.8503, 19.7093, 5.18951)
+
+[node name="Pipe8" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -37.478, 19.7093, 5.18951)
+
+[node name="Pipe2" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.0589899, 0, 3.99956, 0, 4, 0, -3.99956, 0, -0.0589899, -51.0303, 16.5277, 5.18951)
+
+[node name="Pipe3" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.0589899, 0, 3.99956, 0, 4, 0, -3.99956, 0, -0.0589899, -52.8896, 13.2362, 5.18951)
+
+[node name="Pipe4" parent="Pipes" instance=ExtResource("6_ax6t1")]
+transform = Transform3D(-0.0589899, 0, 3.99956, 0, 4, 0, -3.99956, 0, -0.0589899, -49.5107, 13.2362, 5.18951)
+
+[node name="scene" parent="." instance=ExtResource("7_03rxo")]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, -76.1299, 11.9501, 5.21688)
+
+[node name="scene2" parent="." instance=ExtResource("7_03rxo")]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, -89.5925, 8.72429, 5.21688)
+
+[node name="CastleRuins" parent="." instance=ExtResource("8_d8mvq")]
+transform = Transform3D(2.99772, -0.116942, 0, 0.116942, 2.99772, 0, 0, 0, 3, -30.0818, 10.6827, -23.01)
+
+[node name="Plano" parent="CastleRuins/RootNode" index="0"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="wall_1" parent="CastleRuins/RootNode" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="walls" parent="CastleRuins/RootNode" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="Tower" parent="CastleRuins/RootNode" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="structure_1" parent="CastleRuins/RootNode" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="structure_3" parent="CastleRuins/RootNode" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="structure_2" parent="CastleRuins/RootNode" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="windows" parent="CastleRuins/RootNode" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="Sol" parent="CastleRuins/RootNode" index="8"]
+visible = false
+
+[node name="wall_3" parent="CastleRuins/RootNode" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="bricks" parent="CastleRuins/RootNode" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_2" parent="CastleRuins/RootNode" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="base" parent="CastleRuins/RootNode" index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="tree_0" parent="CastleRuins/RootNode" index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="Cámara" parent="CastleRuins/RootNode" index="14"]
+visible = false
+
+[node name="window_1" parent="CastleRuins/RootNode" index="15"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_3" parent="CastleRuins/RootNode" index="16"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="roof_1" parent="CastleRuins/RootNode" index="17"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_6" parent="CastleRuins/RootNode" index="18"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_2_001" parent="CastleRuins/RootNode" index="19"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_1" parent="CastleRuins/RootNode" index="20"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="stairs" parent="CastleRuins/RootNode" index="21"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_4" parent="CastleRuins/RootNode" index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="battlement_5" parent="CastleRuins/RootNode" index="23"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_1_001" parent="CastleRuins/RootNode" index="24"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_3" parent="CastleRuins/RootNode" index="25"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="stairs_2" parent="CastleRuins/RootNode" index="26"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="roof_2" parent="CastleRuins/RootNode" index="27"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_1" parent="CastleRuins/RootNode" index="28"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_2" parent="CastleRuins/RootNode" index="29"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_3" parent="CastleRuins/RootNode" index="30"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_4" parent="CastleRuins/RootNode" index="31"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_5" parent="CastleRuins/RootNode" index="32"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_6" parent="CastleRuins/RootNode" index="33"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_7" parent="CastleRuins/RootNode" index="34"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_8" parent="CastleRuins/RootNode" index="35"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_9" parent="CastleRuins/RootNode" index="36"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_002_10" parent="CastleRuins/RootNode" index="37"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="forest_11" parent="CastleRuins/RootNode" index="38"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_1" parent="CastleRuins/RootNode" index="39"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_2" parent="CastleRuins/RootNode" index="40"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_3" parent="CastleRuins/RootNode" index="41"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_4" parent="CastleRuins/RootNode" index="42"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_5" parent="CastleRuins/RootNode" index="43"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_5" parent="CastleRuins/RootNode" index="44"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_6" parent="CastleRuins/RootNode" index="45"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_7" parent="CastleRuins/RootNode" index="46"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_003_8" parent="CastleRuins/RootNode" index="47"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_1" parent="CastleRuins/RootNode" index="48"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_2" parent="CastleRuins/RootNode" index="49"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_3" parent="CastleRuins/RootNode" index="50"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_4" parent="CastleRuins/RootNode" index="51"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_5" parent="CastleRuins/RootNode" index="52"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_6" parent="CastleRuins/RootNode" index="53"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_7" parent="CastleRuins/RootNode" index="54"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_8" parent="CastleRuins/RootNode" index="55"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_9" parent="CastleRuins/RootNode" index="56"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_10" parent="CastleRuins/RootNode" index="57"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="debris_11" parent="CastleRuins/RootNode" index="58"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_1" parent="CastleRuins/RootNode" index="59"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_2" parent="CastleRuins/RootNode" index="60"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_3" parent="CastleRuins/RootNode" index="61"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_4" parent="CastleRuins/RootNode" index="62"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_5" parent="CastleRuins/RootNode" index="63"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_6" parent="CastleRuins/RootNode" index="64"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_7" parent="CastleRuins/RootNode" index="65"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_8" parent="CastleRuins/RootNode" index="66"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_9" parent="CastleRuins/RootNode" index="67"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_10" parent="CastleRuins/RootNode" index="68"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_11" parent="CastleRuins/RootNode" index="69"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_12" parent="CastleRuins/RootNode" index="70"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_13" parent="CastleRuins/RootNode" index="71"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_14" parent="CastleRuins/RootNode" index="72"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_15" parent="CastleRuins/RootNode" index="73"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_16" parent="CastleRuins/RootNode" index="74"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rocks_17" parent="CastleRuins/RootNode" index="75"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_1" parent="CastleRuins/RootNode" index="76"]
+transform = Transform3D(19.9547, -1.86056, 0.0601376, -0.412464, -2.07961, 5.47695, -1.82742, -19.8472, -0.579518, -2.3391, 0.392846, 6.82816)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_2" parent="CastleRuins/RootNode" index="77"]
+transform = Transform3D(19.946, 1.95119, 0.0601376, -0.0112627, -2.1201, 5.47695, 1.96339, -19.8342, -0.579519, -1.75525, 0.397579, 6.84424)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_3" parent="CastleRuins/RootNode" index="78"]
+transform = Transform3D(9.45078, -15.6111, 0.0601375, -1.54288, -0.964805, 5.47695, -13.6008, -10.7382, -0.579518, -1.9084, 0.34396, 6.32242)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_4" parent="CastleRuins/RootNode" index="79"]
+transform = Transform3D(17.3109, -10.0988, 0.0601376, -1.25066, -1.71195, 5.47695, -10.0234, -17.2274, -0.579518, -2.54228, 0.354369, 6.35993)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_5" parent="CastleRuins/RootNode" index="80"]
+transform = Transform3D(6.34795, -11.5687, 0.0349993, -1.17035, -0.612687, 3.18752, -10.4021, -6.99093, -0.337272, -2.92591, 0.422674, 6.94011)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_6" parent="CastleRuins/RootNode" index="81"]
+transform = Transform3D(-3.24552, -19.5295, 0.0601376, -1.48563, 0.673544, 5.47695, -14.3773, 4.33897, -0.579518, -2.02505, 0.453724, 7.34683)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_7" parent="CastleRuins/RootNode" index="82"]
+transform = Transform3D(4.12997, -18.377, 0.0601379, -1.74028, -0.296147, 5.47695, -16.0186, -4.70586, -0.579518, -2.54876, 0.461352, 7.36542)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_8" parent="CastleRuins/RootNode" index="83"]
+transform = Transform3D(10.6537, 1.29143, 0.0322024, 0.0202129, -1.1351, 2.93279, 1.29658, -10.5937, -0.310319, -1.27171, 0.418186, 7.46836)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_9" parent="CastleRuins/RootNode" index="84"]
+transform = Transform3D(9.90072, -4.48783, 0.0326185, -0.579758, -0.993114, 2.9707, -4.45181, -9.8515, -0.31433, -3.29346, 0.511345, 7.7453)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_10" parent="CastleRuins/RootNode" index="85"]
+transform = Transform3D(-1.38977, -22.5641, 0.0718969, -1.529, 0.469926, 6.54713, -14.5946, 2.09943, -0.692755, -1.68307, 0.438828, 7.87112)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_11" parent="CastleRuins/RootNode" index="86"]
+transform = Transform3D(19.5621, -4.33926, 0.120436, -0.274865, 0.783351, 5.50312, -4.35267, -19.5514, 0.19376, -2.35224, 0.44103, 8.02613)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_12" parent="CastleRuins/RootNode" index="87"]
+transform = Transform3D(4.16831, 19.6079, -0.225761, -1.77467, 1.14256, 5.9703, 19.595, -4.06756, 0.588739, -2.90006, 0.341048, 8.43138)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_13" parent="CastleRuins/RootNode" index="88"]
+transform = Transform3D(15.6759, -6.91993, -0.177209, 1.26664, 1.28029, 4.68622, -6.83351, -15.6368, 0.462114, -2.25931, 0.409962, 8.53362)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="rock_path_14" parent="CastleRuins/RootNode" index="89"]
+transform = Transform3D(12.5227, -5.54088, -0.16589, 1.01186, 1.02514, 4.38689, -5.45896, -12.5206, 0.432597, -2.84518, 0.388636, 7.89595)
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_1" parent="CastleRuins/RootNode" index="90"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_2" parent="CastleRuins/RootNode" index="91"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_002_2" parent="CastleRuins/RootNode" index="92"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_4" parent="CastleRuins/RootNode" index="93"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="moss_001_1" parent="CastleRuins/RootNode" index="94"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_6" parent="CastleRuins/RootNode" index="95"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="doors_7" parent="CastleRuins/RootNode" index="96"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_1" parent="CastleRuins/RootNode" index="97"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_2" parent="CastleRuins/RootNode" index="98"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_3" parent="CastleRuins/RootNode" index="99"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_4" parent="CastleRuins/RootNode" index="100"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_5" parent="CastleRuins/RootNode" index="101"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_6" parent="CastleRuins/RootNode" index="102"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_7" parent="CastleRuins/RootNode" index="103"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_8" parent="CastleRuins/RootNode" index="104"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_9" parent="CastleRuins/RootNode" index="105"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_10" parent="CastleRuins/RootNode" index="106"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_11" parent="CastleRuins/RootNode" index="107"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_12" parent="CastleRuins/RootNode" index="108"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_13" parent="CastleRuins/RootNode" index="109"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_14" parent="CastleRuins/RootNode" index="110"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_15" parent="CastleRuins/RootNode" index="111"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_16" parent="CastleRuins/RootNode" index="112"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="flowers_17" parent="CastleRuins/RootNode" index="113"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_1" parent="CastleRuins/RootNode" index="114"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_2" parent="CastleRuins/RootNode" index="115"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_3" parent="CastleRuins/RootNode" index="116"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_4" parent="CastleRuins/RootNode" index="117"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_5" parent="CastleRuins/RootNode" index="118"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_6" parent="CastleRuins/RootNode" index="119"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_7" parent="CastleRuins/RootNode" index="120"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="vases_8" parent="CastleRuins/RootNode" index="121"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_1" parent="CastleRuins/RootNode" index="122"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_2" parent="CastleRuins/RootNode" index="123"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_3" parent="CastleRuins/RootNode" index="124"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_4" parent="CastleRuins/RootNode" index="125"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_5" parent="CastleRuins/RootNode" index="126"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_6" parent="CastleRuins/RootNode" index="127"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_7" parent="CastleRuins/RootNode" index="128"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_8" parent="CastleRuins/RootNode" index="129"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_9" parent="CastleRuins/RootNode" index="130"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_10" parent="CastleRuins/RootNode" index="131"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_11" parent="CastleRuins/RootNode" index="132"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_12" parent="CastleRuins/RootNode" index="133"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_13" parent="CastleRuins/RootNode" index="134"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_14" parent="CastleRuins/RootNode" index="135"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_15" parent="CastleRuins/RootNode" index="136"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_16" parent="CastleRuins/RootNode" index="137"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_17" parent="CastleRuins/RootNode" index="138"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_18" parent="CastleRuins/RootNode" index="139"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_19" parent="CastleRuins/RootNode" index="140"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="woods_20" parent="CastleRuins/RootNode" index="141"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_1" parent="CastleRuins/RootNode" index="142"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_2" parent="CastleRuins/RootNode" index="143"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_3" parent="CastleRuins/RootNode" index="144"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_4" parent="CastleRuins/RootNode" index="145"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_5" parent="CastleRuins/RootNode" index="146"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_6" parent="CastleRuins/RootNode" index="147"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_7" parent="CastleRuins/RootNode" index="148"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_8" parent="CastleRuins/RootNode" index="149"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_9" parent="CastleRuins/RootNode" index="150"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_10" parent="CastleRuins/RootNode" index="151"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_11" parent="CastleRuins/RootNode" index="152"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_12" parent="CastleRuins/RootNode" index="153"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_13" parent="CastleRuins/RootNode" index="154"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_14" parent="CastleRuins/RootNode" index="155"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_15" parent="CastleRuins/RootNode" index="156"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_16" parent="CastleRuins/RootNode" index="157"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_17" parent="CastleRuins/RootNode" index="158"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_18" parent="CastleRuins/RootNode" index="159"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_19" parent="CastleRuins/RootNode" index="160"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_20" parent="CastleRuins/RootNode" index="161"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_21" parent="CastleRuins/RootNode" index="162"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_22" parent="CastleRuins/RootNode" index="163"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_23" parent="CastleRuins/RootNode" index="164"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_24" parent="CastleRuins/RootNode" index="165"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_25" parent="CastleRuins/RootNode" index="166"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="corner_bricks_26" parent="CastleRuins/RootNode" index="167"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_1" parent="CastleRuins/RootNode" index="168"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_2" parent="CastleRuins/RootNode" index="169"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_3" parent="CastleRuins/RootNode" index="170"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_4" parent="CastleRuins/RootNode" index="171"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_5" parent="CastleRuins/RootNode" index="172"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_6" parent="CastleRuins/RootNode" index="173"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_7" parent="CastleRuins/RootNode" index="174"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_8" parent="CastleRuins/RootNode" index="175"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_9" parent="CastleRuins/RootNode" index="176"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_10" parent="CastleRuins/RootNode" index="177"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_11" parent="CastleRuins/RootNode" index="178"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_12" parent="CastleRuins/RootNode" index="179"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_13" parent="CastleRuins/RootNode" index="180"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_14" parent="CastleRuins/RootNode" index="181"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_15" parent="CastleRuins/RootNode" index="182"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_16" parent="CastleRuins/RootNode" index="183"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_17" parent="CastleRuins/RootNode" index="184"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="grass_18" parent="CastleRuins/RootNode" index="185"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_1" parent="CastleRuins/RootNode" index="186"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_2" parent="CastleRuins/RootNode" index="187"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_3" parent="CastleRuins/RootNode" index="188"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_4" parent="CastleRuins/RootNode" index="189"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_5" parent="CastleRuins/RootNode" index="190"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
+[node name="pumpkins_6" parent="CastleRuins/RootNode" index="191"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
+
 [editable path="Mountains/Mounting_2"]
 [editable path="Mountains/Mounting_3"]
 [editable path="EA04_Env_Rocks_Gray_01c"]
+[editable path="CastleRuins"]

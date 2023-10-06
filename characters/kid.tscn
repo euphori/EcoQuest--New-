@@ -157,7 +157,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33226, 3.65073, 0.767242)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="DashCooldown" type="Timer" parent="."]
+
 [connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
 [connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
 [connection signal="body_entered" from="PlatformDetection" to="." method="_on_platform_detection_body_entered"]
 [connection signal="body_exited" from="PlatformDetection" to="." method="_on_platform_detection_body_exited"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

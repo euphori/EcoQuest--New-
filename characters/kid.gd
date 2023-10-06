@@ -43,7 +43,9 @@ func _process(delta):
 		bullet.global_position = muzzle.global_position
 		print(pressed_time)
 		
-		
+	
+	
+
 
 func _on_platform_detection_body_entered(body):
 	is_on_platform = true
@@ -65,3 +67,14 @@ func _on_collision_shape_3d_child_exiting_tree(body):
 	if body.has_method("npc"):
 		npc_in_range = false
 
+
+
+
+func _on_dash_timer_timeout():
+	dashing = false
+	velocity.x = move_toward(velocity.x, 0 , SPEED)
+	
+
+
+func _on_dash_cooldown_timeout():
+	can_dash = true

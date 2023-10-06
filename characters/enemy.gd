@@ -6,8 +6,10 @@ const JUMP_VELOCITY = 8
 const ACCELERATION = 150
 const MAX_SPEED = 7
 const AGGRO_RANGE = 15
+const KNOCKBACK_FORCE = 40
 
 @export var path_to_player:NodePath
+@export var health = 5
 
 @onready var player = get_node(path_to_player)
 @onready var jump_timer = $JumpCooldown
@@ -17,6 +19,8 @@ var state = CHASE
 var jumping = false
 var jump_cd = 3
 var can_jump = true
+var staggering = false
+var can_move = true
 
 
 enum{
@@ -24,7 +28,8 @@ enum{
 	WANDER,
 	CHASE,
 	ATTACK,
-	JUMP
+	JUMP,
+	STAGGER
 }
 
 
@@ -35,7 +40,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	$Stats.text = str("Velocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
+	$Stats.text = str("Health: ", health,"\nVelocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -50,7 +55,7 @@ func _physics_process(delta):
 			$Label3D.text = str("State: CHASE")
 			var destination = self.global_position.direction_to(player.global_position)
 			var distance = self.global_position - player.global_position
-			if abs(distance.x) > 4 and is_on_floor():
+			if abs(distance.x) > 4 and is_on_floor() and can_move:
 				velocity.x += destination.x * ACCELERATION * delta 
 				velocity = velocity.limit_length(MAX_SPEED)
 				
@@ -63,7 +68,7 @@ func _physics_process(delta):
 				else:
 					$AnimationPlayer.play("idle")
 					velocity.x = move_toward(velocity.x, 0, SPEED)
-			elif abs(distance.x) > 2 and is_on_floor():
+			elif abs(distance.x) > 2 and is_on_floor() and !staggering:
 				state = ATTACK
 			elif abs(distance.x) >= AGGRO_RANGE:
 				state = IDLE
@@ -77,6 +82,10 @@ func _physics_process(delta):
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()
+		STAGGER:
+			("State: STAGGER")
+			staggering = true	
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 		
 	
@@ -91,7 +100,7 @@ func jump():
 	velocity.x
 	if is_on_floor():
 		jumping = false
-	if not jumping and can_jump:
+	if not jumping and can_jump and !staggering:
 		var direction = self.global_position.direction_to(player.global_position)
 		velocity.y += JUMP_VELOCITY
 		jumping = true
@@ -105,10 +114,30 @@ func jump():
 		state = CHASE
 		print(velocity.x)
 		can_jump = false
+		
+
+func hurt():
+	health -= 1
+	knockback()
+	if health <= 0:
+		queue_free()
+		
+		
+func knockback():
+	var direction = player.global_position.direction_to(self.global_position)
+	velocity.x = direction.x * KNOCKBACK_FORCE
+	$StaggerTimer.start(1)
+	$AnimationPlayer.stop()
+	state = STAGGER
+	
+
+	
+	
+	
 
 func _on_player_detection_body_entered(body):
 	
-	if body == player:
+	if body == player and !staggering:
 		state = CHASE
  
 
@@ -120,3 +149,14 @@ func _on_player_detection_body_exited(body):
 
 func _on_jump_cooldown_timeout():
 	can_jump = true
+
+
+func _on_hurtbox_area_entered(area):
+	hurt()
+	
+
+
+func _on_stagger_timer_timeout():
+	can_move = true
+	staggering = false
+	state = CHASE

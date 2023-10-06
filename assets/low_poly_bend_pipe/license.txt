@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Bend Pipe
+* source:	https://sketchfab.com/3d-models/low-poly-bend-pipe-09684bff3d414a8eaa09d428313f105d
+* author:	subtixx (https://sketchfab.com/subtixx)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Bend Pipe" (https://sketchfab.com/3d-models/low-poly-bend-pipe-09684bff3d414a8eaa09d428313f105d) by subtixx (https://sketchfab.com/subtixx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
