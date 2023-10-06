@@ -74,6 +74,7 @@ func _physics_process(delta):
 			$AnimationPlayer.play("attack")
 			await $AnimationPlayer.animation_finished
 			state = CHASE
+			
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()

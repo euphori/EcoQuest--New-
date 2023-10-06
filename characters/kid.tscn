@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=14 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
+[ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -156,6 +157,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56147, 3.65073, 0.416451)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33226, 3.65073, 0.767242)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="attack" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_cdj05")
+volume_db = -7.207
+pitch_scale = 2.23
 
 [connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
 [connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
