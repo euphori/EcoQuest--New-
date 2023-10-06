@@ -8,6 +8,8 @@ const MAX_SPEED = 7
 const AGGRO_RANGE = 15
 const KNOCKBACK_FORCE = 40
 
+
+
 @export var path_to_player:NodePath
 @export var health = 5
 
@@ -48,6 +50,10 @@ func _physics_process(delta):
 		jumping = false
 	match state:
 		IDLE:
+			if !GlobalbgMusic.playing:
+				GlobalbgMusic.play()			
+			GlobalbgMusicAttack.stop()
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			$AnimationPlayer.play("idle")
 			$Label3D.text = str("State: IDLE ")
@@ -79,6 +85,7 @@ func _physics_process(delta):
 			$AnimationPlayer.play("attack")
 			await $AnimationPlayer.animation_finished
 			state = CHASE
+			
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()
@@ -136,8 +143,10 @@ func knockback():
 	
 
 func _on_player_detection_body_entered(body):
-	
-	if body == player and !staggering:
+	GlobalbgMusic.stop()
+	if !GlobalbgMusicAttack.playing:
+		GlobalbgMusicAttack.play()
+	if body == player:
 		state = CHASE
  
 

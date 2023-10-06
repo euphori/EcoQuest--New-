@@ -1,18 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=15 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-[ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_qq673"]
-[ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="5_af2or"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="AudioStream" path="res://assets/sounds/kid_walking.mp3" id="3_qq673"]
-[ext_resource type="AudioStream" path="res://assets/sounds/attack.mp3" id="5_af2or"]
->>>>>>> Stashed changes
+[ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
+[ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -112,24 +104,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
-<<<<<<< Updated upstream
-=======
 tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("kid")
+tracks/1/path = NodePath("kid_sound")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_qq673")
+"stream": ExtResource("3_r71ce")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(-0.2)
 }
 tracks/1/use_blend = true
->>>>>>> Stashed changes
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fijb5"]
 _data = {
@@ -185,18 +174,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33226, 3.65073, 0.767242)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="attack" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_cdj05")
+volume_db = -7.207
+pitch_scale = 2.23
+
+[node name="kid_sound" type="AudioStreamPlayer3D" parent="."]
 [node name="DashTimer" type="Timer" parent="."]
 
 [node name="DashCooldown" type="Timer" parent="."]
-
-[node name="kid" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_qq673")
-volume_db = 3.0
-
-[node name="attack" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_af2or")
-volume_db = -7.2
-pitch_scale = 2.23
 
 [connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
 [connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]

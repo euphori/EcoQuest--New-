@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7wmwixcvyr41"]
+[gd_scene load_steps=13 format=3 uid="uid://c7wmwixcvyr41"]
 
 [ext_resource type="Script" path="res://characters/enemy.gd" id="1_514o1"]
 [ext_resource type="Texture2D" uid="uid://bwiqypqnkj4p4" path="res://assets/player/rb_sheet.png" id="1_w38js"]
 [ext_resource type="PackedScene" uid="uid://d4jukjjk8qioe" path="res://areas/player_detection.tscn" id="3_6nwpr"]
+[ext_resource type="AudioStream" uid="uid://b40het4myf5fm" path="res://assets/sounds/sword.mp3" id="4_korqh"]
+[ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="4_x8mpf"]
+[ext_resource type="PackedScene" uid="uid://dfgedpauj8brb" path="res://assets/sounds/globalbg_music_attack.tscn" id="6_2rqdt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyxu5"]
 
@@ -36,6 +39,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlobalbgMusicAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_korqh")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_l0pn2"]
 resource_name = "idle"
@@ -70,6 +88,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [2, 3, 4, 5, 6, 7, 8, 9]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlobalbgMusicAttack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_x8mpf")
+}],
+"times": PackedFloat32Array(-0.1)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fc56q"]
 _data = {
@@ -136,6 +169,7 @@ debug_shape_thickness = 5
 wait_time = 0.5
 one_shot = true
 
+[node name="GlobalbgMusicAttack" parent="." instance=ExtResource("6_2rqdt")]
 [node name="Hurtbox" type="Area3D" parent="."]
 collision_layer = 128
 collision_mask = 256

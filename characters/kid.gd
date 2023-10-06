@@ -4,6 +4,7 @@ const bolt = preload("res://instanced/bullet.tscn")
 @onready var left_muzzle = $LeftMarker
 @onready var right_muzzle = $RightMarker
 @onready var sprite = $Sprite3D
+@onready var attack = $attack
 
 var is_flipped = false
 var pressed_time = 0.0
@@ -12,6 +13,7 @@ var bolt_size
 func _process(delta):
 	if Input.is_action_pressed("attack"):
 		pressed_time += delta 
+		attack.play()
 		
 	if Input.is_action_just_released("attack"):
 		
