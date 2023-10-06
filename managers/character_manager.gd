@@ -17,7 +17,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	print(StaticData.item_data)
 	if player_num == 1:
 		robot.queue_free()
 	
@@ -66,3 +66,5 @@ func _on_y_slider_drag_ended(value_changed):
 	if value_changed:
 		old_camera_offset["y"] = new_camera_offset["y"]
 		y_label.text = str(old_camera_offset["y"])
+
+

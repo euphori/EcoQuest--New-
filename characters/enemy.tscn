@@ -112,6 +112,8 @@ _data = {
 "run": SubResource("Animation_6b0fi")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oxyig"]
+
 [node name="Enemy" type="CharacterBody3D"]
 collision_mask = 9
 axis_lock_linear_y = true
@@ -141,13 +143,13 @@ libraries = {
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0.323411, 2.22057, 0)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706295, 6.64388, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706295, 7.13056, 0)
 text = "STATE"
 font_size = 72
 outline_size = 3
 
 [node name="Stats" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706295, 6.15756, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706295, 6.41381, 0)
 text = "STATS"
 outline_size = 3
 
@@ -168,9 +170,22 @@ wait_time = 0.5
 one_shot = true
 
 [node name="GlobalbgMusicAttack" parent="." instance=ExtResource("6_2rqdt")]
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.564827, 2.46607, 0)
+shape = SubResource("CapsuleShape3D_oxyig")
+
+[node name="StaggerTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="JumpCooldown" to="." method="_on_jump_cooldown_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="StaggerTimer" to="." method="_on_stagger_timer_timeout"]
 
 [editable path="PlayerDetection"]

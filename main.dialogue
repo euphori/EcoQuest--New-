@@ -15,6 +15,8 @@ if global.questStart == true and global.active_quest["q1"] == false and global.c
 	Quest Master: Would you be willing to use easily-soluble bags instead of plastic?
 	- Definitely, it is very important!
 		set global.dialogue_points += 5
+		set global.decision["q1"] = 5
+		do global.save_data("quest_1" , 5)
 	- Sure, I will try.
 		set global.dialogue_points += 4
 	- Maybe.
