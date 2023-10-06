@@ -80,9 +80,15 @@ func _physics_process(delta):
 				state = IDLE
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 		ATTACK:
+			var dir = self.global_position.direction_to(player.global_position)
 			$Label3D.text = str("State: ATTACK")
+			if dir.x > 0:
+				$AnimationPlayer.play("attack_right")
+			else:
+				$AnimationPlayer.play("attack_left")
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			$AnimationPlayer.play("attack")
+			
 			await $AnimationPlayer.animation_finished
 			state = CHASE
 			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=13 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://dwu7lr44bcav5" path="res://characters/robot.tscn" id="1_6voqy"]
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cd5pn0q81bwnf" path="res://UI/console.tscn" id="2_1vulv"]
 [ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
 [ext_resource type="PackedScene" uid="uid://c7gpy0skdatgh" path="res://UI/widgets.tscn" id="6_78c4s"]
+[ext_resource type="Texture2D" uid="uid://dg43hmtvbf0r2" path="res://assets/ui/player_stats/Vector 51.png" id="7_yc817"]
+[ext_resource type="Texture2D" uid="uid://da7oatdgvr40a" path="res://assets/ui/player_stats/Vector 53.png" id="8_savtu"]
+[ext_resource type="Texture2D" uid="uid://bluj3kkt6jcsa" path="res://assets/ui/player_stats/🦆 icon _Heart_.png" id="9_txvuu"]
+[ext_resource type="Texture2D" uid="uid://drt5y8aped5qc" path="res://assets/ui/player_stats/energy.png" id="10_8e7ev"]
+[ext_resource type="Texture2D" uid="uid://c3bafoxax2bvh" path="res://assets/ui/player_stats/Vector 52.png" id="11_nt57f"]
+[ext_resource type="Texture2D" uid="uid://bqkgd5c2vxohk" path="res://assets/ui/player_stats/🦆 icon _Lightning Bolt_.png" id="12_4rm31"]
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -51,5 +57,53 @@ path_to_other = NodePath("../Kid")
 visible = false
 
 [node name="Widgets" parent="." instance=ExtResource("6_78c4s")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Health" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 44.0
+offset_right = 99.0
+offset_bottom = 84.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Health"]
+layout_mode = 0
+offset_right = 291.0
+offset_bottom = 40.0
+value = 100.0
+texture_under = ExtResource("7_yc817")
+texture_progress = ExtResource("8_savtu")
+texture_progress_offset = Vector2(10, 10)
+
+[node name="🦆IconHeart" type="Sprite2D" parent="UI/Health"]
+position = Vector2(16, 17)
+texture = ExtResource("9_txvuu")
+
+[node name="Energy" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 67.0
+offset_top = 94.0
+offset_right = 107.0
+offset_bottom = 134.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Energy"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -2.0
+offset_right = 319.0
+offset_bottom = 38.0
+max_value = 25.0
+value = 25.0
+texture_under = ExtResource("10_8e7ev")
+texture_progress = ExtResource("11_nt57f")
+texture_progress_offset = Vector2(10, 10)
+
+[node name="🦆IconLightningBolt" type="Sprite2D" parent="UI/Energy"]
+position = Vector2(33, 24)
+texture = ExtResource("12_4rm31")
 
 [editable path="Console"]

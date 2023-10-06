@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-@onready var balloon: ColorRect = $Balloon
+@onready var balloon: TextureRect = $Balloon
 @onready var margin: MarginContainer = $Balloon/Margin
 @onready var character_label: RichTextLabel = $Balloon/Margin/VBox/CharacterLabel
 @onready var dialogue_label: DialogueLabel = $Balloon/Margin/VBox/DialogueLabel

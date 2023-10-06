@@ -6,6 +6,9 @@ extends CharacterBody3D
 @export var ACCELERATION = 150
 @export var MAX_SPEED = 5.0
 @export var DASH_SPEED = 50
+@export var HEALTH = 100
+@export var ENERGY = 25
+@export var MAX_HEALTH = 100
 
 @export_category("Cooldowns")
 @export var dash_cooldown = 1

@@ -9,13 +9,17 @@ const bolt = preload("res://instanced/bullet.tscn")
 var is_flipped = false
 var pressed_time = 0.0
 var bolt_size
+var recharge_time = 1.5
+var can_shoot = true
+var regen_time = 10
 
 func _process(delta):
 	if Input.is_action_pressed("attack"):
 		pressed_time += delta 
 		attack.play()
+		get_parent().energy_ui.value = ENERGY
 		
-	if Input.is_action_just_released("attack"):
+	if Input.is_action_just_released("attack") and ENERGY != 0 and can_shoot:
 		
 		var muzzle
 		if sprite.flip_h == true:
@@ -34,16 +38,23 @@ func _process(delta):
 		
 		bolt_size = pressed_time
 		
-		if pressed_time > 1.5:
+		if pressed_time > 1.5 and ENERGY == 25:
 			bolt_size = 1.5
+			ENERGY -= 25
+			
+			get_parent().energy_ui.value = ENERGY
+			can_shoot = false
 		elif pressed_time < 0.5:
 			bolt_size = 0.5
+			ENERGY -= 10
+		else:
+			ENERGY -= 10
+		$RechargeTimer.start(recharge_time)
+		get_parent().energy_ui.value = ENERGY
 		bullet.scale = Vector3(bolt_size,bolt_size,bolt_size)
-		print(bullet.scale)
-		print(pressed_time)
 		pressed_time = 0
 		bullet.global_position = muzzle.global_position
-		print(pressed_time)
+
 		
 	
 	
@@ -80,3 +91,26 @@ func _on_dash_timer_timeout():
 
 func _on_dash_cooldown_timeout():
 	can_dash = true
+
+
+func _on_hurtbox_area_entered(area):
+	print(get_parent().get_name())
+	if area.get_parent().get_name() == "Enemy":
+		HEALTH -= 20
+		get_parent().health_ui.value = HEALTH
+		$HealthRegen.start(regen_time)
+
+
+func _on_recharge_timer_timeout():
+	get_parent().energy_ui.value = ENERGY
+	ENERGY = 25
+	can_shoot = true
+
+
+func _on_health_regen_timeout():
+	HEALTH += 5
+	if HEALTH > MAX_HEALTH:
+		HEALTH = MAX_HEALTH
+	get_parent().health_ui.value = HEALTH
+	if HEALTH < MAX_HEALTH:
+		$HealthRegen.start(regen_time)

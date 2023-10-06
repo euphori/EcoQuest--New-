@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=16 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
 [ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
+[ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="6_0dp76"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -180,9 +181,19 @@ volume_db = -7.207
 pitch_scale = 2.23
 
 [node name="kid_sound" type="AudioStreamPlayer3D" parent="."]
+
 [node name="DashTimer" type="Timer" parent="."]
 
 [node name="DashCooldown" type="Timer" parent="."]
+
+[node name="Hurtbox" parent="." instance=ExtResource("6_0dp76")]
+
+[node name="CollisionShape3D" parent="Hurtbox" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.257286, 2.46607, 0)
+
+[node name="RechargeTimer" type="Timer" parent="."]
+
+[node name="HealthRegen" type="Timer" parent="."]
 
 [connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
 [connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
@@ -190,3 +201,8 @@ pitch_scale = 2.23
 [connection signal="body_exited" from="PlatformDetection" to="." method="_on_platform_detection_body_exited"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="RechargeTimer" to="." method="_on_recharge_timer_timeout"]
+[connection signal="timeout" from="HealthRegen" to="." method="_on_health_regen_timeout"]
+
+[editable path="Hurtbox"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dywi4foybdfp8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oxyig"]
+
+[node name="Hurtbox" type="Area3D"]
+collision_layer = 128
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.564827, 2.46607, 0)
+shape = SubResource("CapsuleShape3D_oxyig")

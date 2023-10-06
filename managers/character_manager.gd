@@ -5,6 +5,7 @@ extends Node3D
 @export var old_camera_offset = {"x":4,"y":3,"z":3}
 @export var player_num = 1
 
+
 @onready var camera = $Camera3D
 @onready var robot = $Robot
 @onready var kid = $Kid
@@ -14,6 +15,8 @@ extends Node3D
 @onready var z_label = $Widgets/CameraController/ZSlider/Label
 @onready var x_label = $Widgets/CameraController/XSlider/Label2
 @onready var y_label = $Widgets/CameraController/YSlider/Label3
+@onready var health_ui = $UI/Health/TextureProgressBar
+@onready var energy_ui = $UI/Energy/TextureProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
