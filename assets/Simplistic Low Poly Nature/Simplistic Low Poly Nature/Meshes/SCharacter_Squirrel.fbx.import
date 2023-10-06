@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://eski5k6sr1pl"
+path="res://.godot/imported/SCharacter_Squirrel.fbx-44df6cd62a32db2e6b68e67bc5173e4c.scn"
+
+[deps]
+
+source_file="res://assets/Simplistic Low Poly Nature/Simplistic Low Poly Nature/Meshes/SCharacter_Squirrel.fbx"
+dest_files=["res://.godot/imported/SCharacter_Squirrel.fbx-44df6cd62a32db2e6b68e67bc5173e4c.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1
