@@ -4,7 +4,7 @@ extends Node3D
 
 @export var text_label = ""
 
-@export_enum ("npc","object","movable","pickable") var type: String
+@export_enum ("npc","object","movable","pickable","plant") var type: String
 
 
 
@@ -14,6 +14,7 @@ signal talk
 signal item_added
 signal move
 signal stop
+signal grow
 
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:
@@ -34,6 +35,8 @@ func _input(event):
 			global.items[parent.item_name] += 1
 			emit_signal("item_added")
 			parent.queue_free()
+		elif type == "plant":
+			emit_signal("grow")
 
 func _ready():
 	print(type)
@@ -43,9 +46,12 @@ func _ready():
 
 
 func _on_player_detection_body_entered(_body):
-	visible = true
+	
 	player_near = true
-
+	if type == "plant" and parent.start_as_seed:
+		visible = true
+	elif type != "plant":
+		visible = true
 func _on_player_detection_body_exited(_body):
 	visible = false
 	player_near = false

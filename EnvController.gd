@@ -28,7 +28,7 @@ func _process(delta):
 func update_trees():
 	if tree_manager != null:
 		for i in tree_manager.get_child_count():
-			if tree_manager.get_child(i) is StaticBody3D:
+			if tree_manager.get_child(i) is StaticBody3D and !tree_manager.get_child(i).start_as_seed:
 				var rand = randi_range(0,val + 1)
 				if rand < 10 and val < 70 and  val < 98:
 					tree_manager.get_child(i).curr_state = "bald"

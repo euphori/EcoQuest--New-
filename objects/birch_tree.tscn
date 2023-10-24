@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckmcxdf7isn2s"]
+[gd_scene load_steps=20 format=3 uid="uid://ckmcxdf7isn2s"]
 
 [ext_resource type="ArrayMesh" uid="uid://bdynccxtut12" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_1.obj" id="1_wm5yf"]
+[ext_resource type="Script" path="res://objects/tree.gd" id="1_x0dmw"]
 [ext_resource type="ArrayMesh" uid="uid://da6fuouylavk7" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_2.obj" id="2_b3c5y"]
 [ext_resource type="ArrayMesh" uid="uid://c10os3doja1wo" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_3.obj" id="3_c3nkc"]
 [ext_resource type="ArrayMesh" uid="uid://va6jwsjwosy1" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_4.obj" id="4_1m5cb"]
@@ -15,15 +16,17 @@
 [ext_resource type="ArrayMesh" uid="uid://bxs4j4ydl0j6" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_3.obj" id="13_oikjf"]
 [ext_resource type="ArrayMesh" uid="uid://cheofakebai2q" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_4.obj" id="14_5vmuh"]
 [ext_resource type="ArrayMesh" uid="uid://b372h6ehrulvf" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_5.obj" id="15_82alu"]
+[ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="17_h8ekf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aicmp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o3u0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n05fr"]
 resource_name = "Wood"
 albedo_color = Color(0.122341, 0.056288, 0.047609, 1)
 metallic = 0.5
 
 [node name="BirchTree" type="StaticBody3D"]
+script = ExtResource("1_x0dmw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_aicmp")
@@ -35,35 +38,35 @@ disabled = true
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_wm5yf")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="1" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("2_b3c5y")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="2" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("3_c3nkc")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="3" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("4_1m5cb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="4" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("5_vxo2n")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="5" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -88,65 +91,79 @@ transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("6_5afsj")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="1" type="MeshInstance3D" parent="Trim"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("7_1w5jp")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="2" type="MeshInstance3D" parent="Trim"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-visible = false
 mesh = ExtResource("8_5klf7")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="3" type="MeshInstance3D" parent="Trim"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("9_cddy1")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="4" type="MeshInstance3D" parent="Trim"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = ExtResource("10_ulgow")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="Full" type="Node3D" parent="."]
 visible = false
 
 [node name="0" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 mesh = ExtResource("11_b4v7r")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="1" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 mesh = ExtResource("12_nhry5")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="2" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("13_oikjf")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="3" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 mesh = ExtResource("14_5vmuh")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="4" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 mesh = ExtResource("15_82alu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="GrowthTimer" type="Timer" parent="."]
+
+[node name="InteractUI" parent="." instance=ExtResource("17_h8ekf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.83373, 1.49544)
+visible = false
+text_label = "Plant"
+type = "plant"
+
+[connection signal="timeout" from="GrowthTimer" to="." method="_on_growth_timer_timeout"]
+[connection signal="grow" from="InteractUI" to="." method="_on_interact_ui_grow"]

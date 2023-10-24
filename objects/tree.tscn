@@ -71,4 +71,8 @@ visible = false
 shape = SubResource("ConvexPolygonShape3D_qla5i")
 disabled = true
 
+[node name="GrowthTimer" type="Timer" parent="PineTree"]
+
 [node name="BirchTree" parent="." instance=ExtResource("9_tnit5")]
+
+[editable path="BirchTree"]
