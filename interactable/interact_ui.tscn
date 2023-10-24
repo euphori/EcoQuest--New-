@@ -14,8 +14,6 @@ text = "Hello"
 font_size = 100
 
 [node name="PlayerDetection" parent="." instance=ExtResource("2_88e03")]
-collision_layer = 16
-collision_mask = 2
 
 [node name="CollisionShape3D" parent="PlayerDetection" index="0"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -1.49656, 0)

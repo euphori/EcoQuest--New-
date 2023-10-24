@@ -37,7 +37,7 @@ axis_lock_linear_z = true
 path_to_other = NodePath("../Robot")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996596, 0.082443, 0, -0.082443, 0.996596, 1.78076, 6.78169, 10.4206)
+transform = Transform3D(1, 0, 0, 0, 0.989016, 0.147809, 0, -0.147809, 0.989016, 1.781, 6.782, 10.391)
 top_level = true
 current = true
 

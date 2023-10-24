@@ -16,7 +16,7 @@ var regen_time = 10
 func _process(delta):
 	if Input.is_action_pressed("attack"):
 		pressed_time += delta 
-		attack.play()
+		
 		get_parent().energy_ui.value = ENERGY
 		
 	if Input.is_action_just_released("attack") and ENERGY != 0 and can_shoot:
@@ -41,14 +41,19 @@ func _process(delta):
 		if pressed_time > 1.5 and ENERGY == 25:
 			bolt_size = 1.5
 			ENERGY -= 25
-			
+			$GunCooldown.start(2)
 			get_parent().energy_ui.value = ENERGY
 			can_shoot = false
+			
 		elif pressed_time < 0.5:
 			bolt_size = 0.5
 			ENERGY -= 10
+			$GunCooldown.start(1)
 		else:
 			ENERGY -= 10
+			$GunCooldown.start(1)
+		attack.play()
+		can_shoot = false
 		$RechargeTimer.start(recharge_time)
 		get_parent().energy_ui.value = ENERGY
 		bullet.scale = Vector3(bolt_size,bolt_size,bolt_size)
@@ -114,3 +119,7 @@ func _on_health_regen_timeout():
 	get_parent().health_ui.value = HEALTH
 	if HEALTH < MAX_HEALTH:
 		$HealthRegen.start(regen_time)
+
+
+func _on_gun_cooldown_timeout():
+	can_shoot = true

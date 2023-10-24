@@ -23,7 +23,7 @@ var jump_cd = 3
 var can_jump = true
 var staggering = false
 var can_move = true
-
+var attacking = false
 
 enum{
 	IDLE,
@@ -45,6 +45,7 @@ func _physics_process(delta):
 	$Stats.text = str("Health: ", health,"\nVelocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
 	
 	if not is_on_floor():
+
 		velocity.y -= gravity * delta
 	else:
 		jumping = false
@@ -58,23 +59,30 @@ func _physics_process(delta):
 			$AnimationPlayer.play("idle")
 			$Label3D.text = str("State: IDLE ")
 		CHASE:
+			
 			$Label3D.text = str("State: CHASE")
 			var destination = self.global_position.direction_to(player.global_position)
 			var distance = self.global_position - player.global_position
+			
+			if  abs(distance.z) > 0 and is_on_floor() and can_move:
+				velocity.z += destination.z * 5 * delta
+				
 			if abs(distance.x) > 4 and is_on_floor() and can_move:
 				velocity.x += destination.x * ACCELERATION * delta 
+				
 				velocity = velocity.limit_length(MAX_SPEED)
 				
 				if velocity.x < 0 and $LeftRay.is_colliding():
 					state = JUMP
 				elif velocity.x > 0 and $RightRay.is_colliding():
 					state = JUMP
-				if abs(velocity.x) != 0:
+				if velocity != Vector3.ZERO:
 					$AnimationPlayer.play("run")
+					attacking = false
 				else:
 					$AnimationPlayer.play("idle")
 					velocity.x = move_toward(velocity.x, 0, SPEED)
-			elif abs(distance.x) > 2 and is_on_floor() and !staggering:
+			elif abs(distance.x) > 2 and is_on_floor() and !staggering and abs(distance.z) < 0.5:
 				state = ATTACK
 			elif abs(distance.x) >= AGGRO_RANGE:
 				state = IDLE
@@ -82,15 +90,18 @@ func _physics_process(delta):
 		ATTACK:
 			var dir = self.global_position.direction_to(player.global_position)
 			$Label3D.text = str("State: ATTACK")
-			if dir.x > 0:
+			if dir.x > 0 and !attacking:
 				$AnimationPlayer.play("attack_right")
-			else:
+				attacking = true
+			elif dir.x < 0 and !attacking:
 				$AnimationPlayer.play("attack_left")
-			
+				attacking = true
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 			await $AnimationPlayer.animation_finished
 			state = CHASE
+			attacking = false
+
 			
 		JUMP:
 			$Label3D.text = str("State: JUMP")

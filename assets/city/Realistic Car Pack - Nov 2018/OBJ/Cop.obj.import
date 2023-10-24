@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://diec36rijocwj"
+path="res://.godot/imported/Cop.obj-c44cd31fff3fae3f207926c2753e130d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cop.obj-c44cd31fff3fae3f207926c2753e130d.mesh"]
+
+source_file="res://assets/city/Realistic Car Pack - Nov 2018/OBJ/Cop.obj"
+dest_files=["res://.godot/imported/Cop.obj-c44cd31fff3fae3f207926c2753e130d.mesh", "res://.godot/imported/Cop.obj-c44cd31fff3fae3f207926c2753e130d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

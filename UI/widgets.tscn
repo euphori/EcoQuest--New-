@@ -94,11 +94,11 @@ text = "Camera Y-Axis"
 [node name="FPS" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 30.0
+offset_left = 52.0
 offset_top = 1.0
-offset_right = 250.0
+offset_right = 272.0
 offset_bottom = 71.0
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 24
 text = "fps"
 
 [node name="Stats" type="Control" parent="."]

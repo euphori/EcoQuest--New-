@@ -74,7 +74,7 @@ func _physics_process(delta):
 			can_move = false
 		
 	if pushing:
-		print("X")
+		print("PUSHING")
 		busy = true
 		$AnimationPlayer.play("pushing")
 	else:
@@ -112,29 +112,7 @@ func _physics_process(delta):
 		if !jumping and !busy:
 			$AnimationPlayer.play("idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if !active:
-		var destination = self.global_position.direction_to(other_player.global_position)
-		var distance = self.global_position - other_player.global_position
-		if abs(distance.x) > 4 and is_on_floor():
-			velocity.x += destination.x * ACCELERATION * delta 
-			velocity = velocity.limit_length(MAX_SPEED)
-			if abs(velocity.x) != 0:
-				$AnimationPlayer.play("run")
-			else:
-				$AnimationPlayer.play("idle")
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-		else:
-			$AnimationPlayer.play("idle")
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-		if velocity.x < 0:
-			$Sprite3D.flip_h = true
-			$HitDetection.scale.x = -$HitDetection.scale.x
-		elif velocity.x > 0:
-			$Sprite3D.flip_h = false
-			$HitDetection.scale.x = -$HitDetection.scale.x
-		
+	
 	if Input.is_action_just_pressed("dash") and can_dash:
 		
 		if velocity.x != 0:
@@ -148,7 +126,6 @@ func _physics_process(delta):
 		dashing = true
 		$DashTimer.start(0.1)
 		$DashCooldown.start(dash_cooldown)
-		print("DASH")
 		#velocity.x = direction.x * DASH_SPEED
 
 

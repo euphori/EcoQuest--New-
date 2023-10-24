@@ -10,6 +10,7 @@ extends Control
 @onready var kid = get_node(path_to_kid)
 @onready var robot = get_node(path_to_robot)
 @onready var widget = get_parent().get_node("Widgets")
+@onready var env_controller = get_parent().get_parent().get_node("EnvController/CanvasLayer")
 
 var commands = {
 	"speed":"speed",
@@ -20,7 +21,8 @@ var commands = {
 	"act" : "act",
 	"help" : "help",
 	"clear" : "clear",
-	"collision" : "collision"
+	"collision" : "collision",
+	"env" : "env"
 	}
 	
 var is_console_visible = false
@@ -81,7 +83,8 @@ func apply_command(comm,value):
 		history.clear()
 	elif comm == commands["collision"]:
 		get_tree().set_debug_collision_hint(true)
-		
+	elif comm == commands["env"]:
+		env_controller.visible =  !env_controller.visible
 		
 
 func _on_line_edit_text_submitted(new_text):

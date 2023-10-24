@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsmipka0huvsg"]
+
+[ext_resource type="Script" path="res://EnvController.gd" id="1_hkcj8"]
+
+[node name="EnvController" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hkcj8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 450.0
+offset_top = 632.667
+offset_right = 940.0
+offset_bottom = 662.667
+text = "percent"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+offset_left = 450.0
+offset_top = 632.667
+offset_right = 929.0
+offset_bottom = 718.667
+focus_mode = 0
+scrollable = false
+
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]

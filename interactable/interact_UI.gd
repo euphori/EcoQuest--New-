@@ -12,18 +12,21 @@ var player_near = false
 
 signal talk
 signal item_added
+signal move
+signal stop
 
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:
 		print("INTERACT")
 		if type == "movable":
 			if parent.can_move:
+				print("STOP")
+				emit_signal("stop")
 				parent.can_move = false
 				visible = true
-				print("CANT MOVE")
 			else:
+				emit_signal("move")
 				parent.can_move = true
-				print(parent.can_move)
 				visible = false
 		elif type == "npc":
 			emit_signal("talk")

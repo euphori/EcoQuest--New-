@@ -1,0 +1,152 @@
+[gd_scene load_steps=18 format=3 uid="uid://ckmcxdf7isn2s"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdynccxtut12" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_1.obj" id="1_wm5yf"]
+[ext_resource type="ArrayMesh" uid="uid://da6fuouylavk7" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_2.obj" id="2_b3c5y"]
+[ext_resource type="ArrayMesh" uid="uid://c10os3doja1wo" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_3.obj" id="3_c3nkc"]
+[ext_resource type="ArrayMesh" uid="uid://va6jwsjwosy1" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_4.obj" id="4_1m5cb"]
+[ext_resource type="ArrayMesh" uid="uid://bxl7ra2et4dls" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_5.obj" id="5_vxo2n"]
+[ext_resource type="ArrayMesh" uid="uid://beqahfqu3tjse" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Autumn_1.obj" id="6_5afsj"]
+[ext_resource type="ArrayMesh" uid="uid://dbyiq5jd86w25" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Autumn_2.obj" id="7_1w5jp"]
+[ext_resource type="ArrayMesh" uid="uid://nb283u2f2m6v" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Autumn_3.obj" id="8_5klf7"]
+[ext_resource type="ArrayMesh" uid="uid://dacuhxv0w5c6k" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Autumn_4.obj" id="9_cddy1"]
+[ext_resource type="ArrayMesh" uid="uid://cw8tw3kax2aky" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Autumn_5.obj" id="10_ulgow"]
+[ext_resource type="ArrayMesh" uid="uid://cy8y0grvd5nrq" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_1.obj" id="11_b4v7r"]
+[ext_resource type="ArrayMesh" uid="uid://bo4yc22odox23" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_2.obj" id="12_nhry5"]
+[ext_resource type="ArrayMesh" uid="uid://bxs4j4ydl0j6" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_3.obj" id="13_oikjf"]
+[ext_resource type="ArrayMesh" uid="uid://cheofakebai2q" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_4.obj" id="14_5vmuh"]
+[ext_resource type="ArrayMesh" uid="uid://b372h6ehrulvf" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_5.obj" id="15_82alu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aicmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o3u0"]
+resource_name = "Wood"
+albedo_color = Color(0.122341, 0.056288, 0.047609, 1)
+metallic = 0.5
+
+[node name="BirchTree" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_aicmp")
+disabled = true
+
+[node name="Bald" type="Node3D" parent="."]
+
+[node name="0" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_wm5yf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="1" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("2_b3c5y")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="2" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("3_c3nkc")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="3" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("4_1m5cb")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="4" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("5_vxo2n")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="5" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="6" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="7" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+skeleton = NodePath("../../..")
+
+[node name="Trim" type="Node3D" parent="."]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("6_5afsj")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="1" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("7_1w5jp")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="2" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("8_5klf7")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="3" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("9_cddy1")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="4" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("10_ulgow")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="Full" type="Node3D" parent="."]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("11_b4v7r")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="1" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("12_nhry5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="2" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("13_oikjf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="3" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("14_5vmuh")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="4" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("15_82alu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")

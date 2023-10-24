@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4w8y64t553ei"]
+
+[ext_resource type="Script" path="res://objects/tree.gd" id="1_eu8jc"]
+[ext_resource type="Script" path="res://objects/tree_manager.gd" id="1_r3sfm"]
+[ext_resource type="ArrayMesh" uid="uid://bua2g8d50dgel" path="res://assets/mesh/tree_bald.res" id="2_kyvqw"]
+[ext_resource type="ArrayMesh" uid="uid://o6vklurjhcuf" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_4.obj" id="2_ugsxm"]
+[ext_resource type="ArrayMesh" uid="uid://dj6uuk77bpuuw" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_3.obj" id="3_bctaf"]
+[ext_resource type="ArrayMesh" uid="uid://ct7v2dbqr1ryf" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_2.obj" id="4_bldb1"]
+[ext_resource type="ArrayMesh" uid="uid://duuf75yvuk6ij" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_1.obj" id="5_1u3cx"]
+[ext_resource type="ArrayMesh" uid="uid://dwj86jxckru1u" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_5.obj" id="6_kn5m6"]
+[ext_resource type="PackedScene" uid="uid://ckmcxdf7isn2s" path="res://objects/birch_tree.tscn" id="9_tnit5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o3u0"]
+resource_name = "Wood"
+albedo_color = Color(0.122341, 0.056288, 0.047609, 1)
+metallic = 0.5
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qla5i"]
+points = PackedVector3Array(-0.849564, -0.565333, 2.10314, 0.987555, 0.291554, 1.98191, 0.987555, -0.442948, 1.98191, -0.482025, 0.291554, -3.52964, -0.482025, 0.781478, 2.10314, 0.1299, -0.442948, -3.52964, 0.1299, -0.0757928, 4.30914, 0.252669, -1.05564, 1.98191, 0.252669, 0.291554, -3.52964, 0.374862, 0.904055, 2.10314, -0.972141, -0.320755, -0.712099, 0.987555, 0.291554, -0.0997899, -0.972141, 0.168977, 2.10314, -0.237063, -1.05564, 2.10314, -0.35964, -0.442948, -3.52964, 0.374862, -0.320755, -3.52964, -0.35964, 0.781478, -0.0997899, -0.114678, 0.168977, 4.18637, 0.620016, -0.933064, 1.98191, -0.726987, -0.810487, 2.10314, -0.35964, -0.320755, 3.57406, 0.620016, 0.413939, 2.96099, 0.742401, -0.320755, 2.96099, 0.497439, -0.688102, 2.96099, 0.987555, 0.0465922, -0.0997899, 0.864978, -0.688102, 1.85837, -0.114678, 0.904055, 2.10314, 0.864978, 0.536516, 2.10314, -0.726987, 0.536516, 1.85837, -0.482025, -0.320755, -3.52964, -0.114678, -0.810487, 2.83899, 0.374862, 0.168977, -3.52964)
+
+[node name="Tree" type="Node3D"]
+script = ExtResource("1_r3sfm")
+
+[node name="PineTree" type="StaticBody3D" parent="."]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+visible = false
+script = ExtResource("1_eu8jc")
+
+[node name="Bald" type="Node3D" parent="PineTree"]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="PineTree/Bald"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 6.9323, 0)
+mesh = ExtResource("2_kyvqw")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o3u0")
+
+[node name="Trim" type="Node3D" parent="PineTree"]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="PineTree/Trim"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.470137, 0)
+mesh = ExtResource("2_ugsxm")
+skeleton = NodePath("../../..")
+
+[node name="1" type="MeshInstance3D" parent="PineTree/Trim"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.470137, 0)
+mesh = ExtResource("6_kn5m6")
+skeleton = NodePath("../../..")
+
+[node name="2" type="MeshInstance3D" parent="PineTree/Trim"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.470137, 0)
+mesh = ExtResource("4_bldb1")
+skeleton = NodePath("../../..")
+
+[node name="Full" type="Node3D" parent="PineTree"]
+
+[node name="0" type="MeshInstance3D" parent="PineTree/Full"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.470137, 0)
+mesh = ExtResource("3_bctaf")
+skeleton = NodePath("../../..")
+
+[node name="1" type="MeshInstance3D" parent="PineTree/Full"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.470137, 0)
+mesh = ExtResource("5_1u3cx")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PineTree"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.44316, 0)
+visible = false
+shape = SubResource("ConvexPolygonShape3D_qla5i")
+disabled = true
+
+[node name="BirchTree" parent="." instance=ExtResource("9_tnit5")]

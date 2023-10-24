@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends CharacterBody3D
 
 @export var path_to_player: NodePath
 
@@ -6,6 +6,7 @@ extends RigidBody3D
 
 var speed = 1  # Adjust this to control the movement speed
 var can_move = false
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _ready():
@@ -13,14 +14,15 @@ func _ready():
 
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	var direction = Vector3( Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),0.0,0.0).normalized()
-# Check for input or any other condition that triggers movement
-# Apply a force to the RigidBody3D in its local space
-	var force = direction * speed
+
+	var velocity = direction * speed
 	if can_move:
 		player.pushing = true
-		apply_central_impulse(force)
+		move_and_collide(velocity)
 	else:
 		player.pushing = false
 

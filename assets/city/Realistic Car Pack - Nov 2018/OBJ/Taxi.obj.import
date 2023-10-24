@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c71yfnxdkj8ij"
+path="res://.godot/imported/Taxi.obj-5303f11a4f031fa71fa6e2b38caaff78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Taxi.obj-5303f11a4f031fa71fa6e2b38caaff78.mesh"]
+
+source_file="res://assets/city/Realistic Car Pack - Nov 2018/OBJ/Taxi.obj"
+dest_files=["res://.godot/imported/Taxi.obj-5303f11a4f031fa71fa6e2b38caaff78.mesh", "res://.godot/imported/Taxi.obj-5303f11a4f031fa71fa6e2b38caaff78.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
