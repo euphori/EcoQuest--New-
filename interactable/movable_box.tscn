@@ -90,6 +90,7 @@ axis_lock_linear_z = true
 script = ExtResource("1_yq6ds")
 
 [node name="InteractUI" parent="." instance=ExtResource("4_0rex0")]
+text_label = "Hold \"F\" to move"
 
 [node name="LeftRay" type="RayCast3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.701678, 0.87815, 0)

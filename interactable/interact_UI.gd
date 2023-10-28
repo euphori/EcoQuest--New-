@@ -17,19 +17,21 @@ signal stop
 signal grow
 
 func _input(event):
+	if type == "movable"  and parent.colliding:
+		if event.is_action_pressed("interact"):
+			emit_signal("move")
+			parent.can_move = true
+			visible = false
+		if event.is_action_released("interact"):
+			emit_signal("stop")
+			parent.can_move = false
+			visible = true
+		
+
 	if event.is_action_pressed("interact") and player_near:
 		print("INTERACT")
-		if type == "movable":
-			if parent.can_move:
-				print("STOP")
-				emit_signal("stop")
-				parent.can_move = false
-				visible = true
-			else:
-				emit_signal("move")
-				parent.can_move = true
-				visible = false
-		elif type == "npc":
+
+		if type == "npc":
 			emit_signal("talk")
 		elif type == "pickable":
 			global.items[parent.item_name] += 1

@@ -188,7 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2359, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00630713, -1.30667, -0.00416851)
 
 [node name="CharacterManager" parent="." instance=ExtResource("2_3lgwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.862, 11.219, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.6745, 11.219, 5)
 metadata/_edit_group_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

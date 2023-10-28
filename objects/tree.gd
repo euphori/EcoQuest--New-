@@ -18,16 +18,17 @@ var rand
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize_size()
+	#$InteractUI.visible = false
 	rand = randi_range(0, state["trim"].get_child_count() - 1)
 	if start_as_seed:
-		curr_state = "bald"
 		max_scale = scale
 		scale = Vector3(.1,.1,.1)
-		$InteractUI.scale = Vector3(10,10,10)
-		$InteractUI.visible = true
-	
+		$InteractUI.scale = Vector3(20,20,20)
+		$InteractUI.position.y += 5
+		$InteractUI.rotation = -rotation
+		pick_mesh()
 
-	$InteractUI.rotation = -rotation
+	
 	
 	
 func randomize_size():
@@ -61,6 +62,12 @@ func update_growth():
 	
 
 
+func get_state():
+	for i in state:
+		if i == curr_state:
+			return state[i]
+
+
 func update_state():
 	for i in state:
 		if i == curr_state:
@@ -76,8 +83,8 @@ func update_state():
 						mesh = state[curr_state].get_node(str(x))
 						mesh.visible = false
 		else:
-			
-			state[i].visible = false
+			if i != "seed":
+				state[i].visible = false
 
 func pick_mesh():
 
@@ -127,6 +134,8 @@ func _on_growth_timer_timeout():
 
 
 func _on_interact_ui_grow():
-	growing = true
-	growth_timer.start(grow_time)
-	$InteractUI.queue_free()
+	if start_as_seed:
+		$InteractUI.queue_free()
+		growing = true
+		growth_timer.start(grow_time)
+	

@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 const SPEED = 4.0
 var can_move = false
-
+var colliding = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -24,6 +24,13 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity.z = 0
+	if $LeftRay.is_colliding() or $RightRay.is_colliding():
+		$InteractUI.visible = true
+		colliding = true
+		
+	else:
+		$InteractUI.visible = false
+		colliding = false
 	if can_move:
 		if $LeftRay.is_colliding() or $RightRay.is_colliding():
 			velocity.x = direction.x * SPEED

@@ -60,6 +60,8 @@ func update_plants(value):
 						#plants.multimesh.visible_instance_count = value
 						var tween = get_tree().create_tween()
 						var num_of_plants = plants.multimesh.instance_count * (value/100)
+						if num_of_plants <= 0:
+							num_of_plants = 3
 						tween.tween_property(plants.multimesh, "visible_instance_count", num_of_plants, 3)
 	else:
 		print("Terrain Node doesn't exist")
