@@ -42,6 +42,7 @@ var platform = null
 func _ready():
 	if default_char:
 		active = true
+		global.player = self
 
 
 

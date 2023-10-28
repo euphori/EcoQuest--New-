@@ -13,6 +13,7 @@ var recharge_time = 1.5
 var can_shoot = true
 var regen_time = 10
 
+
 func _process(delta):
 	if Input.is_action_pressed("attack"):
 		pressed_time += delta 

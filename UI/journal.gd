@@ -30,6 +30,7 @@ func _input(event):
 			initialize_inv()
 			update_quantity()
 			update_quest()
+			update_save_slot()
 			self.visible = false
 		else:
 			get_curr_quest()
@@ -40,12 +41,19 @@ func _input(event):
 			$Quest.visible = true
 			$Inventory.visible = false
 			$PauseMenu.visible = false
+			$Load.visible = false
 			
 	elif event.is_action_pressed("esc"):
+		get_curr_quest()
+		initialize_inv()
+		update_quantity()
+		update_quest()
+		update_save_slot()
 		self.visible = !self.visible 
 		$PauseMenu.visible = true
 		$Quest.visible = false
 		$Inventory.visible = false
+		$Load.visible = false
 
 
 
@@ -89,8 +97,7 @@ func get_curr_quest():
 				quest_req.text = str(global.items[req_item],"/",global.req_materials[curr_quest][1], "  ",global.req_materials[curr_quest][0])
 				quest_req.visible = true
 			break
-	print(curr_quest)
-	
+
 
 
 func initialize_inv():
@@ -105,11 +112,8 @@ func initialize_inv():
 					break
 				else:
 					if slot.text == "":
-						
-						print("ADDED ITEM NAME")
 						slot.text = i
 					if quant.text == "":
-						print("ADDED QUANT")
 						quant.text = str(global.items[i],"x")
 						break
 
@@ -123,7 +127,10 @@ func update_quantity():
 			x += 1
 		
 
-
+func update_save_slot():
+	if global.save_path.save1 != null:
+		$Load/Save1.text = "Load"
+		print("QWEWQEWQEQW")
 
 
 
@@ -131,14 +138,46 @@ func _on_inv_button_pressed():
 	$Quest.visible = false
 	$Inventory.visible = true
 	$PauseMenu.visible = false
+	$Load.visible = false
 
 func _on_quest_button_pressed():
 	$Quest.visible = true
 	$Inventory.visible = false
 	$PauseMenu.visible = false
+	$Load.visible = false
 
 
 func _on_exit_button_pressed():
 	$Quest.visible = false
 	$Inventory.visible = false
 	$PauseMenu.visible = true
+	$Load.visible = false
+
+
+func _on_save_button_pressed():
+	global.save(global.save_path["save1"])
+
+
+func _on_load_button_pressed():
+	global.load_save(global.save_path["save1"])
+	#$Quest.visible = false
+	#$Inventory.visible = false
+	#$PauseMenu.visible = false
+	#$Load.visible = true
+	
+
+
+func _on_slot_1_pressed():
+	global.load_save(global.save_path["save1"])
+
+
+func _on_slot_2_pressed():
+	global.load_save(global.save_path["save2"])
+
+
+func _on_slot_3_pressed():
+	global.load_save(global.save_path["save3"])
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()

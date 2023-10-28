@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://wiyfvqhus6ir"]
+[gd_scene load_steps=21 format=3 uid="uid://wiyfvqhus6ir"]
 
 [ext_resource type="Script" path="res://UI/journal.gd" id="1_bqxhi"]
 [ext_resource type="Texture2D" uid="uid://dywprg74gmjw6" path="res://assets/ui/journal/Journal Texture.png" id="2_ojg6f"]
 [ext_resource type="Texture2D" uid="uid://l4hr4m01d6ms" path="res://assets/ui/journal/Todo List.png" id="3_1qtd6"]
 [ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="3_xlmq0"]
 [ext_resource type="Texture2D" uid="uid://cinugyu8lbf4g" path="res://assets/ui/journal/Inv close.png" id="4_on7hl"]
-[ext_resource type="Texture2D" uid="uid://cekq6p8tdjbbd" path="res://assets/ui/journal/Options.png" id="5_m17o3"]
+[ext_resource type="FontFile" uid="uid://1m8rcmeb17oc" path="res://assets/fonts/GoodUnicornRegular-Rxev.ttf" id="5_6abh1"]
 [ext_resource type="Texture2D" uid="uid://lehbw5ri0f0s" path="res://assets/ui/journal/Inv.png" id="5_pjgaj"]
 [ext_resource type="Texture2D" uid="uid://bqocfm3w41o60" path="res://assets/ui/journal/Quest close.png" id="6_1hrav"]
 [ext_resource type="Texture2D" uid="uid://dsp4xyy0mjxfe" path="res://assets/ui/journal/Resume.png" id="6_ixgmc"]
+[ext_resource type="Texture2D" uid="uid://doqbg4yn51q7f" path="res://assets/ui/journal/Load.png" id="6_yxoof"]
 [ext_resource type="Texture2D" uid="uid://bb05g1trogu7n" path="res://assets/ui/journal/Save.png" id="7_0ukd4"]
 [ext_resource type="Texture2D" uid="uid://c2pejhwd8fn6v" path="res://assets/ui/journal/Quest_.png" id="7_ceuvn"]
 [ext_resource type="Texture2D" uid="uid://bknuanth8p1g7" path="res://assets/ui/journal/Quit.png" id="8_cifgr"]
@@ -16,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c4caq4eoqmaf6" path="res://assets/ui/journal/Exit Closed.png" id="8_u8eaw"]
 [ext_resource type="Texture2D" uid="uid://bdp330i8pind6" path="res://assets/ui/journal/Settings_.png" id="9_6ryu5"]
 [ext_resource type="Texture2D" uid="uid://cv713dvaduybv" path="res://assets/ui/journal/Exit.png" id="9_fwdkh"]
+[ext_resource type="Texture2D" uid="uid://brl0udhbh3vjr" path="res://assets/ui/journal/ButtonTexture2.png" id="10_8avo4"]
+[ext_resource type="Texture2D" uid="uid://dw5gles4jlmcw" path="res://assets/ui/journal/ButtonTexture.png" id="11_36h5l"]
+[ext_resource type="Texture2D" uid="uid://b332qlkpt4id" path="res://assets/ui/journal/ButtonTexture3.png" id="12_igyun"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -86,18 +90,18 @@ text = "
 "
 
 [node name="QuestRequirements" type="Label" parent="Quest"]
-visible = false
 layout_mode = 0
-offset_left = 727.0
-offset_top = 362.45
-offset_right = 855.0
-offset_bottom = 399.45
-theme_override_colors/font_color = Color(0.603922, 0.419608, 0.309804, 1)
+offset_left = 734.0
+offset_top = 367.0
+offset_right = 862.0
+offset_bottom = 404.0
+theme_override_colors/font_color = Color(0.0976563, 0.0585938, 0.0273438, 1)
 theme_override_fonts/font = ExtResource("3_xlmq0")
 theme_override_font_sizes/font_size = 24
 text = "0/10"
 
 [node name="Inventory" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -120,8 +124,8 @@ theme_override_font_sizes/font_size = 32
 [node name="Quantity1" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 40
 
 [node name="ItemName2" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
@@ -132,8 +136,8 @@ theme_override_font_sizes/font_size = 32
 [node name="Quantity2" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 40
 
 [node name="ItemName3" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
@@ -144,8 +148,8 @@ theme_override_font_sizes/font_size = 32
 [node name="Quantity3" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 40
 
 [node name="ItemName4" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
@@ -156,8 +160,8 @@ theme_override_font_sizes/font_size = 32
 [node name="Quantity4" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 40
 
 [node name="ItemName5" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
@@ -168,8 +172,8 @@ theme_override_font_sizes/font_size = 32
 [node name="Quantity5" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 40
 
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
@@ -183,19 +187,18 @@ theme_override_font_sizes/font_size = 54
 text = "Inventory"
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="OptionsButton" type="TextureButton" parent="PauseMenu"]
+[node name="LoadButton" type="TextureButton" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 437.0
-offset_top = 684.0
-offset_right = 950.0
-offset_bottom = 859.0
-rotation = -0.1309
-texture_normal = ExtResource("5_m17o3")
+offset_left = 443.0
+offset_top = 649.0
+offset_right = 958.0
+offset_bottom = 847.0
+rotation = 0.00174533
+texture_normal = ExtResource("6_yxoof")
 
 [node name="ResumeButton" type="TextureButton" parent="PauseMenu"]
 layout_mode = 0
@@ -231,6 +234,97 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xlmq0")
 theme_override_font_sizes/font_size = 149
 text = "Game Paused"
+
+[node name="Load" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="TextureButton" parent="Load"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 242.0
+offset_right = 936.0
+offset_bottom = 437.0
+pivot_offset = Vector2(251, 86)
+texture_normal = ExtResource("10_8avo4")
+
+[node name="Slot2" type="TextureButton" parent="Load"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 555.0
+offset_right = 930.0
+offset_bottom = 717.0
+texture_normal = ExtResource("11_36h5l")
+
+[node name="Slot3" type="TextureButton" parent="Load"]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 244.0
+offset_right = 1520.0
+offset_bottom = 442.0
+texture_normal = ExtResource("12_igyun")
+
+[node name="Label" type="Label" parent="Load"]
+offset_left = 635.0
+offset_top = 169.0
+offset_right = 865.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Slot #1"
+
+[node name="Save1" type="Label" parent="Load"]
+offset_left = 627.0
+offset_top = 318.0
+offset_right = 857.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Empty"
+
+[node name="Save3" type="Label" parent="Load"]
+offset_left = 1197.0
+offset_top = 316.0
+offset_right = 1427.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Empty"
+
+[node name="Save2" type="Label" parent="Load"]
+offset_left = 618.0
+offset_top = 610.0
+offset_right = 848.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Empty"
+
+[node name="Label2" type="Label" parent="Load"]
+offset_left = 623.0
+offset_top = 477.0
+offset_right = 853.0
+offset_bottom = 566.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Slot #2"
+
+[node name="Label3" type="Label" parent="Load"]
+offset_left = 1171.0
+offset_top = 185.0
+offset_right = 1401.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
+theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_font_sizes/font_size = 85
+text = "Slot #3"
 
 [node name="InvButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -270,6 +364,12 @@ offset_bottom = 871.0
 texture_normal = ExtResource("8_u8eaw")
 texture_focused = ExtResource("9_fwdkh")
 
+[connection signal="pressed" from="PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="PauseMenu/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Load/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="Load/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="Load/Slot3" to="." method="_on_slot_3_pressed"]
 [connection signal="pressed" from="InvButton" to="." method="_on_inv_button_pressed"]
 [connection signal="pressed" from="QuestButton" to="." method="_on_quest_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_quest_button_pressed"]

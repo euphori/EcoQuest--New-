@@ -22,7 +22,8 @@ var commands = {
 	"help" : "help",
 	"clear" : "clear",
 	"collision" : "collision",
-	"env" : "env"
+	"env" : "env",
+	"add" : "add"
 	}
 	
 var is_console_visible = false
@@ -85,6 +86,12 @@ func apply_command(comm,value):
 		get_tree().set_debug_collision_hint(true)
 	elif comm == commands["env"]:
 		env_controller.visible =  !env_controller.visible
+	elif comm == commands["add"]:
+		if value:
+			for i in global.items:
+				print(i)
+				if i == value:
+					global.items[i] += 5
 		
 
 func _on_line_edit_text_submitted(new_text):
