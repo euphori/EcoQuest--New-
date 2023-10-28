@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq3u1mryd64hm"]
+[gd_scene load_steps=8 format=3 uid="uid://cq3u1mryd64hm"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_f6hmq"]
-[ext_resource type="Texture2D" uid="uid://dmq517emrnqs3" path="res://assets/props/Textures/T_Box_Albedo.png" id="2_4th4v"]
 [ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="4_pfb4l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kksfg"]
@@ -43,7 +42,6 @@ shadow_mesh = SubResource("ArrayMesh_tolkg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu07j"]
 albedo_color = Color(0.670588, 0.670588, 0.670588, 1)
-albedo_texture = ExtResource("2_4th4v")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0pe8h"]
 

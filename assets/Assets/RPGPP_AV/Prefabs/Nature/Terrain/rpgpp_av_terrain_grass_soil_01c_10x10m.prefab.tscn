@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5o7c3n3jsd7t"]
-
-[ext_resource type="PackedScene" uid="uid://k168no40nexp" path="res://Assets/RPGPP_AV/Models/Nature/Terrain/rpgpp_av_terrain_grass_soil_01c_10x10m.gltf" id="1_jx1ix"]
-
-[node name="rpgpp_av_terrain_grass_soil_01c_10x10m" instance=ExtResource("1_jx1ix")]

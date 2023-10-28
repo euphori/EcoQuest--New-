@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5qh27ywm85a6"]
-
-[ext_resource type="PackedScene" uid="uid://dyi4xwusetx6f" path="res://Assets/RPGPP_AV/Models/Structures/rpgpp_av_roof_end_01_6x5_wall_beam_e.gltf" id="1_4xhih"]
-
-[node name="rpgpp_av_roof_end_01_6x5_wall_beam_e" instance=ExtResource("1_4xhih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.11472e-08)

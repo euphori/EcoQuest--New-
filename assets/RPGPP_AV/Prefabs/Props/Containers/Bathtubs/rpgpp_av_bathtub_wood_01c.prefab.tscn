@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ohy7jols3nf"]
-
-[ext_resource type="PackedScene" uid="uid://cwinwufai3coq" path="res://Assets/RPGPP_AV/Models/Props/rpgpp_av_bathtub_wood_01c.gltf" id="1_w1v8t"]
-
-[node name="rpgpp_av_bathtub_wood_01c" instance=ExtResource("1_w1v8t")]
