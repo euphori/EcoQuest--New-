@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 global="*res://global.gd"
 GlobalbgMusic="*res://assets/sounds/globalbgMusic.tscn"
 GlobalbgMusicAttack="*res://assets/sounds/globalbg_music_attack.tscn"
 StaticData="*res://singletons/StaticData.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
