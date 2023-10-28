@@ -15,17 +15,11 @@ func _process(delta):
 
 
 func _input(event):
-	if event.is_action_pressed("esc"):
-		if menu.visible:
-			menu.visible = false
-		elif menu.visible == false:
-			menu.visible = true
-		if options.visible:
-			menu.visible = true
-			options.visible = false
+	pass
 
 func _on_start_pressed():
 	menu.visible = false
+	queue_free()
 
 
 func _on_quit_pressed():

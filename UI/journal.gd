@@ -37,6 +37,15 @@ func _input(event):
 			update_quantity()
 			update_quest()
 			self.visible = true
+			$Quest.visible = true
+			$Inventory.visible = false
+			$PauseMenu.visible = false
+			
+	elif event.is_action_pressed("esc"):
+		self.visible = !self.visible 
+		$PauseMenu.visible = true
+		$Quest.visible = false
+		$Inventory.visible = false
 
 
 
@@ -121,7 +130,15 @@ func update_quantity():
 func _on_inv_button_pressed():
 	$Quest.visible = false
 	$Inventory.visible = true
+	$PauseMenu.visible = false
 
 func _on_quest_button_pressed():
 	$Quest.visible = true
 	$Inventory.visible = false
+	$PauseMenu.visible = false
+
+
+func _on_exit_button_pressed():
+	$Quest.visible = false
+	$Inventory.visible = false
+	$PauseMenu.visible = true
