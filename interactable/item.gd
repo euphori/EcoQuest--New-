@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 @export var item_name : String
+@export var assigned_quest : String
 @export var hide = false
 
 @onready var collision = $InteractUI/PlayerDetection/CollisionShape3D
@@ -20,7 +21,7 @@ func _process(delta):
 		velocity.y -= gravity * delta
 	
 	if hide:
-		if global.active_quest["q4"]:
+		if global.active_quest[assigned_quest]:
 			collision.disabled = false
 			self.visible = true 
 		else:

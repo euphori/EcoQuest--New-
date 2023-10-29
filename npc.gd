@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var dialogue : String
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -8,6 +9,7 @@ var busy = false
 var active
 var pushing = false
 var npc_in_range = false
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -18,7 +20,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("talk"):
 			print("TALK")
-			DialogueManager.show_example_dialogue_balloon(load("res://city.dialogue"), "start")
+			DialogueManager.show_example_dialogue_balloon(load(dialogue), "start")
 
 
 	move_and_slide()

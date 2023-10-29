@@ -11,16 +11,16 @@ var questStart = false
 var game_started = false
 
 
-var quest_title = {"q1":"Plastic Collection","q2":"Sample2","q3":"Sample3", "q4":"Collect Solar Panel Parts"}
-var quest_info = {"q1":"Get 5 Plastic Bottles", "q4":"Get 5 Solar Panel Parts"}
+var quest_title = {"tutorial":"Wood Collection", "q1":"Plastic Collection","q2":"Sample2","q3":"Sample3", "q4":"Collect Solar Panel Parts"}
+var quest_info = {"tutorial":"Gather 5 woods", "q1":"Get 5 Plastic Bottles", "q4":"Get 5 Solar Panel Parts"}
 var comp_text = {"q1": ""}
 
 #Quest Types: gathering, question, kill, 
-var quest_type = {"q1":"gather", "q4":"gather"}  
-var req_materials = {"q1": ["Plastic",5], "q4": ["Solar Panel Parts",5]}
+var quest_type = {"tutorial":"gather", "q1":"gather", "q4":"gather"}  
+var req_materials = {"tutorial": ["Wood",5],"q1": ["Plastic",5], "q4": ["Solar Panel Parts",5]}
 
-var active_quest = {"q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
-var completed_quest =  {"q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
+var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
+var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 var decision = {"q1": 0 , "q2": 0, "q3": 0}
 
 
@@ -30,7 +30,7 @@ var dialogue_points = 0
 #Item
 
 var multiplier = 0.5
-var items = {"Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0, "Solar Panel Parts": 0}
+var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0, "Solar Panel Parts": 0}
 
 
 

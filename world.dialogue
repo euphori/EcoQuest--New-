@@ -1,0 +1,24 @@
+~ start
+
+if global.active_quest["tutorial"] == false
+	Nathan: [[Hi|Hello|Howdy]], I need your help resotoring the effects of climate change.
+	Nathan: Are you willing to take the challenge.
+	- We are here to help you!
+		set global.active_quest["tutorial"] = true
+	- No thanks. 
+		=> END
+		
+if global.active_quest["tutorial"] == true
+	Nathan: You need to have a boat to travel to different places.
+	Nathan: So for your first task, gather 5 pieces of wood to build a boat.
+
+if global.items["Wood"] >= 5:
+	set global.completed_quest["tutorial"] = true
+	
+	if global.completed_quest["tutorial"] == true
+		Nathan: Well done!...Your'e boat is waiting on the dock.
+
+
+
+
+=> END
