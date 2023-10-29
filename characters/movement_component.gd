@@ -43,6 +43,9 @@ func _ready():
 	if default_char:
 		active = true
 		global.player = self
+		if global.game_started and global.player_pos != null:
+			self.global_position = global.player_pos
+
 
 
 

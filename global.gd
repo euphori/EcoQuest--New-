@@ -1,10 +1,11 @@
 extends Node
 
 @onready var player
-
+var player_pos
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
-
+var curr_scene
+var save_database 
 
 var questStart = false
 var game_started = false
@@ -46,25 +47,31 @@ func save_data(quest, val):
 	file.open(data_path, FileAccess.WRITE)
 	file.store_string(updated_json)
 	file.close()
-	print("QUEST: ",json_dict["1"][quest])
+
 	
 
+func change_scene():
+	get_tree().change_scene_to_file(curr_scene)
 
 
-var save_database = {
+
+
+
+func save(_save_path):
+	save_database = {
+	"game_started" : game_started,
+	"curr_scene" : curr_scene,
 	"active_quest": active_quest,
 	"completed_quest" : completed_quest,
 	"items" : items,
-	"player_pos" : null
-}
+	"player_pos" : player.global_position
+	}
 
-func save(_save_path):
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
-	if player != null:
-		save_database.player_pos = player.global_position
-	var jstr = JSON.stringify(save_database)
 	
+	var jstr = JSON.stringify(save_database)
 	file.store_line(jstr)
+	print(jstr)
 	file.close()
 	
 func load_save(_save_path):
@@ -76,13 +83,16 @@ func load_save(_save_path):
 			return
 		if FileAccess.file_exists(_save_path) == true:
 			var json = JSON.new()
-			json.parse(file.get_line())
+			json.parse(file.get_as_text())
 			var data = json.get_data()
-			print(data)
+			game_started = data["game_started"]
+			curr_scene = data["curr_scene"]
+			player_pos = str_to_var("Vector3" + data["player_pos"])
+			change_scene()
 			items = data["items"]
 			active_quest = data["active_quest"]
 			completed_quest = data["completed_quest"]
-			player.global_position = str_to_var("Vector3" + data["player_pos"])
+			
 			
 			file.close()
 	else:

@@ -267,6 +267,7 @@ offset_bottom = 442.0
 texture_normal = ExtResource("12_igyun")
 
 [node name="Label" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 635.0
 offset_top = 169.0
 offset_right = 865.0
@@ -277,6 +278,7 @@ theme_override_font_sizes/font_size = 85
 text = "Slot #1"
 
 [node name="Save1" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 627.0
 offset_top = 318.0
 offset_right = 857.0
@@ -287,6 +289,7 @@ theme_override_font_sizes/font_size = 85
 text = "Empty"
 
 [node name="Save3" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 1197.0
 offset_top = 316.0
 offset_right = 1427.0
@@ -297,6 +300,7 @@ theme_override_font_sizes/font_size = 85
 text = "Empty"
 
 [node name="Save2" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 618.0
 offset_top = 610.0
 offset_right = 848.0
@@ -307,6 +311,7 @@ theme_override_font_sizes/font_size = 85
 text = "Empty"
 
 [node name="Label2" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 623.0
 offset_top = 477.0
 offset_right = 853.0
@@ -317,6 +322,7 @@ theme_override_font_sizes/font_size = 85
 text = "Slot #2"
 
 [node name="Label3" type="Label" parent="Load"]
+layout_mode = 0
 offset_left = 1171.0
 offset_top = 185.0
 offset_right = 1401.0
