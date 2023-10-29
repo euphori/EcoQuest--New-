@@ -1,0 +1,36 @@
+~ start
+
+#Question 4
+if global.completed_quest["q3"] == true and global.active_quest["q4"] == false
+	Quest Master: Oh no! It looks like your electric bike ran out of battery.
+	Quest Master: Before I help you...I want to hear your opinions first.
+	Quest Master: Are you willing to save electricity?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Quest Master: Are you willing to install energy-efficient appliances in your home?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Quest Master: Would you consider using things like solar panels for electricity?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Quest Master: Great, I'm now ready to help you.
+	set global.active_quest["q4"] = true
+
+#Task 4
+if global.active_quest["q4"] == true and global.completed_quest["q4"] == false
+	Quest Master: Collect solar panel parts in order to restore the battery of your electric bike.
+	
+if global.items["Solar Panel Parts"] == 5 :
+	set global.completed_quest["q4"] = true
+	
+if global.completed_quest["q4"] == true and global.active_quest["q5"] == false
+	Quest Master: Great! you completed all the materials to build a solar panel.
+	Quest Master: You can now recharge your electric bike.
+
+=> END

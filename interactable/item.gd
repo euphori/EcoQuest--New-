@@ -20,7 +20,7 @@ func _process(delta):
 		velocity.y -= gravity * delta
 	
 	if hide:
-		if global.active_quest["q1"]:
+		if global.active_quest["q4"]:
 			collision.disabled = false
 			self.visible = true 
 		else:
