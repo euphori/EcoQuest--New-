@@ -175,6 +175,56 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_6abh1")
 theme_override_font_sizes/font_size = 40
 
+[node name="ItemName6" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity6" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName7" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity7" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName8" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity8" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName9" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity9" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="ItemName10" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="Quantity10" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
 offset_left = 581.0

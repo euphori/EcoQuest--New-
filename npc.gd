@@ -18,7 +18,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("talk"):
 			print("TALK")
-			DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
+			DialogueManager.show_example_dialogue_balloon(load("res://city.dialogue"), "start")
 
 
 	move_and_slide()
