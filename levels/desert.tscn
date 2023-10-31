@@ -933,6 +933,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nlm50")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjrxh"]
+blend_mode = 1
+albedo_texture = ExtResource("24_j73c5")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rjqan"]
 particle_flag_align_y = true
 direction = Vector3(0, 0, 1)
@@ -942,11 +951,7 @@ initial_velocity_max = 10.0
 scale_min = 0.3
 scale_max = 0.3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g1eu"]
-albedo_texture = ExtResource("24_j73c5")
-
-[sub_resource type="SphereMesh" id="SphereMesh_s2sro"]
-material = SubResource("StandardMaterial3D_6g1eu")
+[sub_resource type="SphereMesh" id="SphereMesh_kka76"]
 
 [node name="Desert" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.11764, 0)
@@ -2724,10 +2729,11 @@ metadata/_edit_group_ = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(0.448368, -0.155215, 0.88027, -0.893849, -0.0778582, 0.441556, 0, -0.984808, -0.173648, -56.2069, 13.1566, 3.80675)
-amount = 30
+material_override = SubResource("StandardMaterial3D_vjrxh")
+amount = 60
 explosiveness = 0.14
 process_material = SubResource("ParticleProcessMaterial_rjqan")
-draw_pass_1 = SubResource("SphereMesh_s2sro")
+draw_pass_1 = SubResource("SphereMesh_kka76")
 
 [editable path="Water/Water"]
 [editable path="Water/Water2"]

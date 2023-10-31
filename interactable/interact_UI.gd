@@ -3,8 +3,10 @@ extends Node3D
 @onready var parent = get_parent()
 
 @export var text_label = ""
+@export_enum ("npc","object","movable","pickable","plant","fix","entrance") var type: String
+@export_category("If Entrace:")
+@export var next_scene:String
 
-@export_enum ("npc","object","movable","pickable","plant","fix") var type: String
 
 
 
@@ -40,6 +42,8 @@ func _input(event):
 			emit_signal("grow")
 		elif type == "fix":
 			pass
+		elif type == "entrance":
+			get_tree().change_scene_to_file(next_scene)
 
 func _ready():
 	$Label3D.text = text_label
