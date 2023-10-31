@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
 
-var SPEED = 5.0
+const SPEED = 5.0
 const JUMP_VELOCITY = 8
 const ACCELERATION = 150
 const MAX_SPEED = 7
 const AGGRO_RANGE = 15
 const KNOCKBACK_FORCE = 40
+
 
 
 @export var path_to_player:NodePath
@@ -43,7 +44,6 @@ func _physics_process(delta):
 	
 	$Stats.text = str("Health: ", health,"\nVelocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
 	
-
 	if not is_on_floor():
 
 		velocity.y -= gravity * delta
@@ -63,6 +63,7 @@ func _physics_process(delta):
 			$Label3D.text = str("State: CHASE")
 			var destination = self.global_position.direction_to(player.global_position)
 			var distance = self.global_position - player.global_position
+			
 			if  abs(distance.z) > 0 and is_on_floor() and can_move:
 				velocity.z += destination.z * 5 * delta
 				
@@ -95,13 +96,8 @@ func _physics_process(delta):
 			elif dir.x < 0 and !attacking:
 				$AnimationPlayer.play("attack_left")
 				attacking = true
-			if self.name == "SawRobot":
-				velocity.x += dir.x * ACCELERATION * delta 
-				velocity = velocity.limit_length(SPEED * 5)
-			else:
-				
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-				velocity.z = move_toward(velocity.z, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 			await $AnimationPlayer.animation_finished
 			state = CHASE
 			attacking = false
@@ -192,7 +188,3 @@ func _on_stagger_timer_timeout():
 	can_move = true
 	staggering = false
 	state = CHASE
-
-
-func _on_hurtbox_body_entered(body):
-	pass # Replace with function body.

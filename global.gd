@@ -2,12 +2,6 @@ extends Node
 
 @onready var player
 var player_pos
-var player_hp
-
-
-signal dialogue_done
-
-
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
@@ -15,6 +9,7 @@ var save_database
 
 var questStart = false
 var game_started = false
+
 
 var quest_title = {"tutorial":"Wood Collection", "q1":"Plastic Collection","q2":"Sample2","q3":"Sample3", "q4":"Collect Solar Panel Parts"}
 var quest_info = {"tutorial":"Gather 5 woods", "q1":"Get 5 Plastic Bottles", "q4":"Get 5 Solar Panel Parts"}
@@ -27,10 +22,6 @@ var req_materials = {"tutorial": ["Wood",5],"q1": ["Plastic",5], "q4": ["Solar P
 var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 var decision = {"q1": 0 , "q2": 0, "q3": 0}
-
-
-# SCENES THAT PLAYERS CAN TRAVEL TO
-var unlocked_map = {"Forest" : true , "Hub": true , "Snow" : false , "Desert" : false , "City" : false}
 
 
 #Point System
@@ -66,9 +57,10 @@ func change_scene():
 
 
 
+
+
 func save(_save_path):
 	save_database = {
-	"player_hp" : player.HEALTH,
 	"game_started" : game_started,
 	"curr_scene" : curr_scene,
 	"active_quest": active_quest,
@@ -95,7 +87,6 @@ func load_save(_save_path):
 			var json = JSON.new()
 			json.parse(file.get_as_text())
 			var data = json.get_data()
-			player_hp = data["player_hp"]
 			game_started = data["game_started"]
 			curr_scene = data["curr_scene"]
 			player_pos = str_to_var("Vector3" + data["player_pos"])

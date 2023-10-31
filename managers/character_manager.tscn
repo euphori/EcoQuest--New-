@@ -15,15 +15,24 @@
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
+new_camera_offset = {
+"x": -1,
+"y": 6,
+"z": 3
+}
+old_camera_offset = {
+"x": -1,
+"y": 6,
+"z": 3
+}
 
 [node name="Console" parent="." instance=ExtResource("2_1vulv")]
 visible = false
 path_to_kid = NodePath("../Kid")
 path_to_robot = NodePath("../Robot")
 
-[node name="Kid" parent="." groups=["player"] instance=ExtResource("1_idrav")]
+[node name="Kid" parent="." instance=ExtResource("1_idrav")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
-collision_mask = 9
 axis_lock_linear_z = true
 path_to_other = NodePath("../Robot")
 
@@ -48,15 +57,6 @@ path_to_other = NodePath("../Kid")
 visible = false
 
 [node name="Widgets" parent="." instance=ExtResource("6_78c4s")]
-
-[node name="ZSlider" parent="Widgets/CameraController" index="1"]
-focus_mode = 0
-
-[node name="XSlider" parent="Widgets/CameraController" index="2"]
-focus_mode = 0
-
-[node name="YSlider" parent="Widgets/CameraController" index="3"]
-focus_mode = 0
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -106,12 +106,4 @@ texture_progress_offset = Vector2(10, 10)
 position = Vector2(33, 24)
 texture = ExtResource("12_4rm31")
 
-[connection signal="value_changed" from="Widgets/CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
-[connection signal="value_changed" from="Widgets/CameraController/XSlider" to="." method="_on_x_slider_value_changed"]
-[connection signal="value_changed" from="Widgets/CameraController/YSlider" to="." method="_on_y_slider_value_changed"]
-[connection signal="pressed" from="Widgets/CameraController/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="Widgets/CameraController/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="Widgets/CameraController/PrintButton" to="." method="_on_print_button_pressed"]
-
 [editable path="Console"]
-[editable path="Widgets"]

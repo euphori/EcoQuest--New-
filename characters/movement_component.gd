@@ -43,8 +43,7 @@ func _ready():
 	if default_char:
 		active = true
 		global.player = self
-		if global.player_pos != null:
-			HEALTH = global.player_hp
+		if global.game_started and global.player_pos != null:
 			self.global_position = global.player_pos
 
 
@@ -59,6 +58,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		$AnimationPlayer.play("falling")
+	
+	
+	
+	if console.is_console_visible:
+		can_move = false
+	else:
+		can_move = true
 	
 	if npc_in_range == true:
 		if Input.is_action_just_pressed("talk"):

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoQuest (New)"
-run/main_scene="res://levels/world.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -98,7 +98,7 @@ locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://ci
 3d_physics/layer_3="Enemy"
 3d_physics/layer_4="Objects"
 3d_physics/layer_5="Area"
-3d_physics/layer_6="RigidBody"
+3d_physics/layer_6="Platform"
 3d_physics/layer_7="NPC"
 3d_physics/layer_8="Hurtbox"
 3d_physics/layer_9="Hitbox"

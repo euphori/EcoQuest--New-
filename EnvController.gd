@@ -2,22 +2,22 @@ extends Control
 
 
 @export var albedo = {"hot" : Color(), "warm" : Color(), "fresh" : Color()}
-@export var start_val: int
+
 
 @onready var slider = $CanvasLayer/HSlider
 @onready var tree_manager = get_parent().get_node("Tree")
 @onready var env = get_parent().get_node("WorldEnvironment")
 @onready var terrain  = get_parent().get_node("Terrains")
+
+
+
 var val = 0
 
 
-
-
 func _ready():
-	
-	update_trees(start_val)
-	update_sky(start_val)
-	update_plants(start_val)
+	update_trees()
+	update_sky(0)
+	update_plants(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,21 +25,21 @@ func _process(delta):
 	pass
 
 
-func update_trees(value):
+func update_trees():
 	if tree_manager != null:
 		for i in tree_manager.get_child_count():
 			if tree_manager.get_child(i) is StaticBody3D and !tree_manager.get_child(i).start_as_seed:
-				var rand = randi_range(0,value + 1)
-				if rand < 10 and value < 70 and  value < 98:
+				var rand = randi_range(0,val + 1)
+				if rand < 10 and val < 70 and  val < 98:
 					tree_manager.get_child(i).curr_state = "bald"
 					tree_manager.get_child(i).update_state()
-				elif rand > 11 and rand < 70 and  value < 98:
+				elif rand > 11 and rand < 70 and  val < 98:
 					tree_manager.get_child(i).curr_state = "trim"
 					tree_manager.get_child(i).update_state()
 				elif rand > 70:
 					tree_manager.get_child(i).curr_state = "full"
 					tree_manager.get_child(i).update_state()
-				elif value >= 98:
+				elif val >= 98:
 					tree_manager.get_child(i).curr_state = "full"
 					tree_manager.get_child(i).update_state()
 	else:
@@ -93,7 +93,7 @@ func update_sky(value):
 func _on_h_slider_value_changed(value):
 	val = value
 	$CanvasLayer/Label.text = str(val)
-	update_trees(value)
+	update_trees()
 	update_sky(value)
 	update_plants(value)
 

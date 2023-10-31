@@ -38,7 +38,7 @@ func _physics_process(delta):
 			
 		else:
 			manager.kid.SPEED = manager.kid.MAX_SPEED
-			manager.kid.pushing = false
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
 		velocity = Vector3.ZERO

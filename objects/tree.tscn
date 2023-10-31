@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4w8y64t553ei"]
+[gd_scene load_steps=12 format=3 uid="uid://b4w8y64t553ei"]
 
 [ext_resource type="Script" path="res://objects/tree.gd" id="1_eu8jc"]
 [ext_resource type="Script" path="res://objects/tree_manager.gd" id="1_r3sfm"]
@@ -9,7 +9,6 @@
 [ext_resource type="ArrayMesh" uid="uid://duuf75yvuk6ij" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_1.obj" id="5_1u3cx"]
 [ext_resource type="ArrayMesh" uid="uid://dwj86jxckru1u" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_5.obj" id="6_kn5m6"]
 [ext_resource type="PackedScene" uid="uid://ckmcxdf7isn2s" path="res://objects/birch_tree.tscn" id="9_tnit5"]
-[ext_resource type="PackedScene" uid="uid://b1n6k50rg5smd" path="res://objects/snow_tree.tscn" id="10_oo8g8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o3u0"]
 resource_name = "Wood"
@@ -76,16 +75,4 @@ disabled = true
 
 [node name="BirchTree" parent="." instance=ExtResource("9_tnit5")]
 
-[node name="SnowTree" parent="." instance=ExtResource("10_oo8g8")]
-
-[node name="CollisionShape3D" parent="SnowTree" index="0"]
-visible = false
-
-[node name="Bald" parent="SnowTree" index="1"]
-visible = false
-
-[node name="InteractUI" parent="SnowTree" index="5"]
-visible = false
-
 [editable path="BirchTree"]
-[editable path="SnowTree"]

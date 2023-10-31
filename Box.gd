@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends CharacterBody3D
 
 @export var path_to_player: NodePath
 
@@ -15,5 +15,14 @@ func _ready():
 
 
 func _physics_process(delta):
-	apply_central_force()
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	var direction = Vector3( Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),0.0,0.0).normalized()
+
+	var velocity = direction * speed
+	if can_move:
+		player.pushing = true
+		move_and_collide(velocity)
+	else:
+		player.pushing = false
 

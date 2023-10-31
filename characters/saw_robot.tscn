@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dguj0c12pybwa"]
+[gd_scene load_steps=14 format=3 uid="uid://ddcjnlqibymjy"]
 
 [ext_resource type="Script" path="res://characters/enemy.gd" id="1_75fnr"]
 [ext_resource type="PackedScene" uid="uid://ve835vvddxl2" path="res://areas/hitbox.tscn" id="2_lnj0r"]
-[ext_resource type="Texture2D" uid="uid://b38eto3ytjrsk" path="res://assets/npc/cutter_anim.png" id="2_m5h80"]
+[ext_resource type="Texture2D" path="res://assets/npc/cutter_anim.png" id="2_m5h80"]
 [ext_resource type="PackedScene" uid="uid://d4jukjjk8qioe" path="res://areas/player_detection.tscn" id="3_4j2mj"]
 [ext_resource type="PackedScene" uid="uid://dfgedpauj8brb" path="res://assets/sounds/globalbg_music_attack.tscn" id="4_y3wq2"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="5_nc0he"]

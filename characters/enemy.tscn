@@ -297,7 +297,6 @@ axis_lock_linear_z = true
 script = ExtResource("1_514o1")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_yjrcb")]
-collision_layer = 1024
 
 [node name="CollisionShape3D" parent="Hitbox" index="0"]
 transform = Transform3D(0.826922, -2.88378, 0, 2.88378, 0.826922, 0, 0, 0, 3, -7.44791, 1.95564, -0.146)
@@ -356,7 +355,6 @@ one_shot = true
 stream = null
 
 [node name="Hurtbox" parent="." instance=ExtResource("7_3p5m8")]
-collision_layer = 512
 
 [node name="StaggerTimer" type="Timer" parent="."]
 one_shot = true
