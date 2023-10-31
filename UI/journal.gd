@@ -6,6 +6,7 @@ extends Control
 @onready var quest_req = $Quest/QuestRequirements
 @onready var slots = $Inventory/GridContainer
 @onready var fin_quest = $Quest/FinishedQuests
+@onready var map = $Map
 
 var done = []
 # Called when the node enters the scene tree for the first time.
@@ -31,18 +32,20 @@ func _input(event):
 			update_quantity()
 			update_quest()
 			update_save_slot()
+			map.initialize_map()
 			self.visible = false
 		else:
 			get_curr_quest()
 			initialize_inv()
 			update_quantity()
 			update_quest()
+			map.initialize_map()
 			self.visible = true
 			$Quest.visible = true
 			$Inventory.visible = false
 			$PauseMenu.visible = false
 			$Load.visible = false
-			
+			$Map.visible = false
 	elif event.is_action_pressed("esc"):
 		get_curr_quest()
 		initialize_inv()
@@ -54,7 +57,7 @@ func _input(event):
 		$Quest.visible = false
 		$Inventory.visible = false
 		$Load.visible = false
-
+		$Map.visible = false
 
 
 func update_quest():
@@ -101,6 +104,7 @@ func get_curr_quest():
 
 
 func initialize_inv():
+	
 	for i in global.items:
 		if global.items[i] != 0:
 			for x in (slots.get_child_count()/2):
@@ -133,26 +137,35 @@ func update_save_slot():
 		print("QWEWQEWQEQW")
 
 
+func show_map():
+	visible = true
+	$Quest.visible = false
+	$Inventory.visible = false
+	$PauseMenu.visible = false
+	$Load.visible = false
+	$Map.visible = true
+
 
 func _on_inv_button_pressed():
 	$Quest.visible = false
 	$Inventory.visible = true
 	$PauseMenu.visible = false
 	$Load.visible = false
+	$Map.visible = false
 
 func _on_quest_button_pressed():
 	$Quest.visible = true
 	$Inventory.visible = false
 	$PauseMenu.visible = false
 	$Load.visible = false
-
+	$Map.visible = false
 
 func _on_exit_button_pressed():
 	$Quest.visible = false
 	$Inventory.visible = false
 	$PauseMenu.visible = true
 	$Load.visible = false
-
+	$Map.visible = false
 
 func _on_save_button_pressed():
 	global.save(global.save_path["save1"])
@@ -165,6 +178,7 @@ func _on_load_button_pressed():
 	#$PauseMenu.visible = false
 	#$Load.visible = true
 	
+
 
 
 func _on_slot_1_pressed():
@@ -181,3 +195,4 @@ func _on_slot_3_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+

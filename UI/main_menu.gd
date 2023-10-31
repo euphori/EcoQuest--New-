@@ -19,6 +19,7 @@ func _input(event):
 	pass
 
 func _on_start_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")
 	menu.visible = false
 	global.game_started = true
 	queue_free()

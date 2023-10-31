@@ -29,7 +29,6 @@ func _input(event):
 		
 
 	if event.is_action_pressed("interact") and player_near:
-		print("INTERACT")
 
 		if type == "npc":
 			emit_signal("talk")
@@ -41,7 +40,6 @@ func _input(event):
 			emit_signal("grow")
 
 func _ready():
-	print(type)
 	$Label3D.text = text_label
 	visible = false
 

@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://b1n6k50rg5smd"]
+
+[ext_resource type="Script" path="res://objects/tree.gd" id="1_260a7"]
+[ext_resource type="ArrayMesh" uid="uid://bdynccxtut12" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_1.obj" id="2_ktbkx"]
+[ext_resource type="ArrayMesh" uid="uid://da6fuouylavk7" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_2.obj" id="3_nqqvj"]
+[ext_resource type="ArrayMesh" uid="uid://c10os3doja1wo" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_3.obj" id="4_ttbi5"]
+[ext_resource type="ArrayMesh" uid="uid://va6jwsjwosy1" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Dead_4.obj" id="5_024w5"]
+[ext_resource type="ArrayMesh" uid="uid://ckcg7kg8pvjri" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Autumn_2.obj" id="6_8u4c6"]
+[ext_resource type="ArrayMesh" uid="uid://dv8jhjasxy3ny" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_1.obj" id="7_w83r0"]
+[ext_resource type="ArrayMesh" uid="uid://cs16ms5dbriuy" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_2.obj" id="8_oqx57"]
+[ext_resource type="ArrayMesh" uid="uid://b03sohe78lpak" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_3.obj" id="9_j44ew"]
+[ext_resource type="ArrayMesh" uid="uid://cqc4y15il4x7h" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_4.obj" id="10_28urj"]
+[ext_resource type="ArrayMesh" uid="uid://cpl6pexsstdoc" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_5.obj" id="11_scb8d"]
+[ext_resource type="ArrayMesh" uid="uid://bbb22r1lt6ly" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Snow_1.obj" id="12_ujomg"]
+[ext_resource type="ArrayMesh" uid="uid://ccpjfhfhdfwnm" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Snow_2.obj" id="13_0hiyf"]
+[ext_resource type="ArrayMesh" uid="uid://f4e7rxmawi3u" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Snow_3.obj" id="14_eqwan"]
+[ext_resource type="ArrayMesh" uid="uid://b3wlvxtijxu74" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Snow_4.obj" id="15_oo3fi"]
+[ext_resource type="ArrayMesh" uid="uid://baovxca7rjh7v" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_Snow_5.obj" id="16_4w86h"]
+[ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="17_3s5lm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aicmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n05fr"]
+resource_name = "Wood"
+albedo_color = Color(0.122341, 0.056288, 0.047609, 1)
+metallic = 0.5
+
+[node name="SnowTree" type="StaticBody3D"]
+script = ExtResource("1_260a7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_aicmp")
+disabled = true
+
+[node name="Bald" type="Node3D" parent="."]
+
+[node name="0" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("2_ktbkx")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="1" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("3_nqqvj")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="2" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("4_ttbi5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="3" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("5_024w5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="4" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("6_8u4c6")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="Trim" type="Node3D" parent="."]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("7_w83r0")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="1" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("8_oqx57")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="2" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("9_j44ew")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="3" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("10_28urj")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="4" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("11_scb8d")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="Full" type="Node3D" parent="."]
+visible = false
+
+[node name="0" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("12_ujomg")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="1" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("13_0hiyf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="2" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("14_eqwan")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="3" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("15_oo3fi")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="4" type="MeshInstance3D" parent="Full"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+mesh = ExtResource("16_4w86h")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
+
+[node name="GrowthTimer" type="Timer" parent="."]
+
+[node name="InteractUI" parent="." instance=ExtResource("17_3s5lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.83373, 1.49544)
+text_label = "Plant"
+type = "plant"
+
+[connection signal="timeout" from="GrowthTimer" to="." method="_on_growth_timer_timeout" flags=18]
+[connection signal="grow" from="InteractUI" to="." method="_on_interact_ui_grow" flags=18]

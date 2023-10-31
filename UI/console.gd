@@ -23,7 +23,9 @@ var commands = {
 	"clear" : "clear",
 	"collision" : "collision",
 	"env" : "env",
-	"add" : "add"
+	"add" : "add",
+	"unlock" : "unlock"
+	
 	}
 	
 var is_console_visible = false
@@ -41,9 +43,10 @@ func _input(event):
 		is_console_visible = !is_console_visible
 		if visible:
 			visible = false
-			
+			kid.can_move = true
 		else:
 			visible = true
+			kid.can_move = false
 		if is_console_visible:
 			input_line.editable = true
 			input_line.grab_focus()
@@ -92,7 +95,15 @@ func apply_command(comm,value):
 				print(i)
 				if i == value:
 					global.items[i] += 5
-		
+	elif comm == commands["unlock"]:
+		if value:
+			
+			for i in global.unlocked_map:
+				if value == "all":
+					global.unlocked_map[i] = true
+				if i == value:
+					global.unlocked_map[i] = true
+				
 
 func _on_line_edit_text_submitted(new_text):
 	history.text += str(new_text,"\n")
