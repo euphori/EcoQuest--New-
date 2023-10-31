@@ -9,7 +9,9 @@ const AGGRO_RANGE = 15
 const KNOCKBACK_FORCE = 40
 var DASH_SPEED = 30
 
-@onready var player = get_parent().get_node("CharacterManager").get_node("Kid")
+@export var path_to_player : NodePath
+
+@onready var player = get_node(path_to_player)
 @export var health = 5
 
 @onready var jump_timer = $JumpCooldown
