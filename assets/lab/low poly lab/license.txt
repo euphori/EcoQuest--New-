@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low-Poly Laboratory
+* source:	https://sketchfab.com/3d-models/low-poly-laboratory-fedc3b5df4724997ac003f7f1b9c8cca
+* author:	Yahor Yurkavets (https://sketchfab.com/Got2b)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low-Poly Laboratory" (https://sketchfab.com/3d-models/low-poly-laboratory-fedc3b5df4724997ac003f7f1b9c8cca) by Yahor Yurkavets (https://sketchfab.com/Got2b) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
-[ext_resource type="Texture2D" uid="uid://bopa2hnhch1si" path="res://addons/dialogue_manager/example_balloon/Dialogue.png" id="2_32jv6"]
+[ext_resource type="Texture2D" uid="uid://bvrk7lm1r4hdd" path="res://addons/dialogue_manager/example_balloon/Group8.png" id="2_3n3kd"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://ctxfeyik1bo1i" path="res://addons/dialogue_manager/example_balloon/farmer.png" id="5_e1g0s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -74,14 +75,14 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -36.0
-offset_top = -253.0
-offset_right = 52.0
-offset_bottom = 4.0
+offset_left = -33.0
+offset_top = -267.0
+offset_right = 55.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_qq3yp")
-texture = ExtResource("2_32jv6")
+texture = ExtResource("2_3n3kd")
 stretch_mode = 5
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon"]
@@ -89,10 +90,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 583.0
-offset_top = 71.0
-offset_right = -509.0
-offset_bottom = -40.0
+offset_left = 619.0
+offset_top = 35.0
+offset_right = -473.0
+offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -105,6 +106,7 @@ modulate = Color(1, 1, 1, 0.501961)
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -142,6 +144,11 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.96875, 0.929688, 0.792969, 1)
 theme_override_colors/font_focus_color = Color(0.976563, 0.9375, 0.796875, 1)
 text = "Response example"
+
+[node name="portrait" type="Sprite2D" parent="Balloon"]
+position = Vector2(430, 74)
+scale = Vector2(0.6915, 0.6915)
+texture = ExtResource("5_e1g0s")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

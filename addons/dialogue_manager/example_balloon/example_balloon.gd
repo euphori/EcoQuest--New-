@@ -5,6 +5,13 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var portrait = $Balloon/portrait
+
+var character_portraits = {
+	"Farmer": "res://addons/dialogue_manager/example_balloon/farmer.png",
+	"Mechanic": "res://addons/dialogue_manager/example_balloon/mechanic.png",
+	# Add more characters as needed
+}
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -42,7 +49,11 @@ var dialogue_line: DialogueLine:
 		# Show our balloon
 		balloon.show()
 		will_hide_balloon = false
-
+		
+		for i in character_portraits:
+			if i == character_label.text:
+				portrait.texture = load(character_portraits[i])
+		
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
 			dialogue_label.type_out()

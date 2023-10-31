@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Computer Desk
+* source:	https://sketchfab.com/3d-models/low-poly-computer-desk-646ed84ecd9d40089c31d94f79334ca5
+* author:	Nyangire (https://sketchfab.com/Nyangire)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Computer Desk" (https://sketchfab.com/3d-models/low-poly-computer-desk-646ed84ecd9d40089c31d94f79334ca5) by Nyangire (https://sketchfab.com/Nyangire) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
