@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ruin Diorama
+* source:	https://sketchfab.com/3d-models/ruin-diorama-3181bf575b7f4146b2b1d2d82fee5a77
+* author:	Corey Keeling (https://sketchfab.com/thecore37)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ruin Diorama" (https://sketchfab.com/3d-models/ruin-diorama-3181bf575b7f4146b2b1d2d82fee5a77) by Corey Keeling (https://sketchfab.com/thecore37) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

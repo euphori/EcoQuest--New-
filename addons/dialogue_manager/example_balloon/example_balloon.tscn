@@ -143,5 +143,8 @@ theme_override_colors/font_color = Color(0.96875, 0.929688, 0.792969, 1)
 theme_override_colors/font_focus_color = Color(0.976563, 0.9375, 0.796875, 1)
 text = "Response example"
 
+[node name="portrait" type="Sprite2D" parent="Balloon"]
+position = Vector2(862, 125)
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
