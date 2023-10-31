@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://c3a0rsiwq2e48"
+path="res://.godot/imported/desert.dialogue-fa1d96e0902af41a762d42bdced29736.tres"
+
+[deps]
+
+source_file="res://desert.dialogue"
+dest_files=["res://.godot/imported/desert.dialogue-fa1d96e0902af41a762d42bdced29736.tres"]
+
+[params]
+
+defaults=true

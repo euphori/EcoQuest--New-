@@ -45,6 +45,16 @@ func _input(event):
 		elif type == "entrance":
 			get_tree().change_scene_to_file(next_scene)
 
+			print(rad_to_deg(get_parent().rotation.x))
+			if global.items["Wrench"] >= 1:
+				
+				get_parent().rotation.x += deg_to_rad(2)
+				
+				print(get_parent().global_rotation.x)
+				if get_parent().rotation.x >= 0:
+					global.fixed_pipe = true
+					get_parent().get_node("GPUParticles3D").queue_free()
+					queue_free()
 func _ready():
 	$Label3D.text = text_label
 	visible = false
