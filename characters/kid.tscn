@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=15 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
@@ -131,15 +131,13 @@ _data = {
 "run": SubResource("Animation_jwhoy")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_oow21"]
-
 [node name="Kid" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_btg3w")
 default_char = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.113373, 1.79349, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.775665, 2.0182, 0)
 shape = SubResource("CapsuleShape3D_7sbix")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -157,15 +155,6 @@ libraries = {
 }
 
 [node name="HitDetection" parent="." instance=ExtResource("3_5wiq4")]
-
-[node name="PlatformDetection" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610454, 0)
-collision_layer = 16
-collision_mask = 32
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformDetection"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0565729, 0.357337, 0)
-shape = SubResource("SphereShape3D_oow21")
 
 [node name="RightMarker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56147, 3.65073, 0.416451)
@@ -187,6 +176,8 @@ pitch_scale = 2.23
 [node name="DashCooldown" type="Timer" parent="."]
 
 [node name="Hurtbox" parent="." instance=ExtResource("6_0dp76")]
+visible = false
+collision_mask = 1024
 
 [node name="CollisionShape3D" parent="Hurtbox" index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.257286, 2.46607, 0)
@@ -198,10 +189,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.257286, 2.46607, 0)
 [node name="GunCooldown" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="area_entered" from="PlatformDetection" to="." method="_on_platform_detection_area_entered"]
-[connection signal="area_exited" from="PlatformDetection" to="." method="_on_platform_detection_area_exited"]
-[connection signal="body_entered" from="PlatformDetection" to="." method="_on_platform_detection_body_entered"]
-[connection signal="body_exited" from="PlatformDetection" to="." method="_on_platform_detection_body_exited"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

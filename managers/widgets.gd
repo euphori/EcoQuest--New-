@@ -16,3 +16,5 @@ func _process(delta):
 	fps.text = str("FPS: ",Engine.get_frames_per_second(),"ms")
 	
 	kid_stats.text = str("Speed: ", kid.SPEED, "\nGlobal Position: ", kid.global_position, "\nOn Floor: " , kid.is_on_floor(), "\nCan Move: ", kid.can_move,"\nJumping: ", kid.jumping)
+
+

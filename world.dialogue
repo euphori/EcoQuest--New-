@@ -14,7 +14,7 @@ if global.active_quest["tutorial"] == true
 
 if global.items["Wood"] >= 5:
 	set global.completed_quest["tutorial"] = true
-	
+	set global.unlocked_map["Forest"] = true
 	if global.completed_quest["tutorial"] == true
 		Nathan: Well done!...Your'e boat is waiting on the dock.
 

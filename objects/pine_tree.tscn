@@ -15,7 +15,6 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 script = ExtResource("1_2qwdd")
 
 [node name="Bald" type="Node3D" parent="."]
-visible = false
 
 [node name="0" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 6.9323, 0)

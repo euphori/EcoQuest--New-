@@ -5,5 +5,5 @@
 [resource]
 resource_name = "Color Pallet"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.501961, 0.717647, 0.439216, 1)
+albedo_color = Color(0.333333, 0.6, 0.25098, 1)
 albedo_texture = ExtResource("1_57aju")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdjwlc4rpiv6r"]
+[gd_scene load_steps=3 format=3 uid="uid://coh7077lskb2l"]
 
 [ext_resource type="Script" path="res://managers/camera_mover.gd" id="1_5mlsy"]
 [ext_resource type="PackedScene" uid="uid://d4jukjjk8qioe" path="res://areas/player_detection.tscn" id="1_tcvtk"]

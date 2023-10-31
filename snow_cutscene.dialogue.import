@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://bnryeuubo8kwa"
+path="res://.godot/imported/snow_cutscene.dialogue-a18e994bc3312fe187a88da47ef47c1a.tres"
+
+[deps]
+
+source_file="res://snow_cutscene.dialogue"
+dest_files=["res://.godot/imported/snow_cutscene.dialogue-a18e994bc3312fe187a88da47ef47c1a.tres"]
+
+[params]
+
+defaults=true
