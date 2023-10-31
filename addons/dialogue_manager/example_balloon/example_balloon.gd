@@ -5,13 +5,6 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var portrait = $Balloon/portrait
-
-var character_portraits = {
-	"character1": "res://addons/dialogue_manager/example_balloon/portrait.png",
-	"character2": "",
-	# Add more characters as needed
-}
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -49,19 +42,12 @@ var dialogue_line: DialogueLine:
 		# Show our balloon
 		balloon.show()
 		will_hide_balloon = false
-		
-		match character_label.text:
-			"Quest Master":
-				print(character_portraits["character1"])
-				portrait.texture = load(character_portraits["character1"])
-			"Quest":
-				portrait.texture = load("res://assets/city/Realistic Car Pack - Nov 2018/Preview.png")
-				
+
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
 			dialogue_label.type_out()
 			await dialogue_label.finished_typing
-		
+
 		# Wait for input
 		if dialogue_line.responses.size() > 0:
 			balloon.focus_mode = Control.FOCUS_NONE
@@ -79,7 +65,6 @@ var dialogue_line: DialogueLine:
 
 
 func _ready() -> void:
-	
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -136,8 +121,3 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
-	
-
-
-
-

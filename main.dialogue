@@ -2,7 +2,7 @@
 
 if global.questStart == false
 	Quest Master: Greetings, brave adventurers! 
-	Quest: I come bearing a crucial quest that calls for your help in saving the world from the clutches of global warming.
+	Quest Master: I come bearing a crucial quest that calls for your help in saving the world from the clutches of global warming.
 	Quest Master: The Earth is in dire need of heroes like you, willing to take on challenges and make a real difference. 
 	Quest Master: Are you up for the task?
 	- We are here to help you!
