@@ -41,11 +41,6 @@ func _input(event):
 		elif type == "plant":
 			emit_signal("grow")
 		elif type == "fix":
-			pass
-		elif type == "entrance":
-			get_tree().change_scene_to_file(next_scene)
-
-			print(rad_to_deg(get_parent().rotation.x))
 			if global.items["Wrench"] >= 1:
 				
 				get_parent().rotation.x += deg_to_rad(2)
@@ -55,6 +50,9 @@ func _input(event):
 					global.fixed_pipe = true
 					get_parent().get_node("GPUParticles3D").queue_free()
 					queue_free()
+		elif type == "entrance":
+			get_tree().change_scene_to_file(next_scene)
+
 func _ready():
 	$Label3D.text = text_label
 	visible = false
