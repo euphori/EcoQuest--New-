@@ -154,7 +154,7 @@ transform = Transform3D(1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 
 fov = 48.2
 
 [node name="Contanier" type="MeshInstance3D" parent="."]
-transform = Transform3D(-17.9076, 14.3481, -198.679, -170.585, 101.902, 22.7345, 102.86, 171.494, 3.11377, 38.7994, 2.9977, 2.62996)
+transform = Transform3D(-17.9076, 14.3481, -198.679, -138.15, 142.816, 22.7657, 143.506, 139.276, -2.87645, 38.7994, 2.9977, 4.62996)
 mesh = SubResource("ArrayMesh_2tdre")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_dwn6x")

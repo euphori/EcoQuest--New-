@@ -4,7 +4,7 @@ extends Node3D
 
 @export var text_label = ""
 
-@export_enum ("npc","object","movable","pickable","plant") var type: String
+@export_enum ("npc","object","movable","pickable","plant","fix") var type: String
 
 
 
@@ -38,6 +38,8 @@ func _input(event):
 			parent.queue_free()
 		elif type == "plant":
 			emit_signal("grow")
+		elif type == "fix":
+			pass
 
 func _ready():
 	$Label3D.text = text_label

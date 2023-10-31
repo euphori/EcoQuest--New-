@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://chxuot5dj22rf"]
+[gd_scene load_steps=121 format=3 uid="uid://chxuot5dj22rf"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctnp1344ru48c" path="res://assets/environment/Mounting_2.fbx" id="4_jkqio"]
 [ext_resource type="PackedScene" uid="uid://b82rmw4fqro17" path="res://assets/low_poly_pipe/scene.gltf" id="6_ax6t1"]
 [ext_resource type="PackedScene" uid="uid://da2jih15ufs7n" path="res://assets/low_poly_bend_pipe/scene.gltf" id="7_03rxo"]
+[ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="7_g6rp4"]
 [ext_resource type="PackedScene" uid="uid://dch08lwywoub8" path="res://assets/CastleRuins.fbx" id="8_d8mvq"]
 [ext_resource type="PackedScene" uid="uid://pqnnit1n2pwh" path="res://assets/desert/free-desert-plant-3d-low-poly-models/Fbx/Desert_plant_012.fbx" id="9_44i6s"]
 [ext_resource type="Texture2D" uid="uid://34ojs1m0hwv1" path="res://assets/palette color.png" id="9_ca5u4"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://pi6vtac0wu7w" path="res://assets/desert/textures/material_0_baseColor.png" id="17_pcv0d"]
 [ext_resource type="Texture2D" uid="uid://cfsufdxm0fxcd" path="res://assets/skybox/Epic_GloriousPink_EquiRect.png" id="19_c1jcm"]
 [ext_resource type="PackedScene" uid="uid://mp1wewkqioxd" path="res://interactable/movable_box.tscn" id="23_mlqp4"]
+[ext_resource type="Texture2D" uid="uid://hl5fqkmknv80" path="res://assets/desert/droplet_None_baseColor.png" id="24_j73c5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymmv6"]
 resource_name = "Material_standard"
@@ -931,6 +933,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nlm50")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rjqan"]
+particle_flag_align_y = true
+direction = Vector3(0, 0, 1)
+spread = 26.14
+initial_velocity_min = 4.0
+initial_velocity_max = 10.0
+scale_min = 0.3
+scale_max = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g1eu"]
+albedo_texture = ExtResource("24_j73c5")
+
+[sub_resource type="SphereMesh" id="SphereMesh_s2sro"]
+material = SubResource("StandardMaterial3D_6g1eu")
+
 [node name="Desert" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.11764, 0)
 script = ExtResource("1_rwywj")
@@ -1208,7 +1225,12 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -44.19
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -40.8503, 19.7093, 5.18951)
 
 [node name="Pipe8" parent="Pipes" instance=ExtResource("6_ax6t1")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -37.478, 19.7093, 5.18951)
+transform = Transform3D(-1.71494e-07, -0.77954, 3.9233, -3.40748e-08, 3.9233, 0.77954, -4, 0, -1.74846e-07, -37.478, 19.7093, 5.18951)
+
+[node name="InteractUI" parent="Pipes/Pipe8" instance=ExtResource("7_g6rp4")]
+transform = Transform3D(-0.00144859, 0.097442, -0.490411, -0.0974421, 0.480955, 0.095851, 0.490411, 0.0958511, 0.0175965, -0.152613, 0.587962, -0.370338)
+text_label = "Fix"
+type = "fix"
 
 [node name="Pipe11" parent="Pipes" instance=ExtResource("6_ax6t1")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -34.1385, 19.7093, 5.18951)
@@ -2699,6 +2721,13 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1499, 11.4507, 5.05319)
 path_to_manager = NodePath("../CharacterManager")
 metadata/_edit_group_ = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.448368, -0.155215, 0.88027, -0.893849, -0.0778582, 0.441556, 0, -0.984808, -0.173648, -56.2069, 13.1566, 3.80675)
+amount = 30
+explosiveness = 0.14
+process_material = SubResource("ParticleProcessMaterial_rjqan")
+draw_pass_1 = SubResource("SphereMesh_s2sro")
 
 [editable path="Water/Water"]
 [editable path="Water/Water2"]
