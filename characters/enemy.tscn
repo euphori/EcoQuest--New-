@@ -355,17 +355,20 @@ one_shot = true
 [node name="GlobalbgMusicAttack" parent="." instance=ExtResource("6_2rqdt")]
 stream = null
 
-[node name="Hurtbox" parent="." instance=ExtResource("7_3p5m8")]
+[node name="Hurtbox" parent="." groups=["enemy"] instance=ExtResource("7_3p5m8")]
 collision_layer = 512
 
 [node name="StaggerTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DashTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="JumpCooldown" to="." method="_on_jump_cooldown_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="StaggerTimer" to="." method="_on_stagger_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 
 [editable path="Hitbox"]
 [editable path="PlayerDetection"]

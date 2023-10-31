@@ -101,7 +101,7 @@ func _on_dash_cooldown_timeout():
 
 func _on_hurtbox_area_entered(area):
 	print(get_parent().get_name())
-	if area.get_parent().get_name() == "Enemy":
+	if area.is_in_group("enemy"):
 		var tween = get_tree().create_tween()
 		HEALTH -= 20
 		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.5)

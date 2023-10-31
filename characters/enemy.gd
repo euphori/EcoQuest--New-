@@ -3,11 +3,11 @@ extends CharacterBody3D
 
 var SPEED = 5.0
 const JUMP_VELOCITY = 8
-const ACCELERATION = 150
+const ACCELERATION = 30
 const MAX_SPEED = 7
 const AGGRO_RANGE = 15
 const KNOCKBACK_FORCE = 40
-
+var DASH_SPEED = 30
 
 @export var path_to_player:NodePath
 @export var health = 5
@@ -23,6 +23,7 @@ var can_jump = true
 var staggering = false
 var can_move = true
 var attacking = false
+var dashing
 
 enum{
 	IDLE,
@@ -30,7 +31,8 @@ enum{
 	CHASE,
 	ATTACK,
 	JUMP,
-	STAGGER
+	STAGGER,
+	DASH
 }
 
 
@@ -45,7 +47,6 @@ func _physics_process(delta):
 	
 
 	if not is_on_floor():
-
 		velocity.y -= gravity * delta
 	else:
 		jumping = false
@@ -89,10 +90,10 @@ func _physics_process(delta):
 		ATTACK:
 			var dir = self.global_position.direction_to(player.global_position)
 			$Label3D.text = str("State: ATTACK")
-			if dir.x > 0 and !attacking:
+			if dir.x > 0 and !attacking and !dashing:
 				$AnimationPlayer.play("attack_right")
 				attacking = true
-			elif dir.x < 0 and !attacking:
+			elif dir.x < 0 and !attacking and !dashing:
 				$AnimationPlayer.play("attack_left")
 				attacking = true
 			if self.name == "SawRobot":
@@ -105,14 +106,16 @@ func _physics_process(delta):
 			await $AnimationPlayer.animation_finished
 			state = CHASE
 			attacking = false
-
-			
+		DASH:
+			$Label3D.text = str("State: DASH")
+			var dir = self.global_position.direction_to(player.global_position)
+			velocity.x = dir.x * DASH_SPEED
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()
 		STAGGER:
 			("State: STAGGER")
-			staggering = true	
+			staggering = true
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 		
@@ -143,6 +146,11 @@ func jump():
 		print(velocity.x)
 		can_jump = false
 		
+
+func dash():
+	$DashTimer.start(0.5)
+	state = DASH
+	dashing = true
 
 func hurt():
 	health -= 1
@@ -196,3 +204,9 @@ func _on_stagger_timer_timeout():
 
 func _on_hurtbox_body_entered(body):
 	pass # Replace with function body.
+
+
+func _on_dash_timer_timeout():
+	dashing = false
+	state = CHASE
+

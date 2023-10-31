@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://y4m2x3ue5rfw" path="res://assets/grass/GrassShader.tres" id="4_m4tl5"]
 [ext_resource type="ArrayMesh" uid="uid://bx2popknfspdn" path="res://assets/grass/grass.res" id="5_5u4nd"]
 [ext_resource type="PackedScene" uid="uid://b1n6k50rg5smd" path="res://objects/snow_tree.tscn" id="5_p7u4o"]
-[ext_resource type="PackedScene" path="res://UI/env_controller.tscn" id="6_wdctm"]
+[ext_resource type="PackedScene" uid="uid://bsmipka0huvsg" path="res://UI/env_controller.tscn" id="6_wdctm"]
 [ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="7_nafbp"]
 [ext_resource type="ArrayMesh" uid="uid://cpl6pexsstdoc" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_Snow_5.obj" id="8_ebyt7"]
 [ext_resource type="PackedScene" uid="uid://lw4kr2vc0apu" path="res://assets/city/Low Poly Construction/Steel Holder .fbx" id="9_vbaw5"]
