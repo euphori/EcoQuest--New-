@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoQuest (New)"
-run/main_scene="res://levels/world.tscn"
+run/main_scene="res://levels/forest.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

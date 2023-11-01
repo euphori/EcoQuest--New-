@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://btx3ng67uo11b"]
+
+[ext_resource type="Script" path="res://load.gd" id="1_8u5xu"]
+[ext_resource type="Texture2D" uid="uid://dw6g6vacaos8n" path="res://assets/ui/loading/Layer 2.png" id="2_lblej"]
+[ext_resource type="Texture2D" uid="uid://cs3f4louar5ay" path="res://assets/ui/loading/Layer 1.png" id="2_urf35"]
+[ext_resource type="Texture2D" uid="uid://c6tk75iqv736d" path="res://assets/ui/loading/Layer 3.png" id="3_yf0pl"]
+[ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="5_eot30"]
+[ext_resource type="Texture2D" uid="uid://86l50g6swtuo" path="res://assets/ui/loading/Layer 4.png" id="6_h4fqv"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8u5xu")
+
+[node name="Layer1" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+texture = ExtResource("2_urf35")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 559.0
+offset_right = 1136.0
+offset_bottom = 603.0
+value = 50.0
+texture_over = ExtResource("2_lblej")
+texture_progress = ExtResource("3_yf0pl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 904.0
+offset_top = 525.0
+offset_right = 998.0
+offset_bottom = 565.0
+theme_override_fonts/font = ExtResource("5_eot30")
+theme_override_font_sizes/font_size = 24
+text = "Loading"
+
+[node name="Layer4" type="Sprite2D" parent="."]
+position = Vector2(945, 482)
+texture = ExtResource("6_h4fqv")

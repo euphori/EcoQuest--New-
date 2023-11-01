@@ -45,26 +45,39 @@ func _on_forest_mouse_entered():
 	loc.text = text.Forest
 
 
+func load_next_scene():
+	var loading_screen = load("res://UI/loading_screen.tscn")
+	get_tree().change_scene_to_packed(loading_screen)
+	
+
+
+
 func _on_forest_pressed():
 	if global.unlocked_map["Forest"]:
-		get_tree().change_scene_to_file("res://levels/world.tscn")
+		global.next_scene = "res://levels/forest.tscn"
+		load_next_scene()
 
 
 func _on_hub_pressed():
 	if global.unlocked_map["Hub"]:
-		get_tree().change_scene_to_file("res://levels/hub.tscn")
+		global.next_scene = "res://levels/hub.tscn"
+		load_next_scene()
+		
 
 
 func _on_snow_pressed():
 	if global.unlocked_map["Snow"]:
-		get_tree().change_scene_to_file("res://levels/snow.tscn")
-
+		global.next_scene = "res://levels/snow.tscn"
+		load_next_scene()
 
 func _on_city_pressed():
 	if global.unlocked_map["City"]:
-		get_tree().change_scene_to_file("res://levels/city.tscn")
+		global.next_scene = "res://levels/city.tscn"
+		load_next_scene()
 
 
 func _on_desert_pressed():
 	if global.unlocked_map["Desert"]:
-		get_tree().change_scene_to_file("res://levels/desert.tscn")
+		global.next_scene = "res://levels/desert.tscn"
+		load_next_scene()
+

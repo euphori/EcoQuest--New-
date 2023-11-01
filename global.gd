@@ -3,7 +3,7 @@ extends Node
 @onready var player
 var player_pos
 var player_hp
-
+var next_scene
 
 signal dialogue_done
 

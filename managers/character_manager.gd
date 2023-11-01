@@ -27,7 +27,7 @@ var in_cutscene = false
 
 var save_path = {
 	"res://levels/lab.tscn": "user://lab_camera.txt",
-	"res://levels/world.tscn": "user://forest_camera.txt",
+	"res://levels/forest.tscn": "user://forest_camera.txt",
 	"res://levels/hub.tscn": "user://hub_camera.txt",
 	"res://levels/desert.tscn" : "user://desert_camera.txt",
 	"res://levels/snow.tscn": "user://snow_camera.txt",
