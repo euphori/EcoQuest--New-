@@ -1,0 +1,30 @@
+~ start
+
+#Question 5
+if global.completed_quest["q4"] == true and global.active_quest["q5"] == false
+	Scientist: The factory has been producing too much carbon dioxide.
+	Scientist: But before you continue...I want to hear your opinions first.
+	Scientist: Are you willing to save water?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Scientist: Are you willing to install energy-efficient appliances in your home?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Scientist: Would you consider using things like solar panels for electricity?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- Now way, I don't have time.
+		set global.dialogue_points += 1
+	Scientist: Great, I'm now ready to give your quest.
+	set global.active_quest["q5"] = true
+
+#Task 4
+if global.active_quest["q5"] == true and global.completed_quest["q5"] == false
+	Scientist: Help me shut down the factory to eliminate the cause of air pollution.
+	Scientist: Go inside the lab to shut it down.
+
+=> END
