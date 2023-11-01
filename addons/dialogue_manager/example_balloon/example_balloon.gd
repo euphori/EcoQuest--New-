@@ -10,6 +10,7 @@ extends CanvasLayer
 var character_portraits = {
 	"Farmer": "res://addons/dialogue_manager/example_balloon/farmer.png",
 	"Mechanic": "res://addons/dialogue_manager/example_balloon/mechanic.png",
+	"Scientist": "res://addons/dialogue_manager/example_balloon/scientist.png",
 	# Add more characters as needed
 }
 

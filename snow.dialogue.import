@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://lyedhgj2m7it"
+path="res://.godot/imported/snow.dialogue-5c02f0d6298f19fbcb53871e5c5c94c7.tres"
+
+[deps]
+
+source_file="res://snow.dialogue"
+dest_files=["res://.godot/imported/snow.dialogue-5c02f0d6298f19fbcb53871e5c5c94c7.tres"]
+
+[params]
+
+defaults=true
