@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=18 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
+[ext_resource type="AudioStream" uid="uid://dmb8oc7vm5jew" path="res://assets/sounds/Pushing.mp3" id="3_u1rgq"]
 [ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="6_0dp76"]
+[ext_resource type="AudioStream" uid="uid://bh5duj7vepfuv" path="res://assets/sounds/Dash.mp3" id="7_bhohd"]
+[ext_resource type="AudioStream" uid="uid://d0cvh7ndvgfd" path="res://assets/sounds/hit.mp3" id="7_jb85n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -75,7 +78,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_c00x2"]
 resource_name = "pushing"
-length = 0.1
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -88,6 +91,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [11]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pushing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_u1rgq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jwhoy"]
 resource_name = "run"
@@ -170,6 +188,16 @@ volume_db = -7.207
 pitch_scale = 2.23
 
 [node name="kid_sound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_jb85n")
+
+[node name="Dash" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_bhohd")
+volume_db = 0.946
+pitch_scale = 1.18
+
+[node name="Pushing" type="AudioStreamPlayer3D" parent="."]
 
 [node name="DashTimer" type="Timer" parent="."]
 

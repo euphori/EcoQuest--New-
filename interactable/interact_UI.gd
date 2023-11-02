@@ -1,11 +1,15 @@
 extends Node3D
 
 @onready var parent = get_parent()
+@onready var pick = $Pick
+
 
 @export var text_label = ""
 @export_enum ("npc","object","movable","pickable","plant","fix","entrance") var type: String
 @export_category("If Entrace:")
 @export var next_scene:String
+
+
 
 
 
@@ -17,6 +21,7 @@ signal item_added
 signal move
 signal stop
 signal grow
+
 
 func _input(event):
 	if type == "movable"  and parent.colliding:
@@ -34,10 +39,12 @@ func _input(event):
 
 		if type == "npc":
 			emit_signal("talk")
+			pick.play()
 		elif type == "pickable":
 			global.items[parent.item_name] += 1
 			emit_signal("item_added")
 			parent.queue_free()
+			
 		elif type == "plant":
 			emit_signal("grow")
 		elif type == "fix":

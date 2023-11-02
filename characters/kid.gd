@@ -5,6 +5,9 @@ const bolt = preload("res://instanced/bullet.tscn")
 @onready var right_muzzle = $RightMarker
 @onready var sprite = $Sprite3D
 @onready var attack = $attack
+@onready var dash = $Dash
+@onready var hurt = $Hurt
+
 
 var is_flipped = false
 var pressed_time = 0.0
@@ -13,8 +16,9 @@ var recharge_time = 1.5
 var can_shoot = true
 var regen_time = 10
 
-
 func _process(delta):
+	if Input.is_action_pressed("dash"):
+		dash.play()
 	if Input.is_action_pressed("attack"):
 		pressed_time += delta 
 		
@@ -107,6 +111,7 @@ func _on_hurtbox_area_entered(area):
 		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.5)
 		#get_parent().health_ui.value = HEALTH
 		$HealthRegen.start(regen_time)
+		hurt.play()
 
 
 func _on_recharge_timer_timeout():
