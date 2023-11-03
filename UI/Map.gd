@@ -1,6 +1,7 @@
 extends Control
 
 @onready var loc = $Location
+@onready var select = $"../Select"
 
 var text = {"Forest" : "" , "Hub": "" , "Snow" : "", "Desert" :"" , "City" :""}
 # Called when the node enters the scene tree for the first time.
@@ -26,22 +27,27 @@ func initialize_map():
 
 
 func _on_desert_mouse_entered():
+	select.play()
 	loc.text = text.Desert
 
 
 func _on_city_mouse_entered():
+	select.play()
 	loc.text = text.City
 
 
 func _on_snow_mouse_entered():
+	select.play()
 	loc.text = text.Snow
 
 
 func _on_hub_mouse_entered():
+	select.play()
 	loc.text = text.Hub
 
 
 func _on_forest_mouse_entered():
+	select.play()
 	loc.text = text.Forest
 
 

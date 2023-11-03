@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://wiyfvqhus6ir"]
+[gd_scene load_steps=37 format=3 uid="uid://wiyfvqhus6ir"]
 
 [ext_resource type="Script" path="res://UI/journal.gd" id="1_bqxhi"]
 [ext_resource type="Texture2D" uid="uid://dywprg74gmjw6" path="res://assets/ui/journal/Journal Texture.png" id="2_ojg6f"]
@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://mn3s0dskao05" path="res://assets/ui/map/Desert Hover.png" id="23_1ymhv"]
 [ext_resource type="Texture2D" uid="uid://cteajdqb5s482" path="res://assets/ui/map/Group 4.png" id="23_wi5md"]
 [ext_resource type="Texture2D" uid="uid://bs715rhdfv50d" path="res://assets/ui/map/Compass.png" id="24_n880j"]
+[ext_resource type="AudioStream" uid="uid://dg68js5mdgnxh" path="res://assets/sounds/close_j.mp3" id="34_3tafa"]
+[ext_resource type="AudioStream" uid="uid://cge5g40yv4h1h" path="res://assets/sounds/open_journal.mp3" id="34_8j7n8"]
+[ext_resource type="AudioStream" uid="uid://diotodl0p36k6" path="res://assets/sounds/Menu_Selection2.mp3" id="36_0bxco"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -515,6 +518,16 @@ offset_right = 1795.0
 offset_bottom = 871.0
 texture_normal = ExtResource("8_u8eaw")
 texture_focused = ExtResource("9_fwdkh")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_3tafa")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_8j7n8")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_0bxco")
+volume_db = 1.825
 
 [connection signal="pressed" from="PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="PauseMenu/SaveButton" to="." method="_on_save_button_pressed"]

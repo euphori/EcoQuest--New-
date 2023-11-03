@@ -7,6 +7,9 @@ extends Control
 @onready var slots = $Inventory/GridContainer
 @onready var fin_quest = $Quest/FinishedQuests
 @onready var map = $Map
+@onready var open = $Open
+@onready var close = $Close
+@onready var select = $Select
 
 var done = []
 # Called when the node enters the scene tree for the first time.
@@ -27,6 +30,7 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("journal"):
 		if self.visible:
+			close.play()
 			get_curr_quest()
 			initialize_inv()
 			update_quantity()
@@ -35,6 +39,7 @@ func _input(event):
 			map.initialize_map()
 			self.visible = false
 		else:
+			open.play()
 			get_curr_quest()
 			initialize_inv()
 			update_quantity()
@@ -138,6 +143,7 @@ func update_save_slot():
 
 
 func show_map():
+	open.play()
 	visible = true
 	$Quest.visible = false
 	$Inventory.visible = false
@@ -147,6 +153,7 @@ func show_map():
 
 
 func _on_inv_button_pressed():
+	open.play()
 	$Quest.visible = false
 	$Inventory.visible = true
 	$PauseMenu.visible = false
@@ -154,6 +161,7 @@ func _on_inv_button_pressed():
 	$Map.visible = false
 
 func _on_quest_button_pressed():
+	open.play()
 	$Quest.visible = true
 	$Inventory.visible = false
 	$PauseMenu.visible = false
@@ -161,6 +169,7 @@ func _on_quest_button_pressed():
 	$Map.visible = false
 
 func _on_exit_button_pressed():
+	open.play()
 	$Quest.visible = false
 	$Inventory.visible = false
 	$PauseMenu.visible = true
@@ -168,10 +177,12 @@ func _on_exit_button_pressed():
 	$Map.visible = false
 
 func _on_save_button_pressed():
+	select.play()
 	global.save(global.save_path["save1"])
 
 
 func _on_load_button_pressed():
+	select.play()
 	global.load_save(global.save_path["save1"])
 	#$Quest.visible = false
 	#$Inventory.visible = false
@@ -182,17 +193,21 @@ func _on_load_button_pressed():
 
 
 func _on_slot_1_pressed():
+	select.play()
 	global.load_save(global.save_path["save1"])
 
 
 func _on_slot_2_pressed():
+	select.play()
 	global.load_save(global.save_path["save2"])
 
 
 func _on_slot_3_pressed():
+	select.play()
 	global.load_save(global.save_path["save3"])
 
 
 func _on_quit_button_pressed():
+	select.play()
 	get_tree().quit()
 
