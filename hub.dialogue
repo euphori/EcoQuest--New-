@@ -1,0 +1,43 @@
+~ start
+
+if global.questStart == false
+	Farmer: Greetings, brave adventurer! 
+	Farmer: I see that you have taken the challenge of restoring the effects of climate change.
+	Farmer: The Earth is in dire need of heroes like you, willing to take on challenges and make a real difference. 
+	Farmer: Are you up for the task?
+	- We are here to help you!
+		set global.questStart = true
+	- No thanks. => END
+
+#Question 1
+if global.questStart == true and global.active_quest["q1"] == false and global.completed_quest["q1"] == false
+	Quest Master: Before I give your first quest...I want to hear your opinions first.
+	Quest Master: Would you be willing to use easily-soluble bags instead of plastic?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+		set global.decision["q1"] = 5
+		do global.save_data("quest_1" , 5)
+	- No, I don't have time to do that.
+		set global.dialogue_points += 1
+	Quest Master: Are you willing to switch to reusable alternatives like water bottles and shopping bags?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- No, I don't have time to do that.
+		set global.dialogue_points += 1
+	Quest Master: Are you willing to throw plastics, metals, and paper into separate recycling bins?
+	- Definitely, it is very important!
+		set global.dialogue_points += 5
+	- No, I don't have time to do that.
+		set global.dialogue_points += 1
+	Quest Master: Great, you are now ready for your first quest.
+	set global.active_quest["q1"] = true
+
+#Task 1
+if global.active_quest["q1"] == true and global.completed_quest["q1"] == false and global.items["Plastic"] < 5
+	Quest Master: For your first quest, help me clean out the place by throwing the trash in their perspective bins.
+	=> END
+if global.items["Plastic"] >= 5:
+	Quest Master: Great! Here's your reward
+	set global.completed_quest["q1"] = true
+	set global.active_quest["q1"] = false
+=> END

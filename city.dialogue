@@ -32,5 +32,6 @@ if global.items["Solar Panel Parts"] == 5 :
 if global.completed_quest["q4"] == true and global.active_quest["q5"] == false
 	Quest Master: Great! you completed all the materials to build a solar panel.
 	Quest Master: You can now recharge your electric bike.
+	Quest Master: Here's your reward for building a solar panel.
 
 => END

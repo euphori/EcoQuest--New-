@@ -2,7 +2,7 @@
 
 if global.questStart == false
 	Farmer: Greetings, brave adventurers! 
-	Mechanic: I come bearing a crucial quest that calls for your help in saving the world from the clutches of global warming.
+	Farmer: I come bearing a crucial quest that calls for your help in saving the world from the clutches of global warming.
 	Quest Master: The Earth is in dire need of heroes like you, willing to take on challenges and make a real difference. 
 	Quest Master: Are you up for the task?
 	- We are here to help you!
@@ -18,8 +18,6 @@ if global.questStart == true and global.active_quest["q1"] == false and global.c
 		set global.decision["q1"] = 5
 		do global.save_data("quest_1" , 5)
 	- No, I don't have time to do that.
-		set global.dialogue_points += 1
-	- , I don't have time to do that.
 		set global.dialogue_points += 1
 	Quest Master: Are you willing to switch to reusable alternatives like water bottles and shopping bags?
 	- Definitely, it is very important!
