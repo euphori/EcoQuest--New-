@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var item_name : String
 @export var assigned_quest : String
 @export var hide = false
-
+@onready var pick = $pick
 @onready var collision = $InteractUI/PlayerDetection/CollisionShape3D
 signal item_added
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -29,3 +29,4 @@ func _process(delta):
 			self.visible = false
 	
 	move_and_slide()
+	
