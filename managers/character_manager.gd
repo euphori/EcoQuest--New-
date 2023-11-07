@@ -5,7 +5,6 @@ extends Node3D
 
 
 @onready var camera = $Camera3D
-@onready var robot = $Robot
 @onready var kid = $Kid
 @onready var z_slider = $Widgets/CameraController/ZSlider
 @onready var y_slider = $Widgets/CameraController/YSlider
@@ -14,17 +13,18 @@ extends Node3D
 @onready var x_label = $Widgets/CameraController/XSlider/Label2
 @onready var y_label = $Widgets/CameraController/YSlider/Label3
 @onready var health_ui = $UI/Health/TextureProgressBar
-@onready var energy_ui = $UI/Energy/TextureProgressBar
 
+@onready var quest_tracker = $UI/Quest/QuestInfo
+@onready var pause_menu = $UI/PauseMenu
 
 var location = global.curr_scene
-var new_camera_offset = {"x":4.0,"y":3.0,"z":3.0}
-var old_camera_offset = {"x":4.0,"y":3.0,"z":3.0}
+var new_camera_offset = {"x":0.5,"y":4,"z":7}
+var old_camera_offset = {"x":0.5,"y":4,"z":7}
 var start_cam_pos 
 var camera_settings
 var change_offset_dur = 1
 var in_cutscene = false
-
+var curr_quest 
 var save_path = {
 	"res://levels/lab.tscn": "user://lab_camera.txt",
 	"res://levels/forest.tscn": "user://forest_camera.txt",
@@ -37,11 +37,12 @@ var disable_cam_control = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	update_quest()
+	kid.connect("player_dead", show_death_screen)
+	global.connect("update_quest", update_quest)
 	
 	camera.position += adjust_camera_pos
 	health_ui.value = kid.HEALTH
-	robot.queue_free()
 	
 	z_slider.value = old_camera_offset["z"]
 	x_slider.value = old_camera_offset["x"]
@@ -52,8 +53,39 @@ func _ready():
 	start_cam_pos = old_camera_offset
 
 
+func _input(event):
+	if event.is_action_pressed("esc"):
+		if !$Journal.visible and !$Journal/Map.visible:
+			show_pause_menu()
+			$Journal.visible = false
+		else:
+			$Journal.visible = false
+			$Journal/Map.visible = false
 
 
+func update_quest():
+	for i in global.active_quest:
+		if global.active_quest[i] == true:
+			curr_quest = i
+			var mat = global.req_materials[i][0]
+			var req_quant = global.req_materials[i][1]
+			var curr_quant
+			for x in global.items:
+				if x == mat:
+					curr_quant = global.items[x]
+			var type = global.quest_type[curr_quest]
+			quest_tracker.text = str(type , " ", mat , " " , curr_quant , "/" , req_quant)
+			if global.req_materials[curr_quest][1] <= global.items[mat]:
+				quest_tracker.text = "Talk to NPC"
+	if !global.active_quest["tutorial"] and global.completed_quest["tutorial"]:
+		if get_parent().name == "Hub":
+			quest_tracker.text = "Talk to the farmer"
+		else:
+			quest_tracker.text = "Travel to the Hub"
+	
+
+func show_death_screen():
+	$UI/DeathScreen.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -151,6 +183,43 @@ func load_save(_save_path):
 
 
 
+func show_pause_menu():
+	if !pause_menu.visible:
+		pause_menu.visible = true
+		var tween = get_tree().create_tween()
+		await tween.tween_property(pause_menu , "global_position", Vector2(0,0), 0.3)
+	elif pause_menu.visible:
+		var tween = get_tree().create_tween()
+		tween.tween_property(pause_menu , "global_position", Vector2(0,921), 0.3)
+		pause_menu.visible = false
 
 func _on_print_button_pressed():
 	print(old_camera_offset)
+
+
+func _on_restart_pressed():
+	global.load_save(global.save_path["save1"])
+
+
+func _on_quit_pressed():
+	get_tree().change_scene_to_packed(load("res://levels/menu_screen.tscn"))
+	
+
+func _on_resume_button_pressed():
+	var tween = get_tree().create_tween()
+	tween.tween_property(pause_menu , "global_position", Vector2(0,921), 0.3)
+	pause_menu.visible = false
+
+
+
+func _on_load_button_pressed():
+	global.load_save(global.save_path["save1"])
+
+func _on_quit_button_pressed():
+	get_tree().quit()
+
+
+
+
+func _on_save_progress_button_pressed():
+	global.save(global.save_path["save1"])

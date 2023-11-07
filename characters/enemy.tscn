@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7wmwixcvyr41"]
+[gd_scene load_steps=19 format=3 uid="uid://c7wmwixcvyr41"]
 
 [ext_resource type="Script" path="res://characters/enemy.gd" id="1_514o1"]
 [ext_resource type="Texture2D" uid="uid://bwiqypqnkj4p4" path="res://assets/player/rb_sheet.png" id="1_w38js"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="4_x8mpf"]
 [ext_resource type="PackedScene" uid="uid://dfgedpauj8brb" path="res://assets/sounds/globalbg_music_attack.tscn" id="6_2rqdt"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="7_3p5m8"]
+[ext_resource type="Texture2D" uid="uid://by6s5cw2wqt7j" path="res://assets/ui/enemy_stats/EnemyHP BG.png" id="9_rvr0i"]
+[ext_resource type="Texture2D" uid="uid://bcej4bre6bdiw" path="res://assets/ui/enemy_stats/EnemyHP Fill.png" id="10_m8mfv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyxu5"]
 
@@ -290,11 +292,16 @@ _data = {
 "run": SubResource("Animation_6b0fi")
 }
 
-[node name="Enemy" type="CharacterBody3D"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1tbx2"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 collision_mask = 9
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 script = ExtResource("1_514o1")
+ATTACK_RANGE = 6
+MIN_ATTACK_RANGE = 4
 
 [node name="Hitbox" parent="." instance=ExtResource("2_yjrcb")]
 collision_layer = 1024
@@ -303,7 +310,7 @@ collision_layer = 1024
 transform = Transform3D(0.826922, -2.88378, 0, 2.88378, 0.826922, 0, 0, 0, 3, -7.44791, 1.95564, -0.146)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67547, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550711, 2.67547, 0)
 flip_h = true
 shaded = true
 alpha_cut = 2
@@ -312,7 +319,7 @@ hframes = 6
 vframes = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.568896, 2.56688, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0713035, 2.45713, 0)
 shape = SubResource("CapsuleShape3D_tyxu5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -357,11 +364,32 @@ stream = null
 
 [node name="Hurtbox" parent="." groups=["enemy"] instance=ExtResource("7_3p5m8")]
 collision_layer = 512
+monitorable = true
 
 [node name="StaggerTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="HealthProgress" type="TextureProgressBar" parent="SubViewport"]
+offset_left = 623.0
+offset_top = 540.0
+offset_right = 1306.0
+offset_bottom = 582.0
+value = 100.0
+texture_under = ExtResource("9_rvr0i")
+texture_progress = ExtResource("10_m8mfv")
+texture_progress_offset = Vector2(5, 5)
+tint_under = Color(0.886275, 0.886275, 0.886275, 1)
+
+[node name="Health" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.492911, 5.63756, -0.546734)
+texture = SubResource("ViewportTexture_1tbx2")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

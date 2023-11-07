@@ -74,7 +74,6 @@ func _init(data: Dictionary = {}) -> void:
 				pauses = data.pauses
 				speeds = data.speeds
 				inline_mutations = data.inline_mutations
-				conditions = data.conditions
 				time = data.time
 				tags = data.tags
 
@@ -88,4 +87,12 @@ func _to_string() -> String:
 			return "<DialogueLine character=\"%s\" text=\"%s\">" % [character, text]
 		_DialogueConstants.TYPE_MUTATION:
 			return "<DialogueLine mutation>"
+	return ""
+
+
+func get_tag_value(tag_name: String) -> String:
+	var wrapped := "%s=" % tag_name
+	for t in tags:
+		if t.begins_with(wrapped):
+			return t.replace(wrapped, "").strip_edges()
 	return ""

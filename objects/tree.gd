@@ -69,22 +69,23 @@ func get_state():
 
 
 func update_state():
-	for i in state:
-		if i == curr_state:
-			state[curr_state].visible = true
-			if state[curr_state].get_child_count() > 1:
-				var rand = randi_range(0, state[curr_state].get_child_count() - 1)
-				var mesh 
-				for x in state[curr_state].get_child_count():
-					if x == rand:
-						mesh = state[curr_state].get_node(str(rand))
-						mesh.visible = true
-					else:
-						mesh = state[curr_state].get_node(str(x))
-						mesh.visible = false
-		else:
-			if i != "seed":
-				state[i].visible = false
+	if state != null:
+		for i in state:
+			if i == curr_state:
+				state[curr_state].visible = true
+				if state[curr_state].get_child_count() > 1:
+					var rand = randi_range(0, state[curr_state].get_child_count() - 1)
+					var mesh 
+					for x in state[curr_state].get_child_count():
+						if x == rand:
+							mesh = state[curr_state].get_node(str(rand))
+							mesh.visible = true
+						else:
+							mesh = state[curr_state].get_node(str(x))
+							mesh.visible = false
+			else:
+				if i != "seed":
+					state[i].visible = false
 
 func pick_mesh():
 

@@ -1,38 +1,44 @@
-[gd_scene load_steps=34 format=3 uid="uid://wiyfvqhus6ir"]
+[gd_scene load_steps=39 format=3 uid="uid://wiyfvqhus6ir"]
 
 [ext_resource type="Script" path="res://UI/journal.gd" id="1_bqxhi"]
-[ext_resource type="Texture2D" uid="uid://dywprg74gmjw6" path="res://assets/ui/journal/Journal Texture.png" id="2_ojg6f"]
+[ext_resource type="Texture2D" uid="uid://wxusmpd8tjqf" path="res://assets/ui/new_journal/Cover.png" id="2_a00sb"]
 [ext_resource type="Texture2D" uid="uid://l4hr4m01d6ms" path="res://assets/ui/journal/Todo List.png" id="3_1qtd6"]
+[ext_resource type="Texture2D" uid="uid://clfah6dwh4ikj" path="res://assets/ui/new_journal/Back.png" id="3_nt7s4"]
 [ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="3_xlmq0"]
+[ext_resource type="Texture2D" uid="uid://wm7fb65dv6hl" path="res://assets/ui/new_journal/Middle.png" id="4_dhbhq"]
 [ext_resource type="Texture2D" uid="uid://cinugyu8lbf4g" path="res://assets/ui/journal/Inv close.png" id="4_on7hl"]
 [ext_resource type="FontFile" uid="uid://1m8rcmeb17oc" path="res://assets/fonts/GoodUnicornRegular-Rxev.ttf" id="5_6abh1"]
+[ext_resource type="Texture2D" uid="uid://cy03hhnltiuhg" path="res://assets/ui/new_journal/Inventory Bookmark.png" id="5_cqogs"]
 [ext_resource type="Texture2D" uid="uid://lehbw5ri0f0s" path="res://assets/ui/journal/Inv.png" id="5_pjgaj"]
+[ext_resource type="Texture2D" uid="uid://r8dny465l1ns" path="res://assets/ui/new_journal/Todo Bookmark.png" id="6_0o6sy"]
 [ext_resource type="Texture2D" uid="uid://bqocfm3w41o60" path="res://assets/ui/journal/Quest close.png" id="6_1hrav"]
-[ext_resource type="Texture2D" uid="uid://dsp4xyy0mjxfe" path="res://assets/ui/journal/Resume.png" id="6_ixgmc"]
-[ext_resource type="Texture2D" uid="uid://doqbg4yn51q7f" path="res://assets/ui/journal/Load.png" id="6_yxoof"]
-[ext_resource type="Texture2D" uid="uid://bb05g1trogu7n" path="res://assets/ui/journal/Save.png" id="7_0ukd4"]
+[ext_resource type="BitMap" uid="uid://g3masp6cg06u" path="res://assets/ui/new_journal/inv_mask.png" id="6_j7xit"]
 [ext_resource type="Texture2D" uid="uid://c2pejhwd8fn6v" path="res://assets/ui/journal/Quest_.png" id="7_ceuvn"]
-[ext_resource type="Texture2D" uid="uid://bknuanth8p1g7" path="res://assets/ui/journal/Quit.png" id="8_cifgr"]
+[ext_resource type="Texture2D" uid="uid://bxyysld12b673" path="res://assets/ui/new_journal/Front Page.png" id="7_j6rab"]
+[ext_resource type="Texture2D" uid="uid://cvhfy5rarulu" path="res://assets/ui/new_journal/Spring.png" id="8_51i8v"]
+[ext_resource type="BitMap" uid="uid://b7efc7fc4t0bg" path="res://assets/ui/new_journal/todo_mask.png" id="8_e2ats"]
 [ext_resource type="Texture2D" uid="uid://ocupd05q4b87" path="res://assets/ui/journal/Settings close.png" id="8_h2tg1"]
 [ext_resource type="Texture2D" uid="uid://c4caq4eoqmaf6" path="res://assets/ui/journal/Exit Closed.png" id="8_u8eaw"]
 [ext_resource type="Texture2D" uid="uid://bdp330i8pind6" path="res://assets/ui/journal/Settings_.png" id="9_6ryu5"]
 [ext_resource type="Texture2D" uid="uid://cv713dvaduybv" path="res://assets/ui/journal/Exit.png" id="9_fwdkh"]
 [ext_resource type="Texture2D" uid="uid://brl0udhbh3vjr" path="res://assets/ui/journal/ButtonTexture2.png" id="10_8avo4"]
+[ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="10_xu7im"]
 [ext_resource type="Texture2D" uid="uid://dw5gles4jlmcw" path="res://assets/ui/journal/ButtonTexture.png" id="11_36h5l"]
 [ext_resource type="Texture2D" uid="uid://b332qlkpt4id" path="res://assets/ui/journal/ButtonTexture3.png" id="12_igyun"]
-[ext_resource type="Texture2D" uid="uid://1q1sjv84oyq" path="res://assets/ui/map/Forest.png" id="13_42ymt"]
 [ext_resource type="Script" path="res://UI/Map.gd" id="13_n6w7j"]
-[ext_resource type="Texture2D" uid="uid://dmfss61v14p7" path="res://assets/ui/map/Forest Hover.png" id="14_kx1jf"]
-[ext_resource type="Texture2D" uid="uid://tndc2byn3ow5" path="res://assets/ui/map/Hub.png" id="16_uayk7"]
-[ext_resource type="Texture2D" uid="uid://bp58vobp7miu7" path="res://assets/ui/map/Hub Hover.png" id="17_w15bf"]
-[ext_resource type="Texture2D" uid="uid://cl3qxmxr72hg2" path="res://assets/ui/map/Snow.png" id="18_2vc1e"]
-[ext_resource type="Texture2D" uid="uid://kow6gf5um6s2" path="res://assets/ui/map/Snow Hover.png" id="19_b8x3e"]
-[ext_resource type="Texture2D" uid="uid://dpouro285gvgl" path="res://assets/ui/map/City.png" id="20_j60ux"]
-[ext_resource type="Texture2D" uid="uid://dsj8fyvy3cllp" path="res://assets/ui/map/City Hover.png" id="21_3h4q7"]
-[ext_resource type="Texture2D" uid="uid://b00arj6kolrnj" path="res://assets/ui/map/Desert.png" id="22_ofj5a"]
-[ext_resource type="Texture2D" uid="uid://mn3s0dskao05" path="res://assets/ui/map/Desert Hover.png" id="23_1ymhv"]
-[ext_resource type="Texture2D" uid="uid://cteajdqb5s482" path="res://assets/ui/map/Group 4.png" id="23_wi5md"]
-[ext_resource type="Texture2D" uid="uid://bs715rhdfv50d" path="res://assets/ui/map/Compass.png" id="24_n880j"]
+[ext_resource type="Texture2D" uid="uid://dg1gi3gbu0nqv" path="res://assets/ui/new_map/BG.png" id="14_n1nu5"]
+[ext_resource type="Texture2D" uid="uid://dqibktrj6agbq" path="res://assets/ui/new_map/Forest.png" id="15_g30jr"]
+[ext_resource type="Texture2D" uid="uid://dx1b1heus2n8k" path="res://assets/ui/new_map/Forest Sel.png" id="16_syo7o"]
+[ext_resource type="Texture2D" uid="uid://b47snwy4a540h" path="res://assets/ui/new_map/Hub.png" id="17_00j8h"]
+[ext_resource type="Texture2D" uid="uid://d1m2emd121v3l" path="res://assets/ui/new_map/Hub sel.png" id="18_rq828"]
+[ext_resource type="Texture2D" uid="uid://htaxbjfrmfqf" path="res://assets/ui/new_map/Snow.png" id="19_t68fh"]
+[ext_resource type="Texture2D" uid="uid://ddqgokn12tsfc" path="res://assets/ui/new_map/Snow Selected.png" id="20_mcl03"]
+[ext_resource type="Texture2D" uid="uid://blabx7buo65yp" path="res://assets/ui/new_map/City.png" id="21_blj0q"]
+[ext_resource type="Texture2D" uid="uid://davnhn20n5pod" path="res://assets/ui/new_map/City Sel.png" id="22_d3xmh"]
+[ext_resource type="Texture2D" uid="uid://notbtdnyk5h5" path="res://assets/ui/new_map/Desert.png" id="23_30dyq"]
+[ext_resource type="Texture2D" uid="uid://dvcq6gilnl2x3" path="res://assets/ui/new_map/Desert sel.png" id="24_f6628"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dg6nk"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -44,70 +50,123 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bqxhi")
 
-[node name="Book" type="Sprite2D" parent="."]
+[node name="Background" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 27.0
+offset_bottom = 26.0
+
+[node name="Cover" type="Sprite2D" parent="Background"]
 position = Vector2(989.55, 546.45)
-texture = ExtResource("2_ojg6f")
+texture = ExtResource("2_a00sb")
+
+[node name="Back" type="Sprite2D" parent="Background"]
+position = Vector2(990, 548)
+texture = ExtResource("3_nt7s4")
+
+[node name="Middle" type="Sprite2D" parent="Background"]
+position = Vector2(990, 548)
+texture = ExtResource("4_dhbhq")
+
+[node name="InventoryBookmark" type="Sprite2D" parent="Background"]
+visible = false
+position = Vector2(955, 954)
+texture = ExtResource("5_cqogs")
+
+[node name="Inventory" type="TextureButton" parent="Background"]
+layout_mode = 1
+offset_left = 868.0
+offset_top = 871.0
+offset_right = 1054.0
+offset_bottom = 1031.0
+pivot_offset = Vector2(89, 36)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dg6nk")
+texture_normal = ExtResource("5_cqogs")
+texture_click_mask = ExtResource("6_j7xit")
+ignore_texture_size = true
+
+[node name="Todo" type="TextureButton" parent="Background"]
+layout_mode = 1
+offset_left = 667.0
+offset_top = 873.0
+offset_right = 878.0
+offset_bottom = 1033.0
+pivot_offset = Vector2(97, 91)
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_dg6nk")
+texture_normal = ExtResource("6_0o6sy")
+texture_click_mask = ExtResource("8_e2ats")
+
+[node name="TodoBookmark" type="Sprite2D" parent="Background"]
+visible = false
+position = Vector2(748, 953)
+texture = ExtResource("6_0o6sy")
+
+[node name="FrontPage" type="Sprite2D" parent="Background"]
+position = Vector2(991, 542)
+texture = ExtResource("7_j6rab")
+
+[node name="Spring" type="Sprite2D" parent="Background"]
+position = Vector2(991, 98)
+texture = ExtResource("8_51i8v")
 
 [node name="Quest" type="Control" parent="."]
 visible = false
 anchors_preset = 0
+offset_left = -2.0
+offset_top = -16.0
+offset_right = -2.0
+offset_bottom = -16.0
 mouse_filter = 2
 
 [node name="TodoList" type="Sprite2D" parent="Quest"]
-position = Vector2(678, 231)
+position = Vector2(988, 189)
 texture = ExtResource("3_1qtd6")
 
 [node name="CurrentQuestTitle" type="Label" parent="Quest"]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 298.0
-offset_right = 662.0
-offset_bottom = 358.0
+offset_left = 749.0
+offset_top = 276.0
+offset_right = 979.0
+offset_bottom = 336.0
 theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 45
 text = "Quest Title"
 
-[node name="DoneLabel" type="Label" parent="Quest"]
-layout_mode = 0
-offset_left = 1108.0
-offset_top = 178.0
-offset_right = 1460.0
-offset_bottom = 262.0
-theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 70
-text = "Completed"
-
 [node name="QuestInfo" type="Label" parent="Quest"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 371.0
-offset_right = 611.0
-offset_bottom = 411.0
+offset_left = 758.0
+offset_top = 343.0
+offset_right = 921.0
+offset_bottom = 383.0
 theme_override_colors/font_color = Color(0.0980392, 0.0588235, 0.027451, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 text = "Quest Info"
 
 [node name="FinishedQuests" type="Label" parent="Quest"]
 layout_mode = 0
-offset_left = 1054.0
-offset_top = 288.0
-offset_right = 1182.0
-offset_bottom = 325.0
+offset_left = 776.0
+offset_top = 415.0
+offset_right = 904.0
+offset_bottom = 485.0
 theme_override_colors/font_color = Color(0.0078125, 0.00390625, 0.00390625, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
 text = "
 Finished"
 
 [node name="QuestRequirements" type="Label" parent="Quest"]
 layout_mode = 0
-offset_left = 755.0
-offset_top = 375.0
-offset_right = 883.0
-offset_bottom = 412.0
+offset_left = 1028.0
+offset_top = 339.0
+offset_right = 1156.0
+offset_bottom = 376.0
 theme_override_colors/font_color = Color(0.0976563, 0.0585938, 0.0273438, 1)
 theme_override_fonts/font = ExtResource("5_6abh1")
 theme_override_font_sizes/font_size = 32
@@ -116,136 +175,139 @@ text = "0/10"
 [node name="Inventory" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 278.0
+offset_top = -33.0
+offset_right = 318.0
+offset_bottom = 7.0
 
 [node name="GridContainer" type="GridContainer" parent="Inventory"]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 271.0
-offset_right = 905.0
-offset_bottom = 703.0
+offset_left = 469.0
+offset_top = 306.0
+offset_right = 940.0
+offset_bottom = 762.0
 theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 12
 columns = 2
 
 [node name="ItemName1" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity1" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName2" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity2" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName3" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity3" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName4" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity4" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName5" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity5" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName6" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity6" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName7" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity7" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName8" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity8" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName9" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity9" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="ItemName10" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 
 [node name="Quantity10" type="Label" parent="Inventory/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
 [node name="Label" type="Label" parent="Inventory"]
@@ -258,56 +320,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xlmq0")
 theme_override_font_sizes/font_size = 54
 text = "Inventory"
-
-[node name="PauseMenu" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LoadButton" type="TextureButton" parent="PauseMenu"]
-layout_mode = 0
-offset_left = 443.0
-offset_top = 649.0
-offset_right = 958.0
-offset_bottom = 847.0
-rotation = 0.00174533
-texture_normal = ExtResource("6_yxoof")
-
-[node name="ResumeButton" type="TextureButton" parent="PauseMenu"]
-layout_mode = 0
-offset_left = 505.0
-offset_top = 454.0
-offset_right = 931.0
-offset_bottom = 616.0
-texture_normal = ExtResource("6_ixgmc")
-
-[node name="SaveButton" type="TextureButton" parent="PauseMenu"]
-layout_mode = 0
-offset_left = 1035.0
-offset_top = 449.0
-offset_right = 1461.0
-offset_bottom = 617.0
-texture_normal = ExtResource("7_0ukd4")
-
-[node name="QuitButton" type="TextureButton" parent="PauseMenu"]
-layout_mode = 0
-offset_left = 1034.0
-offset_top = 633.0
-offset_right = 1466.0
-offset_bottom = 828.0
-texture_normal = ExtResource("8_cifgr")
-
-[node name="Label2" type="Label" parent="PauseMenu"]
-layout_mode = 0
-offset_left = 563.0
-offset_top = 208.0
-offset_right = 1530.0
-offset_bottom = 382.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xlmq0")
-theme_override_font_sizes/font_size = 149
-text = "Game Paused"
 
 [node name="Load" type="Control" parent="."]
 visible = false
@@ -407,70 +419,68 @@ theme_override_font_sizes/font_size = 85
 text = "Slot #3"
 
 [node name="Map" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_n6w7j")
 
-[node name="Group4" type="Sprite2D" parent="Map"]
-position = Vector2(1179, 575)
-texture = ExtResource("23_wi5md")
+[node name="Bg" type="Sprite2D" parent="Map"]
+position = Vector2(1006, 542)
+texture = ExtResource("14_n1nu5")
 
 [node name="Forest" type="TextureButton" parent="Map"]
 layout_mode = 0
-offset_left = 1420.0
-offset_top = 721.0
-offset_right = 1528.0
-offset_bottom = 842.0
-texture_normal = ExtResource("13_42ymt")
-texture_hover = ExtResource("14_kx1jf")
+offset_left = 1088.0
+offset_top = 607.0
+offset_right = 1284.0
+offset_bottom = 781.0
+texture_normal = ExtResource("15_g30jr")
+texture_hover = ExtResource("16_syo7o")
 
 [node name="Hub" type="TextureButton" parent="Map"]
 layout_mode = 0
-offset_left = 1109.0
-offset_top = 518.0
-offset_right = 1217.0
-offset_bottom = 639.0
-texture_normal = ExtResource("16_uayk7")
-texture_hover = ExtResource("17_w15bf")
+offset_left = 883.0
+offset_top = 465.0
+offset_right = 1072.0
+offset_bottom = 586.0
+texture_normal = ExtResource("17_00j8h")
+texture_hover = ExtResource("18_rq828")
 
 [node name="Snow" type="TextureButton" parent="Map"]
 layout_mode = 0
-offset_left = 908.0
-offset_top = 238.0
-offset_right = 1016.0
-offset_bottom = 359.0
-texture_normal = ExtResource("18_2vc1e")
-texture_hover = ExtResource("19_b8x3e")
+offset_left = 803.0
+offset_top = 136.0
+offset_right = 1157.0
+offset_bottom = 257.0
+texture_normal = ExtResource("19_t68fh")
+texture_hover = ExtResource("20_mcl03")
 
 [node name="City" type="TextureButton" parent="Map"]
 layout_mode = 0
-offset_left = 1047.0
-offset_top = 335.0
-offset_right = 1162.0
-offset_bottom = 457.0
-texture_normal = ExtResource("20_j60ux")
-texture_hover = ExtResource("21_3h4q7")
+offset_left = 830.0
+offset_top = 308.0
+offset_right = 1195.0
+offset_bottom = 430.0
+texture_normal = ExtResource("21_blj0q")
+texture_hover = ExtResource("22_d3xmh")
 
 [node name="Desert" type="TextureButton" parent="Map"]
 layout_mode = 0
-offset_left = 932.0
-offset_top = 663.0
-offset_right = 1047.0
-offset_bottom = 785.0
-texture_normal = ExtResource("22_ofj5a")
-texture_hover = ExtResource("23_1ymhv")
-
-[node name="Compass" type="Sprite2D" parent="Map"]
-position = Vector2(687, 769)
-texture = ExtResource("24_n880j")
+offset_left = 677.0
+offset_top = 690.0
+offset_right = 896.0
+offset_bottom = 813.0
+texture_normal = ExtResource("23_30dyq")
+texture_hover = ExtResource("24_f6628")
 
 [node name="Location" type="Label" parent="Map"]
+visible = false
 layout_mode = 0
-offset_left = 449.0
-offset_top = 231.0
-offset_right = 800.0
-offset_bottom = 460.0
+offset_left = 769.0
+offset_top = 881.0
+offset_right = 1120.0
+offset_bottom = 985.0
 theme_override_colors/font_color = Color(0.0823529, 0.0941176, 0.133333, 1)
 theme_override_fonts/font = ExtResource("5_6abh1")
 theme_override_font_sizes/font_size = 100
@@ -479,6 +489,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="InvButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 239.0
 offset_top = 174.0
@@ -490,6 +501,7 @@ texture_disabled = ExtResource("4_on7hl")
 texture_focused = ExtResource("5_pjgaj")
 
 [node name="QuestButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 233.0
 offset_top = 309.0
@@ -499,6 +511,7 @@ texture_normal = ExtResource("6_1hrav")
 texture_focused = ExtResource("7_ceuvn")
 
 [node name="SettingsButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 243.0
 offset_top = 435.0
@@ -508,6 +521,7 @@ texture_normal = ExtResource("8_h2tg1")
 texture_focused = ExtResource("9_6ryu5")
 
 [node name="ExitButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1636.0
 offset_top = 751.0
@@ -516,9 +530,9 @@ offset_bottom = 871.0
 texture_normal = ExtResource("8_u8eaw")
 texture_focused = ExtResource("9_fwdkh")
 
-[connection signal="pressed" from="PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="PauseMenu/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Background/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="toggled" from="Background/Inventory" to="." method="_on_inventory_toggled"]
+[connection signal="toggled" from="Background/Todo" to="." method="_on_todo_toggled"]
 [connection signal="pressed" from="Load/Slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="Load/Slot2" to="." method="_on_slot_2_pressed"]
 [connection signal="pressed" from="Load/Slot3" to="." method="_on_slot_3_pressed"]

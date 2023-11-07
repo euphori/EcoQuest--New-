@@ -1,0 +1,11 @@
+Model Information:
+* title:	Design House Asset
+* source:	https://sketchfab.com/3d-models/design-house-asset-0bc275316f05484b9bd534f99725066d
+* author:	gozdemrl (https://sketchfab.com/gozdemrl)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Design House Asset" (https://sketchfab.com/3d-models/design-house-asset-0bc275316f05484b9bd534f99725066d) by gozdemrl (https://sketchfab.com/gozdemrl) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

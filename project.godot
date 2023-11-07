@@ -11,21 +11,21 @@ config_version=5
 [application]
 
 config/name="EcoQuest (New)"
-run/main_scene="res://levels/forest.tscn"
+run/main_scene="res://levels/menu_screen.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 global="*res://global.gd"
-GlobalbgMusic="*res://assets/sounds/globalbgMusic.tscn"
-GlobalbgMusicAttack="*res://assets/sounds/globalbg_music_attack.tscn"
 StaticData="*res://singletons/StaticData.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GlobalMusic="*res://singletons/global_music.tscn"
+Dialogue="*res://singletons/dialogue.gd"
 
 [dialogue_manager]
 
-general/states=["global"]
+general/states=["global", "Dialogue"]
 
 [display]
 
@@ -35,7 +35,7 @@ window/size/mode=3
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/proton_scatter/plugin.cfg")
 
 [input]
 
@@ -89,7 +89,7 @@ dash={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://city.dialogue", "res://world.dialogue", "res://snow_cutscene.dialogue", "res://desert.dialogue", "res://snow.dialogue")
+locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://city.dialogue", "res://world.dialogue", "res://snow_cutscene.dialogue", "res://desert.dialogue", "res://snow.dialogue", "res://desert_cutscene.dialogue", "res://antagonist.dialogue")
 
 [layer_names]
 
@@ -104,3 +104,22 @@ locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://ci
 3d_physics/layer_9="Hitbox"
 3d_physics/layer_10="EnemyHurtbox"
 3d_physics/layer_11="EnemyHitbox"
+
+[shader_globals]
+
+specular_smoothness={
+"type": "float",
+"value": 0.05
+}
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
+outline_width={
+"type": "float",
+"value": 4.0
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.05
+}

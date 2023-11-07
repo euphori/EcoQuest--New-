@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://g3masp6cg06u"
+path="res://.godot/imported/inv_mask.png-823e459ca649155e43729f992cb2c13e.res"
+
+[deps]
+
+source_file="res://assets/ui/new_journal/inv_mask.png"
+dest_files=["res://.godot/imported/inv_mask.png-823e459ca649155e43729f992cb2c13e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

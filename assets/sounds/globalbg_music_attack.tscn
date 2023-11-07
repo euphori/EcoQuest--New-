@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfgedpauj8brb"]
 
-[ext_resource type="AudioStream" uid="uid://cn4uwen5xqpwc" path="res://assets/sounds/battle_bgMusic.mp3" id="1_kr2bl"]
+[ext_resource type="AudioStream" uid="uid://cn4uwen5xqpwc" path="res://assets/sounds/battle_bgm.mp3" id="1_dohxh"]
 
 [node name="GlobalbgMusicAttack" type="AudioStreamPlayer"]
-stream = ExtResource("1_kr2bl")
+stream = ExtResource("1_dohxh")
 volume_db = -6.0

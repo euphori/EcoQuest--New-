@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6e678nuxcyf5"]
+[gd_scene load_steps=5 format=3 uid="uid://c6e678nuxcyf5"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_52lpt"]
 [ext_resource type="Texture2D" uid="uid://cm45qfqqofb3e" path="res://assets/player/npc.png" id="2_ed8wu"]
@@ -6,28 +6,41 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6swl0"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_au1de"]
-
-[node name="npc" type="CharacterBody3D"]
+[node name="NPC" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
 collision_layer = 2
 script = ExtResource("1_52lpt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0174999, 1.7104, -0.83953)
 shape = SubResource("CapsuleShape3D_6swl0")
 
-[node name="detection_area" type="Area3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="detection_area"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("SphereShape3D_au1de")
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0.7, 0, 0, 0)
+transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0.7, 0, 2, -1)
+shaded = true
 texture = ExtResource("2_ed8wu")
 
 [node name="InteractUI" parent="." instance=ExtResource("3_2ugsp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.676745, 2.45174, 0)
-text_label = "Talk(T)"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.676745, 2.45174, -0.959226)
+text_label = "Talk (F)"
+type = "npc"
+
+[node name="Label3D" parent="InteractUI" index="0"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.791324, 1.05385, 0)
+visible = false
+
+[node name="PlayerDetection" parent="InteractUI" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261353, 0.126029, 0.0917029)
+
+[node name="TalkIcon" parent="InteractUI" index="2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.374185, 2.74664, 0)
+flip_h = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228783, 3.30386, 4.42294)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136299, 5.75212, -1.1229)
+
+[editable path="InteractUI"]
+[editable path="InteractUI/PlayerDetection"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btqrc2ii2pv0v"]
+[gd_scene load_steps=15 format=3 uid="uid://btqrc2ii2pv0v"]
 
 [ext_resource type="Script" path="res://objects/tree.gd" id="1_2qwdd"]
 [ext_resource type="ArrayMesh" uid="uid://bua2g8d50dgel" path="res://assets/mesh/tree_bald.res" id="2_0d5qo"]
@@ -6,6 +6,41 @@
 [ext_resource type="ArrayMesh" uid="uid://cq7ddnjkr6y74" path="res://assets/mesh/tree2.res" id="4_qay2w"]
 [ext_resource type="ArrayMesh" uid="uid://ddkt5pm3t10aa" path="res://assets/mesh/tree3.res" id="5_pxpby"]
 [ext_resource type="ArrayMesh" uid="uid://duuf75yvuk6ij" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_1.obj" id="7_105qv"]
+[ext_resource type="Shader" path="res://src/cel-shader-base.gdshader" id="7_ofado"]
+[ext_resource type="Shader" path="res://src/outline.gdshader" id="7_v8dik"]
+[ext_resource type="Shader" path="res://src/cel-shader-leaf.gdshader" id="8_nvxjy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfn1r"]
+render_priority = 0
+shader = ExtResource("7_v8dik")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj6mk"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_gfn1r")
+shader = ExtResource("7_ofado")
+shader_parameter/color = Color(0.32549, 0.192157, 0.0666667, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5phum"]
+render_priority = 0
+shader = ExtResource("7_v8dik")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ol4o4"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_5phum")
+shader = ExtResource("8_nvxjy")
+shader_parameter/color = Color(0.0941176, 0.184314, 0.101961, 1)
+shader_parameter/specular = Color(0.129412, 0.129412, 0.129412, 0.337255)
+shader_parameter/fresnel = Color(0.109804, 0.109804, 0.109804, 0.168627)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/transmission = null
+shader_parameter/sway_speed = 1.0
+shader_parameter/sway_strength = 0.05
+shader_parameter/sway_phase_len = 8.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qla5i"]
 points = PackedVector3Array(-0.849564, -0.565333, 2.10314, 0.987555, 0.291554, 1.98191, 0.987555, -0.442948, 1.98191, -0.482025, 0.291554, -3.52964, -0.482025, 0.781478, 2.10314, 0.1299, -0.442948, -3.52964, 0.1299, -0.0757928, 4.30914, 0.252669, -1.05564, 1.98191, 0.252669, 0.291554, -3.52964, 0.374862, 0.904055, 2.10314, -0.972141, -0.320755, -0.712099, 0.987555, 0.291554, -0.0997899, -0.972141, 0.168977, 2.10314, -0.237063, -1.05564, 2.10314, -0.35964, -0.442948, -3.52964, 0.374862, -0.320755, -3.52964, -0.35964, 0.781478, -0.0997899, -0.114678, 0.168977, 4.18637, 0.620016, -0.933064, 1.98191, -0.726987, -0.810487, 2.10314, -0.35964, -0.320755, 3.57406, 0.620016, 0.413939, 2.96099, 0.742401, -0.320755, 2.96099, 0.497439, -0.688102, 2.96099, 0.987555, 0.0465922, -0.0997899, 0.864978, -0.688102, 1.85837, -0.114678, 0.904055, 2.10314, 0.864978, 0.536516, 2.10314, -0.726987, 0.536516, 1.85837, -0.482025, -0.320755, -3.52964, -0.114678, -0.810487, 2.83899, 0.374862, 0.168977, -3.52964)
@@ -18,6 +53,7 @@ script = ExtResource("1_2qwdd")
 
 [node name="0" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 6.9323, 0)
+visible = false
 mesh = ExtResource("2_0d5qo")
 skeleton = NodePath("../../..")
 
@@ -36,10 +72,10 @@ mesh = ExtResource("4_qay2w")
 skeleton = NodePath("../../..")
 
 [node name="Full" type="Node3D" parent="."]
-visible = false
 
 [node name="0" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(1.5, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, -0.119029, 0)
+visible = false
 mesh = ExtResource("5_pxpby")
 skeleton = NodePath("../../..")
 
@@ -47,6 +83,8 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 2, 0, -0.470137, 0)
 mesh = ExtResource("7_105qv")
 skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_dj6mk")
+surface_material_override/1 = SubResource("ShaderMaterial_ol4o4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.44316, 0)

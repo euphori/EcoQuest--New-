@@ -2,6 +2,11 @@
 
 Player: There seems to be a way inside from here.
 Player: Maybe I should go in...
-do emit(global.dialogue_done)
+do emit(dialogue_ended_cutscene)
+=> END
+~ help
+
+Scientist: Help! Robots are attacking me!
+do emit(dialogue_ended_cutscene)
 
 => END!

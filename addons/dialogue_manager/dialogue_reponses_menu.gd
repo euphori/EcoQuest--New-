@@ -8,8 +8,16 @@ class_name DialogueResponsesMenu extends VBoxContainer
 signal response_selected(response: DialogueResponse)
 
 
+signal actioned(item:Control)
+
+## Optionally specify a control to duplicate for each response
+@export var response_template: Control
+@export var pointer : Sprite2D
+
 # The list of dialogue responses.
 var _responses: Array = []
+
+
 
 
 func _ready() -> void:
@@ -17,6 +25,23 @@ func _ready() -> void:
 		if visible and get_menu_items().size() > 0:
 			get_menu_items()[0].grab_focus()
 	)
+
+	if is_instance_valid(response_template):
+		response_template.get_parent().remove_child(response_template)
+
+
+func _unhandled_input(event):
+	if not visible: return
+	get_viewport().set_input_as_handled()
+	
+	var item = get_focused_item()
+	if is_instance_valid(item) and event.is_action_pressed("ui_accept"):
+		actioned.emit(item)
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(response_template):
+		response_template.free()
 
 
 ## Set the list of responses to show.
@@ -31,7 +56,11 @@ func set_responses(next_responses: Array) -> void:
 	# Add new items
 	if _responses.size() > 0:
 		for response in _responses:
-			var item: Button = Button.new()
+			var item: Control
+			if is_instance_valid(response_template):
+				item = response_template.duplicate()
+			else:
+				item = Button.new()
 			item.name = "Response%d" % get_child_count()
 			if not response.is_allowed:
 				item.name = String(item.name) + "Disallowed"
@@ -54,6 +83,7 @@ func _configure_focus() -> void:
 		item.focus_neighbor_right = item.get_path()
 
 		if i == 0:
+			
 			item.focus_neighbor_top = item.get_path()
 			item.focus_previous = item.get_path()
 		else:
@@ -78,17 +108,31 @@ func get_menu_items() -> Array:
 	var items: Array = []
 	for child in get_children():
 		if "Disallowed" in child.name: continue
+
 		items.append(child)
 
 	return items
 
+
+
+
+
+func get_focused_item():
+	var item = get_viewport().gui_get_focus_owner()
+	return item if item in get_children() else null
+
+
+func update_selection() -> void:
+	var item = get_focused_item()
+	
+	if is_instance_valid(item) and is_instance_valid(pointer) and visible:
+		pointer.global_position = Vector2(global_position.x, item.global_position.y + item.size.y * 0.5)
 
 ### Signals
 
 
 func _on_response_mouse_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return
-
 	item.grab_focus()
 
 

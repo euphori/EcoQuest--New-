@@ -1,16 +1,31 @@
 extends Node
 
 @onready var player
-var player_pos
-var player_hp
+var last_player_pos = {
+	"Forest" : "" ,
+	"Hub" : "" ,
+	"Desert" : ""  , 
+	"City" : "" ,
+	"Snow" : ""  ,
+	"Lab" : ""  ,
+	}
+var player_hp = 100
 var next_scene
 
-signal dialogue_done
+var enemy_cleared = { 
+	"Forest": false,
+	"Desert": false
+	
+}
+
+
+signal update_quest
 
 
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
+var curr_scene_name
 var save_database 
 
 var questStart = false
@@ -68,6 +83,8 @@ func change_scene():
 
 
 func save(_save_path):
+	
+	last_player_pos[curr_scene_name] = str(player.global_position)
 	save_database = {
 	"player_hp" : player.HEALTH,
 	"game_started" : game_started,
@@ -75,7 +92,7 @@ func save(_save_path):
 	"active_quest": active_quest,
 	"completed_quest" : completed_quest,
 	"items" : items,
-	"player_pos" : player.global_position
+	"last_player_pos" : last_player_pos
 	}
 
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
@@ -99,13 +116,14 @@ func load_save(_save_path):
 			player_hp = data["player_hp"]
 			game_started = data["game_started"]
 			curr_scene = data["curr_scene"]
-			player_pos = str_to_var("Vector3" + data["player_pos"])
-			change_scene()
+			last_player_pos = data["last_player_pos"]
 			items = data["items"]
 			active_quest = data["active_quest"]
 			completed_quest = data["completed_quest"]
 			
 			
+			
+			change_scene()
 			file.close()
 	else:
 		print("no data saved")

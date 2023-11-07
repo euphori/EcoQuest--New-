@@ -1,0 +1,5 @@
+~ start
+
+???: You may have won for now.. But we will meet again
+do emit(dialogue_ended_enemy)
+=> END

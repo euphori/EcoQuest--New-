@@ -8,6 +8,7 @@ if global.questStart == false
 	- We are here to help you!
 		set global.questStart = true
 	- No thanks. => END
+	do emit(global.update_quest)
 
 #Question 1
 if global.questStart == true and global.active_quest["q1"] == false and global.completed_quest["q1"] == false

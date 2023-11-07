@@ -1,0 +1,12 @@
+~ see_pipe
+
+Player: This pipe looks broken. Maybe I can fix this
+do emit(dialogue_ended_cutscene)
+=> END
+
+~ no_wrench
+
+Player: I need some tools inorder to fix this.
+Player: Maybe I can find it somewhere around here.
+do emit(dialogue_ended_interaction)
+=> END

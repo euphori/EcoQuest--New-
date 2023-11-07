@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djuk8c78g6puv"]
+
+[ext_resource type="Texture2D" uid="uid://7di7yi0uwk0e" path="res://assets/ui/player_stats/Background.png" id="1_nohel"]
+[ext_resource type="Texture2D" uid="uid://xu7pptrwi577" path="res://assets/ui/player_stats/Fill.png" id="2_6x08u"]
+
+[node name="ChargeProgress" type="TextureProgressBar"]
+offset_left = 980.0
+offset_top = 597.0
+offset_right = 1801.0
+offset_bottom = 1418.0
+scale = Vector2(0.1, 0.1)
+value = 10.0
+fill_mode = 5
+texture_under = ExtResource("1_nohel")
+texture_progress = ExtResource("2_6x08u")
+texture_progress_offset = Vector2(40, 40)

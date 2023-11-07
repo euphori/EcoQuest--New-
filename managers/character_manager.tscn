@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=14 format=3 uid="uid://dvqnpbbdix25h"]
 
-[ext_resource type="PackedScene" uid="uid://dwu7lr44bcav5" path="res://characters/robot.tscn" id="1_6voqy"]
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
 [ext_resource type="PackedScene" uid="uid://cd5pn0q81bwnf" path="res://UI/console.tscn" id="2_1vulv"]
 [ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
 [ext_resource type="PackedScene" uid="uid://c7gpy0skdatgh" path="res://UI/widgets.tscn" id="6_78c4s"]
-[ext_resource type="Texture2D" uid="uid://dg43hmtvbf0r2" path="res://assets/ui/player_stats/Vector 51.png" id="7_yc817"]
-[ext_resource type="Texture2D" uid="uid://da7oatdgvr40a" path="res://assets/ui/player_stats/Vector 53.png" id="8_savtu"]
-[ext_resource type="Texture2D" uid="uid://bluj3kkt6jcsa" path="res://assets/ui/player_stats/🦆 icon _Heart_.png" id="9_txvuu"]
-[ext_resource type="Texture2D" uid="uid://drt5y8aped5qc" path="res://assets/ui/player_stats/energy.png" id="10_8e7ev"]
-[ext_resource type="Texture2D" uid="uid://c3bafoxax2bvh" path="res://assets/ui/player_stats/Vector 52.png" id="11_nt57f"]
-[ext_resource type="Texture2D" uid="uid://bqkgd5c2vxohk" path="res://assets/ui/player_stats/🦆 icon _Lightning Bolt_.png" id="12_4rm31"]
+[ext_resource type="Texture2D" uid="uid://dl75ccs7y7pru" path="res://assets/ui/player_stats/Heart HP.png" id="6_s6hjq"]
+[ext_resource type="Texture2D" uid="uid://cpy6avpiwnoqd" path="res://assets/ui/hud/QuestTracker.png" id="9_mwwfy"]
+[ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="10_geis5"]
+[ext_resource type="Texture2D" uid="uid://d143nd5tbp3sw" path="res://assets/ui/menus/PauseMenu BG.png" id="14_r2rdb"]
+[ext_resource type="Texture2D" uid="uid://dw5gles4jlmcw" path="res://assets/ui/journal/ButtonTexture.png" id="14_wkdwr"]
+[ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="15_5d7aw"]
+[ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="15_utjnu"]
+[ext_resource type="Texture2D" uid="uid://brl0udhbh3vjr" path="res://assets/ui/journal/ButtonTexture2.png" id="16_8bg1t"]
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -19,13 +20,11 @@ script = ExtResource("1_yd4ht")
 [node name="Console" parent="." instance=ExtResource("2_1vulv")]
 visible = false
 path_to_kid = NodePath("../Kid")
-path_to_robot = NodePath("../Robot")
 
 [node name="Kid" parent="." groups=["player"] instance=ExtResource("1_idrav")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
 collision_mask = 9
 axis_lock_linear_z = true
-path_to_other = NodePath("../Robot")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.989016, 0.147809, 0, -0.147809, 0.989016, 1.781, 6.782, 10.391)
@@ -39,15 +38,13 @@ light_energy = 3.0
 spot_range = 20.0
 spot_angle = 70.19
 
-[node name="Robot" parent="." instance=ExtResource("1_6voqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0829248, 0)
-axis_lock_linear_z = true
-path_to_other = NodePath("../Kid")
-
 [node name="Journal" parent="." instance=ExtResource("4_5p540")]
 visible = false
 
 [node name="Widgets" parent="." instance=ExtResource("6_78c4s")]
+
+[node name="CameraController" parent="Widgets" index="0"]
+visible = false
 
 [node name="ZSlider" parent="Widgets/CameraController" index="1"]
 focus_mode = 0
@@ -64,47 +61,216 @@ follow_viewport_enabled = true
 [node name="Health" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 59.0
-offset_top = 44.0
-offset_right = 99.0
-offset_bottom = 84.0
+offset_left = 192.0
+offset_top = 257.0
+offset_right = 232.0
+offset_bottom = 297.0
+scale = Vector2(0.8, 0.8)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Health"]
 layout_mode = 0
-offset_right = 291.0
-offset_bottom = 40.0
+offset_left = -211.25
+offset_top = -300.0
+offset_right = 227.75
+offset_bottom = -224.0
+scale = Vector2(0.8, 0.8)
+step = 25.0
 value = 100.0
-texture_under = ExtResource("7_yc817")
-texture_progress = ExtResource("8_savtu")
-texture_progress_offset = Vector2(10, 10)
+texture_progress = ExtResource("6_s6hjq")
 
-[node name="🦆IconHeart" type="Sprite2D" parent="UI/Health"]
-position = Vector2(16, 17)
-texture = ExtResource("9_txvuu")
-
-[node name="Energy" type="Control" parent="UI"]
+[node name="Quest" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 67.0
-offset_top = 94.0
-offset_right = 107.0
-offset_bottom = 134.0
+offset_left = 532.0
+offset_top = 47.0
+offset_right = 572.0
+offset_bottom = 87.0
+scale = Vector2(0.7, 0.7)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Energy"]
+[node name="QuestTracker" type="Sprite2D" parent="UI/Quest"]
+position = Vector2(1576, 91)
+texture = ExtResource("9_mwwfy")
+
+[node name="QuestInfo" type="Label" parent="UI/Quest"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = -2.0
-offset_right = 319.0
-offset_bottom = 38.0
-max_value = 25.0
-value = 25.0
-texture_under = ExtResource("10_8e7ev")
-texture_progress = ExtResource("11_nt57f")
-texture_progress_offset = Vector2(10, 10)
+offset_left = 1358.57
+offset_top = 91.4286
+offset_right = 1832.57
+offset_bottom = 140.429
+theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 36
+text = "Quest"
 
-[node name="🦆IconLightningBolt" type="Sprite2D" parent="UI/Energy"]
-position = Vector2(33, 24)
-texture = ExtResource("12_4rm31")
+[node name="QuestTitle" type="Label" parent="UI/Quest"]
+layout_mode = 0
+offset_left = 1363.0
+offset_top = 30.0
+offset_right = 1615.0
+offset_bottom = 68.0
+pivot_offset = Vector2(45, 41)
+theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 32
+text = "Quest"
+
+[node name="DeathScreen" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Restart" type="TextureButton" parent="UI/DeathScreen"]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 345.0
+offset_right = 1162.0
+offset_bottom = 507.0
+texture_normal = ExtResource("14_wkdwr")
+
+[node name="Label" type="Label" parent="UI/DeathScreen/Restart"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 57.0
+offset_right = 348.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("15_utjnu")
+theme_override_font_sizes/font_size = 66
+text = "Restart"
+
+[node name="Quit" type="TextureButton" parent="UI/DeathScreen"]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 549.0
+offset_right = 1255.0
+offset_bottom = 747.0
+texture_normal = ExtResource("16_8bg1t")
+
+[node name="Label2" type="Label" parent="UI/DeathScreen/Quit"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 78.0
+offset_right = 318.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("15_utjnu")
+theme_override_font_sizes/font_size = 66
+text = "Quit"
+
+[node name="Label3" type="Label" parent="UI/DeathScreen/Quit"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = -345.0
+offset_right = 386.0
+offset_bottom = -260.0
+theme_override_fonts/font = ExtResource("15_utjnu")
+theme_override_font_sizes/font_size = 66
+text = "u ded"
+
+[node name="PauseMenu" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 920.0
+offset_right = 40.0
+offset_bottom = 960.0
+
+[node name="PauseMenuBg" type="Sprite2D" parent="UI/PauseMenu"]
+position = Vector2(939, 624)
+texture = ExtResource("14_r2rdb")
+
+[node name="ResumeButton" type="TextureButton" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 372.0
+offset_right = 1163.0
+offset_bottom = 503.0
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label3" type="Label" parent="UI/PauseMenu/ResumeButton"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 35.0
+offset_right = 423.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Resume
+"
+horizontal_alignment = 1
+
+[node name="SaveProgressButton" type="TextureButton" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 730.227
+offset_top = 518.0
+offset_right = 1165.23
+offset_bottom = 648.0
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label4" type="Label" parent="UI/PauseMenu/SaveProgressButton"]
+layout_mode = 0
+offset_left = 10.7731
+offset_top = 32.0
+offset_right = 427.773
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Save game"
+horizontal_alignment = 1
+
+[node name="LoadButton" type="TextureButton" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 730.227
+offset_top = 664.0
+offset_right = 1165.23
+offset_bottom = 794.0
+rotation = 0.00174533
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label2" type="Label" parent="UI/PauseMenu/LoadButton"]
+layout_mode = 0
+offset_left = 111.068
+offset_top = 38.8062
+offset_right = 313.068
+offset_bottom = 101.806
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Load Game
+"
+
+[node name="QuitButton" type="TextureButton" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 818.0
+offset_right = 1170.0
+offset_bottom = 948.0
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label5" type="Label" parent="UI/PauseMenu/QuitButton"]
+layout_mode = 0
+offset_left = 2.77313
+offset_top = 32.0
+offset_right = 419.773
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 266.0
+offset_right = 1043.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 42
+text = "Game Paused"
 
 [connection signal="value_changed" from="Widgets/CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
 [connection signal="value_changed" from="Widgets/CameraController/XSlider" to="." method="_on_x_slider_value_changed"]
@@ -112,6 +278,12 @@ texture = ExtResource("12_4rm31")
 [connection signal="pressed" from="Widgets/CameraController/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Widgets/CameraController/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="Widgets/CameraController/PrintButton" to="." method="_on_print_button_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 
 [editable path="Console"]
 [editable path="Widgets"]

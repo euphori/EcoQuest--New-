@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dguj0c12pybwa"]
+[gd_scene load_steps=17 format=3 uid="uid://dguj0c12pybwa"]
 
 [ext_resource type="Script" path="res://characters/enemy.gd" id="1_75fnr"]
 [ext_resource type="PackedScene" uid="uid://ve835vvddxl2" path="res://areas/hitbox.tscn" id="2_lnj0r"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d4jukjjk8qioe" path="res://areas/player_detection.tscn" id="3_4j2mj"]
 [ext_resource type="PackedScene" uid="uid://dfgedpauj8brb" path="res://assets/sounds/globalbg_music_attack.tscn" id="4_y3wq2"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="5_nc0he"]
+[ext_resource type="Texture2D" uid="uid://by6s5cw2wqt7j" path="res://assets/ui/enemy_stats/EnemyHP BG.png" id="7_8ieh6"]
+[ext_resource type="Texture2D" uid="uid://bcej4bre6bdiw" path="res://assets/ui/enemy_stats/EnemyHP Fill.png" id="8_1inao"]
 
 [sub_resource type="Animation" id="Animation_tfvqf"]
 resource_name = "RESET"
@@ -69,11 +71,70 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(3, 3, 3)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hitbox:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.89237, 1.04428, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.7, 0.7)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitbox/CollisionShape3D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Hitbox:monitorable")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_v4wsy"]
 resource_name = "attack_left"
 length = 2.2
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -105,10 +166,10 @@ tracks/2/path = NodePath("Hitbox/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.3, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -132,7 +193,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-2.36188, 3.11586, 0.509447)]
+"values": [Vector3(-2.7755, 3.04136, 0.509447)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -153,18 +214,68 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.3, 2),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"dash"
+}, {
+"args": [],
+"method": &"stop_dash"
 }]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.89237, 1.04428, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitbox:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.7, 0.7)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Hitbox:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hitbox:monitorable")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_54uji"]
 resource_name = "attack_right"
 length = 2.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -199,7 +310,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.565859, 3.32408, 0.509447)]
+"values": [Vector3(-1.00785, 2.90776, 0.509447)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -232,10 +343,10 @@ tracks/5/path = NodePath("Hitbox/CollisionShape3D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.3, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true]
 }
 tracks/6/type = "method"
 tracks/6/imported = false
@@ -244,12 +355,27 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.3, 2),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"dash"
+}, {
+"args": [],
+"method": &"stop_dash"
 }]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox:monitorable")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_0g6e5"]
@@ -333,12 +459,16 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gjo52"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_g4rfh"]
+viewport_path = NodePath("SubViewport")
+
 [node name="SawRobot" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 4
 script = ExtResource("1_75fnr")
+ATTACK_RANGE = 7
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.59948, -0.0249841, 0, 0.0249841, 0.59948, 0, 0, 0, 0.6, 0.476979, 2.895, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.476968, 2.82516, 0)
 flip_h = true
 shaded = true
 alpha_cut = 2
@@ -352,6 +482,7 @@ libraries = {
 }
 
 [node name="Hitbox" parent="." groups=["enemy"] instance=ExtResource("2_lnj0r")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.89237, 1.04428, 0)
 collision_layer = 1024
 
 [node name="CollisionShape3D" parent="Hitbox" index="0"]
@@ -398,12 +529,32 @@ stream = null
 
 [node name="Hurtbox" parent="." groups=["enemy"] instance=ExtResource("5_nc0he")]
 collision_layer = 512
+monitorable = true
 
 [node name="StaggerTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="DashTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="HealthProgress" type="TextureProgressBar" parent="SubViewport"]
+offset_left = 623.0
+offset_top = 540.0
+offset_right = 1306.0
+offset_bottom = 582.0
+value = 100.0
+texture_under = ExtResource("7_8ieh6")
+texture_progress = ExtResource("8_1inao")
+texture_progress_offset = Vector2(5, 5)
+tint_under = Color(0.886275, 0.886275, 0.886275, 1)
+
+[node name="Health" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.383678, 4.59195, -0.546734)
+texture = SubResource("ViewportTexture_g4rfh")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="timeout" from="JumpCooldown" to="." method="_on_jump_cooldown_timeout"]

@@ -1,17 +1,19 @@
 extends Node3D
 
-@export var path_to_manager: NodePath
-@export var dialogue : String
 
-@onready var player_manager = get_node(path_to_manager)
+@export var dialogue_resource: DialogueResource
+@export var title : String = "start"
+
+@export var player_manager: Node3D
 @onready var marker = $Marker3D
 @onready var marker_sprite = $Marker3D/Sprite3D
-var player 
+@export var player : CharacterBody3D
 var old_camera_pos
 var dia_started = false
 
 func _ready():
-	global.connect("dialogue_done", finish_cutscene)
+
+	Dialogue.connect("dialogue_ended_cutscene", finish_cutscene)
 	marker_sprite.queue_free()
 
 
@@ -22,7 +24,8 @@ func _process(delta):
 
 func show_dialogue():
 	dia_started = true
-	DialogueManager.show_example_dialogue_balloon(load(dialogue), "start")
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
+	
 
 func finish_cutscene():
 	if player != null:
@@ -38,15 +41,13 @@ func pan_camera(_location):
 	if dia_started:
 		player_manager.disable_cam_control = false
 		player.can_move = true
-	if dialogue != "" and !dia_started:
+	if dialogue_resource != null and !dia_started:
 		show_dialogue()
 
 
 func _on_player_detection_body_entered(body):
 	if body.is_in_group("player"):
-		print("PLAYER DETECTED")
-		player = body
-		player.can_move = false
+		player.can_move = false 
 		player_manager.disable_cam_control = true
 		player_manager.in_cutscene = true
 		old_camera_pos = player_manager.camera.global_position 

@@ -1,11 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://ros4da4qyiti"]
+[gd_scene load_steps=10 format=3 uid="uid://ros4da4qyiti"]
 
-[ext_resource type="PackedScene" uid="uid://b4w8y64t553ei" path="res://objects/tree.tscn" id="1_16oxw"]
+[ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="1_fgsan"]
+[ext_resource type="PackedScene" uid="uid://bpnyc4txtodb2" path="res://interactable/raft.tscn" id="2_cn54l"]
+[ext_resource type="PackedScene" uid="uid://c7wmwixcvyr41" path="res://characters/enemy.tscn" id="3_mhgaw"]
+[ext_resource type="PackedScene" uid="uid://c6e678nuxcyf5" path="res://characters/npc.tscn" id="4_j4m3t"]
+[ext_resource type="Resource" uid="uid://c5jmnluie8rmt" path="res://antagonist.dialogue" id="4_v24a3"]
+[ext_resource type="Resource" uid="uid://lvja0gg1cwcq" path="res://world.dialogue" id="5_b2xhi"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_neey8"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u5nhk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cbjpp"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Test" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.54407, 26.5289)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0.137435, 0)
 
-[node name="Tree" parent="." instance=ExtResource("1_16oxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.9484)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_neey8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_u5nhk")
+skeleton = NodePath("../..")
+
+[node name="CharacterManager" parent="." instance=ExtResource("1_fgsan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137435, 0)
+
+[node name="Raft" parent="." instance=ExtResource("2_cn54l")]
+transform = Transform3D(0.517638, 0, 1.93185, 0, 2, 0, -1.93185, 0, 0.517638, 6.5879, 0.137435, -3.74782)
+
+[node name="Enemy" parent="." instance=ExtResource("3_mhgaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+collision_layer = 4
+dialogue_resource = ExtResource("4_v24a3")
+path_to_player = NodePath("../CharacterManager/Kid")
+
+[node name="CollisionShape3D" parent="Enemy/Hitbox" index="0"]
+transform = Transform3D(0.826922, -2.88378, 0, 2.88378, 0.826922, 0, 0, 0, 3, -7.44791, 1.95564, -0.146)
+
+[node name="Health" parent="Enemy" index="15"]
+texture = SubResource("ViewportTexture_cbjpp")
+
+[node name="npc" parent="." instance=ExtResource("4_j4m3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29325, 1.2)
+collision_layer = 64
+dialogue_resource = ExtResource("5_b2xhi")
+
+[node name="Node2D" type="Node2D" parent="npc"]
+
+[editable path="CharacterManager"]
+[editable path="CharacterManager/Console"]
+[editable path="CharacterManager/Widgets"]
+[editable path="Enemy"]
+[editable path="Enemy/Hitbox"]
+[editable path="Enemy/PlayerDetection"]
+[editable path="npc"]
+[editable path="npc/InteractUI"]
+[editable path="npc/InteractUI/PlayerDetection"]

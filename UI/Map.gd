@@ -18,10 +18,9 @@ func initialize_map():
 	for i in get_child_count():
 		if get_child(i) is TextureButton:
 			if global.unlocked_map[get_child(i).name] == false:
-				get_child(i).modulate = Color(0.102, 0.102, 0.102)
-				text[get_child(i).name] = str(get_child(i).name, "\n(Locked)" )
+				get_child(i).visible = false
 			else:
-				get_child(i).modulate = Color(1, 1, 1)
+				get_child(i).visible = true
 				text[get_child(i).name] = get_child(i).name
 
 

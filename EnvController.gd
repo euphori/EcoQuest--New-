@@ -16,7 +16,7 @@ var val = 0
 func _ready():
 	
 	update_trees(start_val)
-	update_sky(start_val)
+	#update_sky(start_val)
 	update_plants(start_val)
 
 
@@ -53,7 +53,6 @@ func update_plants(value):
 		for i in terrain.get_child_count():
 			var plain = terrain.get_child(i)
 			if plain is MeshInstance3D:
-				print(plain)
 				for x in terrain.get_child(i).get_child_count():
 					var plants = plain.get_child(x)
 					if plants is MultiMeshInstance3D:
@@ -89,6 +88,13 @@ func update_sky(value):
 	else:
 		print("Evironment not found!")
 
+
+func update_grass(value):
+	var scatter = get_parent().scatter
+	if value < 50:
+		scatter.enabled = false
+	else:
+		scatter.enabled = true
 
 func _on_h_slider_value_changed(value):
 	val = value

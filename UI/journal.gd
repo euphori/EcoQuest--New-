@@ -7,10 +7,21 @@ extends Control
 @onready var slots = $Inventory/GridContainer
 @onready var fin_quest = $Quest/FinishedQuests
 @onready var map = $Map
+@onready var computer #= get_parent().get_parent().get_node("Computer")
+@onready var inv_button = $Background/Inventory
+@onready var todo_button = $Background/Todo
+var last_inv_pos 
+var last_todo_pos
 
 var done = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	inv_button.modulate = Color(0.627, 0.627, 0.627)
+	todo_button.modulate = Color(0.627, 0.627, 0.627)
+	last_inv_pos = inv_button.global_position
+	last_todo_pos = todo_button.global_position
+
 	if curr_quest != null:
 		get_curr_quest()
 	else:
@@ -25,39 +36,36 @@ func _process(delta):
 
 
 func _input(event):
-	if event.is_action_pressed("journal"):
-		if self.visible:
-			get_curr_quest()
-			initialize_inv()
-			update_quantity()
-			update_quest()
-			update_save_slot()
-			map.initialize_map()
-			self.visible = false
-		else:
-			get_curr_quest()
-			initialize_inv()
-			update_quantity()
-			update_quest()
-			map.initialize_map()
-			self.visible = true
-			$Quest.visible = true
-			$Inventory.visible = false
-			$PauseMenu.visible = false
-			$Load.visible = false
-			$Map.visible = false
+	if event.is_action_pressed("journal") :
+		if computer != null and !computer.visible:
+			if self.visible:
+				refresh_journal()
+				self.visible = false
+			else:
+				refresh_journal()
+				self.visible = true
+				show_page("Quest")
+		elif computer == null:
+			if self.visible:
+				refresh_journal()
+				self.visible = false
+			else:
+				refresh_journal()
+				self.visible = true
+				show_page("Quest")
 	elif event.is_action_pressed("esc"):
-		get_curr_quest()
-		initialize_inv()
-		update_quantity()
-		update_quest()
-		update_save_slot()
-		self.visible = !self.visible 
-		$PauseMenu.visible = true
-		$Quest.visible = false
-		$Inventory.visible = false
-		$Load.visible = false
-		$Map.visible = false
+		if computer != null and !computer.visible:
+			refresh_journal()
+
+
+
+func refresh_journal():
+	get_curr_quest()
+	initialize_inv()
+	update_quantity()
+	update_quest()
+	update_save_slot()
+	map.initialize_map()
 
 
 func update_quest():
@@ -138,46 +146,42 @@ func update_save_slot():
 
 
 func show_map():
-	visible = true
-	$Quest.visible = false
-	$Inventory.visible = false
-	$PauseMenu.visible = false
-	$Load.visible = false
-	$Map.visible = true
+	self.visible = true
+	for i in get_child_count():
+		var page = get_child(i)
+		if page.name == "Map":
+			page.visible = true
+				
+		else:
+			page.visible = false
 
+
+
+func show_page(_page):
+
+	for i in get_child_count():
+		var page = get_child(i)
+	
+		if page.name == _page or page.name == "Background":
+			page.visible = true
+		else:
+			page.visible = false
+
+func hide_journal():
+	for i in get_child_count():
+		if get_child(i).name != "PauseMenu":
+			get_child(i).visible = false
 
 func _on_inv_button_pressed():
-	$Quest.visible = false
-	$Inventory.visible = true
-	$PauseMenu.visible = false
-	$Load.visible = false
-	$Map.visible = false
+	show_page("Inventory")
 
 func _on_quest_button_pressed():
-	$Quest.visible = true
-	$Inventory.visible = false
-	$PauseMenu.visible = false
-	$Load.visible = false
-	$Map.visible = false
+	show_page("Quest")
 
 func _on_exit_button_pressed():
-	$Quest.visible = false
-	$Inventory.visible = false
-	$PauseMenu.visible = true
-	$Load.visible = false
-	$Map.visible = false
-
-func _on_save_button_pressed():
-	global.save(global.save_path["save1"])
+	show_page("PauseMenu")
 
 
-func _on_load_button_pressed():
-	global.load_save(global.save_path["save1"])
-	#$Quest.visible = false
-	#$Inventory.visible = false
-	#$PauseMenu.visible = false
-	#$Load.visible = true
-	
 
 
 
@@ -193,6 +197,32 @@ func _on_slot_3_pressed():
 	global.load_save(global.save_path["save3"])
 
 
-func _on_quit_button_pressed():
-	get_tree().quit()
+
+
+
+func _on_inventory_pressed():
+	pass
+
+func _on_inventory_toggled(button_pressed):
+	
+	if button_pressed:
+		show_page("Inventory")
+		inv_button.modulate = Color(1, 1, 1)
+		inv_button.global_position.y = last_inv_pos.y + 30
+	else:
+		inv_button.modulate = Color(0.627, 0.627, 0.627)
+		inv_button.global_position.y = last_inv_pos.y
+
+
+func _on_todo_toggled(button_pressed):
+	print(button_pressed)
+	if button_pressed:
+		show_page("Quest")
+		todo_button.modulate = Color(1, 1, 1)
+		todo_button.global_position.y = last_todo_pos.y + 30
+		
+	else:
+		todo_button.modulate = Color(0.627, 0.627, 0.627)
+		todo_button.global_position.y = last_todo_pos.y
+
 

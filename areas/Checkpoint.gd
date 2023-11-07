@@ -22,6 +22,8 @@ func _process(delta):
 
 func _on_point_1_body_entered(body):
 	if body == player:
+		global.last_player_pos[global.curr_scene_name] = str(player.global_position)
+		global.save(global.save_path["save1"])
 		last_checkpoint = get_node("Point1")
 
 
@@ -29,3 +31,10 @@ func _on_reset_body_entered(body):
 	if body == player:
 		if last_checkpoint:
 			player.global_position = last_checkpoint.global_position
+
+
+func _on_point_2_body_entered(body):
+	if body == player:
+		global.last_player_pos[global.curr_scene_name] = str(player.global_position)
+		global.save(global.save_path["save1"])
+		last_checkpoint = get_node("Point2")

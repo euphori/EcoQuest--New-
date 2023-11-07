@@ -12,11 +12,11 @@ var regex_comments: RegEx = RegEx.create_from_string("(?:(?>\"(?:\\\\\"|[^\"\\n]
 var regex_mutation: RegEx = RegEx.create_from_string("^\\s*(do|set) (?<mutation>.*)")
 var regex_condition: RegEx = RegEx.create_from_string("^\\s*(if|elif|while|else if) (?<condition>.*)")
 var regex_wcondition: RegEx = RegEx.create_from_string("\\[if (?<condition>((?:[^\\[\\]]*)|(?:\\[(?1)\\]))*?)\\]")
-var regex_wendif: RegEx = RegEx.create_from_string("\\[\\/(if)\\]")
+var regex_wendif: RegEx = RegEx.create_from_string("\\[(\\/if|else)\\]")
 var regex_rgroup: RegEx = RegEx.create_from_string("\\[\\[(?<options>.*?)\\]\\]")
 var regex_endconditions: RegEx = RegEx.create_from_string("^\\s*(endif|else):?\\s*$")
 var regex_tags: RegEx = RegEx.create_from_string("\\[(?<tag>(?!(?:ID:.*)|if)[a-zA-Z_][a-zA-Z0-9_]*)(?:[= ](?<val>[^\\[\\]]+))?\\](?:(?<text>(?!\\[\\/\\k<tag>\\]).*?)?(?<end>\\[\\/\\k<tag>\\]))?")
-var regex_dialogue: RegEx = RegEx.create_from_string("^\\s*(?:(?<random>\\%\\d* )|(?<response>- ))?(?:(?<character>[^#:]*): )?(?<dialogue>.*)$")
+var regex_dialogue: RegEx = RegEx.create_from_string("^\\s*(?:(?<random>\\%[\\d.]* )|(?<response>- ))?(?:(?<character>[^#:]*): )?(?<dialogue>.*)$")
 var regex_goto: RegEx = RegEx.create_from_string("=><? (?:(?<file>[^\\/]+)\\/)?(?<title>[^\\/]*)")
 var regex_string: RegEx = RegEx.create_from_string("^(?<delimiter>[\"'])(?<content>(?:\\\\{2})*|(?:.*?[^\\\\](?:\\\\{2})*))\\1$")
 var regex_escape: RegEx = RegEx.create_from_string("\\\\.")
@@ -37,11 +37,9 @@ var regex_paren: RegEx = RegEx.create_from_string("\\((?<paren>((?:[^\\(\\)]*)|(
 var cache: Dictionary = {}
 
 
-func unreference() -> bool:
-	if super():
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
 		dialogue_manager_parser.free()
-		return true
-	return false
 
 
 func _clear_highlighting_cache() -> void:

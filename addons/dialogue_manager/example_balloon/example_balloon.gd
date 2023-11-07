@@ -1,18 +1,10 @@
 extends CanvasLayer
 
 
-@onready var balloon: TextureRect = %Balloon
+@onready var balloon: Panel = %Balloon
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var portrait = $Balloon/portrait
-
-var character_portraits = {
-	"Farmer": "res://addons/dialogue_manager/example_balloon/farmer.png",
-	"Mechanic": "res://addons/dialogue_manager/example_balloon/mechanic.png",
-	"Scientist": "res://addons/dialogue_manager/example_balloon/scientist.png",
-	# Add more characters as needed
-}
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -33,7 +25,6 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
-			queue_free()
 			return
 
 		dialogue_line = next_dialogue_line
@@ -50,11 +41,7 @@ var dialogue_line: DialogueLine:
 		# Show our balloon
 		balloon.show()
 		will_hide_balloon = false
-		
-		for i in character_portraits:
-			if i == character_label.text:
-				portrait.texture = load(character_portraits[i])
-		
+
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
 			dialogue_label.type_out()
@@ -88,7 +75,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
-	temporary_game_states = extra_game_states
+	$AnimationPlayer.play("pop_up")
+	await $AnimationPlayer.animation_finished
+	temporary_game_states =  [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
@@ -112,6 +101,8 @@ func _on_mutated(_mutation: Dictionary) -> void:
 	)
 
 
+
+
 func _on_balloon_gui_input(event: InputEvent) -> void:
 	# If the user clicks on the balloon while it's typing then skip typing
 	if dialogue_label.is_typing and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
@@ -133,3 +124,14 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+
+
+
+
+func _on_response_example_focus_entered():
+
+	for i in responses_menu.get_child_count():
+		if responses_menu.get_child(i).has_focus():
+			responses_menu.get_child(i).icon = load("res://assets/ui/modals/arrow icon.png")
+		else:
+			responses_menu.get_child(i).icon = null

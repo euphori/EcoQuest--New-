@@ -8,7 +8,6 @@ extends Control
 @onready var input_line = $LineEdit
 @onready var history = $TextEdit
 @onready var kid = get_node(path_to_kid)
-@onready var robot = get_node(path_to_robot)
 @onready var widget = get_parent().get_node("Widgets")
 @onready var env_controller = get_parent().get_parent().get_node("EnvController/CanvasLayer")
 
@@ -24,7 +23,8 @@ var commands = {
 	"collision" : "collision",
 	"env" : "env",
 	"add" : "add",
-	"unlock" : "unlock"
+	"unlock" : "unlock",
+	"hesoyam" : "hesoyam"
 	
 	}
 	
@@ -74,11 +74,14 @@ func apply_command(comm,value):
 	elif comm == commands["comp"]:
 		for i in global.completed_quest:
 			if i == value:
+				global.active_quest[i] = false
 				global.completed_quest[i] = true
+				global.emit_signal("update_quest")
 	elif comm == commands["act"]:
 		for i in global.active_quest:
 			if i == value:
 				global.active_quest[i] = true
+				global.emit_signal("update_quest")
 	elif comm == commands["help"]:
 		history.text += str("List of Commands: ","\n")
 		for i in commands:
@@ -103,7 +106,8 @@ func apply_command(comm,value):
 					global.unlocked_map[i] = true
 				if i == value:
 					global.unlocked_map[i] = true
-				
+	elif comm == commands["hesoyam"]:
+		kid.can_die = false
 
 func _on_line_edit_text_submitted(new_text):
 	history.text += str(new_text,"\n")

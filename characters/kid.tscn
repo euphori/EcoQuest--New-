@@ -1,11 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=23 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
+[ext_resource type="Texture2D" uid="uid://lvluooagxp4g" path="res://assets/ui/controller/Rectangle 3.png" id="3_2sbah"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
 [ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="6_0dp76"]
+[ext_resource type="PackedScene" uid="uid://djuk8c78g6puv" path="res://UI/charge_progress.tscn" id="8_4sev6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -22,6 +24,46 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rectangle3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1fmng"]
+resource_name = "death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rectangle3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ce25x"]
@@ -124,12 +166,72 @@ tracks/1/use_blend = true
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fijb5"]
 _data = {
 "RESET": SubResource("Animation_vgvm5"),
+"death": SubResource("Animation_1fmng"),
 "falling": SubResource("Animation_ce25x"),
 "idle": SubResource("Animation_bym58"),
 "jump": SubResource("Animation_saap6"),
 "pushing": SubResource("Animation_c00x2"),
 "run": SubResource("Animation_jwhoy")
 }
+
+[sub_resource type="Animation" id="Animation_3ddb1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Charge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.87512, 3.13756, -0.0793471)]
+}
+
+[sub_resource type="Animation" id="Animation_oyy13"]
+resource_name = "shake_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Charge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.87512, 3.13756, -0.0793471), Vector3(-1.99716, 3.03042, -0.0793471), Vector3(-1.67256, 3.09923, -0.0793471), Vector3(-1.78492, 3.04097, -0.0793471), Vector3(-1.82945, 3.12931, -0.0793471), Vector3(-1.93872, 3.27504, -0.0793471)]
+}
+
+[sub_resource type="Animation" id="Animation_17mfa"]
+resource_name = "shake_right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Charge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.21306, 2.89037, -0.0793471), Vector3(3.34978, 2.99957, -0.0793471), Vector3(3.25123, 2.73639, -0.0793471), Vector3(3.15897, 2.92497, -0.0793471), Vector3(3.25099, 2.96211, -0.0793471), Vector3(3.26188, 2.74281, -0.0793471)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5mklu"]
+_data = {
+"RESET": SubResource("Animation_3ddb1"),
+"shake_left": SubResource("Animation_oyy13"),
+"shake_right": SubResource("Animation_17mfa")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wv7yq"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Kid" type="CharacterBody3D"]
 collision_layer = 2
@@ -149,6 +251,12 @@ texture = ExtResource("1_pm3dr")
 hframes = 5
 vframes = 4
 
+[node name="Rectangle3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(968.5, 546.5)
+scale = Vector2(1.26865, 1.31321)
+texture = ExtResource("3_2sbah")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fijb5")
@@ -159,8 +267,14 @@ libraries = {
 [node name="RightMarker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56147, 3.65073, 0.416451)
 
+[node name="RightMarker2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09483, 2.94261, -0.312945)
+
 [node name="LeftMarker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33226, 3.65073, 0.767242)
+
+[node name="LeftMarker2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85622, 3.13183, 0.767242)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -183,11 +297,37 @@ collision_mask = 1024
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.257286, 2.46607, 0)
 
 [node name="RechargeTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="HealthRegen" type="Timer" parent="."]
 
 [node name="GunCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="ChargeProgress" parent="SubViewport" instance=ExtResource("8_4sev6")]
+offset_left = 558.0
+offset_top = 130.0
+offset_right = 1389.0
+offset_bottom = 961.0
+scale = Vector2(1, 1)
+value = 100.0
+texture_progress_offset = Vector2(0, 0)
+tint_progress = Color(0.576471, 0.184314, 0.105882, 1)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../SubViewport/ChargeProgress")
+libraries = {
+"": SubResource("AnimationLibrary_5mklu")
+}
+
+[node name="Charge" type="Sprite3D" parent="."]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -1.87512, 3.13756, -0.0793471)
+visible = false
+texture = SubResource("ViewportTexture_wv7yq")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

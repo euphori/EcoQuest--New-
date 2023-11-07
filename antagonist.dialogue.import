@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://c5jmnluie8rmt"
+path="res://.godot/imported/antagonist.dialogue-8e4ca31b041e73a5977d6131a928f01e.tres"
+
+[deps]
+
+source_file="res://antagonist.dialogue"
+dest_files=["res://.godot/imported/antagonist.dialogue-8e4ca31b041e73a5977d6131a928f01e.tres"]
+
+[params]
+
+defaults=true

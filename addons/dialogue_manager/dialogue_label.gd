@@ -10,6 +10,9 @@ signal spoke(letter: String, letter_index: int, speed: float)
 ## Emitted when typing paused for a `[wait]`
 signal paused_typing(duration: float)
 
+## Emitted when the player skips the typing of dialogue.
+signal skipped_typing()
+
 ## Emitted when typing finishes.
 signal finished_typing()
 
@@ -74,25 +77,26 @@ func type_out() -> void:
 	text = dialogue_line.text
 	visible_characters = 0
 	visible_ratio = 0
-	self.is_typing = true
 	_waiting_seconds = 0
+	_last_wait_index = -1
+	_last_mutation_index = -1
 
-	# Text isn't calculated until the next frame
-	await get_tree().process_frame
+	self.is_typing = true
 
 	if get_total_character_count() == 0:
 		self.is_typing = false
 	elif seconds_per_step == 0:
-		_mutation_remaining_mutations()
+		_mutate_remaining_mutations()
 		visible_characters = get_total_character_count()
 		self.is_typing = false
 
 
 ## Stop typing out the text and jump right to the end
 func skip_typing() -> void:
-	_mutation_remaining_mutations()
+	_mutate_remaining_mutations()
 	visible_characters = get_total_character_count()
 	self.is_typing = false
+	skipped_typing.emit()
 
 
 # Type out the next character(s)
@@ -143,7 +147,7 @@ func _get_speed(at_index: int) -> float:
 
 
 # Run any inline mutations that haven't been run yet
-func _mutation_remaining_mutations() -> void:
+func _mutate_remaining_mutations() -> void:
 	for i in range(visible_characters, get_total_character_count() + 1):
 		_mutate_inline_mutations(i)
 
@@ -166,13 +170,14 @@ func _should_auto_pause() -> bool:
 	var parsed_text: String = get_parsed_text()
 
 	# Ignore "." if it's between two numbers
-	if visible_characters > 3 and parsed_text[visible_characters - 1] == ".":
-		var possible_number: String = parsed_text.substr(visible_characters - 2, 3)
-		if str(float(possible_number)) == possible_number:
-			return false
+	#if visible_characters > 3 and parsed_text[visible_characters - 1] == ".":
+	#	var possible_number: String = parsed_text.substr(visible_characters - 2, 3)
+	#	if str(float(possible_number)) == possible_number:
+	#		return false
 
 	# Ignore two non-"." characters next to each other
-	if visible_characters > 1 and parsed_text[visible_characters - 1] in pause_at_characters.replace(".", "").split():
+	var other_pause_characters: PackedStringArray = pause_at_characters.replace(".", "").split()
+	if visible_characters > 1 and parsed_text[visible_characters - 1] in other_pause_characters and parsed_text[visible_characters] in other_pause_characters:
 		return false
 
 	return parsed_text[visible_characters - 1] in pause_at_characters.split()

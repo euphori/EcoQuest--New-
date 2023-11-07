@@ -1,0 +1,166 @@
+[gd_scene load_steps=22 format=3 uid="uid://dhv5a5db46p2"]
+
+[ext_resource type="Texture2D" uid="uid://c7sykdp5idqs8" path="res://assets/ui/computer/Group 1.png" id="1_s2eyx"]
+[ext_resource type="Script" path="res://UI/computer.gd" id="1_xj423"]
+[ext_resource type="Texture2D" uid="uid://bre38i0ey0kex" path="res://assets/ui/computer/mainmenu/Logs.png" id="2_4dpt6"]
+[ext_resource type="Texture2D" uid="uid://cy1277pdksc8m" path="res://assets/ui/computer/mainmenu/Logs sel.png" id="3_2885j"]
+[ext_resource type="Texture2D" uid="uid://lvluooagxp4g" path="res://assets/ui/controller/Rectangle 3.png" id="3_getfk"]
+[ext_resource type="Texture2D" uid="uid://dujdb74crglb7" path="res://assets/ui/computer/mainmenu/manual.png" id="4_r1lit"]
+[ext_resource type="Texture2D" uid="uid://bpdhknfo5mwol" path="res://assets/ui/computer/mainmenu/manual sel.png" id="5_ioffp"]
+[ext_resource type="Texture2D" uid="uid://d4ngypykfx3cy" path="res://assets/ui/computer/mainmenu/shutdown factory.png" id="6_ac2ef"]
+[ext_resource type="Texture2D" uid="uid://cs1rls7vc3i2d" path="res://assets/ui/computer/mainmenu/shutdown factorysel.png" id="7_bnycw"]
+[ext_resource type="Texture2D" uid="uid://30xrgq2ljcrt" path="res://assets/ui/computer/mainmenu/Factory plant system.png" id="8_mgdhc"]
+[ext_resource type="Texture2D" uid="uid://8e4xhstjxygp" path="res://assets/ui/computer/shutdown/Enter password__.png" id="9_8f77p"]
+[ext_resource type="Texture2D" uid="uid://bwfln20na6ody" path="res://assets/ui/computer/shutdown/Factory shutdown.png" id="10_rf4je"]
+[ext_resource type="Texture2D" uid="uid://c00bnvyy0ogap" path="res://assets/ui/computer/shutdown/Warning!  action irreversible!.png" id="11_mmyq1"]
+[ext_resource type="FontFile" uid="uid://cnh6h8xkun3sv" path="res://assets/fonts/retro_computer_personal_use.ttf" id="12_351mn"]
+[ext_resource type="Texture2D" uid="uid://dyynqslquf8bj" path="res://assets/ui/computer/load/Layer 9.png" id="14_c7u26"]
+[ext_resource type="Texture2D" uid="uid://jr7xgy6vapau" path="res://assets/ui/computer/load/Layer 10.png" id="15_btj5i"]
+[ext_resource type="Texture2D" uid="uid://bvc1a1gil8j1c" path="res://assets/ui/computer/load/system shutdown.png" id="16_l5dt0"]
+[ext_resource type="Texture2D" uid="uid://biy3gxrnnn57e" path="res://assets/ui/computer/load/loading_.png" id="17_0dx2w"]
+[ext_resource type="Texture2D" uid="uid://c1javuwoimnio" path="res://assets/ui/computer/Shutdown complete.png" id="18_m5rfs"]
+[ext_resource type="Texture2D" uid="uid://cv8twv1n04nx5" path="res://assets/ui/computer/Logs.png" id="19_5xupn"]
+[ext_resource type="Texture2D" uid="uid://0d8ntw6b0b58" path="res://assets/ui/computer/Manual.png" id="20_5ineh"]
+
+[node name="Computer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xj423")
+
+[node name="Rect" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.694118)
+position = Vector2(961, 539)
+scale = Vector2(1.21113, 1.22437)
+texture = ExtResource("3_getfk")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(970, 538)
+texture = ExtResource("1_s2eyx")
+
+[node name="Label" type="Label" parent="Background"]
+offset_left = -442.0
+offset_top = 177.0
+offset_right = -382.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0.339844, 0.875, 0.3125, 1)
+theme_override_fonts/font = ExtResource("12_351mn")
+theme_override_font_sizes/font_size = 24
+text = "PRESS ESC TO GO BACK"
+
+[node name="MainMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 489.0
+offset_top = 116.0
+offset_right = 489.0
+offset_bottom = 116.0
+mouse_filter = 2
+
+[node name="Logs" type="TextureButton" parent="MainMenu"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 266.0
+offset_right = 160.0
+offset_bottom = 306.0
+texture_normal = ExtResource("2_4dpt6")
+texture_hover = ExtResource("3_2885j")
+texture_focused = ExtResource("3_2885j")
+
+[node name="Manual" type="TextureButton" parent="MainMenu"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 227.0
+offset_right = 201.0
+offset_bottom = 267.0
+texture_normal = ExtResource("4_r1lit")
+texture_hover = ExtResource("5_ioffp")
+
+[node name="Shutdown" type="TextureButton" parent="MainMenu"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 307.0
+offset_right = 199.0
+offset_bottom = 347.0
+texture_normal = ExtResource("6_ac2ef")
+texture_hover = ExtResource("7_bnycw")
+
+[node name="FactoryPlantSystem" type="Sprite2D" parent="MainMenu"]
+position = Vector2(484, 81)
+texture = ExtResource("8_mgdhc")
+
+[node name="Shutdown" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnterPassword" type="Sprite2D" parent="Shutdown"]
+position = Vector2(728, 438)
+texture = ExtResource("9_8f77p")
+
+[node name="FactoryShutdown" type="Sprite2D" parent="Shutdown"]
+position = Vector2(970, 179)
+texture = ExtResource("10_rf4je")
+
+[node name="Warning!ActionIrreversible!" type="Sprite2D" parent="Shutdown"]
+position = Vector2(963, 221)
+texture = ExtResource("11_mmyq1")
+
+[node name="TextEdit" type="LineEdit" parent="Shutdown"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 945.0
+offset_top = 416.0
+offset_right = 1374.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(0.339844, 0.875, 0.3125, 1)
+theme_override_fonts/font = ExtResource("12_351mn")
+theme_override_font_sizes/font_size = 24
+
+[node name="Loading" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Loading"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 568.0
+offset_right = 1368.0
+offset_bottom = 658.0
+pivot_offset = Vector2(529, 23)
+value = 100.0
+texture_over = ExtResource("14_c7u26")
+texture_progress = ExtResource("15_btj5i")
+texture_progress_offset = Vector2(27, 25)
+
+[node name="SystemShutdown" type="Sprite2D" parent="Loading"]
+position = Vector2(973, 233)
+texture = ExtResource("16_l5dt0")
+
+[node name="Loading2" type="Sprite2D" parent="Loading"]
+position = Vector2(661, 540)
+texture = ExtResource("17_0dx2w")
+
+[node name="ShutdownComplete" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(956, 418)
+texture = ExtResource("18_m5rfs")
+
+[node name="Logs" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(799, 296)
+texture = ExtResource("19_5xupn")
+
+[node name="Manual" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(837, 274)
+texture = ExtResource("20_5ineh")
+
+[connection signal="pressed" from="MainMenu/Logs" to="." method="_on_logs_pressed"]
+[connection signal="pressed" from="MainMenu/Manual" to="." method="_on_manual_pressed"]
+[connection signal="pressed" from="MainMenu/Shutdown" to="." method="_on_shutdown_pressed"]
+[connection signal="text_submitted" from="Shutdown/TextEdit" to="." method="_on_text_edit_text_submitted"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b7efc7fc4t0bg"
+path="res://.godot/imported/todo_mask.png-d1cb85dafaa74bac58593afd08c1a009.res"
+
+[deps]
+
+source_file="res://assets/ui/new_journal/todo_mask.png"
+dest_files=["res://.godot/imported/todo_mask.png-d1cb85dafaa74bac58593afd08c1a009.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

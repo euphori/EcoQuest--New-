@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://bjyhfquvypbru"
+path="res://.godot/imported/desert_cutscene.dialogue-92c4bceff10424ecfff9b8e2db422a1e.tres"
+
+[deps]
+
+source_file="res://desert_cutscene.dialogue"
+dest_files=["res://.godot/imported/desert_cutscene.dialogue-92c4bceff10424ecfff9b8e2db422a1e.tres"]
+
+[params]
+
+defaults=true

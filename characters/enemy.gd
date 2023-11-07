@@ -3,18 +3,26 @@ extends CharacterBody3D
 
 var SPEED = 5.0
 const JUMP_VELOCITY = 8
-const ACCELERATION = 30
+const ACCELERATION = 15
 const MAX_SPEED = 7
-const AGGRO_RANGE = 15
+
 const KNOCKBACK_FORCE = 40
-var DASH_SPEED = 30
+var DASH_SPEED = 20
+
+@export_category("Dialogue")
+@export var dialogue_resource : DialogueResource
+@export var title : String = "start"
+
 
 @export var path_to_player : NodePath
 
 @onready var player = get_node(path_to_player)
-@export var health = 5
-
+@export var health = 100
+@export var AGGRO_RANGE = 15
+@export var ATTACK_RANGE = 2
+@export var MIN_ATTACK_RANGE = 1
 @onready var jump_timer = $JumpCooldown
+@onready var hp_bar = $SubViewport/HealthProgress
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var state = CHASE
@@ -25,6 +33,11 @@ var staggering = false
 var can_move = true
 var attacking = false
 var dashing
+var timer_started
+var dead
+
+
+signal engage
 
 enum{
 	IDLE,
@@ -38,8 +51,16 @@ enum{
 
 
 func _ready():
+	if global.enemy_cleared.keys().has(get_parent().name):
+		if global.enemy_cleared[get_parent().name]:
+			queue_free()
+	GlobalMusic.enemy = self
 	state =  CHASE
 	
+
+
+func start_dialogue():
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
 
 
 func _physics_process(delta):
@@ -48,31 +69,45 @@ func _physics_process(delta):
 	
 
 	if not is_on_floor():
+		
 		velocity.y -= gravity * delta
 	else:
 		jumping = false
+	
+	if player.dead and dead:
+		GlobalMusic.change_music("neutral")
+		state = IDLE
+	
 	match state:
 		IDLE:
-			if !GlobalbgMusic.playing:
-				GlobalbgMusic.play()
-			GlobalbgMusicAttack.stop()
-			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			$AnimationPlayer.play("idle")
 			$Label3D.text = str("State: IDLE ")
 		CHASE:
 			
 			$Label3D.text = str("State: CHASE")
-			var destination = self.global_position.direction_to(player.global_position)
-			var distance = self.global_position - player.global_position
-			if  abs(distance.z) > 0 and is_on_floor() and can_move:
-				velocity.z += destination.z * 5 * delta
+			if is_on_floor():
+				var destination = self.global_position.direction_to(player.global_position)
+				var distance = self.global_position - player.global_position
+				if  abs(distance.z) > 1 and is_on_floor() and can_move:
+					velocity.z += destination.z * SPEED * delta
+				elif abs(distance.z) < 1  and is_on_floor() and can_move:
+					velocity.z += move_toward(velocity.z , 0, SPEED)
+				if abs(distance.x) > ATTACK_RANGE and is_on_floor() and can_move:
+					velocity.x += destination.x * ACCELERATION * delta 
+					velocity = velocity.limit_length(SPEED)
+				elif abs(distance.x) < MIN_ATTACK_RANGE and is_on_floor() and can_move:
+					destination =  player.global_position.direction_to(self.global_position)
+					velocity.x += destination.x * ACCELERATION * delta 
+					velocity = velocity.limit_length(SPEED)
 				
-			if abs(distance.x) > 4 and is_on_floor() and can_move:
+				if abs(distance.x) <= ATTACK_RANGE and abs(distance.x) >= MIN_ATTACK_RANGE and is_on_floor() and !staggering and abs(distance.z) < 0.5 and !dashing:
+					state = ATTACK
+					axis_lock_linear_z = true
+				elif abs(distance.x) >= AGGRO_RANGE:
+					state = IDLE
+					velocity.x = move_toward(velocity.x, 0, SPEED)
 				velocity.x += destination.x * ACCELERATION * delta 
-				
-				velocity = velocity.limit_length(MAX_SPEED)
-				
 				if velocity.x < 0 and $LeftRay.is_colliding():
 					state = JUMP
 				elif velocity.x > 0 and $RightRay.is_colliding():
@@ -83,11 +118,6 @@ func _physics_process(delta):
 				else:
 					$AnimationPlayer.play("idle")
 					velocity.x = move_toward(velocity.x, 0, SPEED)
-			elif abs(distance.x) > 2 and is_on_floor() and !staggering and abs(distance.z) < 0.5:
-				state = ATTACK
-			elif abs(distance.x) >= AGGRO_RANGE:
-				state = IDLE
-				velocity.x = move_toward(velocity.x, 0, SPEED)
 		ATTACK:
 			var dir = self.global_position.direction_to(player.global_position)
 			$Label3D.text = str("State: ATTACK")
@@ -97,28 +127,35 @@ func _physics_process(delta):
 			elif dir.x < 0 and !attacking and !dashing:
 				$AnimationPlayer.play("attack_left")
 				attacking = true
-			if self.name == "SawRobot":
-				velocity.x += dir.x * ACCELERATION * delta 
-				velocity = velocity.limit_length(SPEED * 5)
 			else:
-				
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				velocity.z = move_toward(velocity.z, 0, SPEED)
-			await $AnimationPlayer.animation_finished
-			state = CHASE
-			attacking = false
+			if self.name == "Enemy":
+				await $AnimationPlayer.animation_finished
+				state = CHASE
+				attacking = false
 		DASH:
 			$Label3D.text = str("State: DASH")
 			var dir = self.global_position.direction_to(player.global_position)
-			velocity.x = dir.x * DASH_SPEED
+			var distance = self.global_position.distance_to(player.global_position)
+			if abs(distance) >= 1 and dashing:
+				velocity.x = dir.x * DASH_SPEED
+
+			if abs(distance) < 1 and dashing:
+				dashing = false
+				state = STAGGER
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()
 		STAGGER:
-			("State: STAGGER")
-			staggering = true
+			$AnimationPlayer.play("idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			
+			$Label3D.text = str("State: STAGGER")
+			if !staggering:
+				$StaggerTimer.start(1)
+			staggering = true
+
+
 		
 	
 	if velocity.x  < 0:
@@ -132,36 +169,44 @@ func jump():
 	velocity.x
 	if is_on_floor():
 		jumping = false
-	if not jumping and can_jump and !staggering:
+	if not jumping and can_jump and !staggering and !dashing:
 		var direction = self.global_position.direction_to(player.global_position)
 		velocity.y += JUMP_VELOCITY
 		jumping = true
 		jump_timer.start(jump_cd)
 		if $LeftRay.is_colliding() and $Sprite3D.flip_h:
-			print("LEFT COLLIDING")
 			velocity.x = move_toward(velocity.x,direction.x * ACCELERATION,1)
 		elif $RightRay.is_colliding() and not $Sprite3D.flip_h:
 			velocity.x = move_toward(velocity.x,direction.x * ACCELERATION,1)
 		
 		state = CHASE
-		print(velocity.x)
 		can_jump = false
 		
 
 func dash():
-	$DashTimer.start(0.5)
-	state = DASH
-	dashing = true
+	if !dashing:
+		dashing = true
+		state = DASH
+	
+
+func die():
+	dead = true
+	if name == "Enemy":
+		global.enemy_cleared[get_parent().name] = true
+	queue_free()
 
 func hurt():
-	health -= 1
+	health -= 25
+	var tween = get_tree().create_tween()
+	tween.tween_property(hp_bar, "value", health, 0.5)
 	knockback()
 	if health <= 0:
-		GlobalbgMusicAttack.stop()
-		GlobalbgMusic.play()
-		queue_free()
+		die()
 		
-		
+
+
+
+
 func knockback():
 	var direction = player.global_position.direction_to(self.global_position)
 	velocity.x = direction.x * KNOCKBACK_FORCE
@@ -175,14 +220,14 @@ func knockback():
 	
 
 func _on_player_detection_body_entered(body):
-	GlobalbgMusic.stop()
-	if !GlobalbgMusicAttack.playing:
-		GlobalbgMusicAttack.play()
-	if body == player:
+	if GlobalMusic.status != "battle":
+		GlobalMusic.change_music("battle")
+	if body == player and !dashing and !staggering and !player.dead:
 		state = CHASE
  
 
 func _on_player_detection_body_exited(body):
+	
 	pass
 	#if body == player:
 		#state = IDLE
@@ -207,7 +252,9 @@ func _on_hurtbox_body_entered(body):
 	pass # Replace with function body.
 
 
-func _on_dash_timer_timeout():
-	dashing = false
-	state = CHASE
 
+
+func stop_dash():
+	attacking = false
+	dashing = false
+	state = STAGGER

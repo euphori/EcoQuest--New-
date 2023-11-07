@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://doknajk5x51eb"]
+
+[ext_resource type="Script" path="res://areas/Checkpoint.gd" id="1_i08sk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0pv5l"]
+
+[node name="Checkpoint" type="Node3D"]
+script = ExtResource("1_i08sk")
+path_to_player = NodePath("../CharacterManager/Kid")
+
+[node name="Point1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.453, 24.7581, 0)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Point1"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_0pv5l")
+
+[node name="Reset" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.583, 21.3803, 0)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Reset"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.812088, -3.73092, 0)
+shape = SubResource("SphereShape3D_0pv5l")
+
+[connection signal="body_entered" from="Point1" to="." method="_on_point_1_body_entered"]
+[connection signal="body_entered" from="Reset" to="." method="_on_reset_body_entered"]
