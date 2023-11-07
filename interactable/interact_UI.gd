@@ -48,10 +48,13 @@ func _input(event):
 			emit_signal("talk")
 			$TalkIcon.visible = false
 		elif type == "pickable":
+			
 			global.items[parent.item_name] += 1
 			emit_signal("item_added")
 			global.emit_signal("update_quest")
+			#await $AudioStreamPlayer.finished
 			parent.queue_free()
+			
 		elif type == "plant":
 			emit_signal("grow")
 		elif type == "fix":
