@@ -20,12 +20,13 @@ var enemy_cleared = {
 
 
 signal update_quest
-
+signal transistion
 
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
 var curr_scene_name
+var curr_level
 var save_database 
 
 var questStart = false

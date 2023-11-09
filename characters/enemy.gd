@@ -34,7 +34,7 @@ var attacking = false
 var dashing
 var timer_started
 var dead
-
+var death_quest_trigger = ["",""]
 
 signal engage
 
@@ -195,6 +195,11 @@ func die():
 	dead = true
 	if name == "Enemy":
 		global.enemy_cleared[get_parent().name] = true
+		
+	if death_quest_trigger[0] != "" or  death_quest_trigger[1] != "":
+		##0 is chapter 1 is quest id
+		global.quest[death_quest_trigger[0]][death_quest_trigger[1]].completed = true
+		global.emit_signal("update_quest")
 	queue_free()
 
 func hurt():

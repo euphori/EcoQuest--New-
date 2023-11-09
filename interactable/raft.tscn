@@ -41,8 +41,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tfkx8")
 surface_material_override/0 = SubResource("StandardMaterial3D_v1ql6")
 
 [node name="InteractUI" parent="." instance=ExtResource("2_bolqr")]
-transform = Transform3D(0.384972, 0, -0.922928, 0, 1, 0, 0.922928, 0, 0.384972, -2.09657, 3.22404, 0.561781)
+transform = Transform3D(0.384972, 0, -0.922928, 0, 1, 0, 0.922928, 0, 0.384972, -0.126232, 2.50983, 0.0338306)
 text_label = "Travel(F)"
-type = "object"
+type = "travel"
 
 [editable path="Boat"]
+[editable path="InteractUI"]
+[editable path="InteractUI/PlayerDetection"]

@@ -18,6 +18,7 @@ extends Node3D
 @onready var tracker_info = $UI/Quest/QuestInfo
 @onready var tracker_title = $UI/Quest/QuestTitle
 @onready var pause_menu = $UI/PauseMenu
+@onready var journal = $Journal
 
 var location = global.curr_scene
 var new_camera_offset = {"x":0.5,"y":4,"z":7}
@@ -36,6 +37,11 @@ var save_path = {
 	"res://levels/city.tscn": "user://city_camera.txt",
 	}
 var disable_cam_control = false
+
+
+@onready var interactables  = get_tree().get_nodes_in_group("interactable")
+@onready var nearest_interactable = interactables[0]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -96,9 +102,19 @@ func hide_quest():
 func show_death_screen():
 	$UI/DeathScreen.visible = true
 
+func get_nearest_interactable():
+	if nearest_interactable == null:
+		nearest_interactable = interactables[0]
+	
+	for interactable in interactables:
+			if interactable.global_position.distance_to(kid.global_position) < nearest_interactable.global_position.distance_to(kid.global_position):
+				nearest_interactable = interactable
+				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+
+			
 	if !disable_cam_control:
 		var tween = get_tree().create_tween()
 		tween.tween_property(camera, "global_position", Vector3(kid.global_position.x + old_camera_offset["x"],kid.global_position.y + old_camera_offset["y"],old_camera_offset["z"]) ,.3)
@@ -203,7 +219,8 @@ func show_pause_menu():
 		pause_menu.visible = false
 
 func _on_print_button_pressed():
-	print(old_camera_offset)
+	print("Camera Offset: ", old_camera_offset)
+	print("Camera Position : ",camera.global_position)
 
 
 func _on_restart_pressed():

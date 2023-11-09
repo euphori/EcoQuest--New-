@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a4hw0"]
 
-[node name="Item" type="CharacterBody3D"]
+[node name="Item" type="CharacterBody3D" groups=["interactable"]]
 collision_layer = 0
 script = ExtResource("1_3vssh")
 

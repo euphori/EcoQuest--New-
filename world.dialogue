@@ -41,10 +41,16 @@ if global.quest["chapter1"]["q3"].active == true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
-	
-if global.quest["chapter1"]["q4"].active == true
-	Elder: I wouldn't be able to finish this with that guy here.
-	Elder: You have to beat him first.
+if global.quest["chapter1"]["q4"].active == true and global.quest["chapter1"]["q4"].completed == false
+	Nathan: I wouldn't be able to finish this with that guy here.
+	Nathan: You gotta beat him kid.
 	do emit(dialogue_ended)
 	=> END
 	
+if global.quest["chapter1"]["q4"].completed == true
+	Nathan: Thanks u can now use the boat
+	do emit(transistion)
+	set global.quest["chapter1"]["q5"].active = true
+	do emit(dialogue_ended)
+	
+=> END

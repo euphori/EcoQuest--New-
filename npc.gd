@@ -15,7 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var chapter_name : String
 ## quest that needs to be completed
 @export var completed_quest : String
-
+@onready var screen_trans = get_parent().get_node("CanvasLayer/AnimationPlayer")
 
 
 var jumping = false
@@ -41,7 +41,10 @@ func do_event():
 	if chapter_name == "chapter1" and completed_quest == "q2" and global.quest["chapter1"]["q3"].completed == false:
 		if global.quest[chapter_name][completed_quest].completed:
 			return_camera()
+			screen_trans.play("fade_to_black")
+			await screen_trans.animation_finished
 			self.global_position = get_parent().get_node("Dock").global_position
+			screen_trans.play("fade_to_normal")
 
 func talk():
 	if !in_dialogue:

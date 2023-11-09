@@ -34,14 +34,14 @@ offset_top = 21.0
 offset_right = 202.0
 offset_bottom = 61.0
 
-[node name="Raft" parent="." instance=ExtResource("2_cn54l")]
+[node name="Raft" parent="." groups=["interactable"] instance=ExtResource("2_cn54l")]
 transform = Transform3D(0.517638, 0, 1.93185, 0, 2, 0, -1.93185, 0, 0.517638, 6.5879, 0.137435, -3.74782)
 
 [node name="Enemy" parent="." instance=ExtResource("3_mhgaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9703, 0, 0)
 dialogue_resource = ExtResource("4_v24a3")
 
-[node name="npc" parent="." instance=ExtResource("4_j4m3t")]
+[node name="npc" parent="." groups=["interactable"] instance=ExtResource("4_j4m3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29325, 1.2)
 collision_layer = 64
 dialogue_resource = ExtResource("5_b2xhi")
@@ -93,6 +93,10 @@ hide = true
 [editable path="CharacterManager"]
 [editable path="CharacterManager/Console"]
 [editable path="CharacterManager/Widgets"]
+[editable path="Raft"]
+[editable path="Raft/Boat"]
+[editable path="Raft/InteractUI"]
+[editable path="Raft/InteractUI/PlayerDetection"]
 [editable path="npc"]
 [editable path="npc/InteractUI"]
 [editable path="npc/InteractUI/PlayerDetection"]
