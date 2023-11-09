@@ -6,6 +6,8 @@
 radius = 6.12349
 
 [node name="QuestTrigger" type="Area3D"]
+collision_layer = 16
+collision_mask = 2
 script = ExtResource("1_t26lv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

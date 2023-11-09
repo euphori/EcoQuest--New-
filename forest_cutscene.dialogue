@@ -1,7 +1,7 @@
 ~ defend
 
-Enemy Robot: Fancy seeing you here old man. 
-Enemy Robot: Prepare to die.
+Mech Mence: Intruder detected. 
+Mech Menace: Prepare for elimination.
 do emit(dialogue_ended_cutscene)
 
 => END

@@ -570,10 +570,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ResponsesMenu" type="VBoxContainer" parent="." node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_direction = 2
-offset_left = 857.0
-offset_top = 290.0
-offset_right = 1077.0
-offset_bottom = 334.0
+offset_left = 1506.0
+offset_top = 747.0
+offset_right = 1726.0
+offset_bottom = 791.0
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 2
@@ -582,11 +582,11 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="ResponsesMenu"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.175781, 0.210938, 0.226563, 1)
-theme_override_colors/font_pressed_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-theme_override_colors/font_hover_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
-theme_override_colors/font_focus_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
 theme_override_constants/icon_max_width = 31
 theme_override_fonts/font = ExtResource("4_cgvjs")
 theme_override_font_sizes/font_size = 36

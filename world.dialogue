@@ -1,44 +1,50 @@
 ~ start
 
-
+if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].completed == false
+	Elder: Welcome, young one. The forest has called for a hero, and it seems it has chosen you.
+	Elder: Do you understand the impact of climate change, and the importance of our mission?
+	- Yes, I understand.
+	- I'm not sure.
+	- No, I don't.
+	set global.quest["chapter1"]["q2"].active = true
+	do emit(update_quest)
+	Elder: Our world is in peril. The delicate balance of nature has been disrupted by the reckless actions of humankind.
+	Elder: The rivers run dry, the forests wither, and the very essence of life is fading away. But there is hope.
+	Elder: You have been chosen to embark on a quest to restore what has been lost.
+	Elder: The fate of our world rests in your hands, young hero.
+	do emit(dialogue_ended)
+	=> END
+	
 if global.items["Wood"] >= 5 and global.quest["chapter1"]["q2"].active:
 	set global.quest["chapter1"]["q2"].completed = true
 	set global.quest["chapter1"]["q2"].active = false
 	set items["Wood"] -= 5
-	Nathan: That was quick! now meet me at the docks I will be building your boat.
+	Village Elder: That was quick! now meet me at the docks and I will help you build your boat.
 	set global.quest["chapter1"]["q3"].active = true
 	set global.unlocked_map["Forest"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
-
-if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].completed == false
-	Nathan: [[Hi|Hello|Howdy]], I need your help restoring the effects of climate change.
-	Nathan: Are you willing to take the challenge?
-	- I am here to help you!
-		set global.quest["chapter1"]["q2"].active = true
-		do emit(update_quest)
-	- No thanks. 
-		do emit(dialogue_ended)
-		=> END
-		
+	
 if global.quest["chapter1"]["q2"].active == true
-	Nathan: You need to have a boat to travel to different places.
-	Nathan: So for your first task, gather 5 pieces of wood to build a boat.
+	Elder: Look there, a fallen tree. We'll need wood to repair the boat. Use your skills to gather some.
+	Elder: So for your first task, gather 5 pieces of wood to repair the boat.
 	do emit(dialogue_ended)
 	=> END
-	
+
 if global.quest["chapter1"]["q3"].active == true
-	Nathan: Glad you could make it.
-	Nathan: Hope no one comes while i build this boat.
+	Elder: Glad you could make it.
+	Elder: Hope no one comes while i build this boat.
 	set global.quest["chapter1"]["q3"].active = false
 	set global.quest["chapter1"]["q3"].completed = true
 	set global.quest["chapter1"]["q4"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
+	
 if global.quest["chapter1"]["q4"].active == true
-	Nathan: I wouldn't be able to finish this with that guy here.
-	Nathan: You gotta beat him kid.
+	Elder: I wouldn't be able to finish this with that guy here.
+	Elder: You have to beat him first.
 	do emit(dialogue_ended)
 	=> END
+	

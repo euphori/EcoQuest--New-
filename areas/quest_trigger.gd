@@ -17,9 +17,10 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		print("PLAYER ENTERED")
 		if global.quest[chapter_name][active_quest_id].active:
 			global.quest[chapter_name][active_quest_id].completed = true
 			global.quest[chapter_name][active_quest_id].active = false
-			
+			global.emit_signal("update_quest")
 			if next_quest_id != null:
 				global.quest[chapter_name][next_quest_id].active = true

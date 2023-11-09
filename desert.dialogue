@@ -1,36 +1,5 @@
 ~ start
 
-#Question 4
-if global.completed_quest["q1"] == true and global.active_quest["q2"] == false
-	Quest Master: Oh no! it looks like the pipe is broken.
-	Quest Master: But before you continue...I want to hear your opinions first.
-	Quest Master: Are you willing to save water?
-	- Definitely, it is very important!
-		set global.dialogue_points += 5
-	- Now way, I don't have time.
-		set global.dialogue_points += 1
-	Quest Master: Are you willing to install energy-efficient appliances in your home?
-	- Definitely, it is very important!
-		set global.dialogue_points += 5
-	- Now way, I don't have time.
-		set global.dialogue_points += 1
-	Quest Master: Would you consider using things like solar panels for electricity?
-	- Definitely, it is very important!
-		set global.dialogue_points += 5
-	- Now way, I don't have time.
-		set global.dialogue_points += 1
-	Quest Master: Great, I'm now ready to give your quest.
-	set global.active_quest["q2"] = true
 
-#Task 4
-if global.active_quest["q2"] == true and global.completed_quest["q2"] == false
-	Quest Master: Help me fix the broken pipe to conserve water by finding the missing tool.
-	
-if global.items["Wrench"] == 1 and fixed_pipe == true :
-	set global.completed_quest["q2"] = true
-	
-if global.completed_quest["q2"] == true and global.active_quest["q3"] == false
-	Quest Master: Great! you fixed the pipe thank you!
-	Quest Master: Here's your reward.
 
 => END

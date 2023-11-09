@@ -43,7 +43,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 		},
 		"q2": {
@@ -54,7 +54,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : true
 		},
 		"q3": {
@@ -65,7 +65,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 			
 		},
@@ -77,7 +77,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 		},
 		"q5": {
@@ -88,7 +88,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 		
 		},
@@ -100,23 +100,38 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 		
 		},
 		"q7": {
-			"title": "Cleanup Drive",
-			"desc" : "Pick up the trash",
+			"title": "Pick Up",
+			"desc" : "Collect trash",
 			"type" : "gather",
-			"req_items" : ["Plastic" , 5],
+			"req_items" : ["Trash" , 5],
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Tutorial Master",
+			"npc_name" : "Village Elder",
 			"talk_after" : false
 		
 		},
-	}, 
+	},
+	"chapter2":{
+		"q1": {
+			"title": "Go to desert",
+			"desc" : "Find the seed",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : false
+		},
+	},
+	
+	 
 	
 	
 	}
