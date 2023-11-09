@@ -51,7 +51,6 @@ mouse_filter = 2
 script = ExtResource("1_bqxhi")
 
 [node name="Background" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = -13.0
 offset_top = -14.0
@@ -115,7 +114,6 @@ position = Vector2(991, 98)
 texture = ExtResource("8_51i8v")
 
 [node name="Quest" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = -2.0
 offset_top = -16.0
@@ -163,12 +161,12 @@ Finished"
 
 [node name="QuestRequirements" type="Label" parent="Quest"]
 layout_mode = 0
-offset_left = 1028.0
-offset_top = 339.0
-offset_right = 1156.0
-offset_bottom = 376.0
+offset_left = 1178.0
+offset_top = 345.0
+offset_right = 1306.0
+offset_bottom = 382.0
 theme_override_colors/font_color = Color(0.0976563, 0.0585938, 0.0273438, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
+theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 32
 text = "0/10"
 

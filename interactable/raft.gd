@@ -10,13 +10,10 @@ func _ready():
 	pass
 func _process(delta):
 	if hide:
-		if global.completed_quest["tutorial"]:
-			collision.disabled = false
-			self.visible = true 
+		if global.quest["chapter1"]["q4"].active:
+			self.visible = true
 		else:
-			collision.disabled = true
 			self.visible = false
-			
 func _input(event):
 	if event.is_action_pressed("interact") and $InteractUI.player_near and visible:
 		if self.name == "Moped":

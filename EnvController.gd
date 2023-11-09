@@ -100,6 +100,6 @@ func _on_h_slider_value_changed(value):
 	val = value
 	$CanvasLayer/Label.text = str(val)
 	update_trees(value)
-	update_sky(value)
+	#update_sky(value)
 	update_plants(value)
 

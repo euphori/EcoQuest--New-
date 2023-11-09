@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihadagl8o8kn"]
+
+[ext_resource type="ArrayMesh" uid="uid://b17dxeb18hfns" path="res://assets/mesh/root_vine.res" id="1_yvk4k"]
+[ext_resource type="ArrayMesh" uid="uid://cswteka37xwo7" path="res://assets/mesh/root_vine2.res" id="2_tln2x"]
+
+[node name="Root VIne" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_yvk4k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_tln2x")
+skeleton = NodePath("../MeshInstance3D")

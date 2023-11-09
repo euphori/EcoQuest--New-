@@ -8,12 +8,18 @@ extends Node3D
 @onready var marker = $Marker3D
 @onready var marker_sprite = $Marker3D/Sprite3D
 @export var player : CharacterBody3D
+
+@export_category("Quest Requirement")
+@export var chapter_name : String
+@export var completed_quest: String
+
+
 var old_camera_pos
 var dia_started = false
 
 func _ready():
-
-	Dialogue.connect("dialogue_ended_cutscene", finish_cutscene)
+	global.connect("update_quest" , play_cutscene)
+	GlobalDialogue.connect("dialogue_ended_cutscene", finish_cutscene)
 	marker_sprite.queue_free()
 
 
@@ -45,11 +51,23 @@ func pan_camera(_location):
 		show_dialogue()
 
 
-func _on_player_detection_body_entered(body):
-	if body.is_in_group("player"):
+func play_cutscene():
+	if chapter_name != null and completed_quest != null:
+		if global.quest[chapter_name][completed_quest].completed:
+			player.can_move = false 
+			player_manager.disable_cam_control = true
+			player_manager.in_cutscene = true
+			old_camera_pos = player_manager.camera.global_position 
+			pan_camera(marker.global_position)
+	else:
 		player.can_move = false 
 		player_manager.disable_cam_control = true
 		player_manager.in_cutscene = true
 		old_camera_pos = player_manager.camera.global_position 
 		pan_camera(marker.global_position)
+			
+
+func _on_player_detection_body_entered(body):
+	if body.is_in_group("player"):
+		play_cutscene()
 		

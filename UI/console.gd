@@ -58,29 +58,34 @@ func _input(event):
 
 
 
-func apply_command(comm,value):
+func apply_command(comm,value1, value2):
 	if comm == commands["speed"]:
-		kid.SPEED = float(value)
+		kid.SPEED = float(value1)
 	elif comm == commands["fps"]:
 		widget.fps.visible = !widget.fps.visible
 			
 	elif comm == commands["camera"]:
 		widget.camera_controller.visible = !widget.camera_controller.visible 
 	elif comm == commands["stats"]:
-		if value == "kid":
+		if value1 == "kid":
 			widget.kid_stats.visible = !widget.kid_stats.visible
 		else:
 			widget.kid_stats.visible = !widget.kid_stats.visible
 	elif comm == commands["comp"]:
-		for i in global.completed_quest:
-			if i == value:
-				global.active_quest[i] = false
-				global.completed_quest[i] = true
-				global.emit_signal("update_quest")
+		for i in global.quest:
+			if i == value1:
+				for x in global.quest[i]:
+					if x == value2:
+						global.quest[i][x].completed = true
+						global.emit_signal("update_quest")
+						break
 	elif comm == commands["act"]:
-		for i in global.active_quest:
-			if i == value:
-				global.active_quest[i] = true
+		for i in global.quest:
+			if i == value1:
+				for x in global.quest[i]:
+					if x == value2:
+						global.quest[i][x].active = true
+			
 				global.emit_signal("update_quest")
 	elif comm == commands["help"]:
 		history.text += str("List of Commands: ","\n")
@@ -93,18 +98,18 @@ func apply_command(comm,value):
 	elif comm == commands["env"]:
 		env_controller.visible =  !env_controller.visible
 	elif comm == commands["add"]:
-		if value:
+		if value1:
 			for i in global.items:
 				print(i)
-				if i == value:
+				if i == value1:
 					global.items[i] += 5
 	elif comm == commands["unlock"]:
-		if value:
+		if value1:
 			
 			for i in global.unlocked_map:
-				if value == "all":
+				if value1 == "all":
 					global.unlocked_map[i] = true
-				if i == value:
+				if i == value1:
 					global.unlocked_map[i] = true
 	elif comm == commands["hesoyam"]:
 		kid.can_die = false
@@ -113,16 +118,23 @@ func _on_line_edit_text_submitted(new_text):
 	history.text += str(new_text,"\n")
 
 	var parts = new_text.split(" ")
-	if parts.size() >= 2:
-		var value = parts[1]
-		print(value)
+	if parts.size() == 2:
+		var value1 = parts[1]
+
 		if commands.has(parts[0]):
-			apply_command(parts[0],parts[1])
+			apply_command(parts[0],parts[1], "")
+		else:
+			history.text += "command not found\n"
+	elif parts.size() == 3:
+		var value1 = parts[1]
+		var value2 = parts[2]
+		if commands.has(parts[0]):
+			apply_command(parts[0],parts[1],parts[2])
 		else:
 			history.text += "command not found\n"
 	else:
 		if commands.has(parts[0]):
-			apply_command(parts[0],"")
+			apply_command(parts[0],"","")
 		else:
 			history.text += "command not found\n"
 	input_line.clear()

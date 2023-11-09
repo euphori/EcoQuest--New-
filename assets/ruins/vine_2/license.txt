@@ -1,0 +1,11 @@
+Model Information:
+* title:	Vine
+* source:	https://sketchfab.com/3d-models/vine-f75dc3a6c7174304a91a7fae63f74a9d
+* author:	Kane22 (https://sketchfab.com/Kane22)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Vine" (https://sketchfab.com/3d-models/vine-f75dc3a6c7174304a91a7fae63f74a9d) by Kane22 (https://sketchfab.com/Kane22) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

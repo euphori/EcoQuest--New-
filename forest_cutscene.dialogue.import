@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://tr3kn8lc6h4y"
+path="res://.godot/imported/forest_cutscene.dialogue-e7de1c49ad0c6f258304cd57c71379c5.tres"
+
+[deps]
+
+source_file="res://forest_cutscene.dialogue"
+dest_files=["res://.godot/imported/forest_cutscene.dialogue-e7de1c49ad0c6f258304cd57c71379c5.tres"]
+
+[params]
+
+defaults=true

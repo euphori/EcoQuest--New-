@@ -7,9 +7,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $Camera3D
 
 
-
+@export_category("Dialogue")
 @export var title: String = "start"
 @export var dialogue_resource: DialogueResource
+@export_category("Quest Connection")
+@export var has_event : bool
+@export var chapter_name : String
+## quest that needs to be completed
+@export var completed_quest : String
 
 
 
@@ -21,10 +26,22 @@ var player_in_range
 var player
 var in_dialogue
 
-func _ready():
-	$InteractUI.connect("talk" , talk)
-	Dialogue.connect("dialogue_ended", return_camera)
 
+func _ready():
+	if global.quest["chapter1"]["q2"].completed and get_parent().name == "Forest":
+		self.global_position = get_parent().get_node("Dock").global_position
+	$InteractUI.connect("talk" , talk)
+	GlobalDialogue.connect("dialogue_ended", return_camera)
+	if has_event:
+		global.connect("update_quest" , do_event)
+
+
+
+func do_event():
+	if chapter_name == "chapter1" and completed_quest == "q2" and global.quest["chapter1"]["q3"].completed == false:
+		if global.quest[chapter_name][completed_quest].completed:
+			return_camera()
+			self.global_position = get_parent().get_node("Dock").global_position
 
 func talk():
 	if !in_dialogue:
@@ -42,7 +59,8 @@ func return_camera():
 		anim_player.play("hide")
 		await  anim_player.animation_finished
 	in_dialogue = false
-	player.get_parent().camera.current = true
+	if player != null:
+		player.get_parent().camera.current = true
 
 func _physics_process(delta):
 	# Add the gravity.

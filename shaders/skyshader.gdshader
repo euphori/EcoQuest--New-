@@ -6,17 +6,17 @@ render_mode use_half_res_pass;
 // Horizon
 uniform float offset_horizon : hint_range(-1.0, 1.0, 0.1) = 0.0;
 uniform float horizon_intensity : hint_range(-10.0, 5.0, 0.001) = -3.3;
-uniform vec4 sun_set : hint_color = vec4(1.0, 0.8, 1.0, 1.0);
-uniform vec4 horizon_color_day : hint_color = vec4(0.0, 0.8, 1.0, 1.0);
-uniform vec4 horizon_color_night : hint_color = vec4(0.0, 0.8, 1.0, 1.0);
+uniform vec4 sun_set : source_color = vec4(1.0, 0.8, 1.0, 1.0);
+uniform vec4 horizon_color_day : source_color = vec4(0.0, 0.8, 1.0, 1.0);
+uniform vec4 horizon_color_night : source_color = vec4(0.0, 0.8, 1.0, 1.0);
 
 // Sun
-uniform vec4 sun_color : hint_color = vec4(1.0);
+uniform vec4 sun_color : source_color = vec4(1.0);
 uniform float sun_radius : hint_range(0.0, 2.0, 0.001) = 0.5;
 uniform bool flat_sun = true;
 
 // Moon
-uniform vec4 moon_color : hint_color = vec4(1.0);
+uniform vec4 moon_color : source_color = vec4(1.0);
 uniform float moon_radius : hint_range(0.0, 2.0, 0.01) = 0.15;
 // negative: crescent on right side
 // positive: crescent on left side 
@@ -24,20 +24,20 @@ uniform float moon_crescent : hint_range(-0.3, 0.3, 0.001) = -0.3;
 uniform float dark_falloff : hint_range(1.0, 6.0, 0.001) = 4.0;
 
 // Day Background Colors
-uniform vec4 day_bottom_color : hint_color = vec4(0.4, 1.0, 1.0, 1.0);
-uniform vec4 day_top_color : hint_color = vec4(0.0, 0.8, 1.0, 1.0);
+uniform vec4 day_bottom_color : source_color = vec4(0.4, 1.0, 1.0, 1.0);
+uniform vec4 day_top_color : source_color = vec4(0.0, 0.8, 1.0, 1.0);
 
 // Night Background Colors
-uniform vec4 night_bottom_color : hint_color = vec4(0.0, 0.0, 0.2, 1.0);
-uniform vec4 night_top_color : hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 night_bottom_color : source_color = vec4(0.0, 0.0, 0.2, 1.0);
+uniform vec4 night_top_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 // stars
-uniform sampler2D stars_texture : hint_black;
+uniform sampler2D stars_texture : source_black;
 uniform sampler2D base_noise : hint_black;
 uniform float base_noise_scale : hint_range(0.0, 1.0, 0.001) = 0.2;
 uniform float stars_speed : hint_range(0.0, 1.0, 0.001) = 0.3;
 uniform float stars_cutoff : hint_range(0.0, 1.0, 0.001) = 0.08;
-uniform vec4 stars_sky_color : hint_color = vec4(0.0, 0.2, 0.1, 1);
+uniform vec4 stars_sky_color : source_color = vec4(0.0, 0.2, 0.1, 1);
 
 void sky() {
 	// get skyUV to place the sun and the moon

@@ -1,5 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddeh6nspvrqql"]
 
+[ext_resource type="Material" uid="uid://pi8xdgocs1ry" path="res://materials/wood1.tres" id="1_pt7ee"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6gs7"]
 resource_name = "Brown 3"
 vertex_color_use_as_albedo = true
@@ -39,11 +41,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f4yj4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85ftj"]
-resource_name = "Brown 3"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.321569, 0.2, 0.0862745, 0.972549)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_xvock"]
 size = Vector3(9.14105, 0.228829, 0.695008)
 
@@ -55,7 +52,7 @@ collision_mask = 3
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_siv6i")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_85ftj")
+surface_material_override/0 = ExtResource("1_pt7ee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0176494, -0.00250566)

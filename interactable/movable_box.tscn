@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://mp1wewkqioxd"]
+[gd_scene load_steps=12 format=3 uid="uid://mp1wewkqioxd"]
 
 [ext_resource type="Script" path="res://interactable/box.gd" id="1_yq6ds"]
-[ext_resource type="Material" uid="uid://pi8xdgocs1ry" path="res://materials/wood1.tres" id="3_q7ywp"]
+[ext_resource type="Shader" path="res://src/outline.gdshader" id="3_p1l3s"]
 [ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="4_0rex0"]
 [ext_resource type="Material" uid="uid://tak3j30156n0" path="res://materials/wood_light.tres" id="4_k5tf6"]
 
@@ -71,6 +71,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cj7hs")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w2piw"]
+render_priority = 0
+shader = ExtResource("3_p1l3s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nuvc"]
+resource_name = "wood3"
+next_pass = SubResource("ShaderMaterial_w2piw")
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.768627, 0.54902, 0.403922, 1)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lr627"]
 points = PackedVector3Array(-0.0102841, -0.0109714, -0.0102841, 0.0102841, 0.0109714, 0.0102841, 0.0106278, 0.0106278, 0.0106278, -0.0106278, -0.0106278, 0.0106278, -0.0106278, 0.0106278, -0.0106278, 0.0109714, -0.0102841, -0.0102841, 0.0106278, -0.0106278, 0.0106278, -0.0106278, 0.0106278, 0.0106278, 0.0102841, 0.0102841, -0.0109714, -0.0102841, -0.0102841, -0.0109714, -0.0109714, -0.0102841, -0.0102841, 0.0102841, -0.0102841, 0.0109714, 0.0106278, 0.0106278, -0.0106278, 0.0106278, -0.0106278, -0.0106278, -0.0102841, 0.0109714, -0.0102841, -0.0109714, 0.0102841, 0.0102841, 0.0109714, 0.0102841, 0.0102841, -0.0102841, 0.0102841, 0.0109714, 0.0102841, -0.0109714, 0.0102841, -0.0102841, -0.0102841, 0.0109714, 0.0102841, -0.0102841, -0.0109714, -0.0102841, 0.0102841, -0.0109714, -0.0109714, 0.0102841, -0.0102841, -0.0109714, -0.0102841, 0.0102841, -0.0102841, 0.0109714, 0.0102841, 0.0102841, 0.0102841, 0.0109714, 0.0102841, 0.0109714, -0.0102841, 0.0109714, -0.0102841, 0.0102841, 0.0109714, 0.0102841, -0.0102841, 0.0102841, -0.0109714, -0.0102841, -0.0102841, -0.0109714, 0.0102841)
 
@@ -96,7 +107,7 @@ collision_mask = 2
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0.916306, 0)
 mesh = SubResource("ArrayMesh_lpb2l")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_q7ywp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4nuvc")
 surface_material_override/1 = ExtResource("4_k5tf6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

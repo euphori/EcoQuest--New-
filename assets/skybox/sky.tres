@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=13 format=3 uid="uid://632b1x0ros1u"]
 
-[ext_resource type="Shader" path="res://shaders/sky.gdshader" id="1_velad"]
+[ext_resource type="Shader" path="res://assets/skybox/sky.gdshader" id="1_r5qqx"]
 
 [sub_resource type="Gradient" id="Gradient_jc28h"]
 
@@ -44,7 +44,7 @@ color_ramp = SubResource("Gradient_oiisc")
 noise = SubResource("FastNoiseLite_xxj6f")
 
 [resource]
-shader = ExtResource("1_velad")
+shader = ExtResource("1_r5qqx")
 shader_parameter/day_bottom_color = Color(0.180392, 0.85098, 1, 1)
 shader_parameter/day_top_color = Color(0, 0.603922, 0.741176, 1)
 shader_parameter/sunset_bottom_color = Color(0.878431, 0.490196, 0.14902, 1)

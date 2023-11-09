@@ -63,10 +63,6 @@ func _ready():
 		HEALTH = 100
 
 
-
-
-
-
 func jump():
 	velocity.y = JUMP_VELOCITY
 

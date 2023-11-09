@@ -60,30 +60,24 @@ func _input(event):
 
 
 func refresh_journal():
+	update_quest()
 	get_curr_quest()
 	initialize_inv()
 	update_quantity()
-	update_quest()
 	update_save_slot()
 	map.initialize_map()
 
 
+
 func update_quest():
-	for i in global.completed_quest:
-		if global.completed_quest[i] == true and !done.has(global.completed_quest[i]):
-			global.active_quest[i] = false
-			done.append(global.completed_quest[i])
-			fin_quest.text += str(global.quest_title[i],"\n")
-			clear_curr_quest()
-	
-	if global.quest_type.has(curr_quest):
-		if curr_quest != null and global.quest_type[curr_quest] == "gather" and global.completed_quest[curr_quest] == false :
-			var req_item
-			for x in global.items:
-				if x == global.req_materials[curr_quest][0]:
-					req_item = x
-			if global.req_materials[curr_quest][1] <= global.items[req_item]:
-				quest_info.text += "\nTalk to NPC"
+	for i in global.quest:
+		for x in global.quest[i]:
+			var _quest = global.quest[i][x]
+			if _quest.completed:
+				_quest.active = false
+				done.append(_quest.title)
+				fin_quest.text += str(_quest.title,"\n")
+				clear_curr_quest()
 	
 func clear_curr_quest():
 	curr_quest_title.text = "Nothing to do"
@@ -92,23 +86,27 @@ func clear_curr_quest():
 	curr_quest = null
 
 func get_curr_quest():
-	for i in global.active_quest:
-		if global.active_quest[i] == true:
-			curr_quest = i
-			curr_quest_title.text = global.quest_title[curr_quest]
-			if global.quest_info.has(curr_quest):
-				quest_info.text = global.quest_info[curr_quest]
-			else:
-				quest_info.text = str(curr_quest, " info doesn't exist")
-			var req_item
-			if global.quest_type.has(curr_quest) and global.quest_type[curr_quest] == "gather":
-				for x in global.items:
-					if x == global.req_materials[curr_quest][0]:
-						req_item = x
-				quest_req.text = str(global.items[req_item],"/",global.req_materials[curr_quest][1], "  ",global.req_materials[curr_quest][0])
-				quest_req.visible = true
-			break
-
+	
+	## Shows the quest on journal
+	for i in global.quest:
+		for x in global.quest[i]: #get all quest in global
+			var _quest = global.quest[i][x]
+			if _quest.active: #find the active quest
+				curr_quest = _quest.title
+				curr_quest_title.text = _quest.title
+				quest_info.text = _quest.desc
+				
+				if _quest.req_items != null: #shows the req items if there is one
+					var req_item
+					for y in global.items:
+						if y == _quest.req_items[0]:
+							req_item = y
+					
+					quest_req.visible = true
+					if _quest.req_items[1] <= global.items[_quest.req_items[0]] and _quest.talk_after:
+						quest_info.text += str("\n Talk to " , _quest.npc_name)
+					else:
+						quest_req.text = str(global.items[req_item], "/" , _quest.req_items[1], " " , _quest.req_items[0])
 
 
 func initialize_inv():

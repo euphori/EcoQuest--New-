@@ -1,0 +1,11 @@
+Model Information:
+* title:	Vines
+* source:	https://sketchfab.com/3d-models/vines-c1d5a2c8b5dc4b639824ac6ffedd5887
+* author:	Jordan Burckhardt (https://sketchfab.com/burckhardtj)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Vines" (https://sketchfab.com/3d-models/vines-c1d5a2c8b5dc4b639824ac6ffedd5887) by Jordan Burckhardt (https://sketchfab.com/burckhardtj) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

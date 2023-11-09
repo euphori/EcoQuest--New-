@@ -11,8 +11,9 @@ func _ready():
 func _process(delta):
 	
 	if hide:
-		if global.completed_quest["q4"]:
-			self.visible = true 
-		else:
-			self.visible = false
+		pass
+		#if global.completed_quest["q4"]:
+		#	self.visible = true 
+		#else:
+			#self.visible = false
 	

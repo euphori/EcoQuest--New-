@@ -3015,7 +3015,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.322, 20.9132, 6.30933)
 [node name="Item5" parent="Items" instance=ExtResource("26_oitep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7579, -4.80207, 0.304068)
 item_name = "Wrench"
-assigned_quest = "q2"
 hide = true
 
 [node name="Sprite3D" parent="Items/Item5" index="0"]
@@ -3035,15 +3034,12 @@ transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0
 
 [node name="SawRobot" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4725, 13.1132, 2.83113)
-path_to_player = NodePath("../CharacterManager/Kid")
 
 [node name="SawRobot4" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6007, 13.1132, 5.24194)
-path_to_player = NodePath("../CharacterManager/Kid")
 
 [node name="SawRobot2" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.334, 21.6849, 7.24597)
-path_to_player = NodePath("../CharacterManager/Kid")
 
 [node name="rpgpp_av_water_platform_01a" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -76.2979, 6.69293, 4.78395)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4vv3qgrt3xc"]
+
+[ext_resource type="Script" path="res://areas/quest_trigger.gd" id="1_t26lv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t4ukv"]
+radius = 6.12349
+
+[node name="QuestTrigger" type="Area3D"]
+script = ExtResource("1_t26lv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_t4ukv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

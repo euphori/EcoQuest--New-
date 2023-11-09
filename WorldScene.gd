@@ -12,7 +12,7 @@ func _ready():
 	
 	if global.last_player_pos[global.curr_scene_name] != "":
 		manager.kid.global_position = str_to_var("Vector3" + global.last_player_pos[global.curr_scene_name])
-	global.save(global.save_path["save1"])
+	#global.save(global.save_path["save1"])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

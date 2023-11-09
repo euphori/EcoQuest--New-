@@ -1,0 +1,11 @@
+Model Information:
+* title:	Jungle Vine
+* source:	https://sketchfab.com/3d-models/jungle-vine-d8a2da241a1b4ce9aa8c528240fc92b2
+* author:	mike753 (https://sketchfab.com/mike753)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Jungle Vine" (https://sketchfab.com/3d-models/jungle-vine-d8a2da241a1b4ce9aa8c528240fc92b2) by mike753 (https://sketchfab.com/mike753) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

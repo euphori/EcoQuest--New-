@@ -14,12 +14,11 @@ var DASH_SPEED = 20
 @export var title : String = "start"
 
 
-@export var path_to_player : NodePath
 
-@onready var player = get_node(path_to_player)
+@onready var player = get_parent().get_node("CharacterManager/Kid")
 @export var health = 100
 @export var AGGRO_RANGE = 15
-@export var ATTACK_RANGE = 2
+@export var ATTACK_RANGE = 3
 @export var MIN_ATTACK_RANGE = 1
 @onready var jump_timer = $JumpCooldown
 @onready var hp_bar = $SubViewport/HealthProgress
@@ -51,6 +50,8 @@ enum{
 
 
 func _ready():
+
+	
 	if global.enemy_cleared.keys().has(get_parent().name):
 		if global.enemy_cleared[get_parent().name]:
 			queue_free()
@@ -69,7 +70,6 @@ func _physics_process(delta):
 	
 
 	if not is_on_floor():
-		
 		velocity.y -= gravity * delta
 	else:
 		jumping = false
@@ -89,9 +89,10 @@ func _physics_process(delta):
 			if is_on_floor():
 				var destination = self.global_position.direction_to(player.global_position)
 				var distance = self.global_position - player.global_position
-				if  abs(distance.z) > 1 and is_on_floor() and can_move:
+				if  abs(distance.z) > .5 and is_on_floor() and can_move:
+					axis_lock_linear_z = false
 					velocity.z += destination.z * SPEED * delta
-				elif abs(distance.z) < 1  and is_on_floor() and can_move:
+				elif abs(distance.z) < .5  and is_on_floor() and can_move:
 					velocity.z += move_toward(velocity.z , 0, SPEED)
 				if abs(distance.x) > ATTACK_RANGE and is_on_floor() and can_move:
 					velocity.x += destination.x * ACCELERATION * delta 
@@ -100,14 +101,14 @@ func _physics_process(delta):
 					destination =  player.global_position.direction_to(self.global_position)
 					velocity.x += destination.x * ACCELERATION * delta 
 					velocity = velocity.limit_length(SPEED)
-				
-				if abs(distance.x) <= ATTACK_RANGE and abs(distance.x) >= MIN_ATTACK_RANGE and is_on_floor() and !staggering and abs(distance.z) < 0.5 and !dashing:
+				print(distance.z)
+				if abs(distance.x) <= ATTACK_RANGE and abs(distance.x) >= MIN_ATTACK_RANGE and is_on_floor() and !staggering and abs(distance.z) <= 0.7 and !dashing:
 					state = ATTACK
 					axis_lock_linear_z = true
 				elif abs(distance.x) >= AGGRO_RANGE:
 					state = IDLE
 					velocity.x = move_toward(velocity.x, 0, SPEED)
-				velocity.x += destination.x * ACCELERATION * delta 
+				#velocity.x += destination.x * ACCELERATION * delta 
 				if velocity.x < 0 and $LeftRay.is_colliding():
 					state = JUMP
 				elif velocity.x > 0 and $RightRay.is_colliding():
@@ -132,8 +133,9 @@ func _physics_process(delta):
 				velocity.z = move_toward(velocity.z, 0, SPEED)
 			if self.name == "Enemy":
 				await $AnimationPlayer.animation_finished
-				state = CHASE
 				attacking = false
+				state = CHASE
+				
 		DASH:
 			$Label3D.text = str("State: DASH")
 			var dir = self.global_position.direction_to(player.global_position)
@@ -204,7 +206,8 @@ func hurt():
 		die()
 		
 
-
+func attack():
+	state = ATTACK
 
 
 func knockback():

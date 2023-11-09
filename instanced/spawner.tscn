@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07tcmij0avbs"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_t7wbo"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_t7wbo")
+chapter_name = "chapter1"
+completed_quest = "q3"
+path_to_scene = "res://characters/enemy.tscn"
+
+[node name="Marker3D" type="Marker3D" parent="."]

@@ -1,0 +1,11 @@
+Model Information:
+* title:	low poly Ivy
+* source:	https://sketchfab.com/3d-models/low-poly-ivy-695e4b177a884b318e21c084f66c3a6c
+* author:	spicybamer (https://sketchfab.com/smitecraft.swe)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "low poly Ivy" (https://sketchfab.com/3d-models/low-poly-ivy-695e4b177a884b318e21c084f66c3a6c) by spicybamer (https://sketchfab.com/smitecraft.swe) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

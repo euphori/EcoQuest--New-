@@ -1,0 +1,29 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b6bvat2vspvuq"]
+
+[ext_resource type="Texture2D" uid="uid://dj7s5wud1r7q5" path="res://assets/buildings/design_house_asset/textures/Build_1_baseColor.jpeg" id="1_71tmk"]
+[ext_resource type="Texture2D" uid="uid://luprpigy3bgm" path="res://assets/buildings/design_house_asset/textures/Build_1_metallicRoughness.png" id="2_uup2t"]
+[ext_resource type="Shader" path="res://src/outline.gdshader" id="3_6io4b"]
+[ext_resource type="Texture2D" uid="uid://tncpkslmc6e7" path="res://assets/buildings/design_house_asset/textures/Build_1_normal.png" id="4_5owym"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htxbb"]
+render_priority = 0
+shader = ExtResource("3_6io4b")
+
+[resource]
+resource_name = "Build_1"
+next_pass = SubResource("ShaderMaterial_htxbb")
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_71tmk")
+metallic = 1.0
+metallic_texture = ExtResource("2_uup2t")
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("4_5owym")
+rim_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_uup2t")

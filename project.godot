@@ -17,15 +17,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalDialogue="*res://singletons/dialogue.gd"
 global="*res://global.gd"
 StaticData="*res://singletons/StaticData.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalMusic="*res://singletons/global_music.tscn"
-Dialogue="*res://singletons/dialogue.gd"
 
 [dialogue_manager]
 
-general/states=["global", "Dialogue"]
+general/states=["global", "Dialogue", "GlobalDialogue"]
 
 [display]
 
@@ -89,7 +89,7 @@ dash={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://city.dialogue", "res://world.dialogue", "res://snow_cutscene.dialogue", "res://desert.dialogue", "res://snow.dialogue", "res://desert_cutscene.dialogue", "res://antagonist.dialogue")
+locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://city.dialogue", "res://world.dialogue", "res://snow_cutscene.dialogue", "res://desert.dialogue", "res://snow.dialogue", "res://desert_cutscene.dialogue", "res://antagonist.dialogue", "res://forest_cutscene.dialogue")
 
 [layer_names]
 
@@ -117,7 +117,7 @@ outline_color={
 }
 outline_width={
 "type": "float",
-"value": 4.0
+"value": 6.0
 }
 fresnel_smoothness={
 "type": "float",

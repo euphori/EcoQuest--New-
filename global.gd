@@ -32,16 +32,110 @@ var questStart = false
 var game_started = false
 var fixed_pipe = false
 
-var quest_title = {"tutorial":"Wood Collection", "q1":"Plastic Collection","q2":"Fix Pipe","q3":"Sample3", "q4":"Collect Solar Panel Parts"}
-var quest_info = {"tutorial":"Gather 5 woods", "q1":"Get 5 Plastic Bottles","q2":"Find Tool and Fix Pipe", "q4":"Get 5 Solar Panel Parts"}
+var quest = {
+
+	"chapter1":{
+		"q1": {
+			"title": "Find a way out",
+			"desc" : "Explore the area",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+		},
+		"q2": {
+			"title": "Build a boat",
+			"desc" : "Find 5 woods to help fix the boat",
+			"type" : "gather",
+			"req_items" : ["Wood", 5],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : true
+		},
+		"q3": {
+			"title": "New Adventures",
+			"desc" : "Go meet NPC in the docks",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+			
+		},
+		"q4": {
+			"title": "Defend the NPC",
+			"desc" : "Don't let the npc die",
+			"type" : "defend",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+		},
+		"q5": {
+			"title": "New Adventures II",
+			"desc" : "Travel to the Hub",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+		
+		},
+		"q6": {
+			"title": "New Adventures II",
+			"desc" : "Find and talk to the Farmer",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+		
+		},
+		"q7": {
+			"title": "Cleanup Drive",
+			"desc" : "Pick up the trash",
+			"type" : "gather",
+			"req_items" : ["Plastic" , 5],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Tutorial Master",
+			"talk_after" : false
+		
+		},
+	}, 
+	
+	
+	}
+	
+#var quest_info = {
+	#"tutorial":"Gather 5 woods",
+	# "q1":"Get 5 Plastic Bottles",
+	#"q2":"Find Tool and Fix Pipe", 
+	#"q4":"Get 5 Solar Panel Parts"}
+	
+	
 var comp_text = {"q1": ""}
 
 #Quest Types: gathering, question, kill, 
-var quest_type = {"tutorial":"gather", "q1":"gather", "q2":"fix", "q4":"gather"}  
-var req_materials = {"tutorial": ["Wood",5],"q1": ["Plastic",5],"q2": ["Wrench",1], "q4": ["Solar Panel Parts",5]}
+#var quest_type = {"tutorial":"gather", "q1":"gather", "q2":"fix", "q4":"gather"}  
+##var req_materials = {"tutorial": ["Wood",5],"q1": ["Plastic",5],"q2": ["Wrench",1], "q4": ["Solar Panel Parts",5]}
 
-var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
-var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
+#var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
+#var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 var decision = {"q1": 0 , "q2": 0, "q3": 0}
 
 
@@ -89,8 +183,7 @@ func save(_save_path):
 	"player_hp" : player.HEALTH,
 	"game_started" : game_started,
 	"curr_scene" : curr_scene,
-	"active_quest": active_quest,
-	"completed_quest" : completed_quest,
+	"quest" : quest,
 	"items" : items,
 	"last_player_pos" : last_player_pos
 	}
@@ -118,11 +211,7 @@ func load_save(_save_path):
 			curr_scene = data["curr_scene"]
 			last_player_pos = data["last_player_pos"]
 			items = data["items"]
-			active_quest = data["active_quest"]
-			completed_quest = data["completed_quest"]
-			
-			
-			
+			quest = data["quest"]
 			change_scene()
 			file.close()
 	else:

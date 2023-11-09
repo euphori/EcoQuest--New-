@@ -81,11 +81,11 @@ texture_progress = ExtResource("6_s6hjq")
 [node name="Quest" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 532.0
-offset_top = 47.0
-offset_right = 572.0
-offset_bottom = 87.0
-scale = Vector2(0.7, 0.7)
+offset_left = 166.0
+offset_top = 17.0
+offset_right = 206.0
+offset_bottom = 57.0
+scale = Vector2(0.9, 0.9)
 
 [node name="QuestTracker" type="Sprite2D" parent="UI/Quest"]
 position = Vector2(1576, 91)
@@ -272,6 +272,8 @@ theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 42
 text = "Game Paused"
 
+[node name="TrackerTimer" type="Timer" parent="."]
+
 [connection signal="value_changed" from="Widgets/CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
 [connection signal="value_changed" from="Widgets/CameraController/XSlider" to="." method="_on_x_slider_value_changed"]
 [connection signal="value_changed" from="Widgets/CameraController/YSlider" to="." method="_on_y_slider_value_changed"]
@@ -284,6 +286,7 @@ text = "Game Paused"
 [connection signal="pressed" from="UI/PauseMenu/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="TrackerTimer" to="." method="_on_tracker_timer_timeout"]
 
 [editable path="Console"]
 [editable path="Widgets"]

@@ -296,12 +296,16 @@ _data = {
 viewport_path = NodePath("SubViewport")
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 4
 collision_mask = 9
-axis_lock_linear_y = true
 axis_lock_linear_z = true
 script = ExtResource("1_514o1")
 ATTACK_RANGE = 6
 MIN_ATTACK_RANGE = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0713035, 2.45713, 0)
+shape = SubResource("CapsuleShape3D_tyxu5")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_yjrcb")]
 collision_layer = 1024
@@ -317,10 +321,6 @@ alpha_cut = 2
 texture = ExtResource("1_w38js")
 hframes = 6
 vframes = 5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0713035, 2.45713, 0)
-shape = SubResource("CapsuleShape3D_tyxu5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

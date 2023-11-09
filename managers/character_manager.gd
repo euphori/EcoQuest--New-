@@ -14,7 +14,9 @@ extends Node3D
 @onready var y_label = $Widgets/CameraController/YSlider/Label3
 @onready var health_ui = $UI/Health/TextureProgressBar
 
-@onready var quest_tracker = $UI/Quest/QuestInfo
+@onready var tracker = $UI/Quest
+@onready var tracker_info = $UI/Quest/QuestInfo
+@onready var tracker_title = $UI/Quest/QuestTitle
 @onready var pause_menu = $UI/PauseMenu
 
 var location = global.curr_scene
@@ -64,25 +66,32 @@ func _input(event):
 
 
 func update_quest():
-	for i in global.active_quest:
-		if global.active_quest[i] == true:
-			curr_quest = i
-			var mat = global.req_materials[i][0]
-			var req_quant = global.req_materials[i][1]
-			var curr_quant
-			for x in global.items:
-				if x == mat:
-					curr_quant = global.items[x]
-			var type = global.quest_type[curr_quest]
-			quest_tracker.text = str(type , " ", mat , " " , curr_quant , "/" , req_quant)
-			if global.req_materials[curr_quest][1] <= global.items[mat]:
-				quest_tracker.text = "Talk to NPC"
-	if !global.active_quest["tutorial"] and global.completed_quest["tutorial"]:
-		if get_parent().name == "Hub":
-			quest_tracker.text = "Talk to the farmer"
-		else:
-			quest_tracker.text = "Travel to the Hub"
+	tracker.visible = true
+	$TrackerTimer.start(5)
+	for i in global.quest:
+		for x in global.quest[i]: #get all quest in global
+			var _quest = global.quest[i][x]
+			if _quest.active: #find the active quest
+				curr_quest = _quest.title #show quest
+				tracker_title.text = curr_quest
+
+				if _quest.req_items != null: #shows the req items if there is one
+
+					var req_item = _quest.req_items[0]
+					var req_quant = _quest.req_items[1]
+					var curr_quant = global.items[_quest.req_items[0]]
+					
+					if _quest.talk_after and req_quant <= curr_quant:
+						tracker_info.text = str("Talk to " , _quest.npc_name)
+					else:
+						tracker_info.text = str(_quest.type , " " , req_item, " " ,curr_quant, "/" , req_quant)
+				else:
+					tracker_info.text = _quest.desc
+		
 	
+	
+func hide_quest():
+	$UI/Quest.visible = false
 
 func show_death_screen():
 	$UI/DeathScreen.visible = true
@@ -223,3 +232,7 @@ func _on_quit_button_pressed():
 
 func _on_save_progress_button_pressed():
 	global.save(global.save_path["save1"])
+
+
+func _on_tracker_timer_timeout():
+	tracker.visible = false
