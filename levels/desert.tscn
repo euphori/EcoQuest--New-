@@ -6,8 +6,8 @@
 [ext_resource type="Resource" uid="uid://bjyhfquvypbru" path="res://desert_cutscene.dialogue" id="3_1jcvx"]
 [ext_resource type="Material" uid="uid://ci3j4u5fxnucs" path="res://assets/environment/Orange.3.tres" id="3_5k2la"]
 [ext_resource type="PackedScene" uid="uid://ctnp1344ru48c" path="res://assets/environment/Mounting_2.fbx" id="4_jkqio"]
-[ext_resource type="PackedScene" uid="uid://b82rmw4fqro17" path="res://assets/low_poly_pipe/scene.gltf" id="6_ax6t1"]
-[ext_resource type="PackedScene" uid="uid://da2jih15ufs7n" path="res://assets/low_poly_bend_pipe/scene.gltf" id="7_03rxo"]
+[ext_resource type="PackedScene" uid="uid://b82rmw4fqro17" path="res://assets/desert/low_poly_pipe/scene.gltf" id="6_ax6t1"]
+[ext_resource type="PackedScene" uid="uid://da2jih15ufs7n" path="res://assets/desert/low_poly_bend_pipe/scene.gltf" id="7_03rxo"]
 [ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="7_g6rp4"]
 [ext_resource type="Shader" path="res://src/outline.gdshader" id="8_b2u0v"]
 [ext_resource type="PackedScene" uid="uid://dch08lwywoub8" path="res://assets/CastleRuins.fbx" id="8_d8mvq"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ihamk12vyx3a" path="res://assets/desert/free-desert-plant-3d-low-poly-models/Textures/T_Desert_plants.png" id="10_kd1mr"]
 [ext_resource type="PackedScene" uid="uid://dgt2ccdwi3gij" path="res://assets/desert/free-desert-plant-3d-low-poly-models/Fbx/Desert_plant_006.fbx" id="11_we7py"]
 [ext_resource type="PackedScene" uid="uid://cu77jhs8qhqu0" path="res://assets/Ultimate Nature Pack by Quaternius/FBX/CommonTree_Dead_5.fbx" id="12_8tjo0"]
-[ext_resource type="Texture2D" uid="uid://c4x4138searmh" path="res://assets/low_poly_pipe/textures/Object001_mtl_baseColor.jpeg" id="13_6b55a"]
+[ext_resource type="Texture2D" uid="uid://c4x4138searmh" path="res://assets/desert/low_poly_pipe/textures/Object001_mtl_baseColor.jpeg" id="13_6b55a"]
 [ext_resource type="PackedScene" uid="uid://c85b6qlf7yfjx" path="res://assets/Ultimate Nature Pack by Quaternius/FBX/Rock_7.fbx" id="13_vlpot"]
 [ext_resource type="Material" uid="uid://bsv6133evob50" path="res://materials/pipe.tres" id="14_4sual"]
 [ext_resource type="PackedScene" uid="uid://bu5563nwryscc" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Hill_desert_003.fbx" id="14_mxu0m"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://rrhgc5f6s653" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Mountain_desert_009.fbx" id="16_0o3wv"]
 [ext_resource type="Texture2D" uid="uid://bff2mqg1yf37h" path="res://assets/desert/textures/Atlas_texture_2_baseColor.png" id="16_0uerd"]
 [ext_resource type="Material" uid="uid://3yso5lydmebu" path="res://materials/castle_map.tres" id="16_scwot"]
-[ext_resource type="Texture2D" uid="uid://cif4k8x0gooij" path="res://assets/low_poly_bend_pipe/textures/Object001_mtl_baseColor.jpeg" id="16_y8vxu"]
+[ext_resource type="Texture2D" uid="uid://cif4k8x0gooij" path="res://assets/desert/low_poly_bend_pipe/textures/Object001_mtl_baseColor.jpeg" id="16_y8vxu"]
 [ext_resource type="PackedScene" uid="uid://c1vwaavhmxp3u" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Mountain_desert_007.fbx" id="17_7rdrm"]
 [ext_resource type="Texture2D" uid="uid://pi6vtac0wu7w" path="res://assets/desert/textures/material_0_baseColor.png" id="17_pcv0d"]
 [ext_resource type="Texture2D" uid="uid://cfsufdxm0fxcd" path="res://assets/skybox/Epic_GloriousPink_EquiRect.png" id="19_c1jcm"]
@@ -1192,6 +1192,8 @@ dialogue_resource = ExtResource("3_1jcvx")
 title = "see_pipe"
 player_manager = NodePath("../CharacterManager")
 player = NodePath("../CharacterManager/Kid")
+chapter_name = "chapter2"
+active_quest = "q3"
 
 [node name="PlayerDetection" parent="CutsceneManager" index="0"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.9739, -2.53923, -1.04509)
@@ -1474,7 +1476,7 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -44.19
 [node name="Pipe7" parent="Pipes" instance=ExtResource("6_ax6t1")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -40.8503, 19.7093, 5.18951)
 
-[node name="Pipe8" parent="Pipes" instance=ExtResource("6_ax6t1")]
+[node name="Pipe8" parent="Pipes" groups=["interactable"] instance=ExtResource("6_ax6t1")]
 transform = Transform3D(-1.74846e-07, -0.831646, 3.91259, 0, 3.91259, 0.831646, -4, 3.63524e-08, -1.71025e-07, -37.478, 19.7093, 5.18951)
 
 [node name="InteractUI" parent="Pipes/Pipe8" instance=ExtResource("7_g6rp4")]
@@ -3015,6 +3017,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.322, 20.9132, 6.30933)
 [node name="Item5" parent="Items" instance=ExtResource("26_oitep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7579, -4.80207, 0.304068)
 item_name = "Wrench"
+chapter = "chapter2"
+quest = "q2"
 hide = true
 
 [node name="Sprite3D" parent="Items/Item5" index="0"]
@@ -3034,12 +3038,15 @@ transform = Transform3D(0.699411, 0.0287148, 0, -0.0287148, 0.699411, 0, 0, 0, 0
 
 [node name="SawRobot" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4725, 13.1132, 2.83113)
+add_on_kill = true
 
 [node name="SawRobot4" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6007, 13.1132, 5.24194)
+add_on_kill = true
 
 [node name="SawRobot2" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.334, 21.6849, 7.24597)
+add_on_kill = true
 
 [node name="rpgpp_av_water_platform_01a" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -76.2979, 6.69293, 4.78395)
@@ -3110,3 +3117,5 @@ transform = Transform3D(0.974374, 0, -0.224934, 0, 1, 0, 0.224934, 0, 0.974374, 
 [editable path="npc/InteractUI/PlayerDetection"]
 [editable path="Raft"]
 [editable path="Raft/Boat"]
+[editable path="Raft/InteractUI"]
+[editable path="Raft/InteractUI/PlayerDetection"]

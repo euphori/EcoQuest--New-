@@ -27,8 +27,11 @@ if global.items["Trash"] >= 5 and global.quest["chapter1"]["q7"].active:
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
+if global.items["Trash"] < 5 and global.quest["chapter2"]["q1"].active:	
+	Farmer: The first seed is said to be hidden deep within the Rusty Bay, where life struggles to survive.
+	do emit(dialogue_ended)
+	=> END
 	
-
 if global.quest["chapter1"]["q7"].active == true and quest["chapter1"]["q6"].completed == true:
 	Farmer: Now help me clean out the place by picking up the trash around the area.
 	do emit(dialogue_ended)

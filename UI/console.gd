@@ -76,6 +76,7 @@ func apply_command(comm,value1, value2):
 			if i == value1:
 				for x in global.quest[i]:
 					if x == value2:
+						global.quest[i][x].active = false
 						global.quest[i][x].completed = true
 						global.emit_signal("update_quest")
 						break

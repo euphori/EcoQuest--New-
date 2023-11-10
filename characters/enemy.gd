@@ -12,10 +12,13 @@ var DASH_SPEED = 20
 @export_category("Dialogue")
 @export var dialogue_resource : DialogueResource
 @export var title : String = "start"
+@export_category("Quest")
+@export var add_on_kill : bool
 
 
 
 @onready var player = get_parent().get_node("CharacterManager/Kid")
+@export_category("Stats")
 @export var health = 100
 @export var AGGRO_RANGE = 15
 @export var ATTACK_RANGE = 3
@@ -200,6 +203,15 @@ func die():
 		##0 is chapter 1 is quest id
 		global.quest[death_quest_trigger[0]][death_quest_trigger[1]].completed = true
 		global.emit_signal("update_quest")
+	
+	if add_on_kill:
+		global.curr_killcount += 1
+		var quest = global.get_active_quest()
+		print("QUEST: " , quest)
+		if quest.kill_req <= global.curr_killcount:
+			quest.active = false
+			quest.completed = true
+			global.emit_signal("update_quest")
 	queue_free()
 
 func hurt():

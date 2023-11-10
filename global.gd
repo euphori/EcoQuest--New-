@@ -32,6 +32,7 @@ var save_database
 var questStart = false
 var game_started = false
 var fixed_pipe = false
+var curr_killcount = 0
 
 var quest = {
 
@@ -101,7 +102,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Farmer",
 			"talk_after" : false
 		
 		},
@@ -113,7 +114,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Farmer",
 			"talk_after" : false
 		
 		},
@@ -121,14 +122,48 @@ var quest = {
 	"chapter2":{
 		"q1": {
 			"title": "Go to desert",
-			"desc" : "Find the seed",
+			"desc" : "Talk to Plumber",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Farmer",
+			"npc_name" : "Plumber John",
 			"talk_after" : false
+		},
+		"q2": {
+			"title": "Restore Water",
+			"desc" : "Defeat Robots",
+			"type" : "kill",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Plumber John",
+			"talk_after" : true,
+			"kill_req": 3
+		},
+		"q3": {
+			"title": "Find Tool",
+			"desc" : "Find the wrench",
+			"type" : "gather",
+			"req_items" : ["Wrench" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Plumber John",
+			"talk_after" : false,
+		},
+		"q4": {
+			"title": "Fix Pipe",
+			"desc" : "Go to pipe",
+			"type" : "fix",
+			"req_items" : ["Wrench" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Plumber John",
+			"talk_after" : false,
 		},
 	},
 	
@@ -143,7 +178,16 @@ var quest = {
 	#"q2":"Find Tool and Fix Pipe", 
 	#"q4":"Get 5 Solar Panel Parts"}
 	
-	
+
+
+func get_active_quest():
+	for i in quest:
+		for x in quest[i]: #get all quest in global
+			var _quest = quest[i][x]
+			if _quest.active: #find the active quest
+				return _quest
+
+
 var comp_text = {"q1": ""}
 
 #Quest Types: gathering, question, kill, 

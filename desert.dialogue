@@ -1,5 +1,61 @@
 ~ start
 
+if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].completed == false:
+	Plumber John: I've been trying to protect these lands, but the robots are causing trouble.
+	Plumber John: They've been polluting the water sources, and it's harming the desert's fragile ecosystem.
+	Plumber John: Do you know the environmental impact of improper waste management?
+	- Yes, I understand.
+	- I'm not sure.
+	- No, I don't.
+	Plumber John: Help me defeat the robots to restore the waters and I will give you a reward.
+	set quest["chapter2"]["q1"].active = false
+	set quest["chapter2"]["q1"].completed = true
+	set quest["chapter2"]["q2"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	do save(save_path["save1"])
+	=> END
 
+if global.quest["chapter2"]["q2"].completed == true and global.quest["chapter2"]["q3"].active == false:
+	Plumber John:  You fight with courage, my friend. Thank you.
+	Plumber John:  But there's something more sinister at play. Our water supply has been tainted. 
+	Plumber John: Do you think leaving the water running for too long is good for the environment?
+	- Yes, I understand.
+	- I'm not sure.
+	- No, I don't.
+	Plumber John:  You need to help me fix the pipe however, I've forgotten my toolbox. You'll need it in order to fix pipeline.
+	set quest["chapter2"]["q3"].active = true
+	do emit(update_quest)
+	Plumber John:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
+	
+	do emit(dialogue_ended)
+	=> END
+
+if global.quest["chapter2"]["q2"].active == true and quest["chapter2"]["q1"].completed == true:
+	Farmer: Help me defeat the robots to restore the waters and I will give you a reward.
+	do emit(dialogue_ended)
+	=> END
+	
+if global.items["Wrench"] < 1:	
+	set global.quest["chapter2"]["q3"].completed = true
+	set global.quest["chapter2"]["q3"].active = false
+	set global.quest["chapter2"]["q4"].active = true
+	do emit(update_quest)
+
+if global.fixed_pipe == true:
+	set global.quest["chapter2"]["q4"].active = false
+	set global.quest["chapter2"]["q4"].completed = true
+
+if global.quest["chapter2"]["q4"].completed == true: 
+	Plumber John:  You've done it! The water will flow freely once more.	
+	Plumber John:  Your determination and skill are commendable. As promised, I'll give you the first magical seed.
+	Plumber John:  Now, head back to the hub and speak with the wise Elder. He'll guide you on where to plant it.
+
+
+if global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == true :
+	Plumber John:  You need to help me fix the pipe however, I've forgotten my toolbox. You'll need it in order to fix pipeline.
+	Plumber John:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
+	do emit(dialogue_ended)
+	=> END
 
 => END

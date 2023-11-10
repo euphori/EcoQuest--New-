@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6swl0"]
 
-[node name="NPC" type="CharacterBody3D"]
+[node name="NPC" type="CharacterBody3D" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
 collision_layer = 2
 script = ExtResource("1_52lpt")

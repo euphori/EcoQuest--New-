@@ -10,10 +10,10 @@ extends Node3D
 @export var player : CharacterBody3D
 
 @export_category("Quest Requirement")
-@export var chapter_name : String
-@export var completed_quest: String
-
-
+@export var chapter_name : String = ""
+@export var completed_quest: String = ""
+@export var active_quest: String = ""
+ 
 var old_camera_pos
 var dia_started = false
 
@@ -52,8 +52,15 @@ func pan_camera(_location):
 
 
 func play_cutscene():
-	if chapter_name != null and completed_quest != null:
+	if  completed_quest != "" and chapter_name != "":
 		if global.quest[chapter_name][completed_quest].completed:
+			player.can_move = false 
+			player_manager.disable_cam_control = true
+			player_manager.in_cutscene = true
+			old_camera_pos = player_manager.camera.global_position 
+			pan_camera(marker.global_position)
+	elif chapter_name != "" and active_quest != "":
+		if global.quest[chapter_name][active_quest].active:
 			player.can_move = false 
 			player_manager.disable_cam_control = true
 			player_manager.in_cutscene = true
