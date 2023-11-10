@@ -23,7 +23,7 @@ roughness = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1ql6"]
 albedo_texture = ExtResource("3_dbt6j")
 
-[node name="Raft" type="StaticBody3D"]
+[node name="Raft" type="StaticBody3D" groups=["interactable"]]
 transform = Transform3D(0.517638, 0, 1.93185, 0, 2, 0, -1.93185, 0, 0.517638, -38.8794, 0.88073, -6.28017)
 script = ExtResource("1_q8424")
 

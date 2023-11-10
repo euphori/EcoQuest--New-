@@ -37,6 +37,7 @@ var save_path = {
 	"res://levels/city.tscn": "user://city_camera.txt",
 	}
 var disable_cam_control = false
+var stop_camera
 
 
 @onready var interactables  = get_tree().get_nodes_in_group("interactable")
@@ -114,7 +115,6 @@ func get_nearest_interactable():
 func _process(delta):
 	
 
-			
 	if !disable_cam_control:
 		var tween = get_tree().create_tween()
 		tween.tween_property(camera, "global_position", Vector3(kid.global_position.x + old_camera_offset["x"],kid.global_position.y + old_camera_offset["y"],old_camera_offset["z"]) ,.3)
@@ -128,6 +128,7 @@ func _process(delta):
 		await tween.finished
 		disable_cam_control = false
 
+
 func load_camera():
 	if save_path[global.curr_scene] != null:
 		load_save(save_path[global.curr_scene])
@@ -135,6 +136,10 @@ func load_camera():
 	x_slider.value = old_camera_offset["x"]
 	y_slider.value = old_camera_offset["y"]
 
+
+func get_camera_pos():
+	var pos =  Vector3(kid.global_position.x + old_camera_offset["x"],kid.global_position.y + old_camera_offset["y"],old_camera_offset["z"])
+	return pos
 
 func _on_z_slider_value_changed(value):
 	old_camera_offset["z"] = value

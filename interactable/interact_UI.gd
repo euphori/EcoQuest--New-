@@ -6,6 +6,7 @@ extends Node3D
 @export_enum ("npc","object","movable","pickable","plant","fix","entrance","computer", "travel") var type: String
 @export_category("If Entrace:")
 @export var next_scene:String
+@export var new_player_pos : Vector3
 @export_category("Dialogue")
 @export var dialogue_resource : DialogueResource
 @export var title : String = "start"
@@ -38,7 +39,7 @@ func _ready():
 func _input(event):
 	manager.get_nearest_interactable()
 	if manager.nearest_interactable == parent and player_near:
-	
+
 		if type == "movable"  and parent.colliding:
 			if event.is_action_pressed("interact"):
 				emit_signal("move")
@@ -49,7 +50,7 @@ func _input(event):
 				parent.can_move = false
 				visible = true
 
-		if event.is_action_pressed("interact") and player_near:
+		if event.is_action_pressed("interact" ) and player_near:
 			if type == "npc":
 				emit_signal("talk")
 				$TalkIcon.visible = false
@@ -80,10 +81,20 @@ func _input(event):
 
 						DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
 						dia_started = true
+						
 			elif type == "entrance":
-				get_tree().change_scene_to_file(next_scene)
+				print("XXX ")
+				print(new_player_pos)
+				print(player)
+				if next_scene != null:
+					get_tree().change_scene_to_file(next_scene)
+				if new_player_pos != null: 
+					print("ENTERED TREE")
+					player.global_position = new_player_pos
+					
 			elif type == "computer":
 				parent.visible = !parent.visible
+				
 			elif type == "travel":
 				if parent.name == "Moped":
 					manager.journal.map.initialize_map()
