@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2b5c1akigji1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t60pt"]
+emission_shape = 1
+emission_sphere_radius = 1.98
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.4
+initial_velocity_max = 0.4
+scale_min = 0.6
+scale_max = 0.8
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq5po"]
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.741176, 0.65098, 0.290196, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.741176, 0.65098, 0.290196, 1)
+emission_energy_multiplier = 5.0
+clearcoat_enabled = true
+clearcoat_roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_j227a"]
+material = SubResource("StandardMaterial3D_qq5po")
+radius = 0.125
+height = 0.25
+
+[node name="Fireflies" type="GPUParticles3D"]
+transform = Transform3D(-6.89374, -1.2472, 3.86273, -1.08804, 7.90218, 0.609655, -3.91055, -2.98023e-07, -6.97908, -22.8152, 40.1802, -30.1709)
+amount = 128
+lifetime = 2.0
+speed_scale = 0.4
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_t60pt")
+draw_pass_1 = SubResource("SphereMesh_j227a")

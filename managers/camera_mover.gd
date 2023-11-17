@@ -30,5 +30,6 @@ func _on_start_body_entered(body):
 
 func _on_start_body_exited(body):
 	if body.is_in_group("player"):
+		print("LEFT AREA")
 		player_manager.change_offset(old_offset , change_offset_dur)
 

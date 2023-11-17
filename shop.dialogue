@@ -1,0 +1,9 @@
+~ start
+
+Harper: Hey there kid, want to exchange those scraps you have?
+- Let me see what you have.
+	do emit(open_shop)
+	do emit(dialogue_ended)
+- No thanks.
+
+=> END

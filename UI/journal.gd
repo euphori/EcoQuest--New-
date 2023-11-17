@@ -37,6 +37,7 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("journal") :
+		get_parent().notif.visible = false
 		if computer != null and !computer.visible:
 			if self.visible:
 				refresh_journal()

@@ -1,39 +1,66 @@
+~ purpose
+- Not really, no.
+	Old Tom:  Ignorance can be a dangerous thing. Improper waste disposal is part of what got us here. 
+	Old Tom: It's time to learn, child.
+- Yeah, I know. Humanity's greed and pursuit of power ruined it.
+	Old Tom: You're right, and it's a sad truth. Our own actions brought us to this sorry state. 
+	Old Tom : But knowing is the first step to change.
+=> cont
 ~ start
 
 if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false:
-	Farmer: Ah, the Village Elder has told me of your arrival. The world is in dire need of your help.
-	Farmer: But I’m going to test you first.
-	Farmer: Are you aware about the environmental impact of improper waste management?
-	- Yes, I understand.
-	- I'm not sure.
-	- No, I don't.
-	Farmer: Now help me clean out the place by picking up the trash around the area.
-	set quest["chapter1"]["q6"].completed = true
-	set quest["chapter1"]["q7"].active = true
-	do emit(update_quest)
-	do emit(dialogue_ended)
-	=> END
-	
-if global.items["Trash"] >= 5 and global.quest["chapter1"]["q7"].active:	
+	Old Tom: Well now, what brings someone like you to my corner of the woods?
+	-  I'm here to put an end to this mess and save the environment.
+		Old Tom: Save the environment, huh? That's a tall order.   It's a noble cause, but do you even know what happened to our environment?
+		=> purpose
+	-  I was sent to find you.
+		Old Tom:  Sent, you say? Well, ain't that something. What's going on?
+		- I want to restore the world
+			Old Tom:  That's a tall order. It's a noble cause, but do you even know what happened to our environment?
+			=> purpose
+		
+if items["Trash"] >= 5 and quest["chapter1"]["q7"].active:
 	set global.quest["chapter1"]["q7"].completed = true
 	set global.quest["chapter1"]["q7"].active = false
 	set items["Trash"] -= 5
-	Farmer: Great! Now I know you're ready.
-	Farmer: Three magical seeds hold the power to heal the land. But first, they must be found.
-	Farmer: The seeds are scattered across different regions, each with a unique quest that needs to be done.
-	Farmer: The first seed is said to be hidden deep within the Rusty Bay, where life struggles to survive.
+	Old Tom: Well, I'll be. You did a fine job with the trash. But there's more to be done, and I believe you're up for the challenge.
+	Old Tom: We need to find the three sacred seeds. They're the key to reviving the Mother Tree.
+	- Sacred seeds? Where can we find them?
+	Old Tom:  Aye, the sacred seeds. They're unique to these lands, and each one is vital. 
+	Old Tom: The first seed is in a place called Rusty Bay, a desert where the sun and sand meet. 
+	Old Tom: I sent someone there to fetch it, but they haven't returned. I fear something might be amiss. 
+	Old Tom: You need to go to Rusty Bay, find out what happened, and bring back that seed.
+	-  Rusty Bay it is, then.
+	Old Tom: Good. The journey won't be easy, but the fate of the Mother Tree rests on those seeds. 
+	Old Tom: Head to Rusty Bay and see what you can uncover. 
+	Old Tom: And, child, be cautious. The desert can be unforgiving.
 	set global.quest["chapter2"]["q1"].active = true
 	set global.unlocked_map["Desert"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
-if global.items["Trash"] < 5 and global.quest["chapter2"]["q1"].active:	
-	Farmer: The first seed is said to be hidden deep within the Rusty Bay, where life struggles to survive.
+if global.quest["chapter2"]["q1"].active:
+	Old Tom: Head to Rusty Bay and be careful
 	do emit(dialogue_ended)
 	=> END
 	
 if global.quest["chapter1"]["q7"].active == true and quest["chapter1"]["q6"].completed == true:
-	Farmer: Now help me clean out the place by picking up the trash around the area.
+	Old Tom: Go on then, you gotta get your hands dirty to make a difference.
+	do emit(dialogue_ended)
+	=> END
+
+~ cont
+if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false:
+	Old Tom: So, you're serious about making a change, huh? Well, let me tell you, it starts simple. Real simple. 
+	Old Tom: You see that trash scattered around? Yeah, that's where we begin.
+	- Fine by me.
+		Old Tom: That's the spirit. Start by picking up the trash around here. Small actions, big impact.
+	- Seriously? I'm here to save the environment, not play janitor.
+		Old Tom:  Saving the environment ain't always glamorous, my friend. 
+		Old Tom: Sometimes, you gotta get your hands dirty to make a difference.
+	set quest["chapter1"]["q6"].completed = true
+	set quest["chapter1"]["q7"].active = true
+	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 	
@@ -82,3 +109,24 @@ Shopkeeper: There you go! Good as new.
 Shopkeeper: But be warned, the battery's low. You'll need to head to Citadel Heights to charge the electric scooter.
 
 => END
+
+
+~ arrival
+
+if global.quest["chapter1"]["q5"].active == true and quest["chapter1"]["q5"].completed == false:
+	Lucas:  Alright, we need to find Old Man Thompson. 
+	Lucas: He usually spends his time near the big tree—the last one standing. 
+	Lucas: It's dying, just like the rest of them. 
+	Lucas: Head towards the big tree, and you'll likely find him there
+	- Got it. I'll find him.
+	set quest["chapter1"]["q5"].active = false
+	set quest["chapter1"]["q5"].completed = true
+	set quest["chapter1"]["q6"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+
+if  quest["chapter1"]["q5"].completed == true:
+	Lucas:  We'll meet again soon
+	do emit(dialogue_ended)
+	=> END

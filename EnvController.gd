@@ -8,21 +8,42 @@ extends Control
 @onready var tree_manager = get_parent().get_node("Tree")
 @onready var env = get_parent().get_node("WorldEnvironment")
 @onready var terrain  = get_parent().get_node("Terrains")
+@onready var vegetation = get_parent().get_node("Vegetation")
+@onready var particles = get_parent().get_node("Particles")
+@onready var big_tree = get_parent().get_node("BigTree")
 var val = 0
 
+var can_grow = false
+var grass_multi_mesh = []
 
-
-
+var grass_mesh 
 func _ready():
-	
-	update_trees(start_val)
+	update_trees(global.env_condition)
 	#update_sky(start_val)
-	update_plants(start_val)
+	update_plants(global.env_condition)
+	if is_instance_valid(big_tree):
+		update_big_tree(global.env_condition)
+	if is_instance_valid(particles):
+		update_particles(global.env_condition)
+	if is_instance_valid(get_parent().get_node("Rain")):
+		var rain = get_parent().get_node("Rain")
+		var rand = randi_range(0,3)
+		if global.env_condition > 50:
+			if rand >= 1:
+				rain.visible = true
+			else:
+				rain.visible = false
+		elif global.env_condition <= 50:
+			if rand == 1:
+				rain.visible = true
+			else:
+				rain.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if check_grass()!= null:
+		update_grass(global.env_condition)
 
 
 func update_trees(value):
@@ -30,7 +51,7 @@ func update_trees(value):
 		for i in tree_manager.get_child_count():
 			if tree_manager.get_child(i) is StaticBody3D and !tree_manager.get_child(i).start_as_seed:
 				var rand = randi_range(0,value + 1)
-				if rand < 10 and value < 70 and  value < 98:
+				if rand < 10 and value < 98:
 					tree_manager.get_child(i).curr_state = "bald"
 					tree_manager.get_child(i).update_state()
 				elif rand > 11 and rand < 70 and  value < 98:
@@ -89,17 +110,72 @@ func update_sky(value):
 		print("Evironment not found!")
 
 
-func update_grass(value):
-	var scatter = get_parent().scatter
-	if value < 50:
-		scatter.enabled = false
+func check_grass():
+	if is_instance_valid(vegetation):
+		for x in vegetation.get_child_count():
+			var _vegetation = vegetation.get_child(x)
+			var scatter_item = _vegetation.get_node("ScatterOutput").get_node("ScatterItem")
+			if is_instance_valid(scatter_item):
+				for y in scatter_item.get_child_count():
+					return scatter_item.get_child(y)
+			else:
+				return null
 	else:
-		scatter.enabled = true
+		return null
+
+func update_grass(value):
+	for x in vegetation.get_child_count():
+		var _vegetation = vegetation.get_child(x)
+		vegetation.get_child(x).show_output_in_tree = true
+		var scatter_item = _vegetation.get_node("ScatterOutput").get_node("ScatterItem")
+		if is_instance_valid(scatter_item):
+			for y in scatter_item.get_child_count():
+				var item = scatter_item.get_child(y)
+				var percent = float(float(value) / 100)
+				var tween = get_tree().create_tween()
+				tween.tween_property(item.multimesh, "visible_instance_count" ,  abs(item.multimesh.instance_count * percent) , 1)
+			#item.multimesh.visible_instance_count = abs(item.multimesh.instance_count * percent)
+	
+
+func update_particles(value):
+	for i in particles.get_child_count():
+		var _particles = particles.get_child(i)
+		if value > 80:
+			_particles.visible = true
+		else:
+			_particles.visible = false
+
+func update_big_tree(value):
+	var particle = big_tree.get_node("FallingLeaves")
+	var leaves = big_tree.get_node("Leaves")
+	if value > 70:
+		particle.visible = true
+		leaves.visible = true
+	else:
+		particle.visible = false
+		leaves.visible = false
+
+func update_terrain(value):
+	for i in terrain.get_child_count():
+		var _terrain = terrain.get_child(i)
+		if value <= 25:
+			_terrain.material_override.albedo_color = Color(0.745, 0.373, 0)
+		elif value > 25 and value <= 75:
+			_terrain.material_override.albedo_color = Color(0.612, 0.643, 0.576)
+		else:
+			_terrain.material_override.albedo_color = Color(0.78, 0.78, 0.78)
+
 
 func _on_h_slider_value_changed(value):
+	global.env_condition = value
 	val = value
 	$CanvasLayer/Label.text = str(val)
 	update_trees(value)
 	#update_sky(value)
+	update_grass(value)
 	update_plants(value)
+	if is_instance_valid(particles):
+		update_particles(value)
+	if is_instance_valid(big_tree):
+		update_big_tree(value)
 

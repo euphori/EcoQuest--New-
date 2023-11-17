@@ -23,7 +23,7 @@ extends CharacterBody3D
 @export_category("Other Player")
 @export var path_to_other : NodePath
 
-@onready var charge_progress = $SubViewport/ChargeProgress
+
 @onready var charge = $Charge
 @onready var console = get_parent().get_node("Console")
 @onready var sprite = $Sprite3D
@@ -126,14 +126,14 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("dash") and can_dash:
 			if dash_cost_stamina:
-				if charge_progress.value >= dash_cost:
+				if get_parent().energy_bar.value >= dash_cost:
 					if velocity.x != 0:
 						velocity.x = direction.x * DASH_SPEED
 					else:
 						if $Sprite3D.flip_h:
-							velocity.x = -1 * DASH_SPEED/2
+							velocity.x = -1 *  float(DASH_SPEED/2)
 						else:
-							velocity.x = 1 * DASH_SPEED/2
+							velocity.x = 1 * float(DASH_SPEED/2)
 					can_dash = false
 					dashing = true
 					$DashTimer.start(0.1)
@@ -148,7 +148,7 @@ func _physics_process(delta):
 					$AnimationPlayer2.stop()
 					charge.visible = true
 					var tween = get_tree().create_tween()
-					await tween.tween_property(charge_progress, "value",  charge_progress.value - dash_cost , 0.5).finished
+					await tween.tween_property(get_parent().energy_bar, "value",  get_parent().energy_bar.value - dash_cost , 0.5).finished
 					await get_tree().create_timer(.3).timeout
 					charge.visible = false
 				else:

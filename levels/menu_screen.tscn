@@ -12,10 +12,10 @@
 [ext_resource type="ArrayMesh" uid="uid://hexa0vxhette" path="res://assets/mesh/flower.res" id="10_2tk2i"]
 [ext_resource type="Shader" path="res://src/cel-shader-base.gdshader" id="11_arpiu"]
 [ext_resource type="Shader" path="res://src/outline.gdshader" id="12_qrs0y"]
-[ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="13_g4at8"]
 [ext_resource type="ArrayMesh" uid="uid://cheofakebai2q" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/BirchTree_4.obj" id="13_w0g4n"]
 [ext_resource type="Texture2D" uid="uid://btgkwv8cuigle" path="res://assets/vegetation/Textures/freecutout_leaf_8.png" id="14_5cgjd"]
 [ext_resource type="Shader" path="res://src/cel-shader-leaf.gdshader" id="15_ohsny"]
+[ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="16_4rd4r"]
 
 [sub_resource type="Sky" id="Sky_yd5fm"]
 sky_material = ExtResource("1_3v605")
@@ -938,9 +938,6 @@ shadow_enabled = true
 spot_range = 6.35091
 spot_angle = 26.7954
 
-[node name="Kid" parent="." instance=ExtResource("13_g4at8")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.22323, 2.27303, 26.2279)
-
 [node name="moped" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.18432, -0.0138542, -0.920443, 0.0700484, 1.49684, 0.0675998, 0.917878, -0.0963562, 1.18247, 0.763069, 2.09065, 25.9098)
 mesh = SubResource("ArrayMesh_sjw2n")
@@ -1014,6 +1011,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_60eax")
 [node name="MultiMeshInstance3D8" type="MultiMeshInstance3D" parent="Hill_desert_004/RootNode3/Hill_desert_004"]
 material_override = SubResource("ShaderMaterial_ssqpy")
 multimesh = SubResource("MultiMesh_dpjvb")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33579, 4.01749, 22.8)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("16_4rd4r")
+hframes = 5
+vframes = 4
+frame = 8
 
 [editable path="Mountain_winter_009"]
 [editable path="Mountain_winter_011"]

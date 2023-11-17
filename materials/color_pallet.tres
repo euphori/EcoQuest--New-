@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://1iuq1fn6q452"]
+
+[ext_resource type="Texture2D" uid="uid://b4e62p0fm3hq0" path="res://assets/vegetation/Textures/Color Pallet.png" id="1_x5p6t"]
+[ext_resource type="Material" uid="uid://cqth02geh4h5y" path="res://materials/outline.tres" id="2_d6an1"]
+
+[resource]
+resource_name = "Color Pallet"
+next_pass = ExtResource("2_d6an1")
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_x5p6t")
+metallic = 0.4
+roughness = 0.0
+rim_enabled = true

@@ -3,7 +3,7 @@ extends StaticBody3D
 
 
 @onready var state = {"bald" : $Bald , "trim" : $Trim, "full":$Full}
-@onready var growth_timer = $GrowthTimer
+var growth_timer
 
 @export var growth_level = 5
 @export var grow_time = 10
@@ -17,6 +17,7 @@ var full_mesh
 var rand
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	randomize_size()
 	#$InteractUI.visible = false
 	rand = randi_range(0, state["trim"].get_child_count() - 1)
@@ -59,7 +60,6 @@ func update_growth():
 	elif growing and growth_level >=  8 and scale < max_scale:
 		curr_state = "full"
 		pick_mesh()
-	
 
 
 func get_state():
@@ -74,7 +74,7 @@ func update_state():
 			if i == curr_state:
 				state[curr_state].visible = true
 				if state[curr_state].get_child_count() > 1:
-					var rand = randi_range(0, state[curr_state].get_child_count() - 1)
+					var rand = randi_range(0, state[curr_state].get_child_count())
 					var mesh 
 					for x in state[curr_state].get_child_count():
 						if x == rand:

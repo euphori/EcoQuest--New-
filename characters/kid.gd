@@ -17,32 +17,18 @@ signal player_dead
 
 func _process(delta):
 	
-	if charge_progress.value >= 50:
-		charge_progress.tint_progress = Color(0.227, 0.514, 0.212)
-	elif charge_progress.value < 50 and charge_progress.value >= 25:
-		charge_progress.tint_progress = Color(0.529, 0.314, 0.125)
+	if get_parent().energy_bar.value >= 50:
+		get_parent().energy_bar.tint_progress = Color(0.227, 0.514, 0.212)
+	elif get_parent().energy_bar.value < 50 and get_parent().energy_bar.value >= 25:
+		get_parent().energy_bar.tint_progress = Color(0.529, 0.314, 0.125)
 	else:
-		charge_progress.tint_progress = Color(0.576, 0.184, 0.106)
+		get_parent().energy_bar.tint_progress = Color(0.576, 0.184, 0.106)
 	if Input.is_action_pressed("attack"):
+		$RechargeTimer.start(recharge_time)
 		if can_shoot:
-			$Charge.visible = true
-			print(charge_progress.value)
-			print(pressed_time)
-			charge_progress.value -= 45 * delta
-			
-			if charge_progress.value <= 0:
-				if sprite.flip_h:
-					$AnimationPlayer2.play("shake_left")
-				elif !sprite.flip_h:
-					$AnimationPlayer2.play("shake_right")
-			else:
+			if get_parent().energy_bar.value > 0:
+				get_parent().energy_bar.value -= 45 * delta
 				pressed_time += delta 
-				if sprite.flip_h == true:
-					var tween = get_tree().create_tween()
-					tween.tween_property(charge, "global_position", left.global_position, 0.05)
-				else:
-					var tween = get_tree().create_tween()
-					tween.tween_property(charge, "global_position", right.global_position, 0.05)
 				
 	if Input.is_action_just_released("attack") and can_shoot:
 		shoot()
@@ -73,13 +59,12 @@ func shoot():
 	attack.play()
 	can_shoot = false
 	if !charging:
-		await get_tree().create_timer(0.5).timeout
 		$RechargeTimer.start(recharge_time)
 		charging = true
 	pressed_time = 0
 
-	await get_tree().create_timer(1).timeout
-	$Charge.visible = false
+
+
 
 
 
@@ -121,8 +106,8 @@ func _on_hurtbox_area_entered(area):
 	if area.get_parent().is_in_group("enemy"):
 		var tween = get_tree().create_tween()
 		print("HIT")
-		HEALTH -= 20
-		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.5)
+		HEALTH -= 5
+		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.3)
 		if HEALTH <= 0:
 			if can_die:
 				dead = true
@@ -140,18 +125,19 @@ func _on_recharge_timer_timeout():
 	else:
 		var tween = get_tree().create_tween()
 		tween.tween_property(charge, "global_position", right.global_position, 0.05)
-	$AnimationPlayer2.stop()
+
 	charge.visible = true
 	var recharge_time
-	if max_energy - charge_progress.value >= 90:
+	if max_energy - get_parent().energy_bar.value >= 90:
 		recharge_time = 2
-	elif max_energy - charge_progress.value < 90 and  max_energy - charge_progress.value >= 50:
+	elif max_energy - get_parent().energy_bar.value < 90 and  max_energy - get_parent().energy_bar.value >= 50:
 		recharge_time = 1
 	else:
 		recharge_time = 0.5
 	var tween = get_tree().create_tween()
-	await tween.tween_property(charge_progress, "value", max_energy , recharge_time).finished
-	await get_tree().create_timer(1).timeout
+	tween.tween_property(get_parent().energy_bar, "value", max_energy , recharge_time)
+
+	
 	charge.visible = false
 	can_shoot = true
 	charging = false

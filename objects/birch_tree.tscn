@@ -161,6 +161,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n05fr")
 
 [node name="InteractUI" parent="." instance=ExtResource("17_h8ekf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.83373, 1.49544)
+visible = false
 text_label = "Plant"
 type = "plant"
 

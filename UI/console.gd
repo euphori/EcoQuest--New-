@@ -24,7 +24,8 @@ var commands = {
 	"env" : "env",
 	"add" : "add",
 	"unlock" : "unlock",
-	"hesoyam" : "hesoyam"
+	"hesoyam" : "hesoyam",
+	"green" : "green"
 	
 	}
 	
@@ -99,11 +100,15 @@ func apply_command(comm,value1, value2):
 	elif comm == commands["env"]:
 		env_controller.visible =  !env_controller.visible
 	elif comm == commands["add"]:
-		if value1:
+		if value1 and !value2:
 			for i in global.items:
-				print(i)
 				if i == value1:
 					global.items[i] += 5
+		elif value1 and value2:
+			for i in global.items:
+				if i == value1:
+					global.items[i] += str_to_var(value2)
+		global.emit_signal("item_added")
 	elif comm == commands["unlock"]:
 		if value1:
 			
@@ -114,6 +119,8 @@ func apply_command(comm,value1, value2):
 					global.unlocked_map[i] = true
 	elif comm == commands["hesoyam"]:
 		kid.can_die = false
+	elif comm == commands["green"]:
+		global.env_condition = str_to_var(value1)
 
 func _on_line_edit_text_submitted(new_text):
 	history.text += str(new_text,"\n")

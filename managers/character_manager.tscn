@@ -1,18 +1,26 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=22 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
 [ext_resource type="PackedScene" uid="uid://cd5pn0q81bwnf" path="res://UI/console.tscn" id="2_1vulv"]
 [ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
 [ext_resource type="PackedScene" uid="uid://c7gpy0skdatgh" path="res://UI/widgets.tscn" id="6_78c4s"]
-[ext_resource type="Texture2D" uid="uid://dl75ccs7y7pru" path="res://assets/ui/player_stats/Heart HP.png" id="6_s6hjq"]
+[ext_resource type="Texture2D" uid="uid://bxews4q4i0m1r" path="res://assets/ui/player_stats/HP Under.png" id="6_yh70l"]
+[ext_resource type="Texture2D" uid="uid://cwc6u3mcwmve" path="res://assets/ui/player_stats/HP Progress.png" id="7_3g7yr"]
+[ext_resource type="Texture2D" uid="uid://65ake8vkjrtt" path="res://assets/ui/player_stats/Energy Under.png" id="8_dv131"]
 [ext_resource type="Texture2D" uid="uid://cpy6avpiwnoqd" path="res://assets/ui/hud/QuestTracker.png" id="9_mwwfy"]
+[ext_resource type="Texture2D" uid="uid://cbobxrjf15ron" path="res://assets/ui/player_stats/Energy Prog.png" id="9_tascl"]
 [ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="10_geis5"]
 [ext_resource type="Texture2D" uid="uid://d143nd5tbp3sw" path="res://assets/ui/menus/PauseMenu BG.png" id="14_r2rdb"]
 [ext_resource type="Texture2D" uid="uid://dw5gles4jlmcw" path="res://assets/ui/journal/ButtonTexture.png" id="14_wkdwr"]
 [ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="15_5d7aw"]
 [ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="15_utjnu"]
 [ext_resource type="Texture2D" uid="uid://brl0udhbh3vjr" path="res://assets/ui/journal/ButtonTexture2.png" id="16_8bg1t"]
+[ext_resource type="Texture2D" uid="uid://b5asb5gxiksb2" path="res://assets/ui/menus/smallbutton.png" id="17_3bcqj"]
+[ext_resource type="Texture2D" uid="uid://7hhostq7p7ht" path="res://assets/ui/player_stats/Portrait.png" id="17_68gj0"]
+[ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="18_ykw83"]
+[ext_resource type="Texture2D" uid="uid://jcj227n8e8rx" path="res://assets/ui/hud/Journal.png" id="19_apbeu"]
+[ext_resource type="Texture2D" uid="uid://b41jdwqd3bsy6" path="res://assets/ui/hud/RedDot.png" id="20_8x8fx"]
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -21,7 +29,7 @@ script = ExtResource("1_yd4ht")
 visible = false
 path_to_kid = NodePath("../Kid")
 
-[node name="Kid" parent="." groups=["player"] instance=ExtResource("1_idrav")]
+[node name="Kid" parent="." instance=ExtResource("1_idrav")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
 collision_mask = 9
 axis_lock_linear_z = true
@@ -61,10 +69,10 @@ follow_viewport_enabled = true
 [node name="Health" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 192.0
-offset_top = 257.0
-offset_right = 232.0
-offset_bottom = 297.0
+offset_left = 292.0
+offset_top = 293.0
+offset_right = 332.0
+offset_bottom = 333.0
 scale = Vector2(0.8, 0.8)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Health"]
@@ -74,9 +82,31 @@ offset_top = -300.0
 offset_right = 227.75
 offset_bottom = -224.0
 scale = Vector2(0.8, 0.8)
-step = 25.0
 value = 100.0
-texture_progress = ExtResource("6_s6hjq")
+texture_under = ExtResource("6_yh70l")
+texture_progress = ExtResource("7_3g7yr")
+texture_progress_offset = Vector2(3.5, 3)
+
+[node name="Stamina" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 292.0
+offset_top = 293.0
+offset_right = 332.0
+offset_bottom = 333.0
+scale = Vector2(0.8, 0.8)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Stamina"]
+layout_mode = 0
+offset_left = -211.25
+offset_top = -265.0
+offset_right = 227.75
+offset_bottom = -189.0
+scale = Vector2(0.8, 0.8)
+value = 100.0
+texture_under = ExtResource("8_dv131")
+texture_progress = ExtResource("9_tascl")
+texture_progress_offset = Vector2(3.5, 3)
 
 [node name="Quest" type="Control" parent="UI"]
 layout_mode = 3
@@ -272,7 +302,43 @@ theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 42
 text = "Game Paused"
 
+[node name="Icon" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KeyBG" type="Sprite2D" parent="UI/Icon"]
+position = Vector2(33, 1043)
+scale = Vector2(0.279195, 0.306977)
+texture = ExtResource("17_3bcqj")
+
+[node name="Label" type="Label" parent="UI/Icon/KeyBG"]
+offset_left = -21.4904
+offset_top = -65.1514
+offset_right = 18.5096
+offset_bottom = 79.8486
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_ykw83")
+theme_override_font_sizes/font_size = 146
+text = "J"
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Icon"]
+position = Vector2(79, 1003)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_apbeu")
+
+[node name="Notif" type="Sprite2D" parent="UI/Icon"]
+visible = false
+position = Vector2(102, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_8x8fx")
+
 [node name="TrackerTimer" type="Timer" parent="."]
+
+[node name="Portrait" type="Sprite2D" parent="."]
+position = Vector2(59, 61)
+texture = ExtResource("17_68gj0")
 
 [connection signal="value_changed" from="Widgets/CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
 [connection signal="value_changed" from="Widgets/CameraController/XSlider" to="." method="_on_x_slider_value_changed"]

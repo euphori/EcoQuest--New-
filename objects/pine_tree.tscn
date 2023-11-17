@@ -1,14 +1,64 @@
-[gd_scene load_steps=15 format=3 uid="uid://btqrc2ii2pv0v"]
+[gd_scene load_steps=20 format=3 uid="uid://btqrc2ii2pv0v"]
 
 [ext_resource type="Script" path="res://objects/tree.gd" id="1_2qwdd"]
 [ext_resource type="ArrayMesh" uid="uid://bua2g8d50dgel" path="res://assets/mesh/tree_bald.res" id="2_0d5qo"]
 [ext_resource type="ArrayMesh" uid="uid://cjvyxvmllhnv" path="res://assets/mesh/tree1.res" id="3_e615y"]
+[ext_resource type="ArrayMesh" uid="uid://bgfb1goyos32j" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/TreeStump.obj" id="3_mnwyg"]
 [ext_resource type="ArrayMesh" uid="uid://cq7ddnjkr6y74" path="res://assets/mesh/tree2.res" id="4_qay2w"]
 [ext_resource type="ArrayMesh" uid="uid://ddkt5pm3t10aa" path="res://assets/mesh/tree3.res" id="5_pxpby"]
 [ext_resource type="ArrayMesh" uid="uid://duuf75yvuk6ij" path="res://assets/Ultimate Nature Pack by Quaternius/OBJ/PineTree_1.obj" id="7_105qv"]
 [ext_resource type="Shader" path="res://src/cel-shader-base.gdshader" id="7_ofado"]
 [ext_resource type="Shader" path="res://src/outline.gdshader" id="7_v8dik"]
 [ext_resource type="Shader" path="res://src/cel-shader-leaf.gdshader" id="8_nvxjy"]
+
+[sub_resource type="Shader" id="Shader_7bomn"]
+code = "shader_type spatial;
+
+render_mode cull_front, unshaded, depth_draw_never;
+
+global uniform vec4 outline_color;
+global uniform float outline_width;
+
+void vertex() {
+	vec4 clip_position = 
+			PROJECTION_MATRIX *
+			(MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+	vec3 clip_normal =
+			mat3(PROJECTION_MATRIX) *
+			(mat3(MODELVIEW_MATRIX) * NORMAL);
+	clip_position.xy +=
+			normalize(clip_normal.xy) /
+			VIEWPORT_SIZE *
+			clip_position.w *
+			outline_width;
+	POSITION = clip_position;
+}
+
+void fragment() {
+	ALBEDO = outline_color.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5gso"]
+render_priority = 0
+shader = SubResource("Shader_7bomn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n3rj4"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_d5gso")
+shader = ExtResource("7_ofado")
+shader_parameter/color = Color(0.227451, 0.490196, 0.584314, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bgr3"]
+resource_name = "wood3"
+next_pass = SubResource("ShaderMaterial_n3rj4")
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.188235, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gfn1r"]
 render_priority = 0
@@ -53,9 +103,15 @@ script = ExtResource("1_2qwdd")
 
 [node name="0" type="MeshInstance3D" parent="Bald"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 6.9323, 0)
-visible = false
 mesh = ExtResource("2_0d5qo")
 skeleton = NodePath("../../..")
+
+[node name="1" type="MeshInstance3D" parent="Bald"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.419482, 0)
+visible = false
+mesh = ExtResource("3_mnwyg")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0bgr3")
 
 [node name="Trim" type="Node3D" parent="."]
 visible = false
@@ -72,6 +128,7 @@ mesh = ExtResource("4_qay2w")
 skeleton = NodePath("../../..")
 
 [node name="Full" type="Node3D" parent="."]
+visible = false
 
 [node name="0" type="MeshInstance3D" parent="Full"]
 transform = Transform3D(1.5, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, -0.119029, 0)

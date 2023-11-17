@@ -5,3 +5,4 @@ signal dialogue_ended
 signal dialogue_ended_enemy
 signal dialogue_ended_cutscene
 signal dialogue_ended_interaction
+signal open_shop

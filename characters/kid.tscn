@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=18 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://brm8rtjs874vx" path="res://assets/player/kid_sheet.png" id="1_pm3dr"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
 [ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="6_0dp76"]
-[ext_resource type="PackedScene" uid="uid://djuk8c78g6puv" path="res://UI/charge_progress.tscn" id="8_4sev6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -174,66 +173,10 @@ _data = {
 "run": SubResource("Animation_jwhoy")
 }
 
-[sub_resource type="Animation" id="Animation_3ddb1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Charge:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.87512, 3.13756, -0.0793471)]
-}
-
-[sub_resource type="Animation" id="Animation_oyy13"]
-resource_name = "shake_left"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Charge:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.87512, 3.13756, -0.0793471), Vector3(-1.99716, 3.03042, -0.0793471), Vector3(-1.67256, 3.09923, -0.0793471), Vector3(-1.78492, 3.04097, -0.0793471), Vector3(-1.82945, 3.12931, -0.0793471), Vector3(-1.93872, 3.27504, -0.0793471)]
-}
-
-[sub_resource type="Animation" id="Animation_17mfa"]
-resource_name = "shake_right"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Charge:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(3.21306, 2.89037, -0.0793471), Vector3(3.34978, 2.99957, -0.0793471), Vector3(3.25123, 2.73639, -0.0793471), Vector3(3.15897, 2.92497, -0.0793471), Vector3(3.25099, 2.96211, -0.0793471), Vector3(3.26188, 2.74281, -0.0793471)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5mklu"]
-_data = {
-"RESET": SubResource("Animation_3ddb1"),
-"shake_left": SubResource("Animation_oyy13"),
-"shake_right": SubResource("Animation_17mfa")
-}
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_wv7yq"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Kid" type="CharacterBody3D"]
+[node name="Kid" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_btg3w")
 default_char = true
@@ -303,26 +246,6 @@ one_shot = true
 
 [node name="GunCooldown" type="Timer" parent="."]
 one_shot = true
-
-[node name="SubViewport" type="SubViewport" parent="."]
-transparent_bg = true
-size = Vector2i(1920, 1080)
-
-[node name="ChargeProgress" parent="SubViewport" instance=ExtResource("8_4sev6")]
-offset_left = 558.0
-offset_top = 130.0
-offset_right = 1389.0
-offset_bottom = 961.0
-scale = Vector2(1, 1)
-value = 100.0
-texture_progress_offset = Vector2(0, 0)
-tint_progress = Color(0.576471, 0.184314, 0.105882, 1)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-root_node = NodePath("../SubViewport/ChargeProgress")
-libraries = {
-"": SubResource("AnimationLibrary_5mklu")
-}
 
 [node name="Charge" type="Sprite3D" parent="."]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -1.87512, 3.13756, -0.0793471)

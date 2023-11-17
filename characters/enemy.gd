@@ -268,10 +268,6 @@ func _on_stagger_timer_timeout():
 	state = CHASE
 
 
-func _on_hurtbox_body_entered(body):
-	pass # Replace with function body.
-
-
 
 
 func stop_dash():

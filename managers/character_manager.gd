@@ -19,6 +19,8 @@ extends Node3D
 @onready var tracker_title = $UI/Quest/QuestTitle
 @onready var pause_menu = $UI/PauseMenu
 @onready var journal = $Journal
+@onready var energy_bar = $UI/Stamina/TextureProgressBar
+@onready var notif = $UI/Icon/Notif
 
 var location = global.curr_scene
 var new_camera_offset = {"x":0.5,"y":4,"z":7}
@@ -28,6 +30,9 @@ var camera_settings
 var change_offset_dur = 1
 var in_cutscene = false
 var curr_quest 
+var prev_quest
+
+var ammount
 var save_path = {
 	"res://levels/lab.tscn": "user://lab_camera.txt",
 	"res://levels/forest.tscn": "user://forest_camera.txt",
@@ -65,8 +70,13 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("esc"):
 		if !$Journal.visible and !$Journal/Map.visible:
+			
 			show_pause_menu()
-			$Journal.visible = false
+			#if get_tree().is_paused():
+			#	get_tree().paused = false
+			#else:
+			#	get_tree().paused = true
+			#$Journal.visible = false
 		else:
 			$Journal.visible = false
 			$Journal/Map.visible = false
@@ -79,11 +89,14 @@ func update_quest():
 		for x in global.quest[i]: #get all quest in global
 			var _quest = global.quest[i][x]
 			if _quest.active: #find the active quest
+				if curr_quest != null:
+					prev_quest = curr_quest
 				curr_quest = _quest.title #show quest
+				if curr_quest != prev_quest:
+					notif.visible = true
 				tracker_title.text = curr_quest
 
 				if _quest.req_items != null: #shows the req items if there is one
-
 					var req_item = _quest.req_items[0]
 					var req_quant = _quest.req_items[1]
 					var curr_quant = global.items[_quest.req_items[0]]
@@ -104,6 +117,7 @@ func show_death_screen():
 	$UI/DeathScreen.visible = true
 
 func get_nearest_interactable():
+	interactables  = get_tree().get_nodes_in_group("interactable")
 	if nearest_interactable == null:
 		nearest_interactable = interactables[0]
 	
@@ -113,7 +127,7 @@ func get_nearest_interactable():
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	get_nearest_interactable()
 
 	if !disable_cam_control:
 		var tween = get_tree().create_tween()
@@ -217,7 +231,7 @@ func show_pause_menu():
 	if !pause_menu.visible:
 		pause_menu.visible = true
 		var tween = get_tree().create_tween()
-		await tween.tween_property(pause_menu , "global_position", Vector2(0,0), 0.3)
+		tween.tween_property(pause_menu , "global_position", Vector2(0,0), 0.3)
 	elif pause_menu.visible:
 		var tween = get_tree().create_tween()
 		tween.tween_property(pause_menu , "global_position", Vector2(0,921), 0.3)

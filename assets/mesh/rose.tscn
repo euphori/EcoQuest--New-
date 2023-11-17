@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbkqtwqqcn07f"]
+
+[ext_resource type="ArrayMesh" uid="uid://gruj4k22lv7k" path="res://assets/mesh/rose1.res" id="1_bmn2k"]
+
+[node name="Rose" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_bmn2k")

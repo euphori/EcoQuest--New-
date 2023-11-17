@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=15 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dm3haxc55ryx4" path="res://assets/ui/modals/SPeechbubble.png" id="3_sdu7h"]
 [ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="4_cgvjs"]
 [ext_resource type="Texture2D" uid="uid://c4wwsopl326ra" path="res://assets/ui/modals/arrow icon.png" id="6_qwox3"]
+[ext_resource type="Texture2D" uid="uid://cd3cttpd7y3u7" path="res://assets/ui/hud/Pickup LabelBG.png" id="7_jukon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hp2k4"]
 texture = ExtResource("3_sdu7h")
@@ -186,7 +187,7 @@ tracks/0/path = NodePath("Balloon:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(446, 339), Vector2(56, 49)]
@@ -198,7 +199,7 @@ tracks/1/path = NodePath("Balloon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [true, false]
@@ -222,7 +223,7 @@ tracks/3/path = NodePath("Balloon:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(748, 91), Vector2(957, 336)]
@@ -270,7 +271,7 @@ tracks/7/path = NodePath("Balloon:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
@@ -342,7 +343,7 @@ tracks/13/path = NodePath(".")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -570,12 +571,12 @@ metadata/_edit_use_anchors_ = true
 [node name="ResponsesMenu" type="VBoxContainer" parent="." node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_direction = 2
-offset_left = 1506.0
-offset_top = 747.0
-offset_right = 1726.0
-offset_bottom = 791.0
+offset_left = 1384.0
+offset_top = 755.0
+offset_right = 1916.0
+offset_bottom = 936.0
 size_flags_vertical = 8
-theme_override_constants/separation = 2
+theme_override_constants/separation = 30
 alignment = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
@@ -595,6 +596,16 @@ text = "Response example"
 icon = ExtResource("6_qwox3")
 flat = true
 alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample"]
+z_index = -1
+layout_mode = 2
+offset_left = -11.0
+offset_top = -4.0
+offset_right = 521.0
+offset_bottom = 131.0
+scale = Vector2(1, 0.4)
+texture = ExtResource("7_jukon")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

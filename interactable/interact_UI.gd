@@ -3,14 +3,14 @@ extends Node3D
 @onready var parent = get_parent()
 
 @export var text_label = ""
-@export_enum ("npc","object","movable","pickable","plant","fix","entrance","computer", "travel") var type: String
+@export_enum ("npc","object","movable","pickable","plant","fix","entrance","computer", "travel", "observe") var type: String
 @export_category("If Entrace:")
 @export var next_scene:String
 @export var new_player_pos : Vector3
+@export var new_offset : String
 @export_category("Dialogue")
 @export var dialogue_resource : DialogueResource
 @export var title : String = "start"
-
 
 @onready var manager = get_tree().get_root().get_child(5).get_node("CharacterManager")
 
@@ -28,18 +28,18 @@ signal grow
 
 
 func _ready():
-
-	#Dialogue.connect("dialogue_ended_interaction" , end_dialogue)
-	$Label3D.text = text_label
 	visible = false
 	
 	
 
 
 func _input(event):
+
 	manager.get_nearest_interactable()
 	if manager.nearest_interactable == parent and player_near:
-
+		if event.is_action_pressed("interact"):
+			$Arrow.visible = false
+			$Hint.visible = false
 		if type == "movable"  and parent.colliding:
 			if event.is_action_pressed("interact"):
 				emit_signal("move")
@@ -55,12 +55,13 @@ func _input(event):
 				emit_signal("talk")
 				$TalkIcon.visible = false
 			elif type == "pickable":
+				
 				global.items[parent.item_name] += 1
 				emit_signal("item_added")
 				global.emit_signal("update_quest")
+				global.emit_signal("pickup_item", parent.item_name, 1)
 				#await $AudioStreamPlayer.finished
 				manager.interactables.erase(parent)
-				parent.queue_free()
 				#parent.get_node("Sprite3D").visible = false
 				#parent.get_node("CollisionShape3D").disabled = true
 				
@@ -90,6 +91,9 @@ func _input(event):
 					get_tree().change_scene_to_file(next_scene)
 				if new_player_pos != null: 
 					print("ENTERED TREE")
+					manager.disable_cam_control = false
+					var _new_offset = JSON.parse_string(new_offset)
+					manager.change_offset(_new_offset , .5)
 					player.global_position = new_player_pos
 					
 			elif type == "computer":
@@ -103,8 +107,9 @@ func _input(event):
 					manager.journal.map.initialize_map()
 					manager.journal.show_map()
 				global.last_player_pos[global.curr_scene_name] = str(player.global_position)
-
-				
+			elif type == "obeserve":
+				parent.observe_bar.visible = true
+		
 
 				
 
@@ -113,8 +118,12 @@ func end_dialogue():
 	dia_started = false
 
 func _on_player_detection_body_entered(_body):
-	player = _body
-	player_near = true
+	$Arrow.visible = true
+	if _body.is_in_group("player"):
+		player = _body
+		player_near = true
+	$Hint.visible = true
+	
 	if type == "plant" and parent.start_as_seed:
 		visible = true
 	elif type != "plant":
@@ -127,7 +136,9 @@ func _on_player_detection_body_entered(_body):
 		
 
 func _on_player_detection_body_exited(_body):
+	$Arrow.visible = false
 	visible = false
+	$Hint.visible = false
 	player_near = false
 	if type == "movable":
 		parent.can_move = false

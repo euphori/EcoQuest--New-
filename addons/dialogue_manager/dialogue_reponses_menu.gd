@@ -108,7 +108,6 @@ func get_menu_items() -> Array:
 	var items: Array = []
 	for child in get_children():
 		if "Disallowed" in child.name: continue
-
 		items.append(child)
 
 	return items

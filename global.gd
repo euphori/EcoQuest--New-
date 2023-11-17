@@ -1,5 +1,11 @@
 extends Node
 
+
+
+var env_condition = 10
+
+
+
 @onready var player
 var last_player_pos = {
 	"Forest" : "" ,
@@ -21,7 +27,8 @@ var enemy_cleared = {
 
 signal update_quest
 signal transistion
-
+signal pickup_item(item,ammount)
+signal item_added
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
@@ -121,8 +128,8 @@ var quest = {
 	},
 	"chapter2":{
 		"q1": {
-			"title": "Go to Rusty Bay",
-			"desc" : "Talk to Plumber",
+			"title": "Rusty Bay",
+			"desc" : "Go to Rusty Bay and investigate.",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
@@ -379,6 +386,13 @@ func get_active_quest():
 			if _quest.active: #find the active quest
 				return _quest
 
+
+var item_texture = {
+	"Wood" : "res://assets/item_textures/wood.png",
+	"Trash" : "res://assets/item_textures/Can.png",
+	
+	
+}
 
 var comp_text = {"q1": ""}
 
