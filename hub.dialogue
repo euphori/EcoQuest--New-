@@ -63,15 +63,26 @@ if global.quest["chapter3"]["q1"].active == true and quest["chapter2"]["q5"].com
 if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == false:	
 	Old Tom: Excellent! It looks like you have obtained the second seed.
 	Old Tom: The balance of nature is in your hands. Let's take it to the heart of the enchanted forest.
-	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q4"].completed = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+	#cut scene forest restoring
+if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == true:
+	Old Tom: You need a electric scooter to go to Polar Pines, there lies the path that holds the final seed.
+	Old Tom: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
+	Old Tom: Before you go, are you aware of the environmental impact of fossil fuels and the increasing number of cars?
+	- Yes. These cars contribute to the greenhouse gases and use non-renewable energy.
+	- Yes. They emit smoke that is harmful to people.
+	- Yes. They contribute to the traffic.
+	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q5"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 	
 if global.quest["chapter3"]["q5"].active == true and quest["chapter3"]["q5"].completed == false:	
-	Old Tom: You need a electric scooter to go to Polar Pines, it holds the final clue of the last seed. 
+	Old Tom: You need a electric scooter to go to Polar Pines, there lies the path that holds the final seed.
 	Old Tom: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
 	do emit(dialogue_ended)
 	=> END
