@@ -2,17 +2,17 @@
 
 if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].completed == false:
 	Harper: Well, look who stumbled into the chaos.
-	Harper: So what is your business here, kid? 
-	- Old Tom sent me.
 	Harper: Old Tom sent you, huh? Figures. You're looking at the girl who already found it.
 	-  He sent me to find you and bring the seed back.
 	- So, you've found the sacred seed. Where is it?
-	-  That's nice. Now, where's the seed?
-	Harper: Hold your horses, kid. The sacred seed is hidden in somwhere in here. 
-	Harper: But, before we go there, we've got a little problem to take care of.
-	- Problem? What are you talking about?
-	Harper: Those blasted robots! They've been polluting the water around the desert. 
-	Harper: We can't let them keep messing with the ecosystem. Deal with them first, and then I'll show you where it is. 
+	Harper: Hold your horses, kid. You need to help me first before I give you the seed. 
+	Harper: We've got a little problem to take care of.
+	Harper: Do you know the environmental impact of water conservation?
+	- We're doing our duties as citizens of our community.
+	- It ensures that our water supply will not run out.
+	- I want to use as much water as I can.
+	Harper: There are robots that has been polluting the water around the desert. 
+	Harper: We can't let them keep messing with the ecosystem. 
 	set quest["chapter2"]["q1"].active = false
 	set quest["chapter2"]["q1"].completed = true
 	set quest["chapter2"]["q2"].active = true
@@ -22,22 +22,23 @@ if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].com
 	=> END
 
 if global.quest["chapter2"]["q2"].completed == true and global.quest["chapter2"]["q3"].active == false:
-	Harper:  You fight with courage, my friend. Thank you.
-	Harper:  But there's something more sinister at play. Our water supply has been tainted. 
+	Harper:  I didn’t know you had that power in you, friend! I’m impressed.
+	Harper:  Oh no. We have another problem. Our water supply! It’s tainted. 
 	Harper: Do you think leaving the water running for too long is good for the environment?
-	- Yes, I understand.
-	- I'm not sure.
-	- No, I don't.
-	Harper:  You need to help me fix the pipe however, I've forgotten my toolbox. You'll need it in order to fix pipeline.
+	- We reduce our carbon footprint.
+	- That will increase our water bills. 
+	- There are more ways we can get water, that’s fine.
+
+	Harper:  I need to fix this pipe, but I forgot my toolbox! Young hero, please help me!
 	set quest["chapter2"]["q3"].active = true
+	Harper:  Head to the ancient ruins on the far side of the desert. 
+	Harper: You'll find my toolbox there, and then you can fix the pipeline.
 	do emit(update_quest)
-	Harper:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
-	
 	do emit(dialogue_ended)
 	=> END
 
 if global.quest["chapter2"]["q2"].active == true and quest["chapter2"]["q1"].completed == true:
-	Farmer: Help me defeat the robots to restore the waters and I will give you a reward.
+	Harper: Help me defeat the robots to restore the waters and I will give you a reward.
 	do emit(dialogue_ended)
 	=> END
 	
@@ -53,13 +54,15 @@ if global.fixed_pipe == true:
 	set global.quest["chapter2"]["q4"].completed = true
 
 if global.quest["chapter2"]["q4"].completed == true: 
-	Harper:  You've done it! The water will flow freely once more.
-	Harper:  Your determination and skill are commendable. As promised, I'll give you the first magical seed.
-	Harper:  Now, head back to the hub and speak with the wise Elder. He'll guide you on where to plant it.
-
+	Harper:  You've done it! Thanks, young hero! The water’s cleaner than ever!
+	Harper:  As promised, I'll give you the first magical seed.
+	set items["Seeds"] += 1
+	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
+	do emit(dialogue_ended)
+	=> END
 
 if global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == true :
-	Harper:  You need to help me fix the pipe however, I've forgotten my toolbox. You'll need it in order to fix pipeline.
+	Harper:  You need to help me fix the pipe.
 	Harper:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
 	do emit(dialogue_ended)
 	=> END

@@ -1,6 +1,6 @@
 ~ see_pipe
 
-Player: This pipe looks broken. Maybe I can fix this
+Player: This seems to be the pipe that needs to be fixed.
 do emit(dialogue_ended_cutscene)
 => END
 

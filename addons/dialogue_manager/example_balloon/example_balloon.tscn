@@ -571,10 +571,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ResponsesMenu" type="VBoxContainer" parent="." node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_direction = 2
-offset_left = 1236.0
-offset_top = 424.0
-offset_right = 1768.0
-offset_bottom = 709.0
+offset_left = 1232.0
+offset_top = 668.0
+offset_right = 1764.0
+offset_bottom = 953.0
 size_flags_vertical = 8
 theme_override_constants/separation = 30
 alignment = 2

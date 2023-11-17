@@ -427,7 +427,7 @@ var dialogue_points = 0
 #Item
 
 var multiplier = 0.5
-var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0, "Wrench": 0, "Solar Panel Parts": 0, "Data": 0, "Scraps": 0}
+var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 0, "Solar Panel Parts": 0, "Data": 0, "Scraps": 0}
 
 
 
