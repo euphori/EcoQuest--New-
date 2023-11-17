@@ -36,8 +36,49 @@ if global.quest["chapter1"]["q7"].active == true and quest["chapter1"]["q6"].com
 	Farmer: Now help me clean out the place by picking up the trash around the area.
 	do emit(dialogue_ended)
 	=> END
+	
+#--------------------CHAPTER2 (After Receiving the first seed)
+if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].completed == false:
+	Farmer: Excellent you have obtained the first seed.
+	Farmer: To restore balance, you must plant it in the heart of the enchanted forest. Follow the ancient markings.
+	set global.quest["chapter2"]["q5"].completed = true
+	set global.quest["chapter2"]["q5"].active = false
+	set global.quest["chapter2"]["q6"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+
+if global.quest["chapter2"]["q6"].active == true and quest["chapter2"]["q6"].completed == true:	
+	Farmer:  The forest responds to your efforts. Well done, young hero.
+	Farmer:  Now, it's time to seek the second seed. Go back to the whispering woods the Village Elder needs your help.
+	set global.quest["chapter3"]["q1"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
 
 
+#---------CHAPTER3 (After Receiving the first seed)
+if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == false:	
+	Farmer: Excellent you have obtained the second seed.
+	Farmer: the balance of nature is in your hands. Take it to the heart of the enchanted forest.
+	set global.quest["chapter3"]["q4"].active = false
+	set global.quest["chapter3"]["q4"].completed = true
+	set global.quest["chapter3"]["q5"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+	
+if global.quest["chapter3"]["q6"].active == true and quest["chapter3"]["q6"].completed == false:	
+	Farmer: You need a electric scooter to go to Polar Pines, it holds the final clue of the last seed. 
+	Farmer: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
+	=> END
+	
+#player goes to the workshop 
+Shopkeeper: Well, well, what do we have here? The scooter is need to be fixed.
+Shopkeeper: With the right scraps, anything is possible. Let's get to work.
 
+#player is presented with the newly restored bike.
+Shopkeeper: There you go! Good as new.
+Shopkeeper: But be warned, the battery's low. You'll need to head to Citadel Heights to charge the electric scooter.
 
 => END

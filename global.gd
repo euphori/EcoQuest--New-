@@ -121,7 +121,7 @@ var quest = {
 	},
 	"chapter2":{
 		"q1": {
-			"title": "Go to desert",
+			"title": "Go to Rusty Bay",
 			"desc" : "Talk to Plumber",
 			"type" : "explore",
 			"req_items" : null,
@@ -165,11 +165,203 @@ var quest = {
 			"npc_name" : "Plumber John",
 			"talk_after" : false,
 		},
+		"q5": {
+			"title": "Go to Briarwood Harbor",
+			"desc" : "Talk to Farmer",
+			"type" : "explore",
+			"req_items" : ["Seeds" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : false,
+		},
+		"q6": {
+			"title": "Plant",
+			"desc" : "Plant the first seed",
+			"type" : "plant",
+			"req_items" : ["Seeds" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : true,
+		},
 	},
-	
-	 
-	
-	
+	"chapter3":{
+		"q1": {
+			"title": "Go to Whispering Woods",
+			"desc" : "Talk to Elder",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Elder",
+			"talk_after" : false
+		},
+		"q2": {
+			"title": "Research",
+			"desc" : "Gather data from the forest",
+			"type" : "gather",
+			"req_items" : ["Data" , 4],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Elder",
+			"talk_after" : true
+		},
+		"q3": {
+			"title": "Protect Data",
+			"desc" : "Defeat Robots",
+			"type" : "kill",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Elder",
+			"talk_after" : true,
+			"kill_req": 3
+		},
+		"q4": {
+			"title": "Go to Briarwood Harbor",
+			"desc" : "Talk to Farmer",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : false,
+		},
+		"q5": {
+			"title": "Plant",
+			"desc" : "Plant the second seed",
+			"type" : "plant",
+			"req_items" : ["Seeds" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : true,
+		},
+		"q6": {
+			"title": "Fix Electric Scooter",
+			"desc" : "Go to shop",
+			"type" : "Fix",
+			"req_items" : ["Scraps" , 5],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Mechanic",
+			"talk_after" : true,
+		},
+	},
+	"chapter4":{
+		"q1": {
+			"title": "Go to Citadel Heights",
+			"desc" : "Talk to Mechanic",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Mechanic",
+			"talk_after" : false
+		},
+		"q2": {
+			"title": "Build Solar Panel",
+			"desc" : "Collect solar panel parts",
+			"type" : "gather",
+			"req_items" : ["Solar Panel Parts" , 5],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Mechanic",
+			"talk_after" : false
+		},
+		"q3": {
+			"title": "Go to Polar Pine",
+			"desc" : "Talk to Professor",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Professor",
+			"talk_after" : false
+		},
+		"q4": {
+			"title": "Protect Professor",
+			"desc" : "Defeat Robots",
+			"type" : "kill",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Professor",
+			"talk_after" : true,
+			"kill_req": 3
+		},
+		"q5": {
+			"title": "Shut Down Factory",
+			"desc" : "Go inside the laboratory",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Professor",
+			"talk_after" : false
+		},
+		"q6": {
+			"title": "Go outside",
+			"desc" : "Talk to Professor",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Professor",
+			"talk_after" : false
+		},
+	},
+	"chapter5":{
+		"q1": {
+			"title": "Go to Briarwood Harbor",
+			"desc" : "Talk to Farmer",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : false
+		},
+		"q2": {
+			"title": "Plant",
+			"desc" : "Plant the last seed",
+			"type" : "plant",
+			"req_items" : ["Seeds" , 1],
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Farmer",
+			"talk_after" : false,
+		},
+		"q3": {
+			"title": "Protect the Trees",
+			"desc" : "Defeat Robots",
+			"type" : "kill",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Professor",
+			"talk_after" : true,
+			"kill_req": 4
+		},
+	},
 	}
 	
 #var quest_info = {
@@ -209,7 +401,7 @@ var dialogue_points = 0
 #Item
 
 var multiplier = 0.5
-var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0, "Wrench": 0, "Solar Panel Parts": 0}
+var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 1,"Trash": 0, "Wrench": 0, "Solar Panel Parts": 0, "Data": 0, "Scraps": 0}
 
 
 
