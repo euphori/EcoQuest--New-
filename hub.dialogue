@@ -46,7 +46,8 @@ if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].com
 	Farmer: Let's Plant it into the enchanted forest.
 	set global.quest["chapter2"]["q5"].completed = true
 	set global.quest["chapter2"]["q5"].active = false
-	set global.quest["chapter2"]["q"].active = true
+	set global.quest["chapter3"]["q1"].active = true
+	set env_condition += 40 #update the environment
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
@@ -65,7 +66,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q4"].completed = true
 	set global.quest["chapter3"]["q5"].active = true
-	set env_condition += 40 #update the environment
+
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
