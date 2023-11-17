@@ -194,17 +194,6 @@ var quest = {
 			"npc_name" : "Farmer",
 			"talk_after" : false,
 		},
-		"q6": {
-			"title": "Plant",
-			"desc" : "Plant the first seed",
-			"type" : "plant",
-			"req_items" : ["Seeds" , 1],
-			"weight" : null,
-			"active" : false,
-			"completed" : false,
-			"npc_name" : "Farmer",
-			"talk_after" : true,
-		},
 	},
 	"chapter3":{
 		"q1": {

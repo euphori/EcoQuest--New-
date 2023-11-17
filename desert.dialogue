@@ -53,17 +53,24 @@ if global.fixed_pipe == true:
 	set global.quest["chapter2"]["q4"].active = false
 	set global.quest["chapter2"]["q4"].completed = true
 
-if global.quest["chapter2"]["q4"].completed == true: 
+if global.quest["chapter2"]["q4"].completed == true and global.quest["chapter2"]["q5"].active == false: 
 	Harper:  You've done it! Thanks, young hero! The water’s cleaner than ever!
 	Harper:  As promised, I'll give you the first magical seed.
 	set items["Seeds"] += 1
 	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
+	set global.quest["chapter2"]["q5"].active = true
+	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 
 if global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == true :
 	Harper:  You need to help me fix the pipe.
 	Harper:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
+	do emit(dialogue_ended)
+	=> END
+
+if global.quest["chapter2"]["q4"].completed == true and global.quest["chapter2"]["q5"].active == true:
+	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
 	do emit(dialogue_ended)
 	=> END
 

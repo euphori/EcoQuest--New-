@@ -43,19 +43,17 @@ if global.quest["chapter1"]["q7"].active == true and quest["chapter1"]["q7"].com
 #--------------------CHAPTER2 (After Receiving the first seed)
 if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].completed == false:
 	Farmer: Excellent you have obtained the first seed.
-	Farmer: To restore balance, you must plant it in the heart of the enchanted forest. Follow the ancient markings.
+	Farmer: Let's Plant it into the enchanted forest.
 	set global.quest["chapter2"]["q5"].completed = true
 	set global.quest["chapter2"]["q5"].active = false
-	set global.quest["chapter2"]["q6"].active = true
+	set global.quest["chapter2"]["q"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 
-if global.quest["chapter2"]["q6"].active == true and quest["chapter2"]["q6"].completed == true:	
+if global.quest["chapter3"]["q1"].active == true and quest["chapter2"]["q5"].completed == true:	
 	Farmer:  The forest responds to your efforts. Well done, young hero.
-	Farmer:  Now, it's time to seek the second seed. Go back to the whispering woods the Village Elder needs your help.
-	set global.quest["chapter3"]["q1"].active = true
-	do emit(update_quest)
+	Farmer:  Now, it's time to seek the second seed. Go back to the whispering woods Old Tom needs your help.
 	do emit(dialogue_ended)
 	=> END
 
