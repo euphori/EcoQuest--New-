@@ -6,4 +6,20 @@ Harper: Hey there kid, want to exchange those scraps you have?
 	do emit(dialogue_ended)
 - No thanks.
 
+if global.quest["chapter3"]["q5"].active == true and quest["chapter3"]["q5"].completed == true:	
+	Harper: Ta-da! There you go! Good as new.
+	Harper: But be warned, I ain’t got new batteries with me, so it’s kinda running low on that. 
+	Harper: Don’t worry though, you can charge it at Citadel Heights!
+	set global.quest["chapter3"]["q5"].active = false
+	set global.quest["chapter4"]["q1"].completed = true
+	set global.unlocked_map["City"] = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+	
+if global.quest["chapter4"]["q1"].active == true and quest["chapter4"]["q1"].completed == false:	
+	Harper: Go to Citadel Heights to charge the scooter.
+	do emit(dialogue_ended)
+	=> END
+
 => END

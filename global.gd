@@ -120,7 +120,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Farmer",
+			"npc_name" : "Old Tom",
 			"talk_after" : false
 		
 		},
@@ -132,7 +132,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Farmer",
+			"npc_name" : "Old Tom",
 			"talk_after" : false
 		
 		},
@@ -146,7 +146,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Plumber John",
+			"npc_name" : "Harper",
 			"talk_after" : false
 		},
 		"q2": {
@@ -157,7 +157,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Plumber John",
+			"npc_name" : "Harper",
 			"talk_after" : true,
 			"kill_req": 3
 		},
@@ -169,7 +169,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Plumber John",
+			"npc_name" : "Harper",
 			"talk_after" : false,
 		},
 		"q4": {
@@ -180,42 +180,42 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Plumber John",
+			"npc_name" : "Harper",
 			"talk_after" : false,
 		},
 		"q5": {
 			"title": "Go to Briarwood Harbor",
-			"desc" : "Talk to Farmer",
+			"desc" : "Talk to Old Tom",
 			"type" : "explore",
 			"req_items" : ["Seeds" , 1],
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Farmer",
+			"npc_name" : "Old Tom",
 			"talk_after" : false,
 		},
 	},
 	"chapter3":{
 		"q1": {
 			"title": "Go to Whispering Woods",
-			"desc" : "Talk to Elder",
+			"desc" : "Talk to Lucas",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : false
 		},
 		"q2": {
 			"title": "Research",
 			"desc" : "Gather data from the forest",
 			"type" : "gather",
-			"req_items" : ["Data" , 4],
+			"req_items" : ["Data" , 3],
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : true
 		},
 		"q3": {
@@ -226,33 +226,22 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : true,
 			"kill_req": 3
 		},
 		"q4": {
 			"title": "Go to Briarwood Harbor",
-			"desc" : "Talk to Farmer",
+			"desc" : "Talk to Old Tom",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Farmer",
+			"npc_name" : "Lucas",
 			"talk_after" : false,
 		},
 		"q5": {
-			"title": "Plant",
-			"desc" : "Plant the second seed",
-			"type" : "plant",
-			"req_items" : ["Seeds" , 1],
-			"weight" : null,
-			"active" : false,
-			"completed" : false,
-			"npc_name" : "Farmer",
-			"talk_after" : true,
-		},
-		"q6": {
 			"title": "Fix Electric Scooter",
 			"desc" : "Go to shop",
 			"type" : "Fix",
