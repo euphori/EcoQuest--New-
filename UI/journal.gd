@@ -71,6 +71,8 @@ func refresh_journal():
 
 
 func update_quest():
+	for x in global.items["Seeds"]:
+		$Quest/Seeds.get_child(x).modulate = Color(1,1,1)
 	for i in global.quest:
 		for x in global.quest[i]:
 			var _quest = global.quest[i][x]
@@ -127,6 +129,7 @@ func initialize_inv():
 					if quant.text == "":
 						quant.text = str(global.items[i],"x")
 						break
+
 
 func update_quantity():
 	var x = 0
