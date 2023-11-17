@@ -18,6 +18,16 @@ var grass_multi_mesh = []
 
 var grass_mesh 
 func _ready():
+	global.connect("update_quest" , update_all)
+	update_all()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if check_grass()!= null:
+		update_grass(global.env_condition)
+
+
+func update_all():
 	update_trees(global.env_condition)
 	#update_sky(start_val)
 	update_plants(global.env_condition)
@@ -40,12 +50,6 @@ func _ready():
 				rain.visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if check_grass()!= null:
-		update_grass(global.env_condition)
-
-
 func update_trees(value):
 	if tree_manager != null:
 		for i in tree_manager.get_child_count():
@@ -63,6 +67,7 @@ func update_trees(value):
 				elif value >= 98:
 					tree_manager.get_child(i).curr_state = "full"
 					tree_manager.get_child(i).update_state()
+				await get_tree().create_timer(1).timeout
 	else:
 		print("Tree Manager Doesn't Exist")
 
@@ -133,7 +138,7 @@ func update_grass(value):
 				var item = scatter_item.get_child(y)
 				var percent = float(float(value) / 100)
 				var tween = get_tree().create_tween()
-				tween.tween_property(item.multimesh, "visible_instance_count" ,  abs(item.multimesh.instance_count * percent) , 1)
+				tween.tween_property(item.multimesh, "visible_instance_count" ,  abs(item.multimesh.instance_count * percent) , 5)
 			#item.multimesh.visible_instance_count = abs(item.multimesh.instance_count * percent)
 	
 

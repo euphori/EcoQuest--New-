@@ -1,0 +1,4 @@
+~ start
+Player: Looks like the seed is working!
+do emit("dialogue_ended_cutscene")
+=> END
