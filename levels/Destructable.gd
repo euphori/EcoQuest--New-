@@ -21,7 +21,6 @@ func spawn():
 	_item.item_name = item_name
 	_item.amount = _amount
 	get_parent().get_node("Items").add_child(_item)
-
 	_item.global_position = self.global_position
 	_item.sprite.texture = load(texture_path)
 	

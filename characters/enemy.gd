@@ -38,6 +38,9 @@ var dashing
 var timer_started
 var dead
 var death_quest_trigger = ["",""]
+var chosen = false
+var chosen_dir = Vector3.ZERO
+
 
 signal engage
 
@@ -141,14 +144,20 @@ func _physics_process(delta):
 				
 		DASH:
 			$Label3D.text = str("State: DASH")
-			var dir = self.global_position.direction_to(player.global_position)
-			var distance = self.global_position.distance_to(player.global_position)
-			if abs(distance) >= 1 and dashing:
-				velocity.x = dir.x * DASH_SPEED
 
-			if abs(distance) < 1 and dashing:
-				dashing = false
-				state = STAGGER
+			var distance = self.global_position.distance_to(player.global_position)
+			if !chosen:
+				chosen_dir = player.global_position
+				chosen = true
+			var dir = self.global_position.direction_to(chosen_dir)
+			if dashing:
+				if !timer_started:
+					$DashTimer.start(.5)
+					timer_started = true
+				velocity.x = dir.x * DASH_SPEED
+			
+				
+				
 		JUMP:
 			$Label3D.text = str("State: JUMP")
 			jump()
@@ -274,3 +283,9 @@ func stop_dash():
 	attacking = false
 	dashing = false
 	state = STAGGER
+
+
+func _on_dash_timer_timeout():
+	dashing = false
+	timer_started = false
+	chosen = false

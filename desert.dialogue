@@ -1,18 +1,11 @@
 ~ start
 
 if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].completed == false:
-	Harper: Well, look who stumbled into the chaos. What's your story?
-	- Just looking for some sacred seed.
-		Harper:  Sacred seed, huh? You're talking about the one that's supposed to revive the Mother Tree, right?
-	- Just passing through. What happened to you?
-		Harper: Passed out in the desert, that's what happened.
+	Harper: Well, look who stumbled into the chaos.
 	Harper: So what is your business here, kid? 
 	- Old Tom sent me.
 	Harper: Old Tom sent you, huh? Figures. You're looking at the girl who already found it.
 	-  He sent me to find you and bring the seed back.
-	- I'm just here to get the job done.\nIf you've got the seed, let's get moving.
-	Harper:  Old Man Tom, you say? He never mentioned you. Well, if he's sending reinforcements, I suppose we can work together. 
-	Harper: But don't think you're getting a hero's welcome.
 	- So, you've found the sacred seed. Where is it?
 	-  That's nice. Now, where's the seed?
 	Harper: Hold your horses, kid. The sacred seed is hidden in somwhere in here. 
@@ -55,11 +48,12 @@ if global.items["Wrench"] < 1:
 	do emit(update_quest)
 
 if global.fixed_pipe == true:
+	set global.quest["chapter2"]["q3"].active = false
 	set global.quest["chapter2"]["q4"].active = false
 	set global.quest["chapter2"]["q4"].completed = true
 
 if global.quest["chapter2"]["q4"].completed == true: 
-	Harper:  You've done it! The water will flow freely once more.	
+	Harper:  You've done it! The water will flow freely once more.
 	Harper:  Your determination and skill are commendable. As promised, I'll give you the first magical seed.
 	Harper:  Now, head back to the hub and speak with the wise Elder. He'll guide you on where to plant it.
 

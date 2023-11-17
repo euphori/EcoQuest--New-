@@ -13,7 +13,6 @@ var old_pos
 func _ready():
 	if self.name == "Hub":
 		var rand = randi_range(0,2)
-		print(rand)
 		if rand == 1:
 			$DirectionalLight3D2.visible = true
 			$DirectionalLight3D.visible = false

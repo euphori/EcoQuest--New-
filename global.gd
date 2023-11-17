@@ -401,7 +401,8 @@ func get_active_quest():
 var item_texture = {
 	"Wood" : "res://assets/item_textures/wood.png",
 	"Trash" : "res://assets/item_textures/Can.png",
-	
+	"Wrench" :"res://assets/item_textures/wrench.png",
+	"Scraps": "res://assets/item_textures/Scraps.png"
 	
 }
 
@@ -469,7 +470,6 @@ func save(_save_path):
 	
 	var jstr = JSON.stringify(save_database)
 	file.store_line(jstr)
-	print(jstr)
 	file.close()
 	
 func load_save(_save_path):

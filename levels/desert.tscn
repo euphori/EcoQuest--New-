@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://chxuot5dj22rf"]
+[gd_scene load_steps=172 format=3 uid="uid://chxuot5dj22rf"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c85b6qlf7yfjx" path="res://assets/Ultimate Nature Pack by Quaternius/FBX/Rock_7.fbx" id="13_vlpot"]
 [ext_resource type="Material" uid="uid://bsv6133evob50" path="res://materials/pipe.tres" id="14_4sual"]
 [ext_resource type="PackedScene" uid="uid://bu5563nwryscc" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Hill_desert_003.fbx" id="14_mxu0m"]
+[ext_resource type="Script" path="res://levels/pipes.gd" id="14_vx301"]
 [ext_resource type="PackedScene" uid="uid://bkn437lbekbc5" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Mountain_desert_001.fbx" id="15_utadd"]
 [ext_resource type="Texture2D" uid="uid://c7udnnf220kry" path="res://assets/desert/textures/jarras_baseColor.png" id="15_wd10k"]
 [ext_resource type="PackedScene" uid="uid://rrhgc5f6s653" path="res://assets/desert/free-desert-mountain-3d-low-poly-models/Fbx/Mountain_desert_009.fbx" id="16_0o3wv"]
@@ -1680,7 +1681,8 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -44.19
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -40.8503, 19.7093, 5.18951)
 
 [node name="Pipe8" parent="Pipes" groups=["interactable"] instance=ExtResource("6_ax6t1")]
-transform = Transform3D(-1.74846e-07, -0.831646, 3.91259, 0, 3.91259, 0.831646, -4, 3.63524e-08, -1.71025e-07, -37.478, 19.7093, 5.18951)
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -37.478, 19.7093, 5.18951)
+script = ExtResource("14_vx301")
 
 [node name="InteractUI" parent="Pipes/Pipe8" instance=ExtResource("7_g6rp4")]
 transform = Transform3D(-0.00144859, 0.097442, -0.490411, -0.0974421, 0.480955, 0.095851, 0.490411, 0.0958511, 0.0175965, -0.152613, 0.587962, -0.370338)
@@ -1691,6 +1693,7 @@ title = "no_wrench"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Pipes/Pipe8"]
 transform = Transform3D(-4.8997e-09, 0.246202, 0.043412, -0.241884, -0.0109715, 0.0622222, 0.0631822, -0.0420027, 0.23821, -0.0408126, 0.222908, -0.864496)
+visible = false
 material_override = SubResource("StandardMaterial3D_vjrxh")
 amount = 60
 explosiveness = 0.14
@@ -1797,7 +1800,7 @@ transform = Transform3D(100, -2.13163e-14, 1.19209e-07, -1.78814e-07, -1.19209e-
 surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
 
 [node name="structure_3" parent="CastleRuins/RootNode" index="5"]
-transform = Transform3D(128.215, -2.84217e-14, 4.76837e-07, -2.38419e-07, -1.52845e-05, 438.142, 0, -128.215, -5.22306e-05, -3.81217, 3.03403, 1.46164)
+transform = Transform3D(128.215, -5.68434e-14, 4.76837e-07, -3.57628e-07, -1.52845e-05, 438.142, 0, -128.215, -5.22306e-05, -3.81217, 3.03403, 1.46164)
 surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
 
 [node name="structure_2" parent="CastleRuins/RootNode" index="6"]
@@ -1822,6 +1825,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
 surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
 
 [node name="tree_0" parent="CastleRuins/RootNode" index="13"]
+transform = Transform3D(23.8588, -1.10199, 4.31008, -5.32997, 3.14212, 18.5599, -1.77236, -24.2839, 2.2059, -2.78367, 9.00805, 2.82841)
 surface_material_override/0 = SubResource("StandardMaterial3D_1t5un")
 
 [node name="Cámara" parent="CastleRuins/RootNode" index="14"]
@@ -3266,7 +3270,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6007, 13.1132, 5.24194)
 add_on_kill = true
 
 [node name="SawRobot2" parent="." instance=ExtResource("30_ktrhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.334, 21.6849, 7.24597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.051, 21.6849, 7.24597)
 add_on_kill = true
 
 [node name="rpgpp_av_water_platform_01a" type="MeshInstance3D" parent="."]
