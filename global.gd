@@ -40,7 +40,7 @@ var questStart = false
 var game_started = false
 var fixed_pipe = false
 var curr_killcount = 0
-
+var in_dialogue = false
 var quest = {
 
 	"chapter1":{
@@ -52,7 +52,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : false
 		},
 		"q2": {
@@ -63,7 +63,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : true
 		},
 		"q3": {
@@ -74,7 +74,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : false
 			
 		},
@@ -86,18 +86,29 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Lucas",
+			"talk_after" : false
+		},
+		"q4.5": {
+			"title": "Briarwood Harbour",
+			"desc" : "use the boat to travel",
+			"type" : "travel",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "Lucas",
 			"talk_after" : false
 		},
 		"q5": {
 			"title": "New Adventures II",
-			"desc" : "Travel to the Hub",
+			"desc" : "Talk to Lucas",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Village Elder",
+			"npc_name" : "Lucas",
 			"talk_after" : false
 		
 		},

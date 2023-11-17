@@ -1,37 +1,15 @@
 ~ start
 
 if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].completed == false
-	Lucas:  Glad you made it! You know, being late gave me a little more time to think about the urgency of saving the environment. 
-	Lucas: But let's not dwell on that. I'm here to train you, and together we can make a difference.
-	- I'm sorry for being late. I'm ready to learn. SAMPLE QWEWQEQWEWQEWQEQWEQWEWEW!
-		Lucas: That's alright, punctuality isn't everything. What matters is your willingness to learn and make a difference.
-		
-	- Yeah, sorry about that. I'm not really sure why I'm here though...
-		Lucas: No worries! You're here because you care, and that's what matters.
-
-	Lucas:  Now, let me ask you a few questions to gauge your knowledge.
-	Lucas: How familiar are you with climate change and its impact on our planet?
-	base knowledge
-	- Honestly, I don't know much about it.
-		Lucas: That's alright, we're here to learn. 
-		Lucas: Climate change refers to long-term shifts in weather patterns caused by various factors, primarily human activities. 
-		Lucas: It leads to rising temperatures, extreme weather events, and impacts ecosystems. 
-		Lucas: Ready to dive in?
-	- I have some knowledge about climate change.
-		Lucas: Fantastic! It's great to have a starting point. 
-		Lucas: As you may know, climate change is a result of increased greenhouse gas emissions, primarily from burning fossil fuels.
-		Lucas: It's causing rising sea levels, loss of biodiversity, and severe weather events. How about we build upon your existing knowledge?
-	- I'm quite knowledgeable about climate change.
-		Lucas: That's impressive! It's wonderful to meet someone who is well-informed. 
-		Lucas: We need more people like you.
-	Lucas: Remember, no matter where you stand in terms of knowledge, we can all contribute to saving the environment.
-	Lucas: Now, let's focus on the task at hand. We need to gather some wood around here to build a boat. 
-	Lucas: We're heading to Briarwood Harbor.
-	- What's Briarwood Harbor?
-		Lucas: Briarwood Harbor is where I live, and it's one of the few places left with trees and fertile lands. It's our best chance for survival and rebuilding what has been lost. 
-		Lucas: Now, let's gather some wood and get started on our journey. Time is of the essence.
-	- Alright, let's get started.
-		Lucas: That's the spirit! Now start collecting some wood. We'll need it to build our boat.
+	Lucas:  Welcome, young one. The forest has called for a hero, and it seems it has chosen you.
+	Lucas: Do you understand the impact of climate change, and the importance of our mission?
+	- This is an urgent matter.
+	- This has somewhat become my duty.
+	- Are you sure you chose the right person for this?
+   
+	Lucas: Our world is in peril. The delicate balance of nature has been disrupted by the reckless actions of humankind.
+	Lucas: The fate of our world rests in your hands, young hero.
+	Lucas: Look there, a fallen tree. We'll need wood to repair the boat. Use your skills to gather some.
 	set global.quest["chapter1"]["q2"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
@@ -64,20 +42,16 @@ if global.quest["chapter1"]["q3"].active == true
 	=> END
 if global.quest["chapter1"]["q4"].active == true and global.quest["chapter1"]["q4"].completed == false
 	Lucas: I wouldn't be able to finish this with that guy here.
-	Lucas: Use your gun to beat him.
+	Lucas: Use your weapon to beat him.
 	do emit(dialogue_ended)
 	=> END
 	
 if global.quest["chapter1"]["q4"].completed == true
 	Lucas: That was close. Thanks for handling that. These robots are relentless.
-	-  No problem, Lucas
-		Lucas: They're probably guarding the illegal logging site. Get on the boat.
-	- What were they doing here?
-		Lucas: I'm not sure, but it means we're onto something. We need to be cautious. 
-		Lucas: Now, let's not waste any more time. Get on the boat.
-	Lucas: Briarwood Harbor awaits. Once we arrive, we'll gather more information and figure out our next move. Stay sharp.
+	Lucas: Briarwood Harbor awaits. Once we arrive, we'll gather more information and figure out our next move.
 	do emit(transistion)
-	set global.quest["chapter1"]["q5"].active = true
+	set global.quest["chapter1"]["q4.5"].active = true
+	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 #---------------------CHAPTER 3

@@ -6,6 +6,7 @@ extends Node3D
 @export var drop_item = true
 @export var item_name : String
 @export var texture_path : String
+@export var _amount = 1
 
 @onready var hp_bar = $SubViewport/HealthProgress
 @onready var item = load("res://interactable/item.tscn")
@@ -18,6 +19,7 @@ func _ready():
 func spawn():
 	var _item = item.instantiate()
 	_item.item_name = item_name
+	_item.amount = _amount
 	get_parent().get_node("Items").add_child(_item)
 
 	_item.global_position = self.global_position

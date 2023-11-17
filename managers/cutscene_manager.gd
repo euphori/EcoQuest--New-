@@ -47,7 +47,9 @@ func pan_camera(_location):
 	if dia_started:
 		player_manager.disable_cam_control = false
 		player.can_move = true
+		global.in_dialogue = false
 	if dialogue_resource != null and !dia_started:
+		global.in_dialogue = true
 		show_dialogue()
 
 

@@ -56,7 +56,7 @@ func _input(event):
 				$TalkIcon.visible = false
 			elif type == "pickable":
 				
-				global.items[parent.item_name] += 1
+				global.items[parent.item_name] += parent.amount
 				emit_signal("item_added")
 				global.emit_signal("update_quest")
 				global.emit_signal("pickup_item", parent.item_name, 1)

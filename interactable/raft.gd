@@ -10,7 +10,7 @@ func _ready():
 	pass
 func _process(delta):
 	if hide:
-		if global.quest["chapter1"]["q5"].active:
+		if global.quest["chapter1"]["q4.5"].active:
 			self.visible = true
 		else:
 			self.visible = false

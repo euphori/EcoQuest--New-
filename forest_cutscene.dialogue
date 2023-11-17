@@ -1,7 +1,7 @@
 ~ defend
 
-Mech Mence: Intruder detected. 
-Mech Menace: Prepare for elimination.
+Atom: Intruder detected. 
+Atom: Prepare for elimination.
 do emit(dialogue_ended_cutscene)
 
 => END

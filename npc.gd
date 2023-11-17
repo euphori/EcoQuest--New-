@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export_category("Quest Connection")
 @export var has_event : bool
 @export var chapter_name : String
+@onready var manager = get_parent().get_node("CharacterManager")
 ## quest that needs to be completed
 @export var completed_quest : String
 @onready var screen_trans = get_parent().get_node("CanvasLayer/AnimationPlayer")
@@ -24,7 +25,7 @@ var active
 var pushing = false
 var player_in_range
 var player
-var in_dialogue
+
 
 
 func _ready():
@@ -61,23 +62,24 @@ func talk():
 		$Sprite3D.flip_h = true
 	else:
 		$Sprite3D.flip_h = false
-	if !in_dialogue:
+	if !global.in_dialogue:
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
-		in_dialogue = true
+		global.in_dialogue= true
 	#var balloon = get_parent().get_node("ExampleBalloon/Balloon")
 	#balloon.global_position = Vector2($Marker3D.global_position.x,$Marker3D.global_position.y)
 	camera.current = true
 
 
 func return_camera():
-	if in_dialogue:
-		if get_parent().get_node("ExampleBalloon/AnimationPlayer") != null:
-			var anim_player = get_parent().get_node("ExampleBalloon/AnimationPlayer")
-			anim_player.play("hide")
-			await  anim_player.animation_finished
-		in_dialogue = false
-		if player != null:
-			player.get_parent().camera.current = true
+	if manager.nearest_interactable == self:
+		if global.in_dialogue:
+			if get_parent().get_node("ExampleBalloon/AnimationPlayer") != null:
+				var anim_player = get_parent().get_node("ExampleBalloon/AnimationPlayer")
+				anim_player.play("hide")
+				await  anim_player.animation_finished
+			global.in_dialogue= false
+			if player != null:
+				player.get_parent().camera.current = true
 
 func _physics_process(delta):
 	# Add the gravity.

@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var item_name : String
 @export var chapter : String
 @export var quest : String
+@export var amount = 1
 
 @export var hide = false
 
@@ -18,7 +19,7 @@ var collected = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite.texture = load(global.item_texture[item_name])
+	
 	$PickLabel.visible = false
 	if hide:
 		if global.quest[chapter][quest].active:
@@ -46,7 +47,7 @@ func show_item():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
+	sprite.texture = load(global.item_texture[item_name])
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
