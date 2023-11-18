@@ -5,7 +5,6 @@ extends Node3D
 @export_category("Item Spawned")
 @export var drop_item = true
 @export var item_name : String
-@export var texture_path : String
 @export var _amount = 1
 
 @onready var hp_bar = $SubViewport/HealthProgress
@@ -22,8 +21,7 @@ func spawn():
 	_item.amount = _amount
 	get_parent().get_node("Items").add_child(_item)
 	_item.global_position = self.global_position
-	_item.sprite.texture = load(texture_path)
-	
+
 func _on_hurtbox_area_entered(area):
 	if HP > 0:
 		HP -= 50

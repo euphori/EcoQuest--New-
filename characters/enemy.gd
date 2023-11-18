@@ -15,6 +15,12 @@ var DASH_SPEED = 20
 @export_category("Quest")
 @export var add_on_kill : bool
 
+@export_category("Item Spawned")
+@export var drop_item = true
+@export var item_name = "Scraps"
+@export var _amount = 2
+@onready var item = load("res://interactable/item.tscn")
+
 
 
 @onready var player = get_parent().get_node("CharacterManager/Kid")
@@ -64,6 +70,13 @@ func _ready():
 	GlobalMusic.enemy = self
 	state =  CHASE
 	
+
+func spawn():
+	var _item = item.instantiate()
+	_item.item_name = item_name
+	_item.amount = _amount
+	get_parent().get_node("Items").add_child(_item)
+	_item.global_position = self.global_position
 
 
 func start_dialogue():
@@ -205,6 +218,8 @@ func dash():
 
 func die():
 	dead = true
+	if drop_item:
+		spawn()
 	if name == "Enemy":
 		global.enemy_cleared[get_parent().name] = true
 		

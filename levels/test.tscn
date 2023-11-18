@@ -63,42 +63,44 @@ dialogue_resource = ExtResource("5_b2xhi")
 
 [node name="Node2D" type="Node2D" parent="npc"]
 
-[node name="Item" parent="." instance=ExtResource("7_qocv4")]
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Item" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96378, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
 quest = "q2"
 hide = true
 
-[node name="Item2" parent="." instance=ExtResource("7_qocv4")]
+[node name="Item2" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7614, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
 quest = "q2"
 hide = true
 
-[node name="Item3" parent="." instance=ExtResource("7_qocv4")]
+[node name="Item3" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47497, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
 quest = "q2"
 hide = true
 
-[node name="Item4" parent="." instance=ExtResource("7_qocv4")]
+[node name="Item4" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88982, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
 quest = "q2"
 hide = true
 
-[node name="Item5" parent="." instance=ExtResource("7_qocv4")]
+[node name="Item5" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82014, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
 quest = "q2"
 hide = true
 
-[node name="Item6" parent="." instance=ExtResource("7_qocv4")]
+[node name="Item6" parent="Items" instance=ExtResource("7_qocv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57988, 1.17889, 0)
 item_name = "Wood"
 chapter = "chapter1"
