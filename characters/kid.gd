@@ -29,7 +29,6 @@ func _process(delta):
 		$RechargeTimer.start(recharge_time)
 		if can_shoot:
 			$AnimationPlayer.play("charge")
-			await $AnimationPlayer.animation_finished
 			if get_parent().energy_bar.value > 0:
 				
 				get_parent().energy_bar.value -= 45 * delta
