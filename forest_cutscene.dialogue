@@ -5,3 +5,10 @@ Atom: Prepare for elimination.
 do emit(dialogue_ended_cutscene)
 
 => END
+~ chapter3
+
+Atom: We meet again.
+Atom: Prepare for elimation [shake rate=20 level=10][/shake]
+do emit(dialogue_ended_cutscene)
+
+=> END

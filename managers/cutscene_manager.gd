@@ -61,7 +61,8 @@ func play_cutscene():
 			player_manager.in_cutscene = true
 			old_camera_pos = player_manager.camera.global_position 
 			pan_camera(marker.global_position)
-	elif  chapter_name != "" and active_quest != "" and completed_quest == "":
+	elif chapter_name != "" and active_quest != "" and completed_quest == "":
+		print("Trigger")
 		if global.quest[chapter_name][active_quest].active:
 			player.can_move = false 
 			player_manager.disable_cam_control = true

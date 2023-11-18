@@ -47,9 +47,11 @@ func _input(event):
 		if visible:
 			visible = false
 			kid.can_move = true
+			get_parent().journal_icon.visible = true
 		else:
 			visible = true
 			kid.can_move = false
+			get_parent().journal_icon.visible = false
 		if is_console_visible:
 			input_line.editable = true
 			input_line.grab_focus()

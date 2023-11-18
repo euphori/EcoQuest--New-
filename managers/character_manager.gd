@@ -21,6 +21,7 @@ extends Node3D
 @onready var journal = $Journal
 @onready var energy_bar = $UI/Stamina/TextureProgressBar
 @onready var notif = $UI/Icon/Notif
+@onready var journal_icon = $UI/Icon
 
 var location = global.curr_scene
 var new_camera_offset = {"x":0.5,"y":4,"z":7}
@@ -83,8 +84,7 @@ func _input(event):
 
 
 func update_quest():
-	tracker.visible = true
-	$TrackerTimer.start(5)
+
 	for i in global.quest:
 		for x in global.quest[i]: #get all quest in global
 			var _quest = global.quest[i][x]
@@ -94,6 +94,8 @@ func update_quest():
 				curr_quest = _quest.title #show quest
 				if curr_quest != prev_quest:
 					notif.visible = true
+					tracker.visible = true
+					$TrackerTimer.start(5)
 				tracker_title.text = curr_quest
 
 				if _quest.req_items != null: #shows the req items if there is one

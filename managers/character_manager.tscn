@@ -109,6 +109,7 @@ texture_progress = ExtResource("9_tascl")
 texture_progress_offset = Vector2(3.5, 3)
 
 [node name="Quest" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 166.0

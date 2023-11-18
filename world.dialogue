@@ -62,9 +62,12 @@ if global.items["Data"] >= 3 and global.quest["chapter3"]["q2"].active:
 	set global.quest["chapter3"]["q2"].completed = true
 	Lucas: This information is invaluable. The forest will thrive with such knowledge in our hands. 
 	Lucas: You've proven yourself a true guardian of nature.
+	Lucas: ...
+	Lucas:[shake rate=20 level=10] Someone is coming! [/shake]
+	do emit(dialogue_ended)
 	set global.quest["chapter3"]["q3"].active = true
 	do emit(update_quest)
-	do emit(dialogue_ended)
+
 	=> END
 	
 if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q1"].completed == false
@@ -89,10 +92,8 @@ if global.quest["chapter3"]["q2"].active == true and global.quest["chapter3"]["q
 
 
 	
-#cut scene robots emerge 
-Robot Invaders: Intruders detected. Prepare for elimination.
 
-if global.quest["chapter3"]["q3"].active == true and global.quest["chapter3"]["q3"].completed == true
+if global.quest["chapter3"]["q3"].active == false and global.quest["chapter3"]["q3"].completed == true
 	Lucas: Thank you, young hero. Thank you for defending this precious place. 
 	Lucas: The forest owes you its life.
 

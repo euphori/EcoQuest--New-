@@ -113,7 +113,8 @@ func end_dialogue():
 	dia_started = false
 
 func _on_player_detection_body_entered(_body):
-	$Arrow.visible = true
+	if is_instance_valid($Arrow):
+		$Arrow.visible = true
 	if _body.is_in_group("player"):
 		player = _body
 		player_near = true
@@ -131,7 +132,8 @@ func _on_player_detection_body_entered(_body):
 		
 
 func _on_player_detection_body_exited(_body):
-	$Arrow.visible = false
+	if is_instance_valid($Arrow):
+		$Arrow.visible = false
 	visible = false
 	$Hint.visible = false
 	player_near = false
