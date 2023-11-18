@@ -14,6 +14,8 @@ var DASH_SPEED = 20
 @export var title : String = "start"
 @export_category("Quest")
 @export var add_on_kill : bool
+@export var related_chapter: String
+@export var related_quest: String
 
 @export_category("Item Spawned")
 @export var drop_item = true
@@ -62,8 +64,8 @@ enum{
 
 
 func _ready():
-
-	
+	if global.quest[related_chapter][related_quest].completed:
+		queue_free()
 	if global.enemy_cleared.keys().has(get_parent().name):
 		if global.enemy_cleared[get_parent().name]:
 			queue_free()

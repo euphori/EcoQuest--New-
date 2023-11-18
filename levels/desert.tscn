@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
 [ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="2_3lgwb"]
 [ext_resource type="Script" path="res://levels/transistion.gd" id="2_j7e22"]
-[ext_resource type="Material" uid="uid://632b1x0ros1u" path="res://assets/skybox/sky.tres" id="2_mc0qr"]
+[ext_resource type="Material" uid="uid://desigkrxltoeg" path="res://assets/skybox/sky.tres" id="2_mc0qr"]
 [ext_resource type="Resource" uid="uid://bjyhfquvypbru" path="res://desert_cutscene.dialogue" id="3_1jcvx"]
 [ext_resource type="Material" uid="uid://ci3j4u5fxnucs" path="res://assets/environment/Orange.3.tres" id="3_5k2la"]
 [ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="3_kgprt"]

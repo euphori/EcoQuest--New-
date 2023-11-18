@@ -82,6 +82,7 @@ func _input(event):
 						
 			elif type == "entrance":
 				if next_scene != null:
+					global.save(global.save_path["save1"])
 					get_tree().change_scene_to_file(next_scene)
 					
 			elif type == "computer":

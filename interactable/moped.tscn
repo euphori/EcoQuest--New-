@@ -404,7 +404,7 @@ metadata/_edit_group_ = true
 [node name="InteractUI" parent="." instance=ExtResource("2_hbkok")]
 transform = Transform3D(0.772368, 0, -0.635175, 0, 1, 0, 0.635175, 0, 0.772368, 0, 1.57889, 0)
 text_label = "Travel(F)"
-type = "object"
+type = "travel"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
