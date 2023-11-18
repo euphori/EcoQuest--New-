@@ -47,7 +47,7 @@ var stop_camera
 
 
 @onready var interactables  = get_tree().get_nodes_in_group("interactable")
-@onready var nearest_interactable = interactables[0]
+@onready var nearest_interactable = interactables[0] 
 
 
 # Called when the node enters the scene tree for the first time.

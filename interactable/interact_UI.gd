@@ -83,15 +83,9 @@ func _input(event):
 			elif type == "entrance":
 				if next_scene != null:
 					get_tree().change_scene_to_file(next_scene)
-				if new_player_pos != null: 
-					print("ENTERED TREE")
-					manager.disable_cam_control = false
-					var _new_offset = JSON.parse_string(new_offset)
-					manager.change_offset(_new_offset , .5)
-					player.global_position = new_player_pos
 					
 			elif type == "computer":
-				parent.visible = !parent.visible
+				parent.get_node("Computer").visible = !parent.get_node("Computer").visible
 				
 			elif type == "travel":
 				if parent.name == "Moped" and global.scooter_repaired:

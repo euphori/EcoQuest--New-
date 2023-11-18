@@ -27,6 +27,7 @@ func _process(delta):
 		$RechargeTimer.start(recharge_time)
 		if can_shoot:
 			if get_parent().energy_bar.value > 0:
+				print(get_parent().energy_bar.value)
 				get_parent().energy_bar.value -= 45 * delta
 				pressed_time += delta 
 				

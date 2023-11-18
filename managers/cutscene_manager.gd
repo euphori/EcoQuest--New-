@@ -35,6 +35,8 @@ func show_dialogue():
 	
 
 func finish_cutscene():
+	var anim_player = get_parent().get_node("ExampleBalloon/AnimationPlayer")
+	anim_player.play("hide")
 	if player != null:
 		await pan_camera(old_camera_pos)
 	$PlayerDetection/CollisionShape3D.disabled = true

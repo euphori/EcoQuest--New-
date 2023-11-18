@@ -24,7 +24,7 @@ func _process(delta):
 			self.visible = false
 
 func charge():
-	if global.quest["chapter4"]["q3"].active:
+	if global.quest["chapter4"]["q3"].active and global.curr_scene_name == "City":
 		
 		$AnimationPlayer.play("charge")
 		if $SubViewport/Control/TextureProgressBar.value >= 100:
