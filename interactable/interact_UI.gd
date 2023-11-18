@@ -95,10 +95,13 @@ func _input(event):
 				
 			elif type == "travel":
 				if parent.name == "Moped" and global.scooter_repaired:
-					manager.journal.map.initialize_map()
-					manager.journal.show_map()
-				elif parent.name == "Moped" and !global.scooter_repaired:
-					print("XXXX")
+					if parent.need_to_charge and parent.charged:
+						manager.journal.map.initialize_map()
+						manager.journal.show_map()
+					else:
+						manager.journal.map.initialize_map()
+						manager.journal.show_map()
+				elif parent.name == "Moped" and !global.scooter_repaired and parent.has_dialogue:
 					parent.show_dialogue()
 				else:
 					manager.journal.map.initialize_map()
@@ -119,12 +122,13 @@ func _on_player_detection_body_entered(_body):
 	if _body.is_in_group("player"):
 		player = _body
 		player_near = true
-	$Hint.visible = true
+		if type == "observe" and !global.quest["chapter3"]["q2"].active:
+			visible = false
+		else:
+			visible = true
+	if self.visible:
+		$Hint.visible = true
 	
-	if type == "plant" and parent.start_as_seed:
-		visible = true
-	elif type != "plant":
-		visible = true
 	if type == "npc":
 		parent.player_in_range = true
 		if !dia_started:
@@ -145,7 +149,3 @@ func _on_player_detection_body_exited(_body):
 
 
 
-func _on_detection_area_body_entered(body):
-	visible = true
-	player_near = true
-	

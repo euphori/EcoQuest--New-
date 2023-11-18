@@ -390,6 +390,7 @@ tint_under = Color(0.886275, 0.886275, 0.886275, 1)
 
 [node name="Health" type="Sprite3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.03441, 5.63756, -0.546734)
+alpha_cut = 2
 texture = SubResource("ViewportTexture_1tbx2")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

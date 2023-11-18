@@ -9,6 +9,10 @@ var done = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.quest["chapter3"]["q2"].active:
+		self.visible = true
+	else:
+		self.visible = false
 	global.connect("update_quest", show)
 
 func _input(event):
@@ -17,6 +21,8 @@ func _input(event):
 func show():
 	if global.quest["chapter3"]["q2"].active:
 		self.visible = true
+
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

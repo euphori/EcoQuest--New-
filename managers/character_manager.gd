@@ -106,7 +106,10 @@ func update_quest():
 					if _quest.talk_after and req_quant <= curr_quant:
 						tracker_info.text = str("Talk to " , _quest.npc_name)
 					else:
-						tracker_info.text = str(_quest.type , " " , req_item, " " ,curr_quant, "/" , req_quant)
+						if _quest.req_items.size() > 2:
+							tracker_info.text = tracker_title.text
+						else:
+							tracker_info.text = str(_quest.type , " " , req_item, " " ,curr_quant, "/" , req_quant)
 				else:
 					tracker_info.text = _quest.desc
 		

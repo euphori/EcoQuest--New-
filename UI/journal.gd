@@ -100,7 +100,11 @@ func get_curr_quest():
 				quest_info.text = _quest.desc
 				
 				if _quest.req_items != null: #shows the req items if there is one
-					var req_item
+
+					var req_item = _quest.req_items[0]
+					var req_quant = _quest.req_items[1]
+					var curr_quant = global.items[_quest.req_items[0]]
+					var info = []
 					for y in global.items:
 						if y == _quest.req_items[0]:
 							req_item = y
@@ -109,8 +113,19 @@ func get_curr_quest():
 					if _quest.req_items[1] <= global.items[_quest.req_items[0]] and _quest.talk_after:
 						quest_info.text += str("\n Talk to " , _quest.npc_name)
 					else:
-						quest_req.text = str(global.items[req_item], "/" , _quest.req_items[1], " " , _quest.req_items[0])
-
+						if _quest.req_items.size() > 2:
+							quest_req.text = str(_quest.type , " ")
+							for items in _quest.req_items.size():
+								if (items + 1) % 2 == 1:
+									req_item = _quest.req_items[items]
+									print(_quest.req_items[items])
+									curr_quant = global.items[_quest.req_items[items]]
+								if (items + 1) % 2 == 0 :
+									req_quant = _quest.req_items[items]
+									quest_req.text += str(req_item, " " ,curr_quant, "/" , req_quant,"\n")
+								
+						else:
+							quest_req.text = str(_quest.type , " " , req_item, " " ,curr_quant, "/" , req_quant)
 			if _quest.active and _quest.completed:
 				_quest.active = false
 			
