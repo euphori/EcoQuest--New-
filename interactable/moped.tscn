@@ -396,7 +396,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eku77")
 
-[node name="Moped" type="StaticBody3D"]
+[node name="Moped" type="StaticBody3D" groups=["interactable"]]
 transform = Transform3D(1.4613, 0, 1.3655, 0, 2, 0, -1.3655, 0, 1.4613, 16.96, 1.83737, 0.968253)
 script = ExtResource("1_hcg32")
 metadata/_edit_group_ = true

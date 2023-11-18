@@ -5,6 +5,11 @@ extends StaticBody3D
 @onready var collision = $InteractUI/PlayerDetection/CollisionShape3D
 @onready var journal = get_parent().get_node("CharacterManager/Journal")
 @onready var player = get_parent().get_node("CharacterManager/Kid")
+
+@export_category("Dialogue")
+@export var has_dialogue = false
+@export var dialogue_resource : DialogueResource
+@export var title = "start"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -14,3 +19,8 @@ func _process(delta):
 			self.visible = true
 		else:
 			self.visible = false
+			
+func show_dialogue():
+	if !global.in_dialogue:
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
+		global.in_dialogue= true

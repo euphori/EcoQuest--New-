@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://err305snm328"
+path="res://.godot/imported/scooter.dialogue-158d8a4b594a0255ac9bcd2a0680964a.tres"
+
+[deps]
+
+source_file="res://scooter.dialogue"
+dest_files=["res://.godot/imported/scooter.dialogue-158d8a4b594a0255ac9bcd2a0680964a.tres"]
+
+[params]
+
+defaults=true

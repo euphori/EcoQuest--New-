@@ -1,0 +1,7 @@
+~ start
+
+Player: This moped looks cool!
+Player: Seems to be broken tho. Maybe I could ask someone to repair it.
+do emit("dialogue_ended")
+set in_dialogue = false
+=> END

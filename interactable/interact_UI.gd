@@ -97,9 +97,12 @@ func _input(event):
 				parent.visible = !parent.visible
 				
 			elif type == "travel":
-				if parent.name == "Moped":
+				if parent.name == "Moped" and global.scooter_repaired:
 					manager.journal.map.initialize_map()
 					manager.journal.show_map()
+				elif parent.name == "Moped" and !global.scooter_repaired:
+					print("XXXX")
+					parent.show_dialogue()
 				else:
 					manager.journal.map.initialize_map()
 					manager.journal.show_map()
