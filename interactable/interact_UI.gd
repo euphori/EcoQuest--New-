@@ -38,8 +38,9 @@ func _input(event):
 	manager.get_nearest_interactable()
 	if manager.nearest_interactable == parent and player_near:
 		if event.is_action_pressed("interact"):
-			$Arrow.visible = false
-			$Hint.visible = false
+			if is_instance_valid($Arrow):
+				$Arrow.visible = false
+				$Hint.visible = false
 		if type == "movable"  and parent.colliding:
 			if event.is_action_pressed("interact"):
 				emit_signal("move")
