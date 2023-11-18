@@ -8,7 +8,7 @@ func _ready():
 	$InteractUI.visible = false
 	
 func break_pipe():
-	if global.quest["chapter2"]["q3"].active == true:
+	if global.quest["chapter2"]["q3"].active == true and is_instance_valid($InteractUI):
 		$InteractUI.visible = true
 		$GPUParticles3D.visible = true
 		self.rotation.x = deg_to_rad(-12)

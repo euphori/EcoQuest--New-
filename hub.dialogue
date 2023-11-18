@@ -52,7 +52,7 @@ if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].com
 	do emit(dialogue_ended)
 	=> END
 
-if global.quest["chapter3"]["q1"].active == true and quest["chapter2"]["q5"].completed == true:	
+if global.quest["chapter3"]["q1"].active == true and quest["chapter2"]["q5"].completed == true:
 	Old Tom:  The forest responds to your efforts. Well done, young hero.
 	Old Tom:  Now, it's time to seek the second seed. Go back to the whispering woods Lucas needs your help.
 	do emit(dialogue_ended)

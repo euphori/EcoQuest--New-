@@ -50,6 +50,7 @@ if global.quest["chapter1"]["q4"].completed == true
 	Lucas: That was close. Thanks for handling that. These robots are relentless.
 	Lucas: Briarwood Harbor awaits. Once we arrive, we'll gather more information and figure out our next move.
 	do emit(transistion)
+	set global.quest["chapter1"]["q4"].active = false
 	set global.quest["chapter1"]["q4.5"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
