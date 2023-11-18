@@ -103,11 +103,10 @@ func _input(event):
 					manager.journal.map.initialize_map()
 					manager.journal.show_map()
 				global.last_player_pos[global.curr_scene_name] = str(player.global_position)
-			elif type == "obeserve":
-				parent.observe_bar.visible = true
+			elif type == "observe":
+				if !parent.done:
+					parent.observe_bar.visible = true
 		
-
-				
 
 
 func end_dialogue():

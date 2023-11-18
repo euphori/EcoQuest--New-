@@ -67,7 +67,7 @@ func update_trees(value):
 				elif value >= 98:
 					tree_manager.get_child(i).curr_state = "full"
 					tree_manager.get_child(i).update_state()
-				await get_tree().create_timer(1).timeout
+				await get_tree().create_timer(.1).timeout
 	else:
 		print("Tree Manager Doesn't Exist")
 

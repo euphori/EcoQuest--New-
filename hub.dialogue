@@ -77,6 +77,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	- Yes. They contribute to the traffic.
 	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q5"].active = true
+	set env_condition += 30 #update the environment
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END

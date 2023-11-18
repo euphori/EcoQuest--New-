@@ -54,7 +54,7 @@ text = "Press \"F\" to interact"
 
 [node name="Arrow" type="Sprite3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
-visible = false
+alpha_cut = 2
 texture = ExtResource("6_l6frb")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
