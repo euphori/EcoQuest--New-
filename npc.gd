@@ -30,13 +30,16 @@ var player
 
 func _ready():
 	if get_parent().name == "Forest" and self.name == "Lucas":
-		if global.quest["chapter1"]["q2"].completed:
+		if global.quest["chapter1"]["q2"].completed and !global.quest["chapter3"]["q1"].active :
 			self.global_position = get_parent().get_node("Dock").global_position
-		elif global.quest["chapter3"]["q1"].active:
-			self.global_position = get_parent().get_node("Research").global_position
+		elif global.quest["chapter3"]["q1"].active or global.quest["chapter2"]["q5"].completed:
+			self.global_position = get_parent().get_node("Observe").global_position
+		if check_completed_quest("chapter1") == true:
+			title = "chapter3"
 	elif get_parent().name == "Hub" and self.name == "Lucas":
 		if  global.quest["chapter1"]["q5"].active == false:
 			self.queue_free()
+	
 	
 	if get_parent().name == "Hub" and self.name == "Harper":
 		if global.quest["chapter2"]["q4"].completed == false:
@@ -48,6 +51,11 @@ func _ready():
 	GlobalDialogue.connect("open_shop" , open_shop)
 
 
+func check_completed_quest(chapter):
+		for i in global.quest[chapter]:
+			if !global.quest[chapter][i].completed:
+				return false
+			return true
 
 func open_shop():
 	if is_instance_valid($Shop):

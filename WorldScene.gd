@@ -28,6 +28,8 @@ func _ready():
 	old_pos = manager.get_camera_pos()
 	
 	
+	if global.quest["chapter2"]["q1"].completed and self.name == "Forest":
+		manager.kid.global_position = $Dock.global_position
 	
 	if global.last_player_pos[global.curr_scene_name] != "":
 		manager.kid.global_position = str_to_var("Vector3" + global.last_player_pos[global.curr_scene_name])

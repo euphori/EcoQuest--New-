@@ -27,4 +27,4 @@ func _process(delta):
 			global.items["Data"] += 1
 			global.emit_signal("update_quest")
 			observe_bar.queue_free()
-			$InteractUI.queue_free()
+			$InteractUI.visible = false

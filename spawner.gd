@@ -3,6 +3,7 @@ extends Node3D
 @export_category("Spawn Requirements")
 @export var chapter_name : String
 @export var quest_to_complete : String
+@export var active_quest : String
 
 @export var quest_fulfilled : String
 @export_category("Object to spawn")
@@ -16,7 +17,7 @@ func _ready():
 	global.connect("update_quest" , spawn)
 
 func spawn():
-	if global.quest[chapter_name][quest_to_complete].completed and !spawned:
+	if global.quest[chapter_name][quest_to_complete].completed and !spawned and global.quest[chapter_name][active_quest].active:
 		spawned = true
 		var object = scene.instantiate()
 		object.global_position = $Marker3D.global_position
