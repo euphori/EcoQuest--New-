@@ -110,3 +110,36 @@ if  quest["chapter1"]["q5"].completed == true:
 	Lucas:  We'll meet again soon
 	do emit(dialogue_ended)
 	=> END
+	
+if global.quest["chapter5"]["q1"].active == true and quest["chapter5"]["q1"].completed == false:
+	Old Tom: Ah, you've returned, young hero. I believe you’ve retrieved the final seed.
+	Old Tom: Quickly! Let’s plant it.
+	set quest["chapter5"]["q1"].active = false
+	set quest["chapter5"]["q1"].completed = true
+	set quest["chapter5"]["q2"].active = true
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	=> END
+	
+#plants the final seed, and a magical cutscene begins
+
+#robots cutscene
+if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].completed == false:
+	Old Tom: Oh no! The robots are here to cut down the magical trees.
+	Old Tom: Quickly, young one! Defend the magical trees!
+	do emit(dialogue_ended)
+	=> END
+	
+#after defeating robots
+
+if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].completed == true:
+	Old Tom: I believe that they are finally gone. Thank you, young hero. 
+	Old Tom: The world is now saved from the dangers of climate change.
+	Old Tom: I have one last question, if everything goes back around, do you think that we can still  save the Earth?
+	- As long as we work as one community, we can.
+	- We need to save ourselves from this by doing minuscule actions.
+	- The Earth will get destroyed eventually. It’s better to let things happen.
+	do emit(dialogue_ended)
+	=> END
+
+

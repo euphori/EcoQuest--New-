@@ -335,17 +335,6 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Plant",
-			"desc" : "Plant the last seed",
-			"type" : "plant",
-			"req_items" : ["Seeds" , 1],
-			"weight" : null,
-			"active" : false,
-			"completed" : false,
-			"npc_name" : "Farmer",
-			"talk_after" : false,
-		},
-		"q3": {
 			"title": "Protect the Trees",
 			"desc" : "Defeat Robots",
 			"type" : "kill",
