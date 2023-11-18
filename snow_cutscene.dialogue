@@ -6,7 +6,12 @@ do emit(dialogue_ended_cutscene)
 => END
 ~ help
 
-Scientist: Help! Robots are attacking me!
+Victor: Help! Robots are attacking me!
+set quest["chapter4"]["q3"].completed = true
+set quest["chapter4"]["q3"].active = false
+set quest["chapter4"]["q4"].active = true
+do emit(update_quest)
+
 do emit(dialogue_ended_cutscene)
 
 => END!

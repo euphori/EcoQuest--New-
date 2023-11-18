@@ -16,6 +16,7 @@ extends Node3D
  
 var old_camera_pos
 var dia_started = false
+var player_near = false
 
 func _ready():
 	global.connect("update_quest" , play_cutscene)
@@ -54,30 +55,32 @@ func pan_camera(_location):
 
 
 func play_cutscene():
-	if  completed_quest != "" and chapter_name != "" and active_quest != "":
-		if global.quest[chapter_name][completed_quest].completed and global.quest[chapter_name][active_quest].active:
+	if player_near:
+		if  completed_quest != "" and chapter_name != "" and active_quest != "":
+			if global.quest[chapter_name][completed_quest].completed and global.quest[chapter_name][active_quest].active:
+				player.can_move = false 
+				player_manager.disable_cam_control = true
+				player_manager.in_cutscene = true
+				old_camera_pos = player_manager.camera.global_position 
+				pan_camera(marker.global_position)
+		elif chapter_name != "" and active_quest != "" and completed_quest == "":
+			print("Trigger")
+			if global.quest[chapter_name][active_quest].active:
+				player.can_move = false 
+				player_manager.disable_cam_control = true
+				player_manager.in_cutscene = true
+				old_camera_pos = player_manager.camera.global_position 
+				pan_camera(marker.global_position)
+		else:
 			player.can_move = false 
 			player_manager.disable_cam_control = true
 			player_manager.in_cutscene = true
 			old_camera_pos = player_manager.camera.global_position 
 			pan_camera(marker.global_position)
-	elif chapter_name != "" and active_quest != "" and completed_quest == "":
-		print("Trigger")
-		if global.quest[chapter_name][active_quest].active:
-			player.can_move = false 
-			player_manager.disable_cam_control = true
-			player_manager.in_cutscene = true
-			old_camera_pos = player_manager.camera.global_position 
-			pan_camera(marker.global_position)
-	else:
-		player.can_move = false 
-		player_manager.disable_cam_control = true
-		player_manager.in_cutscene = true
-		old_camera_pos = player_manager.camera.global_position 
-		pan_camera(marker.global_position)
-			
+				
 
 func _on_player_detection_body_entered(body):
 	if body.is_in_group("player"):
+		player_near = true
 		play_cutscene()
 		

@@ -81,9 +81,6 @@ func _input(event):
 						dia_started = true
 						
 			elif type == "entrance":
-				print("XXX ")
-				print(new_player_pos)
-				print(player)
 				if next_scene != null:
 					get_tree().change_scene_to_file(next_scene)
 				if new_player_pos != null: 

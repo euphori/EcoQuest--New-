@@ -297,7 +297,7 @@ var quest = {
 			"completed" : false,
 			"npc_name" : "Professor",
 			"talk_after" : true,
-			"kill_req": 3
+			"kill_req": 4
 		},
 		"q5": {
 			"title": "Shut Down Factory",

@@ -1,56 +1,45 @@
 ~ start
 
-if global.quest["chapter4"]["q3"].active == true and quest["chapter4"]["q3"].completed == false:
-	Victor: Finally you're here!
-	Victor: Please save me from these robots!
-	set global.quest["chapter4"]["q3"].active = false
-	set global.quest["chapter4"]["q3"].completed = true
-	set global.quest["chapter4"]["q4"].active = true
-	do emit(update_quest)
-	do emit(dialogue_ended)
-	=> END 
-
-#cutscence to robots
-
 if global.quest["chapter4"]["q4"].active == true and quest["chapter4"]["q4"].completed == false:
-	Victor: Please save me from these robots!
+	Victor: Help! Robots are attacking me!
 	do emit(dialogue_ended)
-	=> END 
+	=> END
 	
-if global.quest["chapter4"]["q4"].active == true and quest["chapter4"]["q4"].completed == true:
-	Victor: Thank you! I nearly thought I was going to be gone!
-	Victor: I’m a scientist at that factory you see covering our skies with its smoke 24/7. 
+if global.quest["chapter4"]["q4"].active == false and quest["chapter4"]["q4"].completed == true:
+	Victor: Thank you for saving me! I nearly thought I was going to be gone!
+	Victor: I’m a scientist at that factory you see covering our skies with its smoke 24/7.
 	Victor: The factory is controlled by my boss. The one responsible for building these robots. 
 	Victor: The factory is producing a lot of carbon dioxide and it’s polluting the air.
 	Victor: Are you aware of the major greenhouse gasses contributing to climate change?
 	- They are the ones that heat up our planet!
-	- These trap heat and cause extreme weather and increases wildfires!
+	- These trap heat, cause extreme weather and increased wildfires!
 	- Uhuh! They fly up in the air.
-	set global.quest["chapter4"]["q4"].active = false
-	set global.quest["chapter4"]["q5"].active = true
+
+
+	do emit(dialogue_ended)
+	set quest["chapter4"]["q5"].active = true
 	do emit(update_quest)
+	=> END 
+	
+if global.quest["chapter4"]["q5"].active == true and quest["chapter4"]["q5"].completed == false:
+	Victor:  Can you help me go into the lab and access the control panel? 
+	Victor: We need to shut the factory down and end this once and for all!
 	do emit(dialogue_ended)
 	=> END 
 
-if global.quest["chapter4"]["q5"].active == true and quest["chapter4"]["q5"].completed == false:
-	Victor: Go into the lab and access the control panel.
-	Victor: We need to shut it down and end this once and for all!
-	
 if global.quest["chapter4"]["q6"].active == true and quest["chapter4"]["q6"].completed == false:
 	Victor: You did it! You've stopped the factory. Thank you!
-	Victor: Here's the final seed. I believe it holds the power to restore the last piece of our world. 
-	Victor: Take it and give it to Old Tom.
-	set global.quest["chapter4"]["q6"].active = false
-	set global.quest["chapter4"]["q6"].completed = true
-	set global.quest["chapter5"]["q1"].active = true
+	Victor: I believe you're looking for this.
+	set items["Seeds"] += 1
+	Victor: Take the final seed back to the Briarwood Harbour.
+	set quest["chapter4"]["q6"].active = false 
+	set quest["chapter4"]["q6"].completed = true 
+	set quest["chapter5"]["q1"].active = true 
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END 
-
 if global.quest["chapter5"]["q1"].active == true and quest["chapter4"]["q6"].completed == true:
-	Victor: Give the last seed to Old Tom back in Briarwood Harbor.
-	do emit(update_quest)
+	Victor: Take the final seed back to the Briarwood Harbour.
 	do emit(dialogue_ended)
-	=> END 
-	
+	=> END
 => END

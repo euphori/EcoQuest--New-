@@ -56,6 +56,10 @@ func _on_text_edit_text_submitted(new_text):
 			load_prog.value += randi_range(1,10)
 		if load_prog.value == 100:
 			done = true
+			global.quest["chapter4"]["q5"].completed == true
+			global.quest["chapter4"]["q5"].active == false
+			global.quest["chapter4"]["q6"].active == true
+			global.emit("update_quest")
 			show_screen("ShutdownComplete")
 			
 			
