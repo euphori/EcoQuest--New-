@@ -25,7 +25,9 @@ var commands = {
 	"add" : "add",
 	"unlock" : "unlock",
 	"hesoyam" : "hesoyam",
-	"green" : "green"
+	"green" : "green",
+	"compall" : "compall"
+	
 	
 	}
 	
@@ -121,6 +123,10 @@ func apply_command(comm,value1, value2):
 		kid.can_die = false
 	elif comm == commands["green"]:
 		global.env_condition = str_to_var(value1)
+	elif comm == commands["compall"]:
+		for quests in global.quest[value1]: #get the quests in the entered chapter
+			global.quest[value1][quests].completed = true
+				
 
 func _on_line_edit_text_submitted(new_text):
 	history.text += str(new_text,"\n")

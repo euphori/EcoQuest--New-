@@ -179,6 +179,8 @@ viewport_path = NodePath("SubViewport")
 [node name="Kid" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_btg3w")
+SPEED = 10.0
+MAX_SPEED = 10.0
 default_char = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

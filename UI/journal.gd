@@ -111,6 +111,10 @@ func get_curr_quest():
 					else:
 						quest_req.text = str(global.items[req_item], "/" , _quest.req_items[1], " " , _quest.req_items[0])
 
+			if _quest.active and _quest.completed:
+				_quest.active = false
+			
+			
 
 func initialize_inv():
 	

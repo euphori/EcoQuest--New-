@@ -44,6 +44,7 @@ if global.quest["chapter1"]["q7"].active == true and quest["chapter1"]["q7"].com
 if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].completed == false:
 	Old Tom: Excellent you have obtained the first seed.
 	Old Tom: Let's Plant it into the enchanted forest.
+	do emit(transistion)
 	set global.quest["chapter2"]["q5"].completed = true
 	set global.quest["chapter2"]["q5"].active = false
 	set global.quest["chapter3"]["q1"].active = true

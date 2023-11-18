@@ -29,8 +29,18 @@ var player
 
 
 func _ready():
-	if global.quest["chapter1"]["q2"].completed and get_parent().name == "Forest" and self.name == "Lucas":
-		self.global_position = get_parent().get_node("Dock").global_position
+	if get_parent().name == "Forest" and self.name == "Lucas":
+		if global.quest["chapter1"]["q2"].completed:
+			self.global_position = get_parent().get_node("Dock").global_position
+		elif global.quest["chapter3"]["q1"].active:
+			self.global_position = get_parent().get_node("Research").global_position
+	elif get_parent().name == "Hub" and self.name == "Lucas":
+		if  global.quest["chapter1"]["q5"].active == false:
+			self.queue_free()
+	
+	if get_parent().name == "Hub" and self.name == "Harper":
+		if global.quest["chapter2"]["q4"].completed == false:
+			self.queue_free()
 	$InteractUI.connect("talk" , talk)
 	GlobalDialogue.connect("dialogue_ended", return_camera)
 	if has_event:

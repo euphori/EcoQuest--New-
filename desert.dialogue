@@ -79,6 +79,7 @@ if global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"
 
 if global.quest["chapter2"]["q4"].completed == true and global.quest["chapter2"]["q5"].active == true:
 	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
+	Harper: See you soon.
 	do emit(dialogue_ended)
 	=> END
 
