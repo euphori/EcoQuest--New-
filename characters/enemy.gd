@@ -64,7 +64,7 @@ enum{
 
 
 func _ready():
-	if global.quest[related_chapter][related_quest].completed:
+	if related_chapter != "" and global.quest[related_chapter][related_quest].completed:
 		queue_free()
 	if global.enemy_cleared.keys().has(get_parent().name):
 		if global.enemy_cleared[get_parent().name]:

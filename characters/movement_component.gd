@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 @export_category("STATS")
-@export var SPEED = 5.0
+@export var SPEED = 10
 @export var JUMP_VELOCITY = 7
 @export var ACCELERATION = 150
-@export var MAX_SPEED = 5.0
+@export var MAX_SPEED = 10
 @export var DASH_SPEED = 50
 @export var HEALTH = 100
 @export var ENERGY = 100
@@ -46,6 +46,7 @@ var can_dash = true
 var dashing = false
 var dead
 var can_die = true
+
 
 var is_on_platform = false
 var platform = null

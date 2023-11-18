@@ -30,6 +30,10 @@ skeleton = NodePath("../..")
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137435, 0)
 
+[node name="Kid" parent="CharacterManager" index="1"]
+SPEED = 10
+MAX_SPEED = 10
+
 [node name="Health" parent="CharacterManager/UI" index="0"]
 offset_left = 293.0
 offset_top = 262.0

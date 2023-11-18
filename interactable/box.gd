@@ -18,7 +18,9 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 		move_and_slide()
 
-
+	if manager.kid.pushing == false:
+		manager.kid.SPEED = manager.kid.MAX_SPEED
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -37,7 +39,7 @@ func _physics_process(delta):
 			manager.kid.SPEED = SPEED
 			
 		else:
-			manager.kid.SPEED = manager.kid.MAX_SPEED
+
 			manager.kid.pushing = false
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:

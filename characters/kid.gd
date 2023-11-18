@@ -13,6 +13,8 @@ var regen_time = 10
 var max_energy = 100
 var charging = false
 
+
+
 signal player_dead
 
 func _process(delta):
@@ -26,8 +28,10 @@ func _process(delta):
 	if Input.is_action_pressed("attack"):
 		$RechargeTimer.start(recharge_time)
 		if can_shoot:
+			$AnimationPlayer.play("charge")
+			await $AnimationPlayer.animation_finished
 			if get_parent().energy_bar.value > 0:
-				print(get_parent().energy_bar.value)
+				
 				get_parent().energy_bar.value -= 45 * delta
 				pressed_time += delta 
 				
