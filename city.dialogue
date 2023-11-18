@@ -12,25 +12,27 @@ if global.quest["chapter4"]["q1"].active == true and quest["chapter4"]["q1"].com
 	do emit(dialogue_ended)
 	=> END
 
-if global.quest["chapter4"]["q2"].active == true and quest["chapter4"]["q2"].completed == false:
-	Harper: Gather parts throughout out the city to build the solar panel.
-	do emit(dialogue_ended)
-	=> END
-	
-if items["Solar Panel Parts"] >= 5 and quest["chapter4"]["q2"].active:
+if items["Glass"] >= 1 and items["Metal Frame"] >= 1 and items["Metal Sheet"] >= 1 and items["Junction Box"] >= 1 and quest["chapter4"]["q2"].active:
+	set quest["chapter4"]["q2"].completed = true
+	set quest["chapter4"]["q2"].active = false
+	set quest["chapter4"]["q3"].active = true
+	set global.unlocked_map["Snow"] = true
 	Harper: Excellent work! With these, I can assemble the solar panel you need.
 	Harper: But before that I need to ask you a question.
 	Harper: Do you understand the benefits of using renewable energy like solar panels?
 	- We must stay away from non-renewable energy, they harm the planet.
 	- We can use the power of the sun as much as we want, and it’s free!
 	- Do we have any cheaper alternatives like the coal-powered ones?
-	set quest["chapter4"]["q2"].completed = true
-	set quest["chapter4"]["q2"].active = false
-	set quest["chapter4"]["q3"].active = true
-	set global.unlocked_map["Snow"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
+	
+if global.quest["chapter4"]["q2"].active == true and quest["chapter4"]["q2"].completed == false:
+	Harper: Gather parts throughout out the city to build the solar panel.
+	do emit(dialogue_ended)
+	=> END
+	
+
 
 #assembles the solar panel, and a charging animation begins
 if global.quest["chapter4"]["q3"].active == true and quest["chapter4"]["q2"].completed == true:

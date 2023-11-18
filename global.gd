@@ -269,7 +269,7 @@ var quest = {
 			"title": "Build Solar Panel",
 			"desc" : "Collect solar panel parts",
 			"type" : "gather",
-			"req_items" : ["Solar Panel Parts" , 5],
+			"req_items" : ["Glass", 1, "Metal Frame", 1 , "Metal Sheet", 1 , "Junction Box", 1],
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
@@ -369,7 +369,11 @@ var item_texture = {
 	"Wood" : "res://assets/item_textures/wood.png",
 	"Trash" : "res://assets/item_textures/Can.png",
 	"Wrench" :"res://assets/item_textures/wrench.png",
-	"Scraps": "res://assets/item_textures/Scraps.png"
+	"Scraps": "res://assets/item_textures/Scraps.png",
+	"Glass": "res://assets/item_textures/glass.png",
+	"Metal Frame": "res://assets/item_textures/mframe.png",
+	"Metal Sheet": "res://assets/item_textures/msheet.png",
+	"Junction Box": "res://assets/item_textures/jbox.png",
 	
 }
 
@@ -394,7 +398,7 @@ var dialogue_points = 0
 #Item
 
 var multiplier = 0.5
-var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 0, "Solar Panel Parts": 0, "Data": 0, "Scraps": 0}
+var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 0, "Glass": 0, "Metal Frame": 0,"Metal Sheet": 0, "Junction Box": 0,"Data": 0, "Scraps": 0}
 
 
 
