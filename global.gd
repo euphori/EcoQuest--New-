@@ -5,7 +5,7 @@ extends Node
 var env_condition = 10
 
 
-
+var scooter_repaired = false
 @onready var player
 var last_player_pos = {
 	"Forest" : "" ,
@@ -227,7 +227,7 @@ var quest = {
 			"active" : false,
 			"completed" : false,
 			"npc_name" : "Lucas",
-			"talk_after" : true,
+			"talk_after" : false,
 			"kill_req": 3
 		},
 		"q4": {
@@ -238,7 +238,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Lucas",
+			"npc_name" : "Old Tom",
 			"talk_after" : false,
 		},
 		"q5": {

@@ -1,12 +1,8 @@
 ~ start
 
-Harper: Hey there kid, want to exchange those scraps you have?
-- Let me see what you have.
-	do emit(open_shop)
-	do emit(dialogue_ended)
-- No thanks.
 
-if global.quest["chapter3"]["q5"].active == true and quest["chapter3"]["q5"].completed == true:	
+
+if global.scooter_repaired == true:
 	Harper: Ta-da! There you go! Good as new.
 	Harper: But be warned, I ain’t got new batteries with me, so it’s kinda running low on that. 
 	Harper: Don’t worry though, you can charge it at Citadel Heights!
@@ -16,6 +12,12 @@ if global.quest["chapter3"]["q5"].active == true and quest["chapter3"]["q5"].com
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
+
+Harper: Hey there kid, want to exchange those scraps you have?
+- Let me see what you have.
+	do emit(open_shop)
+	do emit(dialogue_ended)
+- No thanks.
 	
 if global.quest["chapter4"]["q1"].active == true and quest["chapter4"]["q1"].completed == false:	
 	Harper: Let's go to Citadel Heights to charge the scooter.

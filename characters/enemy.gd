@@ -226,6 +226,7 @@ func die():
 	if death_quest_trigger[0] != "" and  death_quest_trigger[1] != "":
 		##0 is chapter 1 is quest id
 		global.quest[death_quest_trigger[0]][death_quest_trigger[1]].completed = true
+		global.quest[death_quest_trigger[0]][death_quest_trigger[1]].active = false
 		global.emit_signal("update_quest")
 	
 	if add_on_kill:

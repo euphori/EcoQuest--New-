@@ -57,6 +57,8 @@ func _on_repair_pressed():
 		repair_button.disabled = true
 		$Repair/Cost.text = "Moped Repaired"
 		global.emit_signal("item_added")
+		global.scooter_repaired = true
+		global.quest["chapter3"]["q5"].completed = true
 	else:
 		$Warning.visible = true
 		await get_tree().create_timer(.5).timeout

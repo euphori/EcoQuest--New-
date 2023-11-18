@@ -69,7 +69,9 @@ if global.items["Data"] >= 3 and global.quest["chapter3"]["q2"].active:
 	do emit(update_quest)
 
 	=> END
-	
+if global.quest["chapter3"]["q3"].active == true and global.quest["chapter3"]["q3"].completed == false:
+	Lucas: Help me defeat the robot!
+
 if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q1"].completed == false
 	Lucas: Ah, young hero. See how the forest flourishes after planting the first seed? 
 	Lucas: Your efforts are making a difference.
@@ -90,25 +92,23 @@ if global.quest["chapter3"]["q2"].active == true and global.quest["chapter3"]["q
 	do emit(dialogue_ended)
 	=> END
 
-
+if global.quest["chapter3"]["q4"].active == true and global.quest["chapter3"]["q4"].completed == false
+	Village Elder: Take this seed and give it to Old Tom in Briarwood Harbor.
+	do emit(dialogue_ended)
+	=> END
 	
 
 if global.quest["chapter3"]["q3"].active == false and global.quest["chapter3"]["q3"].completed == true
 	Lucas: Thank you, young hero. Thank you for defending this precious place. 
 	Lucas: The forest owes you its life.
-
 	Lucas: As promised, here’s the second magical seed.
 	set items["Seeds"] += 1
-	set global.quest["chapter3"]["q3"].active = false
 	set global.quest["chapter3"]["q4"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 
-if global.quest["chapter3"]["q4"].active == true and global.quest["chapter3"]["q4"].completed == false
-	Village Elder: Take this seed and give it to Old Tom in Briarwood Harbor.
-	do emit(dialogue_ended)
-	=> END
+
 
 
 	
