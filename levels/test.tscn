@@ -32,6 +32,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137435, 0)
 
 [node name="Label3" parent="CharacterManager/UI/SaveIcon" index="1"]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
 
 [node name="Health" parent="CharacterManager/UI" index="1"]
 offset_left = 293.0

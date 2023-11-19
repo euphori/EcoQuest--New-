@@ -2,10 +2,13 @@
 
 if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].completed == false
 	Lucas:  Welcome, young one. The forest has called for a hero, and it seems it has chosen you.
-	Lucas: Do you understand the impact of climate change, and the importance of our mission?
+	Lucas: [color=red]Do you understand the impact of climate change, and the importance of our mission?[/color]
 	- This is an urgent matter.
+		set awareness_points["GeneralKnowledge"] += 3
 	- This has somewhat become my duty.
+		set awareness_points["GeneralKnowledge"] += 1
 	- Are you sure you chose the right person for this?
+		set awareness_points["GeneralKnowledge"] += 0
    
 	Lucas: Our world is in peril. The delicate balance of nature has been disrupted by the reckless actions of humankind.
 	Lucas: The fate of our world rests in your hands, young hero.

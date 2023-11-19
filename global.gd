@@ -4,6 +4,11 @@ extends Node
 
 var env_condition = 10
 
+var awareness_points = {
+	"SolutionAwareness" : 0,
+	"GeneralKnowledge": 0,
+	"PollutionAwareness": 0
+}
 
 var scooter_repaired = false
 @onready var player
