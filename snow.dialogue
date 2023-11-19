@@ -10,10 +10,14 @@ if global.quest["chapter4"]["q5"].active == false and quest["chapter4"]["q4"].co
 	Victor: I’m a scientist at that factory you see covering our skies with its smoke 24/7.
 	Victor: The factory is controlled by my boss. The one responsible for building these robots. 
 	Victor: The factory is producing a lot of carbon dioxide and it’s polluting the air.
-	Victor: Are you aware of the major greenhouse gasses contributing to climate change?
+	#Question8
+	Victor: [color=red]Are you aware of the major greenhouse gasses contributing to climate change?[/color]
 	- They are the ones that heat up our planet!
+		set awareness_points["PollutionAwareness"] += 1
 	- These trap heat, cause extreme weather and increased wildfires!
+		set awareness_points["PollutionAwareness"] += 3
 	- Uhuh! They fly up in the air.
+		set awareness_points["PollutionAwareness"] += 0
 	do emit(dialogue_ended)
 	set quest["chapter4"]["q5"].active = true
 	do emit(update_quest)

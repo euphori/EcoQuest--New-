@@ -7,10 +7,14 @@ if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].com
 	- So, you've found the sacred seed. Where is it?
 	Harper: Hold your horses, kid. You need to help me first before I give you the seed. 
 	Harper: We've got a little problem to take care of.
-	Harper: Do you know the environmental impact of water conservation?
+	#Question3
+	Harper: [color=red]Do you know the environmental impact of water conservation?[/color]
 	- We're doing our duties as citizens of our community.
+		set awareness_points["PollutionAwareness"] += 1
 	- It ensures that our water supply will not run out.
+		set awareness_points["PollutionAwareness"] += 3
 	- I want to use as much water as I can.
+		set awareness_points["PollutionAwareness"] += 0
 	Harper: There are robots that has been polluting the water around the desert. 
 	Harper: We can't let them keep messing with the ecosystem. 
 	set quest["chapter2"]["q1"].active = false
@@ -26,10 +30,14 @@ if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].com
 if global.quest["chapter2"]["q2"].completed == true and global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == false :
 	Harper:  I didn’t know you had that power in you, friend! I’m impressed.
 	Harper:  Oh no. We have another problem. Our water supply! It’s tainted. 
-	Harper: Do you think leaving the water running for too long is good for the environment?
+	#Question4
+	Harper: [color=red]Do you think leaving the water running for too long is good for the environment?[/color]
 	- We reduce our carbon footprint.
+		set awareness_points["SolutionAwareness"] += 3
 	- That will increase our water bills. 
+		set awareness_points["SolutionAwareness"] += 1
 	- There are more ways we can get water, that’s fine.
+		set awareness_points["SolutionAwareness"] += 0
 	Harper:  I need to fix this pipe, but I forgot my toolbox! Young hero, please help me!
 	set quest["chapter2"]["q3"].active = true
 	do emit(update_quest)

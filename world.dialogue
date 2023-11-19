@@ -2,6 +2,7 @@
 
 if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].completed == false
 	Lucas:  Welcome, young one. The forest has called for a hero, and it seems it has chosen you.
+	#Question1
 	Lucas: [color=red]Do you understand the impact of climate change, and the importance of our mission?[/color]
 	- This is an urgent matter.
 		set awareness_points["GeneralKnowledge"] += 3
@@ -80,10 +81,14 @@ if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q
 	Lucas: Ah, young hero. See how the forest flourishes after planting the first seed? 
 	Lucas: Your efforts are making a difference.
 	Lucas: We must learn more about this forest to ensure its continued growth. 
-	Lucas: But first, do you believe that climate change should be taught in schools?
+	#Question5
+	Lucas: [color=red]But first, do you believe that climate change should be taught in schools?[/color]
 	- It is a must. Climate change is a topic widely discussed.
+		set awareness_points["GeneralKnowledge"] += 1
 	- Yes, we need more heroes like us to conserve and protect our environment.
+		set awareness_points["GeneralKnowledge"] += 3
 	- I think we should just let the students learn themselves about it.
+		set awareness_points["GeneralKnowledge"] += 0
 	Lucas: Now, help me Gather data by observing the plants, trees, and insects.
 	set global.quest["chapter3"]["q1"].active = false
 	set global.quest["chapter3"]["q1"].completed = true

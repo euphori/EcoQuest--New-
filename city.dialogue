@@ -19,10 +19,14 @@ if items["Glass"] >= 1 and items["Metal Frame"] >= 1 and items["Metal Sheet"] >=
 	set global.unlocked_map["Snow"] = true
 	Harper: Excellent work! With these, I can assemble the solar panel you need.
 	Harper: But before that I need to ask you a question.
-	Harper: Do you understand the benefits of using renewable energy like solar panels?
+	#Question7
+	Harper: [color=red]Do you understand the benefits of using renewable energy like solar panels?[/color]
 	- We must stay away from non-renewable energy, they harm the planet.
+		set awareness_points["SolutionAwareness"] += 3
 	- We can use the power of the sun as much as we want, and it’s free!
+		set awareness_points["SolutionAwareness"] += 1
 	- Do we have any cheaper alternatives like the coal-powered ones?
+		set awareness_points["SolutionAwareness"] += 0
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END

@@ -3,10 +3,14 @@
 if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false:
 	Old Tom: Ah, the Village Elder has told me of your arrival. The world is in dire need of your help.
 	Old Tom: But I’m going to test you first.
-	Old Tom: Are you aware about the environmental impact of improper waste management?
+	#Question2
+	Old Tom: [color=red]Are you aware about the environmental impact of improper waste management?[/color]
 	- I have seen people throwing their waste into sections.
+		set awareness_points["SolutionAwareness"] += 1
 	- This is a haphazard action, it increases greenhouse gases.
+		set awareness_points["SolutionAwareness"] += 3
 	- Why would we even have that?
+		set awareness_points["SolutionAwareness"] += 0
 	Old Tom: Now help me clean out the place by picking up the trash around the area.
 	set quest["chapter1"]["q6"].completed = true
 	set quest["chapter1"]["q6"].active = false
@@ -73,10 +77,14 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == true:
 	Old Tom: You need a electric scooter to go to Polar Pines, there lies the path that holds the final seed.
 	Old Tom: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
-	Old Tom: Before you go, are you aware of the environmental impact of fossil fuels and the increasing number of cars?
+	#Question6
+	Old Tom: [color=red]Before you go, are you aware of the environmental impact of fossil fuels and the increasing number of cars?[/color]
 	- Yes. These cars contribute to the greenhouse gases and use non-renewable energy.
+		set awareness_points["PollutionAwareness"] += 3
 	- Yes. They emit smoke that is harmful to people.
+		set awareness_points["PollutionAwareness"] += 1
 	- Yes. They contribute to the traffic.
+		set awareness_points["PollutionAwareness"] += 0
 	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q5"].active = true
 	set env_condition += 30 #update the environment
