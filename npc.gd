@@ -34,10 +34,10 @@ func _ready():
 			self.global_position = get_parent().get_node("Dock").global_position
 		elif global.quest["chapter3"]["q1"].active or global.quest["chapter2"]["q5"].completed:
 			self.global_position = get_parent().get_node("Observe").global_position
-		if check_completed_quest("chapter1") == true:
+		if check_completed_quest("chapter1") == true or check_completed_quest("chapter2") == true:
 			title = "chapter3"
 	elif get_parent().name == "Hub" and self.name == "Lucas":
-		if  global.quest["chapter1"]["q5"].active == false:
+		if  !global.quest["chapter1"]["q4.5"].active:
 			self.queue_free()
 	
 	
@@ -55,7 +55,7 @@ func check_completed_quest(chapter):
 		for i in global.quest[chapter]:
 			if !global.quest[chapter][i].completed:
 				return false
-			return true
+		return true
 
 func open_shop():
 	if is_instance_valid($Shop):

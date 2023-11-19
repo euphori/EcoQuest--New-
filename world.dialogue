@@ -10,6 +10,7 @@ if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].co
 	Lucas: Our world is in peril. The delicate balance of nature has been disrupted by the reckless actions of humankind.
 	Lucas: The fate of our world rests in your hands, young hero.
 	Lucas: Look there, a fallen tree. We'll need wood to repair the boat. Use your skills to gather some.
+	set global.quest["chapter1"]["q1"].completed = true
 	set global.quest["chapter1"]["q2"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
@@ -64,14 +65,14 @@ if global.items["Data"] >= 3 and global.quest["chapter3"]["q2"].active:
 	Lucas: You've proven yourself a true guardian of nature.
 	Lucas: ...
 	Lucas:[shake rate=20 level=10] Someone is coming! [/shake]
-	do emit(dialogue_ended)
 	set global.quest["chapter3"]["q3"].active = true
+	do emit(dialogue_ended)
 	do emit(update_quest)
-
 	=> END
 if global.quest["chapter3"]["q3"].active == true and global.quest["chapter3"]["q3"].completed == false:
 	Lucas: Help me defeat the robot!
-
+	do emit(dialogue_ended)
+	=> END
 if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q1"].completed == false
 	Lucas: Ah, young hero. See how the forest flourishes after planting the first seed? 
 	Lucas: Your efforts are making a difference.
@@ -80,6 +81,7 @@ if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q
 	- It is a must. Climate change is a topic widely discussed.
 	- Yes, we need more heroes like us to conserve and protect our environment.
 	- I think we should just let the students learn themselves about it.
+	Lucas: Now, help me Gather data by observing the plants, trees, and insects.
 	set global.quest["chapter3"]["q1"].active = false
 	set global.quest["chapter3"]["q1"].completed = true
 	set global.quest["chapter3"]["q2"].active = true
@@ -93,7 +95,7 @@ if global.quest["chapter3"]["q2"].active == true and global.quest["chapter3"]["q
 	=> END
 
 if global.quest["chapter3"]["q4"].active == true and global.quest["chapter3"]["q4"].completed == false
-	Village Elder: Take this seed and give it to Old Tom in Briarwood Harbor.
+	Lucas: Take this seed and give it to Old Tom in Briarwood Harbor.
 	do emit(dialogue_ended)
 	=> END
 	

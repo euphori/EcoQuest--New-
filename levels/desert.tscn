@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=3 uid="uid://chxuot5dj22rf"]
+[gd_scene load_steps=171 format=3 uid="uid://chxuot5dj22rf"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://hl5fqkmknv80" path="res://assets/desert/droplet_None_baseColor.png" id="24_j73c5"]
 [ext_resource type="PackedScene" uid="uid://b5noi3cupyxa5" path="res://interactable/item.tscn" id="26_oitep"]
 [ext_resource type="PackedScene" uid="uid://4rins12q31kr" path="res://managers/cutscene_manager.tscn" id="26_r0ida"]
-[ext_resource type="Texture2D" uid="uid://dypd45ejr6tdc" path="res://assets/desert/wrench.png" id="27_g1lgv"]
 [ext_resource type="PackedScene" uid="uid://c6e678nuxcyf5" path="res://characters/npc.tscn" id="28_w6ubm"]
 [ext_resource type="PackedScene" uid="uid://dguj0c12pybwa" path="res://characters/saw_robot.tscn" id="30_ktrhh"]
 [ext_resource type="Material" uid="uid://djhutry0ilw67" path="res://materials/white.tres" id="30_wa66l"]
@@ -1380,19 +1379,20 @@ light_energy = 0.3
 shadow_enabled = true
 
 [node name="CutsceneManager" parent="." node_paths=PackedStringArray("player_manager", "player") instance=ExtResource("26_r0ida")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8389, 14.7773, 5.82599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5361, 14.7773, 5.82599)
 dialogue_resource = ExtResource("3_1jcvx")
 title = "see_pipe"
 player_manager = NodePath("../CharacterManager")
 player = NodePath("../CharacterManager/Kid")
 chapter_name = "chapter2"
+completed_quest = "q2"
 active_quest = "q3"
 
 [node name="PlayerDetection" parent="CutsceneManager" index="0"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.9739, -2.53923, -1.04509)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 27.9739, -2.53923, -1.04509)
 
 [node name="Marker3D" parent="CutsceneManager" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7079, 0, 5.90315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8432, 0, 5.90315)
 
 [node name="Sprite3D" parent="CutsceneManager/Marker3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
@@ -1421,10 +1421,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13431, -1.30667, -0.004168
 [node name="CharacterManager" parent="." instance=ExtResource("2_3lgwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.9348, 12.8016, 5)
 metadata/_edit_group_ = true
-
-[node name="Kid" parent="CharacterManager" index="1"]
-SPEED = 10
-MAX_SPEED = 10
 
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -54.5046, 10.5498, -11.6089)
@@ -3086,6 +3082,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_24i22")
 [node name="StaticBody3D" type="StaticBody3D" parent="ruins/pCylinder3/pCylinder3_redstone_0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ruins/pCylinder3/pCylinder3_redstone_0/StaticBody3D"]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_pfq1j")
 
 [node name="pCube32" type="Node3D" parent="ruins"]
@@ -3215,15 +3212,14 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.322, 20.9132, 6.30933)
 
 [node name="Item5" parent="Items" instance=ExtResource("26_oitep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7579, -4.80207, 0.304068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0437317, -3.16235, 0.304068)
 item_name = "Wrench"
 chapter = "chapter2"
 quest = "q2"
 hide = true
 
 [node name="Sprite3D" parent="Items/Item5" index="0"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.44726, 0)
-texture = ExtResource("27_g1lgv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44726, 0)
 
 [node name="InteractUI" parent="Items/Item5" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14989, 0)
@@ -3247,7 +3243,11 @@ texture = ExtResource("39_57lgb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.470469, 2.45174, 2.00813)
 
 [node name="TalkIcon" parent="npc/InteractUI" index="1"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.458473, 2.11514, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0797176, 2.41578, -2.06854)
+
+[node name="Arrow" parent="npc/InteractUI" index="4"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.217436, 1.19237, -2.41194)
+visible = false
 
 [node name="Camera3D" parent="npc" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228783, 3.15506, 6.46422)
