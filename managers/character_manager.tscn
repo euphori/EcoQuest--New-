@@ -161,7 +161,7 @@ offset_bottom = 140.429
 theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
 theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 36
-text = "Quest"
+text = "quest"
 
 [node name="QuestTitle" type="Label" parent="UI/Quest"]
 layout_mode = 0
