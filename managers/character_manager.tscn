@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=20 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
 [ext_resource type="PackedScene" uid="uid://cd5pn0q81bwnf" path="res://UI/console.tscn" id="2_1vulv"]
 [ext_resource type="PackedScene" uid="uid://wiyfvqhus6ir" path="res://UI/journal.tscn" id="4_5p540"]
 [ext_resource type="PackedScene" uid="uid://c7gpy0skdatgh" path="res://UI/widgets.tscn" id="6_78c4s"]
+[ext_resource type="Texture2D" uid="uid://cjn58wmhxek3g" path="res://assets/ui/hud/save-2.6s-200px.png" id="6_voeet"]
 [ext_resource type="Texture2D" uid="uid://bxews4q4i0m1r" path="res://assets/ui/player_stats/HP Under.png" id="6_yh70l"]
 [ext_resource type="Texture2D" uid="uid://cwc6u3mcwmve" path="res://assets/ui/player_stats/HP Progress.png" id="7_3g7yr"]
 [ext_resource type="Texture2D" uid="uid://65ake8vkjrtt" path="res://assets/ui/player_stats/Energy Under.png" id="8_dv131"]
@@ -12,10 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cbobxrjf15ron" path="res://assets/ui/player_stats/Energy Prog.png" id="9_tascl"]
 [ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="10_geis5"]
 [ext_resource type="Texture2D" uid="uid://d143nd5tbp3sw" path="res://assets/ui/menus/PauseMenu BG.png" id="14_r2rdb"]
-[ext_resource type="Texture2D" uid="uid://dw5gles4jlmcw" path="res://assets/ui/journal/ButtonTexture.png" id="14_wkdwr"]
 [ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="15_5d7aw"]
-[ext_resource type="FontFile" uid="uid://dy4au6t1nt3fr" path="res://assets/fonts/MondayFeelings-7BD2l.ttf" id="15_utjnu"]
-[ext_resource type="Texture2D" uid="uid://brl0udhbh3vjr" path="res://assets/ui/journal/ButtonTexture2.png" id="16_8bg1t"]
 [ext_resource type="Texture2D" uid="uid://b5asb5gxiksb2" path="res://assets/ui/menus/smallbutton.png" id="17_3bcqj"]
 [ext_resource type="Texture2D" uid="uid://7hhostq7p7ht" path="res://assets/ui/player_stats/Portrait.png" id="17_68gj0"]
 [ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="18_ykw83"]
@@ -33,8 +31,6 @@ path_to_kid = NodePath("../Kid")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
 collision_mask = 9
 axis_lock_linear_z = true
-SPEED = 10
-MAX_SPEED = 10
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.989016, 0.147809, 0, -0.147809, 0.989016, 1.781, -0.162395, 4.25197)
@@ -67,6 +63,39 @@ focus_mode = 0
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="SaveIcon" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 43.0
+offset_top = -18.0
+offset_right = 83.0
+offset_bottom = 22.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SaveIcon"]
+layout_mode = 0
+offset_left = 1633.0
+offset_top = 869.0
+offset_right = 1767.0
+offset_bottom = 1003.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_voeet")
+
+[node name="Label3" type="Label" parent="UI/SaveIcon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = 216.6
+offset_top = 119.96
+offset_right = 211.12
+offset_bottom = -49.76
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 42
+text = "Saving"
 
 [node name="Health" type="Control" parent="UI"]
 layout_mode = 3
@@ -135,18 +164,6 @@ theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 36
 text = "Quest"
 
-[node name="QuestTitle" type="Label" parent="UI/Quest"]
-layout_mode = 0
-offset_left = 1363.0
-offset_top = 30.0
-offset_right = 1615.0
-offset_bottom = 68.0
-pivot_offset = Vector2(45, 41)
-theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 32
-text = "Quest"
-
 [node name="DeathScreen" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
@@ -154,54 +171,86 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Restart" type="TextureButton" parent="UI/DeathScreen"]
+[node name="QuestTitle" type="Label" parent="UI/DeathScreen"]
 layout_mode = 0
-offset_left = 736.0
-offset_top = 345.0
-offset_right = 1162.0
-offset_bottom = 507.0
-texture_normal = ExtResource("14_wkdwr")
+offset_left = 1392.7
+offset_top = 44.0
+offset_right = 1644.7
+offset_bottom = 82.0
+pivot_offset = Vector2(45, 41)
+theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 32
+text = "Quest"
 
-[node name="Label" type="Label" parent="UI/DeathScreen/Restart"]
+[node name="Label3" type="Label" parent="UI/DeathScreen"]
+layout_mode = 2
+offset_left = 769.0
+offset_top = 233.0
+offset_right = 1204.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 66
+text = "You failed"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathScreen"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 57.0
-offset_right = 348.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("15_utjnu")
+offset_left = 769.0
+offset_top = 331.0
+offset_right = 1201.0
+offset_bottom = 692.0
+theme_override_constants/separation = 30
+
+[node name="Restart" type="TextureButton" parent="UI/DeathScreen/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label" type="Label" parent="UI/DeathScreen/VBoxContainer/Restart"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 36.0
+offset_right = 347.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.207843, 0.235294, 0.211765, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 66
 text = "Restart"
+horizontal_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="UI/DeathScreen"]
-layout_mode = 0
-offset_left = 740.0
-offset_top = 549.0
-offset_right = 1255.0
-offset_bottom = 747.0
-texture_normal = ExtResource("16_8bg1t")
+[node name="Quit" type="TextureButton" parent="UI/DeathScreen/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
 
-[node name="Label2" type="Label" parent="UI/DeathScreen/Quit"]
+[node name="Label" type="Label" parent="UI/DeathScreen/VBoxContainer/Quit"]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 78.0
-offset_right = 318.0
-offset_bottom = 163.0
-theme_override_fonts/font = ExtResource("15_utjnu")
+offset_left = 77.0
+offset_top = 38.0
+offset_right = 353.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.207843, 0.235294, 0.211765, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 66
-text = "Quit"
+text = "Exit To Menu"
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="UI/DeathScreen/Quit"]
+[node name="ExitGame" type="TextureButton" parent="UI/DeathScreen/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label" type="Label" parent="UI/DeathScreen/VBoxContainer/ExitGame"]
 layout_mode = 0
-offset_left = 110.0
-offset_top = -345.0
-offset_right = 386.0
-offset_bottom = -260.0
-theme_override_fonts/font = ExtResource("15_utjnu")
+offset_left = 77.0
+offset_top = 38.0
+offset_right = 353.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.207843, 0.235294, 0.211765, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 66
-text = "u ded"
+text = "Quit game"
+horizontal_alignment = 1
 
 [node name="PauseMenu" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 920.0
@@ -212,89 +261,20 @@ offset_bottom = 960.0
 position = Vector2(939, 624)
 texture = ExtResource("14_r2rdb")
 
-[node name="ResumeButton" type="TextureButton" parent="UI/PauseMenu"]
-layout_mode = 0
-offset_left = 728.0
-offset_top = 372.0
-offset_right = 1163.0
-offset_bottom = 503.0
-texture_normal = ExtResource("15_5d7aw")
-
-[node name="Label3" type="Label" parent="UI/PauseMenu/ResumeButton"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 35.0
-offset_right = 423.0
-offset_bottom = 98.0
+[node name="SettingsLabel" type="Label" parent="UI/PauseMenu"]
+visible = false
+layout_mode = 2
+offset_left = 756.0
+offset_top = 270.0
+offset_right = 1102.0
+offset_bottom = 315.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 60
-text = "Resume
-"
+theme_override_fonts/font = ExtResource("18_ykw83")
+theme_override_font_sizes/font_size = 42
+text = "Settings"
 horizontal_alignment = 1
 
-[node name="SaveProgressButton" type="TextureButton" parent="UI/PauseMenu"]
-layout_mode = 0
-offset_left = 730.227
-offset_top = 518.0
-offset_right = 1165.23
-offset_bottom = 648.0
-texture_normal = ExtResource("15_5d7aw")
-
-[node name="Label4" type="Label" parent="UI/PauseMenu/SaveProgressButton"]
-layout_mode = 0
-offset_left = 10.7731
-offset_top = 32.0
-offset_right = 427.773
-offset_bottom = 95.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 60
-text = "Save game"
-horizontal_alignment = 1
-
-[node name="LoadButton" type="TextureButton" parent="UI/PauseMenu"]
-layout_mode = 0
-offset_left = 730.227
-offset_top = 664.0
-offset_right = 1165.23
-offset_bottom = 794.0
-rotation = 0.00174533
-texture_normal = ExtResource("15_5d7aw")
-
-[node name="Label2" type="Label" parent="UI/PauseMenu/LoadButton"]
-layout_mode = 0
-offset_left = 111.068
-offset_top = 38.8062
-offset_right = 313.068
-offset_bottom = 101.806
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 60
-text = "Load Game
-"
-
-[node name="QuitButton" type="TextureButton" parent="UI/PauseMenu"]
-layout_mode = 0
-offset_left = 735.0
-offset_top = 818.0
-offset_right = 1170.0
-offset_bottom = 948.0
-texture_normal = ExtResource("15_5d7aw")
-
-[node name="Label5" type="Label" parent="UI/PauseMenu/QuitButton"]
-layout_mode = 0
-offset_left = 2.77313
-offset_top = 32.0
-offset_right = 419.773
-offset_bottom = 95.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 60
-text = "Quit"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="UI/PauseMenu"]
+[node name="PausedLabel" type="Label" parent="UI/PauseMenu"]
 layout_mode = 0
 offset_left = 843.0
 offset_top = 266.0
@@ -304,6 +284,136 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 42
 text = "Game Paused"
+
+[node name="PausMenuContainer" type="VBoxContainer" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 344.0
+offset_right = 1198.0
+offset_bottom = 1195.0
+scale = Vector2(0.82, 0.82)
+
+[node name="ResumeButton" type="TextureButton" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label3" type="Label" parent="UI/PauseMenu/PausMenuContainer/ResumeButton"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 555.0
+offset_bottom = 157.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Resume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label3" type="Label" parent="UI/PauseMenu/PausMenuContainer/SettingsButton"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 555.0
+offset_bottom = 157.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveProgressButton" type="TextureButton" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label4" type="Label" parent="UI/PauseMenu/PausMenuContainer/SaveProgressButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 563.0
+offset_bottom = 152.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Save game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadButton" type="TextureButton" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label2" type="Label" parent="UI/PauseMenu/PausMenuContainer/LoadButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 569.0
+offset_bottom = 157.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Load Game
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_5d7aw")
+
+[node name="Label5" type="Label" parent="UI/PauseMenu/PausMenuContainer/QuitButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 580.0
+offset_bottom = 156.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PauseMenu/PausMenuContainer"]
+layout_mode = 2
+
+[node name="Settings" type="Control" parent="UI/PauseMenu"]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 50.0
+offset_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Settings"]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 353.0
+offset_right = 1090.0
+offset_bottom = 1120.0
+theme_override_constants/separation = 25
+
+[node name="Label4" type="Label" parent="UI/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_ykw83")
+theme_override_font_sizes/font_size = 32
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="UI/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
 
 [node name="Icon" type="Control" parent="UI"]
 layout_mode = 3
@@ -349,12 +459,14 @@ texture = ExtResource("17_68gj0")
 [connection signal="pressed" from="Widgets/CameraController/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Widgets/CameraController/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="Widgets/CameraController/PrintButton" to="." method="_on_print_button_pressed"]
-[connection signal="pressed" from="UI/DeathScreen/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="UI/DeathScreen/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/DeathScreen/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_tracker_timer_timeout"]
 
 [editable path="Console"]

@@ -32,3 +32,7 @@ func _on_quit_pressed():
 func _on_options_pressed():
 	$Menu.visible = false
 	$OptionsTab.visible = true
+
+
+func _on_resume_pressed():
+	global.load_save(global.save_path["save1"])

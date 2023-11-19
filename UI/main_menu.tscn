@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfsiue5kmi83"]
+[gd_scene load_steps=14 format=3 uid="uid://dfsiue5kmi83"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_8pel1"]
-[ext_resource type="Texture2D" uid="uid://dcmh8qvsdhr42" path="res://assets/ui/main menu/START.png" id="2_5j8e3"]
 [ext_resource type="Texture2D" uid="uid://bujfx8phds48k" path="res://assets/ui/main menu/Test.png" id="2_g653g"]
-[ext_resource type="Texture2D" uid="uid://deig0een18nrm" path="res://assets/ui/main menu/Property 1=Start Game_EcoQuest2.png" id="3_ayvp4"]
 [ext_resource type="Texture2D" uid="uid://cb4xy3bmess4e" path="res://assets/ui/main menu/Component 1.png" id="4_vu8mj"]
 [ext_resource type="Texture2D" uid="uid://b00qvg7cxodj2" path="res://assets/ui/main menu/Property 1=Options_EcoQuest2.png" id="5_kjjtx"]
+[ext_resource type="Texture2D" uid="uid://cl1fxdmdwkxqw" path="res://assets/ui/main menu/New Game.png" id="5_qw0af"]
+[ext_resource type="Texture2D" uid="uid://dkum2vvygs1u0" path="res://assets/ui/main menu/New Game Hovered.png" id="6_2pge5"]
 [ext_resource type="Texture2D" uid="uid://bilp8ls8a54km" path="res://assets/ui/main menu/QUIT GAME.png" id="6_7lgbm"]
+[ext_resource type="Texture2D" uid="uid://cihqkii7sn1kn" path="res://assets/ui/main menu/Property 1=Resume.png" id="7_6rt86"]
 [ext_resource type="Texture2D" uid="uid://b1qembo58l2x" path="res://assets/ui/main menu/Property 1=Quit Game_EcoQuest2.png" id="7_j11nw"]
+[ext_resource type="Texture2D" uid="uid://c5aa6masria1c" path="res://assets/ui/main menu/Resume Hovered.png" id="8_xdn82"]
 [ext_resource type="Texture2D" uid="uid://bierwkh3obusn" path="res://assets/ui/main menu/whitetranspa 1.png" id="9_qsiq4"]
 [ext_resource type="PackedScene" uid="uid://dqdbd53sscrn1" path="res://UI/options.tscn" id="10_na6p2"]
 [ext_resource type="Texture2D" uid="uid://lvluooagxp4g" path="res://assets/ui/controller/Rectangle 3.png" id="10_spyue"]
@@ -33,47 +35,58 @@ scale = Vector2(1.21113, 1.22437)
 texture = ExtResource("10_spyue")
 
 [node name="Test" type="Sprite2D" parent="Menu"]
-position = Vector2(537, 503.5)
+position = Vector2(515, 554.5)
 texture = ExtResource("2_g653g")
 
+[node name="Whitetranspa1" type="Sprite2D" parent="Menu"]
+position = Vector2(273, 455)
+texture = ExtResource("9_qsiq4")
+
 [node name="Start" type="TextureButton" parent="Menu"]
-layout_mode = 0
-offset_left = 1307.0
-offset_top = 365.0
-offset_right = 1595.0
-offset_bottom = 432.0
-texture_normal = ExtResource("2_5j8e3")
-texture_hover = ExtResource("3_ayvp4")
-texture_focused = ExtResource("3_ayvp4")
+layout_mode = 2
+offset_left = 1380.0
+offset_top = 332.0
+offset_right = 1697.0
+offset_bottom = 399.0
+texture_normal = ExtResource("5_qw0af")
+texture_hover = ExtResource("6_2pge5")
+texture_focused = ExtResource("6_2pge5")
+
+[node name="Resume" type="TextureButton" parent="Menu"]
+layout_mode = 2
+offset_left = 1382.0
+offset_top = 427.0
+offset_right = 1699.0
+offset_bottom = 494.0
+texture_normal = ExtResource("7_6rt86")
+texture_hover = ExtResource("8_xdn82")
+texture_focused = ExtResource("8_xdn82")
 
 [node name="Options" type="TextureButton" parent="Menu"]
-layout_mode = 0
-offset_left = 1311.0
-offset_top = 466.0
-offset_right = 1599.0
-offset_bottom = 553.0
+layout_mode = 2
+offset_left = 1382.0
+offset_top = 528.0
+offset_right = 1699.0
+offset_bottom = 615.0
 texture_normal = ExtResource("4_vu8mj")
 texture_hover = ExtResource("5_kjjtx")
 texture_focused = ExtResource("5_kjjtx")
 
 [node name="Quit" type="TextureButton" parent="Menu"]
-layout_mode = 0
-offset_left = 1315.0
-offset_top = 576.0
-offset_right = 1603.0
-offset_bottom = 643.0
+layout_mode = 2
+offset_left = 1382.0
+offset_top = 625.0
+offset_right = 1699.0
+offset_bottom = 692.0
 texture_normal = ExtResource("6_7lgbm")
 texture_hover = ExtResource("7_j11nw")
 texture_focused = ExtResource("7_j11nw")
-
-[node name="Whitetranspa1" type="Sprite2D" parent="Menu"]
-position = Vector2(295, 404)
-texture = ExtResource("9_qsiq4")
 
 [node name="OptionsTab" parent="." instance=ExtResource("10_na6p2")]
 visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]

@@ -29,6 +29,7 @@ signal update_quest
 signal transistion
 signal pickup_item(item,ammount)
 signal item_added
+signal game_saved
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
@@ -421,12 +422,15 @@ func save_data(quest, val):
 	
 
 func change_scene():
-	get_tree().change_scene_to_file(curr_scene)
+	var loading_screen = load("res://UI/loading_screen.tscn")
+	global.next_scene = curr_scene
+	get_tree().change_scene_to_packed(loading_screen)
+
 
 
 
 func save(_save_path):
-	
+	emit_signal("game_saved")
 	last_player_pos[curr_scene_name] = str(player.global_position)
 	save_database = {
 	"player_hp" : player.HEALTH,
@@ -434,7 +438,8 @@ func save(_save_path):
 	"curr_scene" : curr_scene,
 	"quest" : quest,
 	"items" : items,
-	"last_player_pos" : last_player_pos
+	"last_player_pos" : last_player_pos,
+	"unlocked_map" : unlocked_map
 	}
 
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
@@ -460,6 +465,7 @@ func load_save(_save_path):
 			last_player_pos = data["last_player_pos"]
 			items = data["items"]
 			quest = data["quest"]
+			unlocked_map = data["unlocked_map"]
 			change_scene()
 			file.close()
 	else:

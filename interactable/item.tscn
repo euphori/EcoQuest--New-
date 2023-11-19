@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a4hw0"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u8x1c"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2v1hu"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Animation" id="Animation_nch5r"]
@@ -135,12 +135,12 @@ offset_right = 994.0
 offset_bottom = 532.0
 theme_override_fonts/font = ExtResource("4_kkrk0")
 theme_override_font_sizes/font_size = 100
-text = "+1 item"
+text = " item"
 
 [node name="PickLabel" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5578, 0)
 billboard = 1
-texture = SubResource("ViewportTexture_u8x1c")
+texture = SubResource("ViewportTexture_2v1hu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

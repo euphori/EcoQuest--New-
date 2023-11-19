@@ -55,7 +55,7 @@ func _ready():
 	update_quest()
 	kid.connect("player_dead", show_death_screen)
 	global.connect("update_quest", update_quest)
-	
+	global.connect("game_saved" , show_save_icon)
 	camera.position += adjust_camera_pos
 	health_ui.value = kid.HEALTH
 	
@@ -160,6 +160,13 @@ func get_camera_pos():
 	var pos =  Vector3(kid.global_position.x + old_camera_offset["x"],kid.global_position.y + old_camera_offset["y"],old_camera_offset["z"])
 	return pos
 
+
+func show_save_icon():
+	$UI/SaveIcon.visible = true
+	await get_tree().create_timer(1).timeout
+	$UI/SaveIcon.visible = false
+
+
 func _on_z_slider_value_changed(value):
 	old_camera_offset["z"] = value
 	z_label.text = str(old_camera_offset["z"])
@@ -238,9 +245,15 @@ func show_pause_menu():
 		var tween = get_tree().create_tween()
 		tween.tween_property(pause_menu , "global_position", Vector2(0,0), 0.3)
 	elif pause_menu.visible:
-		var tween = get_tree().create_tween()
-		tween.tween_property(pause_menu , "global_position", Vector2(0,921), 0.3)
-		pause_menu.visible = false
+		if $UI/PauseMenu/Settings.visible:
+			$UI/PauseMenu/Settings.visible = false
+			$UI/PauseMenu/SettingsLabel.visible = false
+			$UI/PauseMenu/PausedLabel.visible = true
+			$UI/PauseMenu/PausMenuContainer.visible = true
+		else:
+			var tween = get_tree().create_tween()
+			tween.tween_property(pause_menu , "global_position", Vector2(0,921), 0.3)
+			pause_menu.visible = false
 
 func _on_print_button_pressed():
 	print("Camera Offset: ", old_camera_offset)
@@ -277,3 +290,14 @@ func _on_save_progress_button_pressed():
 
 func _on_tracker_timer_timeout():
 	tracker.visible = false
+
+
+func _on_settings_button_pressed():
+	$UI/PauseMenu/Settings.visible = true
+	$UI/PauseMenu/PausedLabel.visible = false
+	$UI/PauseMenu/PausMenuContainer.visible = false
+	$UI/PauseMenu/SettingsLabel.visible = true
+
+
+func _on_exit_game_pressed():
+	get_tree().quit()
