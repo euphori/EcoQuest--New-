@@ -27,7 +27,7 @@ var enemy_cleared = {
 	"Forest": false,
 	"Desert": false
 	
-}
+}	
 
 
 signal update_quest

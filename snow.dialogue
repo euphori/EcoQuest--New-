@@ -5,7 +5,7 @@ if global.quest["chapter4"]["q4"].active == true and quest["chapter4"]["q4"].com
 	do emit(dialogue_ended)
 	=> END
 	
-if global.quest["chapter4"]["q5"].active == false and quest["chapter4"]["q4"].completed == true:
+if global.quest["chapter4"]["q5"].active == false and quest["chapter4"]["q4"].completed == true and  global.quest["chapter4"]["q6"].active == false and  global.quest["chapter4"]["q6"].completed == false:
 	Victor: Thank you for saving me! I nearly thought I was going to be gone!
 	Victor: I’m a scientist at that factory you see covering our skies with its smoke 24/7.
 	Victor: The factory is controlled by my boss. The one responsible for building these robots. 

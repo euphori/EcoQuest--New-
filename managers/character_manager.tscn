@@ -140,7 +140,6 @@ texture_progress = ExtResource("9_tascl")
 texture_progress_offset = Vector2(3.5, 3)
 
 [node name="Quest" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 166.0
@@ -162,6 +161,17 @@ offset_bottom = 140.429
 theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
 theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 36
+text = "Quest"
+
+[node name="QuestTitle" type="Label" parent="UI/Quest"]
+layout_mode = 0
+offset_left = 1349.0
+offset_top = 30.0
+offset_right = 1610.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.231373, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 32
 text = "Quest"
 
 [node name="DeathScreen" type="Control" parent="UI"]
