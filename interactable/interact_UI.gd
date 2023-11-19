@@ -68,14 +68,17 @@ func _input(event):
 			elif type == "plant":
 				emit_signal("grow")
 			elif type == "fix":
-				if global.items["Wrench"] >= 1 and global.quest["chapter2"]["q3"].active:
+				if global.items["Wrench"] >= 1 and global.quest["chapter2"]["q4"].active:
 					get_parent().rotation.x += deg_to_rad(2)
 					if get_parent().rotation.x >= 0:
 						global.fixed_pipe = true
 						get_parent().get_node("GPUParticles3D").queue_free()
+						global.quest["chapter2"]["q4"].completed = true
+						global.quest["chapter2"]["q4"].active = false
+						global.emit_signal("update_quest")
 						queue_free()
 				else:
-					if dialogue_resource != null and !dia_started and global.quest["chapter2"]["q3"].active:
+					if dialogue_resource != null and !dia_started and global.quest["chapter2"]["q4"].active:
 						DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
 						dia_started = true
 						

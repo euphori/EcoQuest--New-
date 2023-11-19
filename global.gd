@@ -175,9 +175,9 @@ var quest = {
 		},
 		"q4": {
 			"title": "Fix Pipe",
-			"desc" : "Go to pipe",
+			"desc" : "Go to the broken pipe",
 			"type" : "fix",
-			"req_items" : ["Wrench" , 1],
+			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
@@ -188,7 +188,7 @@ var quest = {
 			"title": "Go to Briarwood Harbor",
 			"desc" : "Talk to Old Tom",
 			"type" : "explore",
-			"req_items" : ["Seeds" , 1],
+			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
@@ -229,7 +229,6 @@ var quest = {
 			"completed" : false,
 			"npc_name" : "Lucas",
 			"talk_after" : false,
-			"kill_req": 3
 		},
 		"q4": {
 			"title": "Go to Briarwood Harbor",

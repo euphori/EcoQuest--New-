@@ -55,10 +55,10 @@ func update_trees(value):
 		for i in tree_manager.get_child_count():
 			if tree_manager.get_child(i) is StaticBody3D and !tree_manager.get_child(i).start_as_seed:
 				var rand = randi_range(0,value + 1)
-				if rand < 10 and value < 98:
+				if rand <= 10 and value < 98:
 					tree_manager.get_child(i).curr_state = "bald"
 					tree_manager.get_child(i).update_state()
-				elif rand > 11 and rand < 70 and  value < 98:
+				elif rand >= 11 and rand <= 70 and  value < 98:
 					tree_manager.get_child(i).curr_state = "trim"
 					tree_manager.get_child(i).update_state()
 				elif rand > 70:

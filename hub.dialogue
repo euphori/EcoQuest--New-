@@ -9,6 +9,7 @@ if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].com
 	- Why would we even have that?
 	Old Tom: Now help me clean out the place by picking up the trash around the area.
 	set quest["chapter1"]["q6"].completed = true
+	set quest["chapter1"]["q6"].active = false
 	set quest["chapter1"]["q7"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)

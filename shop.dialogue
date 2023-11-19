@@ -7,7 +7,7 @@ if global.scooter_repaired == true:
 	Harper: But be warned, I ain’t got new batteries with me, so it’s kinda running low on that. 
 	Harper: Don’t worry though, you can charge it at Citadel Heights!
 	set global.quest["chapter3"]["q5"].active = false
-	set global.quest["chapter4"]["q1"].completed = true
+	set global.quest["chapter4"]["q1"].active = true
 	set global.unlocked_map["City"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
