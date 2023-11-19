@@ -123,7 +123,6 @@ func _physics_process(delta):
 					destination =  player.global_position.direction_to(self.global_position)
 					velocity.x += destination.x * ACCELERATION * delta 
 					velocity = velocity.limit_length(SPEED)
-				print(distance.z)
 				if abs(distance.x) <= ATTACK_RANGE and abs(distance.x) >= MIN_ATTACK_RANGE and is_on_floor() and !staggering and abs(distance.z) <= 0.7 and !dashing:
 					state = ATTACK
 					axis_lock_linear_z = true
