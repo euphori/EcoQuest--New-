@@ -64,9 +64,10 @@ enum{
 
 
 func _ready():
-	if related_chapter != "" and global.quest[related_chapter][related_quest].completed:
+	if related_chapter != "" and !related_quest == null and global.quest[related_chapter][related_quest].completed:
+		print("ENEMY DESPAWNED")
 		queue_free()
-	if global.enemy_cleared.keys().has(get_parent().name):
+	if global.enemy_cleared.keys().has(get_parent().name) and self.name != "Enemy":
 		if global.enemy_cleared[get_parent().name]:
 			queue_free()
 	GlobalMusic.enemy = self
