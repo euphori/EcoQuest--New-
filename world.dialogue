@@ -18,6 +18,7 @@ if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].co
 	set global.quest["chapter1"]["q2"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	
 if global.items["Wood"] >= 5 and global.quest["chapter1"]["q2"].active:
@@ -29,6 +30,7 @@ if global.items["Wood"] >= 5 and global.quest["chapter1"]["q2"].active:
 	set global.unlocked_map["Forest"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	
 if global.quest["chapter1"]["q2"].active == true
@@ -44,6 +46,7 @@ if global.quest["chapter1"]["q3"].active == true
 	set global.quest["chapter1"]["q4"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 if global.quest["chapter1"]["q4"].active == true and global.quest["chapter1"]["q4"].completed == false
 	Lucas: I wouldn't be able to finish this with that guy here.
@@ -59,6 +62,7 @@ if global.quest["chapter1"]["q4"].completed == true
 	set global.quest["chapter1"]["q4.5"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 ~ chapter3
@@ -72,6 +76,7 @@ if global.items["Data"] >= 3 and global.quest["chapter3"]["q2"].active:
 	set global.quest["chapter3"]["q3"].active = true
 	do emit(dialogue_ended)
 	do emit(update_quest)
+	do save(save_path["save1"])
 	=> END
 if global.quest["chapter3"]["q3"].active == true and global.quest["chapter3"]["q3"].completed == false:
 	Lucas: Help me defeat the robot!
@@ -95,6 +100,7 @@ if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q
 	set global.quest["chapter3"]["q2"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 if global.quest["chapter3"]["q2"].active == true and global.quest["chapter3"]["q2"].completed == false
@@ -116,6 +122,7 @@ if global.quest["chapter3"]["q3"].active == false and global.quest["chapter3"]["
 	set global.quest["chapter3"]["q4"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 

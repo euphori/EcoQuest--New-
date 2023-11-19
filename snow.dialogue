@@ -21,6 +21,8 @@ if global.quest["chapter4"]["q5"].active == false and quest["chapter4"]["q4"].co
 	do emit(dialogue_ended)
 	set quest["chapter4"]["q5"].active = true
 	do emit(update_quest)
+	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END 
 	
 if global.quest["chapter4"]["q5"].active == true and quest["chapter4"]["q5"].completed == false:
@@ -39,6 +41,7 @@ if global.quest["chapter4"]["q6"].active == true and quest["chapter4"]["q6"].com
 	set quest["chapter5"]["q1"].active = true 
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END 
 if global.quest["chapter5"]["q1"].active == true and quest["chapter4"]["q6"].completed == true:
 	Victor: Take the final seed back to the Briarwood Harbour.

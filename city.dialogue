@@ -10,6 +10,7 @@ if global.quest["chapter4"]["q1"].active == true and quest["chapter4"]["q1"].com
 	set quest["chapter4"]["q2"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 if items["Glass"] >= 1 and items["Metal Frame"] >= 1 and items["Metal Sheet"] >= 1 and items["Junction Box"] >= 1 and quest["chapter4"]["q2"].active:
@@ -29,6 +30,7 @@ if items["Glass"] >= 1 and items["Metal Frame"] >= 1 and items["Metal Sheet"] >=
 		set awareness_points["SolutionAwareness"] += 0
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	
 if global.quest["chapter4"]["q2"].active == true and quest["chapter4"]["q2"].completed == false:

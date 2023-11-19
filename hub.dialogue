@@ -1,7 +1,7 @@
 ~ start
 
 if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false:
-	Old Tom: Ah, the Village Elder has told me of your arrival. The world is in dire need of your help.
+	Old Tom: Ah, the Lucas has told me of your arrival. The world is in dire need of your help.
 	Old Tom: But I’m going to test you first.
 	#Question2
 	Old Tom: [color=red]Are you aware about the environmental impact of improper waste management?[/color]
@@ -17,6 +17,7 @@ if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].com
 	set quest["chapter1"]["q7"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 if items["Trash"] >= 5 and quest["chapter1"]["q7"].active:
@@ -33,6 +34,7 @@ if items["Trash"] >= 5 and quest["chapter1"]["q7"].active:
 	set global.unlocked_map["Desert"] = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 if global.quest["chapter2"]["q1"].active:
 	Old Tom: Head to Rusty Bay and be careful
@@ -56,6 +58,7 @@ if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].com
 	set env_condition += 40 #update the environment
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 if global.quest["chapter3"]["q1"].active == true and quest["chapter2"]["q5"].completed == true:
@@ -72,6 +75,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	set global.quest["chapter3"]["q4"].completed = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	#cut scene forest restoring
 if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == true:
@@ -90,6 +94,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	set env_condition += 30 #update the environment
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	
 if global.quest["chapter3"]["q5"].active == true and quest["chapter3"]["q5"].completed == false:	
@@ -113,6 +118,7 @@ if global.quest["chapter1"]["q5"].active == true and quest["chapter1"]["q5"].com
 	set quest["chapter1"]["q6"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 
 if  quest["chapter1"]["q5"].completed == true and global.quest["chapter5"]["q1"].active == false:
@@ -122,44 +128,33 @@ if  quest["chapter1"]["q5"].completed == true and global.quest["chapter5"]["q1"]
 	
 if global.quest["chapter5"]["q1"].active == true and quest["chapter5"]["q1"].completed == false:
 	Old Tom: Ah, you've returned, young hero. I believe you’ve retrieved the final seed.
-	Old Tom: [color=red]For your final lesson, do you understand how deforestation contributes to climate change?[/color]
-	- Our trees cover us from the heat, and help us cool down!
-		set awareness_points["PollutionAwareness"] += 1
-	- Our trees absorb and store carbon dioxide, if deforestation continues, more CO2 will be trapped in the atmosphere!
-		set awareness_points["PollutionAwareness"] += 3
-	- Our trees can be planted any time and replenish quickly.
-		set awareness_points["PollutionAwareness"] += 0
-	Old Tom: Now let us plant this seed.
-	Old Tom: ...
-	Old Tom: Oh boy, Seems like we have some visitors.
+	Old Tom: Quickly! Let’s plant it.
 	set quest["chapter5"]["q1"].active = false
 	set quest["chapter5"]["q1"].completed = true
 	set quest["chapter5"]["q2"].active = true
-	set global.env_condition = 100
 	do emit(update_quest)
 	do emit(dialogue_ended)
+	do save(save_path["save1"])
 	=> END
 	
 #plants the final seed, and a magical cutscene begins
 
 #robots cutscene
 if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].completed == false:
-	Old Tom: This is it kid, the last stand.  
+	Old Tom: Oh no! The robots are here to cut down the magical trees.
+	Old Tom: Quickly, young one! Defend the magical trees!
 	do emit(dialogue_ended)
 	=> END
 	
 #after defeating robots
 
-if quest["chapter5"]["q2"].completed == true:
-	Old Tom: That was close! We owe you a lot kid. 
-	Old Tom: The world is now slowly regaining its former glory. Thanks to you.
-	Old Tom: [color=red]Tell me, if everything goes back around, do you think that we can still  save the Earth?[/color]
+if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].completed == true:
+	Old Tom: I believe that they are finally gone. Thank you, young hero. 
+	Old Tom: The world is now saved from the dangers of climate change.
+	Old Tom: I have one last question, if everything goes back around, do you think that we can still  save the Earth?
 	- As long as we work as one community, we can.
-		set awareness_points["GeneralKnowledge"] += 3
 	- We need to save ourselves from this by doing minuscule actions.
-		set awareness_points["GeneralKnowledge"] += 1
 	- The Earth will get destroyed eventually. It’s better to let things happen.
-		set awareness_points["GeneralKnowledge"] += 0
 	do emit(dialogue_ended)
 	=> END
 

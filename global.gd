@@ -139,7 +139,7 @@ var quest = {
 			"active" : false,
 			"completed" : false,
 			"npc_name" : "Old Tom",
-			"talk_after" : false
+			"talk_after" : true
 		
 		},
 	},
@@ -176,7 +176,7 @@ var quest = {
 			"active" : false,
 			"completed" : false,
 			"npc_name" : "Harper",
-			"talk_after" : false,
+			"talk_after" : true,
 		},
 		"q4": {
 			"title": "Fix Pipe",
