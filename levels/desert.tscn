@@ -1432,7 +1432,7 @@ metadata/_edit_group_ = true
 texture = SubResource("ViewportTexture_fdet8")
 
 [node name="Bolt" parent="CharacterManager/Kid" index="19"]
-transform = Transform3D(0.0837647, -2.99883, 0, 2.99883, 0.0837647, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
+visible = true
 
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -54.5046, 10.5498, -11.6089)

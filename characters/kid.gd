@@ -26,7 +26,7 @@ func _input(event):
 				$AnimationPlayer.play("charge_right")
 			else:
 				$AnimationPlayer.play("charge_left")
-	if event.is_action_released("attack"):
+	if event.is_action_released("attack") and can_shoot:
 		$AnimationPlayer.play("release")
 		$Bolt.visible = false
 		charging_attack = false
