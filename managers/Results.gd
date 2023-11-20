@@ -14,7 +14,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("esc"):
 		if self.visible:
-			self.visible = true
+			self.visible = false
 
 
 func update_result():

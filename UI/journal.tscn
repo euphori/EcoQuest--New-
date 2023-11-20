@@ -341,6 +341,66 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_xu7im")
 theme_override_font_sizes/font_size = 40
 
+[node name="ItemName11" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
+
+[node name="Quantity11" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 40
+
+[node name="ItemName12" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
+
+[node name="Quantity12" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 40
+
+[node name="ItemName13" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
+
+[node name="Quantity13" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 40
+
+[node name="ItemName14" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
+
+[node name="Quantity14" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 40
+
+[node name="ItemName15" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 32
+
+[node name="Quantity15" type="Label" parent="Inventory/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 40
+
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
 offset_left = 581.0
