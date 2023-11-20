@@ -114,7 +114,7 @@ func get_curr_quest():
 							req_item = y
 					
 					quest_req.visible = true
-					if _quest.req_items[1] <= global.items[_quest.req_items[0]] and _quest.talk_after:
+					if _quest.req_items[1] <= global.items[_quest.req_items[0]] and _quest.talk_after or  _quest.kill_req[0] >= global.curr_killcount and _quest.talk_after:
 						quest_info.text += str("\n Talk to " , _quest.npc_name)
 					else:
 						if _quest.req_items.size() > 2:

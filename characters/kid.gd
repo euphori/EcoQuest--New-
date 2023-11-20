@@ -20,20 +20,22 @@ signal player_dead
 
 func _input(event):
 	if event.is_action_pressed("attack"):
-		if can_shoot:
 			charging_attack = true
 			if sprite.flip_h:
 				$AnimationPlayer.play("charge_right")
 			else:
 				$AnimationPlayer.play("charge_left")
-	if event.is_action_released("attack") and can_shoot:
+	if event.is_action_released("attack"):
+		
 		$AnimationPlayer.play("release")
 		$Bolt.visible = false
 		charging_attack = false
-		shoot()
+		if can_shoot:
+			shoot()
 
 func _process(delta):
-	
+	if !charging_attack:
+		$Bolt.visible = false
 	if get_parent().energy_bar.value >= 50:
 		get_parent().energy_bar.tint_progress = Color(0.227, 0.514, 0.212)
 	elif get_parent().energy_bar.value < 50 and get_parent().energy_bar.value >= 25:

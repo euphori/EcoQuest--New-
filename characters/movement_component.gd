@@ -106,18 +106,18 @@ func _physics_process(delta):
 		
 
 		
-		if direction.x and active and can_move and !dashing:
-			
+		if direction.x and active and can_move and !dashing and !global.in_dialogue:
 			jumping = false
 			velocity.x = direction.x * SPEED
-			if !jumping and !busy and is_on_floor() and !charging_attack:
+			if !busy and is_on_floor() and !charging_attack:
 				if pushing:
 					$AnimationPlayer.play("pushing")
 				else:
-					$AnimationPlayer.play("run")
 					if Input.is_action_just_pressed("jump"):
 						$AnimationPlayer.play("dash")
 						jump()
+					else:
+						$AnimationPlayer.play("run")
 			if velocity.x  < 0 and !busy and !pushing :
 				$HitDetection.scale.x = -$HitDetection.scale.x
 				$Sprite3D.flip_h = true

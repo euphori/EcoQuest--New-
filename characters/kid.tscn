@@ -484,7 +484,6 @@ texture = SubResource("ViewportTexture_wv7yq")
 
 [node name="Bolt" type="Sprite3D" parent="."]
 transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
-visible = false
 texture = ExtResource("8_7232q")
 hframes = 6
 vframes = 5

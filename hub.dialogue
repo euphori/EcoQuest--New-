@@ -1,6 +1,6 @@
 ~ start
 
-if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false and global.quest["chapter1"]["q4.5"].active == true:
+if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].completed == false or global.quest["chapter1"]["q4.5"].active == true:
 	Old Tom: Ah, the Lucas has told me of your arrival. The world is in dire need of your help.
 	Old Tom: But I’m going to test you first.
 	#Question2

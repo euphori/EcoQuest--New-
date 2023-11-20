@@ -96,7 +96,7 @@ func update_quest():
 				if curr_quest != prev_quest:
 					notif.visible = true
 					tracker.visible = true
-					$TrackerTimer.start(5)
+					$TrackerTimer.start(30)
 				tracker_title.text = curr_quest
 
 				if _quest.req_items != null: #shows the req items if there is one
