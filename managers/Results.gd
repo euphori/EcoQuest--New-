@@ -2,7 +2,7 @@ extends Control
 
 @onready var awareness = $Awareness
 
-var result
+var result = ""
 
 var comment = {"Low" : "Needs more improvements" , "Average": "Getting there, slight improvements", "High" : "Influence and educate others." , "Invalid": "Insuficient Data"}
 
@@ -13,7 +13,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("esc"):
-		self.visible = !self.visible
+		if self.visible:
+			self.visible = true
 
 
 func update_result():
@@ -32,6 +33,7 @@ func update_result():
 			result = "High"
 	else:
 		result = "Invalid"
+	
 	awareness.text = result
 	$Comment.text = comment[result]
 

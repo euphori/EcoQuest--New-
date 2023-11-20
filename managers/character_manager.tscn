@@ -48,10 +48,6 @@ axis_lock_linear_z = true
 [node name="Charge" parent="Kid" index="18"]
 texture = SubResource("ViewportTexture_04ija")
 
-[node name="Bolt" parent="Kid" index="19"]
-transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
-visible = true
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.989016, 0.147809, 0, -0.147809, 0.989016, 1.781, -0.162395, 4.25197)
 top_level = true
