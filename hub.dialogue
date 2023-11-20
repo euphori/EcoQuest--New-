@@ -56,9 +56,11 @@ if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].com
 	do emit(transistion)
 	set global.quest["chapter2"]["q5"].completed = true
 	set global.quest["chapter2"]["q5"].active = false
-	set global.quest["chapter3"]["q1"].active = true
 	set env_condition += 40 #update the environment
 	do emit(update_quest)
+	Old Tom:  The forest responds to your efforts. Well done, young hero.
+	Old Tom:  Now, it's time to seek the second seed. Go back to the whispering woods Lucas needs your help.
+	set global.quest["chapter3"]["q1"].active = true
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
 	=> END
@@ -80,7 +82,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	do save(save_path["save1"])
 	=> END
 	#cut scene forest restoring
-if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == true:
+if global.quest["chapter3"]["q4"].completed == true and  global.quest["chapter3"]["q5"].active == false:
 	Old Tom: You need a electric scooter to go to Polar Pines, there lies the path that holds the final seed.
 	Old Tom: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
 	#Question6
