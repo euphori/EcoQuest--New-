@@ -56,7 +56,7 @@ var quest = {
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
-			"active" : true,
+			"active" : false,
 			"completed" : false,
 			"npc_name" : "Lucas",
 			"talk_after" : false
@@ -187,7 +187,7 @@ var quest = {
 			"active" : false,
 			"completed" : false,
 			"npc_name" : "Harper",
-			"talk_after" : false,
+			"talk_after" : true,
 		},
 		"q5": {
 			"title": "Adeventure II",
