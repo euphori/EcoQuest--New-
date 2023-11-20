@@ -47,7 +47,7 @@ var can_dash = true
 var dashing = false
 var dead
 var can_die = true
-
+var charging_attack = false
 
 var is_on_platform = false
 var platform = null
@@ -66,14 +66,15 @@ func _ready():
 
 
 func jump():
-	velocity.y = JUMP_VELOCITY
+	velocity.y += JUMP_VELOCITY
 
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		$AnimationPlayer.play("falling")
+		#$AnimationPlayer.play("falling")
+
 	if !dead:
 		if npc_in_range == true:
 			if Input.is_action_just_pressed("talk"):
@@ -86,19 +87,15 @@ func _physics_process(delta):
 				attacking = true
 				can_move = false
 			
-		if pushing:
-			print("PUSHING")
-			busy = true
-			$AnimationPlayer.play("pushing")
+
 		else:
 			busy = false
 
 		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active:
 			jumping = true
-			velocity.y += JUMP_VELOCITY
 			$AnimationPlayer.play("jump")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("falling")
+
+			
 		
 		
 		# Get the input direction and handle the movement/deceleration.
@@ -113,18 +110,27 @@ func _physics_process(delta):
 			
 			jumping = false
 			velocity.x = direction.x * SPEED
-			if !jumping and !busy:
-				$AnimationPlayer.play("run")
-			if velocity.x  < 0 and !busy :
+			if !jumping and !busy and is_on_floor() and !charging_attack:
+				if pushing:
+					$AnimationPlayer.play("pushing")
+				else:
+					$AnimationPlayer.play("run")
+					if Input.is_action_just_pressed("jump"):
+						$AnimationPlayer.play("dash")
+						jump()
+			if velocity.x  < 0 and !busy and !pushing :
 				$HitDetection.scale.x = -$HitDetection.scale.x
 				$Sprite3D.flip_h = true
-			elif velocity.x  > 0 and !busy :
+			elif velocity.x  > 0 and !busy  and !pushing  :
 				$HitDetection.scale.x = -$HitDetection.scale.x
 				$Sprite3D.flip_h = false
 		elif direction.x == 0 and active and !attacking and is_on_floor():
-			if !jumping and !busy:
-				$AnimationPlayer.play("idle")
-				velocity.x = move_toward(velocity.x, 0, SPEED)
+			if !jumping and !busy  and !charging_attack:
+				if pushing:
+					$AnimationPlayer.play("idle_pushing")
+				else:
+					$AnimationPlayer.play("idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		if Input.is_action_just_pressed("dash") and can_dash:
 			dash.play()
@@ -132,6 +138,7 @@ func _physics_process(delta):
 				if get_parent().energy_bar.value >= dash_cost:
 					if velocity.x != 0:
 						velocity.x = direction.x * DASH_SPEED
+						$AnimationPlayer.play("dash")
 					else:
 						if $Sprite3D.flip_h:
 							velocity.x = -1 *  float(DASH_SPEED/2)
@@ -165,21 +172,19 @@ func _physics_process(delta):
 					charge.visible = false
 			else:
 				if velocity.x != 0:
-						velocity.x = direction.x * DASH_SPEED
+					dashing = true
+					
+					$AnimationPlayer.play("dash")
+					velocity.x = direction.x * DASH_SPEED
 				else:
 					if $Sprite3D.flip_h:
 						velocity.x = -1 * DASH_SPEED/2
 					else:
 						velocity.x = 1 * DASH_SPEED/2
 				can_dash = false
-				dashing = true
 				$DashTimer.start(0.1)
 				$DashCooldown.start(dash_cooldown)
 
 	if can_move:
 		move_and_slide()
 		
-
-
-
-

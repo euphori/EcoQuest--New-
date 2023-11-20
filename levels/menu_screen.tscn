@@ -1,6 +1,6 @@
 [gd_scene load_steps=78 format=3 uid="uid://crwyw7fiqueyp"]
 
-[ext_resource type="Material" uid="uid://632b1x0ros1u" path="res://assets/skybox/sky.tres" id="1_3v605"]
+[ext_resource type="Material" uid="uid://desigkrxltoeg" path="res://assets/skybox/sky.tres" id="1_3v605"]
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_jsqcx"]
 [ext_resource type="PackedScene" uid="uid://dfsiue5kmi83" path="res://UI/main_menu.tscn" id="1_s6vs3"]
 [ext_resource type="Material" uid="uid://byue68mo5dacq" path="res://assets/Color Pallet.tres" id="3_2egfm"]
@@ -1013,7 +1013,7 @@ material_override = SubResource("ShaderMaterial_ssqpy")
 multimesh = SubResource("MultiMesh_dpjvb")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33579, 4.01749, 22.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244452, 4.01749, 22.8)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("16_4rd4r")

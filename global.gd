@@ -56,7 +56,7 @@ var quest = {
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
-			"active" : false,
+			"active" : true,
 			"completed" : false,
 			"npc_name" : "Lucas",
 			"talk_after" : false

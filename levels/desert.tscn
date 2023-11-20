@@ -1431,6 +1431,9 @@ metadata/_edit_group_ = true
 [node name="Charge" parent="CharacterManager/Kid" index="18"]
 texture = SubResource("ViewportTexture_fdet8")
 
+[node name="Bolt" parent="CharacterManager/Kid" index="19"]
+transform = Transform3D(0.0837647, -2.99883, 0, 2.99883, 0.0837647, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
+
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -54.5046, 10.5498, -11.6089)
 visible = false
@@ -3277,14 +3280,17 @@ shape = SubResource("ConcavePolygonShape3D_a6scq")
 [node name="SawRobot" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4725, 13.1132, 2.83113)
 add_on_kill = true
+_amount = 5
 
 [node name="SawRobot4" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6007, 13.1132, 5.24194)
 add_on_kill = true
+_amount = 5
 
 [node name="SawRobot2" parent="." instance=ExtResource("30_ktrhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.051, 21.6849, 7.24597)
 add_on_kill = true
+_amount = 5
 
 [node name="rpgpp_av_water_platform_01a" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -76.2979, 6.69293, 4.78395)
