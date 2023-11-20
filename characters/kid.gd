@@ -17,6 +17,22 @@ var charging = false
 
 signal player_dead
 
+
+func _input(event):
+	if event.is_action_pressed("attack"):
+		if can_shoot:
+			charging_attack = true
+			if sprite.flip_h:
+				$AnimationPlayer.play("charge_right")
+			else:
+				$AnimationPlayer.play("charge_left")
+	if event.is_action_released("attack"):
+		$AnimationPlayer.play("release")
+		$Bolt.visible = false
+		await $AnimationPlayer.animation_finished
+		charging_attack = false
+		shoot()
+
 func _process(delta):
 	
 	if get_parent().energy_bar.value >= 50:
@@ -28,14 +44,13 @@ func _process(delta):
 	if Input.is_action_pressed("attack"):
 		$RechargeTimer.start(recharge_time)
 		if can_shoot:
-			$AnimationPlayer.play("charge")
 			if get_parent().energy_bar.value > 0:
-				
 				get_parent().energy_bar.value -= 45 * delta
 				pressed_time += delta 
 				
-	if Input.is_action_just_released("attack") and can_shoot:
-		shoot()
+
+
+		
 		
 	
 

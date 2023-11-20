@@ -292,7 +292,7 @@ _data = {
 "run": SubResource("Animation_6b0fi")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1tbx2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0vkay"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
@@ -300,6 +300,7 @@ collision_layer = 4
 collision_mask = 9
 axis_lock_linear_z = true
 script = ExtResource("1_514o1")
+_amount = 10
 AGGRO_RANGE = 20
 ATTACK_RANGE = 6
 MIN_ATTACK_RANGE = 4
@@ -315,9 +316,8 @@ collision_layer = 1024
 transform = Transform3D(0.826922, -2.88378, 0, 2.88378, 0.826922, 0, 0, 0, 3, -7.44791, 1.95564, -0.146)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550711, 2.67547, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189259, 2.67547, 0)
 flip_h = true
-shaded = true
 alpha_cut = 2
 texture = ExtResource("1_w38js")
 hframes = 6
@@ -378,6 +378,7 @@ one_shot = true
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
 [node name="HealthProgress" type="TextureProgressBar" parent="SubViewport"]
 offset_left = 623.0
@@ -391,9 +392,10 @@ texture_progress_offset = Vector2(5, 5)
 tint_under = Color(0.886275, 0.886275, 0.886275, 1)
 
 [node name="Health" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.03441, 5.63756, -0.546734)
+transform = Transform3D(-2.18557e-08, -0.5, 8.14908e-09, 0.5, -2.18557e-08, -1.30385e-07, 1.30385e-07, 8.14907e-09, 0.5, 0.710067, 5.54626, 0.0595493)
+billboard = 1
 alpha_cut = 2
-texture = SubResource("ViewportTexture_1tbx2")
+texture = SubResource("ViewportTexture_0vkay")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

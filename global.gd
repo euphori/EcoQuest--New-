@@ -47,6 +47,9 @@ var game_started = false
 var fixed_pipe = false
 var curr_killcount = 0
 var in_dialogue = false
+	
+
+
 var quest = {
 
 	"chapter1":{
@@ -56,7 +59,7 @@ var quest = {
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
-			"active" : false,
+			"active" : true,
 			"completed" : false,
 			"npc_name" : "Lucas",
 			"talk_after" : false
@@ -361,7 +364,10 @@ var quest = {
 	#"q4":"Get 5 Solar Panel Parts"}
 	
 
-
+func get_time():
+	var time = Time.get_ticks_msec()
+	return time
+	
 func get_active_quest():
 	for i in quest:
 		for x in quest[i]: #get all quest in global

@@ -36,7 +36,7 @@ _subresources={
 },
 "Material.006": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/wood_dark.tres"
+"use_external/path": "res://materials/wood_light.tres"
 }
 }
 }

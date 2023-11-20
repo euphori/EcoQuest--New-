@@ -64,6 +64,8 @@ enum{
 
 
 func _ready():
+	$Label3D.queue_free()
+	$Stats.queue_free()
 	if related_chapter != "" and !related_quest == null and global.quest[related_chapter][related_quest].completed:
 		print("ENEMY DESPAWNED")
 		queue_free()
@@ -88,7 +90,8 @@ func start_dialogue():
 
 func _physics_process(delta):
 	
-	$Stats.text = str("Health: ", health,"\nVelocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
+	if is_instance_valid($Stats):
+		$Stats.text = str("Health: ", health,"\nVelocity: ", velocity, "\nIs Jumping: ", jumping, "\nJump Cooldown: ",int($JumpCooldown.time_left))
 	
 
 	if not is_on_floor():
@@ -104,10 +107,10 @@ func _physics_process(delta):
 		IDLE:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			$AnimationPlayer.play("idle")
-			$Label3D.text = str("State: IDLE ")
+
 		CHASE:
 			
-			$Label3D.text = str("State: CHASE")
+
 			if is_on_floor():
 				var destination = self.global_position.direction_to(player.global_position)
 				var distance = self.global_position - player.global_position
@@ -142,7 +145,7 @@ func _physics_process(delta):
 					velocity.x = move_toward(velocity.x, 0, SPEED)
 		ATTACK:
 			var dir = self.global_position.direction_to(player.global_position)
-			$Label3D.text = str("State: ATTACK")
+
 			if dir.x > 0 and !attacking and !dashing:
 				$AnimationPlayer.play("attack_right")
 				attacking = true
@@ -158,7 +161,6 @@ func _physics_process(delta):
 				state = CHASE
 				
 		DASH:
-			$Label3D.text = str("State: DASH")
 
 			var distance = self.global_position.distance_to(player.global_position)
 			if !chosen:
@@ -174,7 +176,7 @@ func _physics_process(delta):
 				
 				
 		JUMP:
-			$Label3D.text = str("State: JUMP")
+
 			jump()
 		STAGGER:
 			$AnimationPlayer.play("idle")

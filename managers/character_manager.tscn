@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=28 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
@@ -18,8 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://7hhostq7p7ht" path="res://assets/ui/player_stats/Portrait.png" id="17_68gj0"]
 [ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="18_ykw83"]
 [ext_resource type="Texture2D" uid="uid://jcj227n8e8rx" path="res://assets/ui/hud/Journal.png" id="19_apbeu"]
+[ext_resource type="Script" path="res://managers/Results.gd" id="19_ev7ir"]
+[ext_resource type="Texture2D" uid="uid://wxusmpd8tjqf" path="res://assets/ui/new_journal/Cover.png" id="19_mo4cx"]
 [ext_resource type="AudioStream" uid="uid://dtfipawaentik" path="res://assets/sounds/open_journal.mp3" id="20_5g3qf"]
 [ext_resource type="Texture2D" uid="uid://b41jdwqd3bsy6" path="res://assets/ui/hud/RedDot.png" id="20_8x8fx"]
+[ext_resource type="Texture2D" uid="uid://clfah6dwh4ikj" path="res://assets/ui/new_journal/Back.png" id="20_n42jn"]
+[ext_resource type="Texture2D" uid="uid://wm7fb65dv6hl" path="res://assets/ui/new_journal/Middle.png" id="21_aq5jh"]
+[ext_resource type="Texture2D" uid="uid://cy03hhnltiuhg" path="res://assets/ui/new_journal/Inventory Bookmark.png" id="22_gy8ei"]
+[ext_resource type="Texture2D" uid="uid://r8dny465l1ns" path="res://assets/ui/new_journal/Todo Bookmark.png" id="23_7hw20"]
+[ext_resource type="Texture2D" uid="uid://bxyysld12b673" path="res://assets/ui/new_journal/Front Page.png" id="24_a5tvv"]
+[ext_resource type="Texture2D" uid="uid://cvhfy5rarulu" path="res://assets/ui/new_journal/Spring.png" id="25_6jmgo"]
 [ext_resource type="AudioStream" uid="uid://cveld00t3m37x" path="res://assets/sounds/close_journal.mp3" id="21_o3dfa"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_04ija"]
@@ -148,6 +156,7 @@ texture_progress = ExtResource("9_tascl")
 texture_progress_offset = Vector2(3.5, 3)
 
 [node name="Quest" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 166.0
@@ -464,6 +473,139 @@ visible = false
 position = Vector2(102, 960)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("20_8x8fx")
+
+[node name="Results" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_ev7ir")
+
+[node name="Background" type="Control" parent="UI/Results"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 27.0
+offset_bottom = 26.0
+
+[node name="Cover" type="Sprite2D" parent="UI/Results/Background"]
+position = Vector2(989.55, 546.45)
+texture = ExtResource("19_mo4cx")
+
+[node name="Back" type="Sprite2D" parent="UI/Results/Background"]
+position = Vector2(990, 548)
+texture = ExtResource("20_n42jn")
+
+[node name="Middle" type="Sprite2D" parent="UI/Results/Background"]
+position = Vector2(990, 548)
+texture = ExtResource("21_aq5jh")
+
+[node name="InventoryBookmark" type="Sprite2D" parent="UI/Results/Background"]
+visible = false
+position = Vector2(955, 954)
+texture = ExtResource("22_gy8ei")
+
+[node name="TodoBookmark" type="Sprite2D" parent="UI/Results/Background"]
+visible = false
+position = Vector2(748, 953)
+texture = ExtResource("23_7hw20")
+
+[node name="FrontPage" type="Sprite2D" parent="UI/Results/Background"]
+position = Vector2(991, 542)
+texture = ExtResource("24_a5tvv")
+
+[node name="Spring" type="Sprite2D" parent="UI/Results/Background"]
+position = Vector2(991, 98)
+texture = ExtResource("25_6jmgo")
+
+[node name="Congrats" type="Label" parent="UI/Results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -668.4
+offset_top = -723.04
+offset_right = -647.88
+offset_bottom = -843.76
+theme_override_colors/font_color = Color(0.298039, 0.298039, 0.298039, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 62
+text = "Congratulations
+on finishing the game!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="UI/Results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -690.4
+offset_top = -548.04
+offset_right = -669.88
+offset_bottom = -668.76
+theme_override_colors/font_color = Color(0.298039, 0.298039, 0.298039, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 45
+text = "Awareness level:"
+
+[node name="Label2" type="Label" parent="UI/Results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -687.4
+offset_top = -496.04
+offset_right = -666.88
+offset_bottom = -616.76
+theme_override_colors/font_color = Color(0.298039, 0.298039, 0.298039, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 45
+text = "Elapsed Time: "
+
+[node name="Category" type="Label" parent="UI/Results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -415.4
+offset_top = -548.04
+offset_right = -394.88
+offset_bottom = -668.76
+theme_override_colors/font_color = Color(0.831373, 0.0980392, 0.235294, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 45
+text = "Average"
+
+[node name="Time" type="Label" parent="UI/Results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -474.4
+offset_top = -494.04
+offset_right = -453.88
+offset_bottom = -614.76
+theme_override_colors/font_color = Color(0.831373, 0.0980392, 0.235294, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("10_geis5")
+theme_override_font_sizes/font_size = 45
+text = "10:00"
 
 [node name="TrackerTimer" type="Timer" parent="."]
 

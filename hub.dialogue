@@ -121,7 +121,7 @@ if global.quest["chapter1"]["q5"].active == true and quest["chapter1"]["q5"].com
 	do save(save_path["save1"])
 	=> END
 
-if  quest["chapter1"]["q5"].completed == true and global.quest["chapter5"]["q1"].active == false:
+if  quest["chapter1"]["q6"].active == true or quest["chapter2"]["q1"].active == true or quest["chapter1"]["q7"].active == true:
 	Lucas:  We'll meet again soon
 	do emit(dialogue_ended)
 	=> END
