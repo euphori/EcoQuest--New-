@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=26 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://d0fdgxax3w5sa" path="res://assets/player/new_kid.png" id="2_fmbq7"]
@@ -390,6 +390,22 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_6wlwg"]
+resource_name = "release"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fijb5"]
 _data = {
 "RESET": SubResource("Animation_vgvm5"),
@@ -401,6 +417,7 @@ _data = {
 "idle_pushing": SubResource("Animation_oeami"),
 "jump": SubResource("Animation_saap6"),
 "pushing": SubResource("Animation_c00x2"),
+"release": SubResource("Animation_6wlwg"),
 "run": SubResource("Animation_jwhoy")
 }
 
