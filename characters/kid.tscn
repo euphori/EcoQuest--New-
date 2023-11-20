@@ -1,13 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=23 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://d0fdgxax3w5sa" path="res://assets/player/new_kid.png" id="2_fmbq7"]
 [ext_resource type="Texture2D" uid="uid://lvluooagxp4g" path="res://assets/ui/controller/Rectangle 3.png" id="3_2sbah"]
 [ext_resource type="PackedScene" uid="uid://ca0e68uf27aaw" path="res://areas/hit_detection.tscn" id="3_5wiq4"]
 [ext_resource type="AudioStream" uid="uid://7q30okipo16e" path="res://assets/sounds/kid_walking.mp3" id="3_r71ce"]
+[ext_resource type="AudioStream" uid="uid://dbqrc1kjqcquf" path="res://assets/sounds/Pushing.mp3" id="4_aavsi"]
 [ext_resource type="AudioStream" uid="uid://b8b14doub5qpy" path="res://assets/sounds/attack.mp3" id="4_cdj05"]
 [ext_resource type="PackedScene" uid="uid://dywi4foybdfp8" path="res://areas/hurtbox.tscn" id="6_0dp76"]
 [ext_resource type="Texture2D" uid="uid://b745xkne8htbj" path="res://assets/bullets/greenbolt.png" id="8_7232q"]
+[ext_resource type="AudioStream" uid="uid://b62a3fipobjvg" path="res://assets/sounds/hit.mp3" id="10_it71i"]
+[ext_resource type="AudioStream" uid="uid://6p5nnqas5j6e" path="res://assets/sounds/Dash2.mp3" id="10_ivqpy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -183,6 +186,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_c00x2"]
 resource_name = "pushing"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -195,6 +199,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [16, 17, 18, 19]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("kid_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_aavsi")
+}],
+"times": PackedFloat32Array(-0.3)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jwhoy"]
 resource_name = "run"
@@ -325,6 +344,14 @@ texture = ExtResource("8_7232q")
 hframes = 6
 vframes = 5
 frame = 10
+
+[node name="hit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_it71i")
+pitch_scale = 1.04
+
+[node name="dash" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_ivqpy")
+pitch_scale = 1.36
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

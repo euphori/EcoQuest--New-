@@ -22,6 +22,8 @@ extends Node3D
 @onready var energy_bar = $UI/Stamina/TextureProgressBar
 @onready var notif = $UI/Icon/Notif
 @onready var journal_icon = $UI/Icon
+@onready var open = $Open
+@onready var close = $Close
 
 var location = global.curr_scene
 var new_camera_offset = {"x":0.5,"y":4,"z":7}
@@ -71,7 +73,6 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("esc"):
 		if !$Journal.visible and !$Journal/Map.visible:
-			
 			show_pause_menu()
 			#if get_tree().is_paused():
 			#	get_tree().paused = false

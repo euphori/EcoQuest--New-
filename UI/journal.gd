@@ -10,6 +10,8 @@ extends Control
 @onready var computer #= get_parent().get_parent().get_node("Computer")
 @onready var inv_button = $Background/Inventory
 @onready var todo_button = $Background/Todo
+@onready var open = $"../Open"
+@onready var close = $"../Close"
 var last_inv_pos 
 var last_todo_pos
 
@@ -48,9 +50,11 @@ func _input(event):
 				show_page("Quest")
 		elif computer == null:
 			if self.visible:
+				close.play()
 				refresh_journal()
 				self.visible = false
 			else:
+				open.play()
 				refresh_journal()
 				self.visible = true
 				show_page("Quest")
@@ -223,7 +227,9 @@ func _on_slot_3_pressed():
 
 func _on_inventory_pressed():
 	pass
+	open.play()
 
+	
 func _on_inventory_toggled(button_pressed):
 	
 	if button_pressed:
@@ -238,6 +244,7 @@ func _on_inventory_toggled(button_pressed):
 func _on_todo_toggled(button_pressed):
 	print(button_pressed)
 	if button_pressed:
+		open.play()
 		show_page("Quest")
 		todo_button.modulate = Color(1, 1, 1)
 		todo_button.global_position.y = last_todo_pos.y + 30

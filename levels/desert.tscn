@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=3 uid="uid://chxuot5dj22rf"]
+[gd_scene load_steps=173 format=3 uid="uid://chxuot5dj22rf"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
@@ -178,6 +178,9 @@ dof_blur_far_distance = 71.93
 dof_blur_near_enabled = true
 dof_blur_near_distance = 3.04
 dof_blur_amount = 0.03
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fdet8"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymmv6"]
 resource_name = "Material_standard"
@@ -1424,6 +1427,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13431, -1.30667, -0.004168
 [node name="CharacterManager" parent="." instance=ExtResource("2_3lgwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.9348, 12.8016, 5)
 metadata/_edit_group_ = true
+
+[node name="Charge" parent="CharacterManager/Kid" index="18"]
+texture = SubResource("ViewportTexture_fdet8")
 
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -54.5046, 10.5498, -11.6089)
@@ -3329,6 +3335,8 @@ shape = SubResource("BoxShape3D_ll0ti")
 [editable path="Water/Water3"]
 [editable path="CharacterManager"]
 [editable path="CharacterManager/Console"]
+[editable path="CharacterManager/Kid"]
+[editable path="CharacterManager/Kid/Hurtbox"]
 [editable path="CharacterManager/Widgets"]
 [editable path="Mountains/Mounting_2"]
 [editable path="Mountains/Mounting_3"]

@@ -3,7 +3,7 @@ extends "res://characters/movement_component.gd"
 const bolt = preload("res://instanced/bullet.tscn")
 
 
-
+@onready var hit = $hit
 var is_flipped = false
 var pressed_time = 0.0
 var bolt_size
@@ -111,6 +111,7 @@ func _on_hurtbox_area_entered(area):
 		var tween = get_tree().create_tween()
 		print("HIT")
 		HEALTH -= 5
+		hit.play()
 		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.3)
 		if HEALTH <= 0:
 			if can_die:

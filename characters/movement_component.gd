@@ -34,6 +34,7 @@ extends CharacterBody3D
 
 
 @onready var attack = $attack
+@onready var dash = $dash
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -126,6 +127,7 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		if Input.is_action_just_pressed("dash") and can_dash:
+			dash.play()
 			if dash_cost_stamina:
 				if get_parent().energy_bar.value >= dash_cost:
 					if velocity.x != 0:
