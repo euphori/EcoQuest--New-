@@ -234,12 +234,12 @@ func die():
 	if add_on_kill:
 		global.curr_killcount += 1
 		var quest = global.get_active_quest()
-		print("QUEST: " , quest)
-		
-		if quest.kill_req <= global.curr_killcount:
-			quest.active = false
-			quest.completed = true
-			global.emit_signal("update_quest")
+
+		if quest != null and quest.has("kill_req"):
+			if quest.kill_req >= global.curr_killcount:
+				quest.active = false
+				quest.completed = true
+				global.emit_signal("update_quest")
 	queue_free()
 
 func hurt():

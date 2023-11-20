@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export_category("STATS")
 @export var SPEED = 10
-@export var JUMP_VELOCITY = 7
+@export var JUMP_VELOCITY = 5
 @export var ACCELERATION = 150
 @export var MAX_SPEED = 10
 @export var DASH_SPEED = 50
@@ -81,7 +81,7 @@ func _physics_process(delta):
 				DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
 		
 		
-		if Input.is_action_just_pressed("attack") and active and !attacking:
+		if Input.is_action_just_pressed("attack") and active and !attacking and !global.in_dialogue:
 			if $AnimationPlayer.has_animation("attack"):
 				$AnimationPlayer.play("attack")
 				attacking = true
@@ -91,7 +91,7 @@ func _physics_process(delta):
 		else:
 			busy = false
 
-		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active:
+		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active and !global.in_dialogue:
 			jumping = true
 			$AnimationPlayer.play("jump")
 

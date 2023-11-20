@@ -18,6 +18,7 @@ func _input(event):
 
 
 func update_result():
+
 	if global.quest["chapter5"]["q2"].completed:
 		self.visible = true
 	var sa = global.awareness_points["SolutionAwareness"]

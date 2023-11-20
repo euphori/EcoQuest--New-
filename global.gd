@@ -413,11 +413,11 @@ var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 
 var data_path = "res://Data/PlayerChoices.json"
 
 #Player Choice data
-func save_data(quest, val):
+func save_data(val):
 	var file = FileAccess.open(data_path, FileAccess.READ_WRITE)
 	var json_string = FileAccess.get_file_as_string(data_path)
 	var json_dict = JSON.parse_string(json_string)
-	json_dict["1"][quest] = val
+	json_dict["1"] = val
 	var updated_json = JSON.stringify(json_dict)
 	file.open(data_path, FileAccess.WRITE)
 	file.store_string(updated_json)
