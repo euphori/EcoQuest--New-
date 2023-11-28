@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://wiyfvqhus6ir"]
+[gd_scene load_steps=44 format=3 uid="uid://wiyfvqhus6ir"]
 
 [ext_resource type="Script" path="res://UI/journal.gd" id="1_bqxhi"]
 [ext_resource type="Texture2D" uid="uid://wxusmpd8tjqf" path="res://assets/ui/new_journal/Cover.png" id="2_a00sb"]
@@ -39,7 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://blabx7buo65yp" path="res://assets/ui/new_map/City.png" id="21_blj0q"]
 [ext_resource type="Texture2D" uid="uid://davnhn20n5pod" path="res://assets/ui/new_map/City Sel.png" id="22_d3xmh"]
 [ext_resource type="Texture2D" uid="uid://notbtdnyk5h5" path="res://assets/ui/new_map/Desert.png" id="23_30dyq"]
+[ext_resource type="Texture2D" uid="uid://cd3cttpd7y3u7" path="res://assets/ui/hud/Pickup LabelBG.png" id="23_a3hlr"]
 [ext_resource type="Texture2D" uid="uid://dvcq6gilnl2x3" path="res://assets/ui/new_map/Desert sel.png" id="24_f6628"]
+[ext_resource type="Texture2D" uid="uid://c7qix61fbru5v" path="res://assets/ui/hud/Map Marker2.png" id="33_3l73x"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_dg6nk"]
 
@@ -510,7 +512,6 @@ theme_override_font_sizes/font_size = 85
 text = "Slot #3"
 
 [node name="Map" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -519,6 +520,35 @@ script = ExtResource("13_n6w7j")
 [node name="Bg" type="Sprite2D" parent="Map"]
 position = Vector2(1006, 542)
 texture = ExtResource("14_n1nu5")
+
+[node name="Hint" type="Control" parent="Map"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PickupLabelBg" type="Sprite2D" parent="Map/Hint"]
+position = Vector2(1655, 818)
+texture = ExtResource("23_a3hlr")
+
+[node name="QuestInfo" type="Label" parent="Map/Hint"]
+layout_mode = 0
+offset_left = 1522.0
+offset_top = 786.0
+offset_right = 1878.0
+offset_bottom = 855.0
+theme_override_fonts/font = ExtResource("10_xu7im")
+theme_override_font_sizes/font_size = 67
+text = "= CUrrent location"
+
+[node name="TextureRect2" type="TextureRect" parent="Map/Hint"]
+modulate = Color(0.768627, 0.192157, 0.192157, 1)
+layout_mode = 0
+offset_left = 1450.0
+offset_top = 786.0
+offset_right = 1485.0
+offset_bottom = 829.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_3l73x")
 
 [node name="Forest" type="TextureButton" parent="Map"]
 layout_mode = 0
@@ -565,19 +595,40 @@ offset_bottom = 813.0
 texture_normal = ExtResource("23_30dyq")
 texture_hover = ExtResource("24_f6628")
 
-[node name="Location" type="Label" parent="Map"]
-visible = false
+[node name="Location" type="Control" parent="Map"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Map/Location"]
+modulate = Color(0.768627, 0.192157, 0.192157, 1)
 layout_mode = 0
-offset_left = 769.0
-offset_top = 881.0
-offset_right = 1120.0
-offset_bottom = 985.0
-theme_override_colors/font_color = Color(0.0823529, 0.0941176, 0.133333, 1)
-theme_override_fonts/font = ExtResource("5_6abh1")
-theme_override_font_sizes/font_size = 100
-text = "Forest"
-horizontal_alignment = 1
-autowrap_mode = 2
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 34.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_3l73x")
+
+[node name="MarkerLocation" type="Control" parent="Map"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Forest" type="Marker2D" parent="Map/MarkerLocation"]
+position = Vector2(1279, 756)
+
+[node name="Desert" type="Marker2D" parent="Map/MarkerLocation"]
+position = Vector2(642, 792)
+
+[node name="Hub" type="Marker2D" parent="Map/MarkerLocation"]
+position = Vector2(837, 533)
+
+[node name="City" type="Marker2D" parent="Map/MarkerLocation"]
+position = Vector2(773, 404)
+
+[node name="Snow" type="Marker2D" parent="Map/MarkerLocation"]
+position = Vector2(772, 211)
 
 [node name="InvButton" type="TextureButton" parent="."]
 visible = false

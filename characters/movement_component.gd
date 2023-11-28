@@ -93,7 +93,8 @@ func _physics_process(delta):
 
 		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active and !global.in_dialogue:
 			jumping = true
-			$AnimationPlayer.play("jump")
+			if !dashing:
+				$AnimationPlayer.play("jump")
 
 			
 		
@@ -115,7 +116,7 @@ func _physics_process(delta):
 				else:
 					if Input.is_action_just_pressed("jump"):
 						$AnimationPlayer.play("dash")
-						velocity.y += JUMP_VELOCITY - 5
+						velocity.y += JUMP_VELOCITY - 2
 					else:
 						$AnimationPlayer.play("run")
 			if velocity.x  < 0 and !busy and !pushing :

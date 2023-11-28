@@ -21,7 +21,7 @@ func _input(event):
 func _on_start_pressed():
 	if !global.game_started:
 		var loading_screen = load("res://UI/loading_screen.tscn")
-		global.next_scene = "res://levels/forest.tscn"
+		global.next_scene = "res://levels/presurvey.tscn"
 		get_tree().change_scene_to_packed(loading_screen)
 	global.game_started = true
 

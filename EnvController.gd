@@ -18,7 +18,7 @@ var grass_multi_mesh = []
 
 var grass_mesh 
 func _ready():
-	global.connect("update_quest" , update_all)
+	global.connect("update_env" , update_all)
 	update_all()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,7 +67,7 @@ func update_trees(value):
 				elif value >= 98:
 					tree_manager.get_child(i).curr_state = "full"
 					tree_manager.get_child(i).update_state()
-				await get_tree().create_timer(.01).timeout
+				await get_tree().create_timer(0.5).timeout
 	else:
 		print("Tree Manager Doesn't Exist")
 

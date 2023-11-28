@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ros4da4qyiti"]
+[gd_scene load_steps=11 format=3 uid="uid://ros4da4qyiti"]
 
 [ext_resource type="PackedScene" uid="uid://dvqnpbbdix25h" path="res://managers/character_manager.tscn" id="1_fgsan"]
 [ext_resource type="PackedScene" uid="uid://bpnyc4txtodb2" path="res://interactable/raft.tscn" id="2_cn54l"]
@@ -12,6 +12,9 @@
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u5nhk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jsh3g"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Test" type="Node3D"]
 process_mode = 3
@@ -29,6 +32,12 @@ skeleton = NodePath("../..")
 [node name="CharacterManager" parent="." instance=ExtResource("1_fgsan")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137435, 0)
+
+[node name="Charge" parent="CharacterManager/Kid" index="18"]
+texture = SubResource("ViewportTexture_jsh3g")
+
+[node name="Bolt" parent="CharacterManager/Kid" index="19"]
+transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
 
 [node name="Label3" parent="CharacterManager/UI/SaveIcon" index="1"]
 layout_mode = 0
@@ -132,6 +141,8 @@ quest = "q2"
 
 [editable path="CharacterManager"]
 [editable path="CharacterManager/Console"]
+[editable path="CharacterManager/Kid"]
+[editable path="CharacterManager/Kid/Hurtbox"]
 [editable path="CharacterManager/Widgets"]
 [editable path="Raft"]
 [editable path="Raft/Boat"]

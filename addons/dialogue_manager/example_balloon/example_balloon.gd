@@ -75,8 +75,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
-	$AnimationPlayer.play("pop_up")
-	await $AnimationPlayer.animation_finished
+	if is_instance_valid($AnimationPlayer):
+		$AnimationPlayer.play("pop_up")
+		await $AnimationPlayer.animation_finished
 	temporary_game_states =  [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource

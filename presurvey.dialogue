@@ -1,0 +1,13 @@
+~ start
+
+???: You have been chosen to be the hero of tomorrow, are you willing to embark on our mission?
+- I know my duties for our Mother Earth.
+- What is my duty? Let’s go!
+- Are you sure about that now?
+
+???: Trash is surrounding everywhere! Are you willing to help me in our cause on waste management?
+- Surely the government does that already.
+- This needs to be mitigated to decrease greenhouse gasses!
+- We can have one trash can for all.
+do emit(dialogue_ended)
+=> END

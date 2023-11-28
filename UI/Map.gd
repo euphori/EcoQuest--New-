@@ -1,6 +1,7 @@
 extends Control
 
-@onready var loc = $Location
+
+@onready var curr_loc = $Location
 
 var text = {"Forest" : "" , "Hub": "" , "Snow" : "", "Desert" :"" , "City" :""}
 # Called when the node enters the scene tree for the first time.
@@ -22,26 +23,18 @@ func initialize_map():
 			else:
 				get_child(i).visible = true
 				text[get_child(i).name] = get_child(i).name
+		var marker_pos
+		for x in $MarkerLocation.get_child_count():
+			if $MarkerLocation.get_child(x).name == global.curr_scene_name:
+				print($MarkerLocation.get_child(x).name)
+				marker_pos = $MarkerLocation.get_child(x).global_position
+				
+		
+		if marker_pos != null:
+			curr_loc.global_position = marker_pos
+		
 
 
-func _on_desert_mouse_entered():
-	loc.text = text.Desert
-
-
-func _on_city_mouse_entered():
-	loc.text = text.City
-
-
-func _on_snow_mouse_entered():
-	loc.text = text.Snow
-
-
-func _on_hub_mouse_entered():
-	loc.text = text.Hub
-
-
-func _on_forest_mouse_entered():
-	loc.text = text.Forest
 
 
 func load_next_scene():

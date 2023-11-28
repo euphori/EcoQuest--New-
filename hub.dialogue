@@ -58,6 +58,7 @@ if global.quest["chapter2"]["q5"].active == true and quest["chapter2"]["q5"].com
 	set global.quest["chapter2"]["q5"].active = false
 	set global.quest["chapter3"]["q1"].active = true
 	set env_condition += 40 #update the environment
+	do emit(update_env)
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
@@ -94,6 +95,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q5"].active = true
 	set env_condition += 30 #update the environment
+	do emit(update_env)
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
@@ -123,7 +125,7 @@ if global.quest["chapter1"]["q5"].active == true and quest["chapter1"]["q5"].com
 	do save(save_path["save1"])
 	=> END
 
-if  quest["chapter1"]["q5"].completed == true and global.quest["chapter5"]["q1"].active == false:
+if  quest["chapter1"]["q5"].completed == true and global.quest["chapter5"]["q1"].active == false and global.quest["chapter2"]["q1"].completed == false:
 	Lucas:  We'll meet again soon
 	do emit(dialogue_ended)
 	=> END
@@ -135,6 +137,7 @@ if global.quest["chapter5"]["q1"].active == true and quest["chapter5"]["q1"].com
 	set quest["chapter5"]["q1"].completed = true
 	set quest["chapter5"]["q2"].active = true
 	set env_condition = 100
+	do emit(update_env)
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
@@ -151,13 +154,15 @@ if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].com
 	
 #after defeating robots
 
-if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].completed == true:
+if quest["chapter5"]["q2"].completed == true:
 	Old Tom: I believe that they are finally gone. Thank you, young hero. 
 	Old Tom: The world is now saved from the dangers of climate change.
 	Old Tom: I have one last question, if everything goes back around, do you think that we can still  save the Earth?
 	- As long as we work as one community, we can.
 	- We need to save ourselves from this by doing minuscule actions.
 	- The Earth will get destroyed eventually. It’s better to let things happen.
+	set quest["chapter5"]["q3"].active = true
+	do emit(update_quest)
 	do emit(dialogue_ended)
 	=> END
 

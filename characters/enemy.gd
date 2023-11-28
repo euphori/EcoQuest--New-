@@ -246,7 +246,7 @@ func hurt():
 	health -= 25
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar, "value", health, 0.5)
-	knockback()
+	#knockback()
 	if health <= 0:
 		die()
 		

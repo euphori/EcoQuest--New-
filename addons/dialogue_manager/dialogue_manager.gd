@@ -259,20 +259,23 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 
 	var is_small_window: bool = ProjectSettings.get_setting("display/window/size/viewport_width") < 400
 	var balloon: Node = (SmallExampleBalloonScene if is_small_window else ExampleBalloonScene).instantiate()
+	
+	get_current_scene.call().add_child(balloon)
+	balloon.start(resource, title, extra_game_states)
+	print(resource)
+	return balloon
+	
+func show_dialogue_box(resource: DialogueResource, title: String = "",extra_game_states: Array = []) -> CanvasLayer:
+	var ExampleBalloonScene = load("res://addons/dialogue_manager/example_balloon/dialogue_box.tscn")
+	
+	var balloon: Node = ExampleBalloonScene.instantiate()
 	get_current_scene.call().add_child(balloon)
 	balloon.start(resource, title, extra_game_states)
 	print(resource)
 	return balloon
 
 
-func show_speech_bubble(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> CanvasLayer:
-	var bubble = load("res://addons/dialogue_manager/example_balloon/speech_bubble.tscn")
-	
-	get_current_scene.call().add_child(bubble)
-	bubble.start(resource, title, extra_game_states)
-	
-	return bubble
-### Dotnet bridge
+
 
 
 func _bridge_get_next_dialogue_line(resource: DialogueResource, key: String, extra_game_states: Array = []) -> void:

@@ -10,6 +10,12 @@ var awareness_points = {
 	"PollutionAwareness": 0
 }
 
+var pre_ap = {
+	"SolutionAwareness" : 0,
+	"GeneralKnowledge": 0,
+	"PollutionAwareness": 0
+}
+
 var scooter_repaired = false
 @onready var player
 var last_player_pos = {
@@ -35,6 +41,7 @@ signal transistion
 signal pickup_item(item,ammount)
 signal item_added
 signal game_saved
+signal update_env
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var curr_scene
@@ -56,7 +63,7 @@ var quest = {
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
-			"active" : false,
+			"active" : true,
 			"completed" : false,
 			"npc_name" : "Lucas",
 			"talk_after" : false
@@ -120,13 +127,13 @@ var quest = {
 		},
 		"q6": {
 			"title": "Adeventure I",
-			"desc" : "Find and talk to the Old Tom",
+			"desc" : "Find and talk to the OldTom",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Old Tom",
+			"npc_name" : "OldTom",
 			"talk_after" : false
 		
 		},
@@ -138,7 +145,7 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Old Tom",
+			"npc_name" : "OldTom",
 			"talk_after" : true
 		
 		},
@@ -191,13 +198,13 @@ var quest = {
 		},
 		"q5": {
 			"title": "Adeventure II",
-			"desc" : "Go to Briarwood Harbor and talk to Old Tom",
+			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Old Tom",
+			"npc_name" : "OldTom",
 			"talk_after" : false,
 		},
 	},
@@ -237,13 +244,13 @@ var quest = {
 		},
 		"q4": {
 			"title": "Adeventure III",
-			"desc" : "Go to Briarwood Harbor and talk to Old Tom",
+			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Old Tom",
+			"npc_name" : "OldTom",
 			"talk_after" : false,
 		},
 		"q5": {
@@ -330,13 +337,13 @@ var quest = {
 	"chapter5":{
 		"q1": {
 			"title": "Adeventure V",
-			"desc" : "Go to Briarwood Harbor and talk to Old Tom",
+			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Old Tom",
+			"npc_name" : "OldTom",
 			"talk_after" : false
 		},
 		"q2": {
@@ -347,9 +354,20 @@ var quest = {
 			"weight" : null,
 			"active" : false,
 			"completed" : false,
-			"npc_name" : "Professor",
+			"npc_name" : "OldTom",
 			"talk_after" : true,
-			"kill_req": 4
+			"kill_req": 2
+		},
+		"q3": {
+			"title": "The End",
+			"desc" : "Check your results",
+			"type" : "explore",
+			"req_items" : null,
+			"weight" : null,
+			"active" : false,
+			"completed" : false,
+			"npc_name" : "OldTom",
+			"talk_after" : false
 		},
 	},
 	}
@@ -443,7 +461,8 @@ func save(_save_path):
 	"quest" : quest,
 	"items" : items,
 	"last_player_pos" : last_player_pos,
-	"unlocked_map" : unlocked_map
+	"unlocked_map" : unlocked_map,
+	"awareness_points" : awareness_points
 	}
 
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
@@ -470,6 +489,7 @@ func load_save(_save_path):
 			items = data["items"]
 			quest = data["quest"]
 			unlocked_map = data["unlocked_map"]
+			awareness_points = data["awareness_points"]
 			change_scene()
 			file.close()
 	else:

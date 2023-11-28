@@ -21,10 +21,11 @@ signal player_dead
 func _input(event):
 	if event.is_action_pressed("attack"):
 			charging_attack = true
-			if sprite.flip_h:
-				$AnimationPlayer.play("charge_right")
-			else:
-				$AnimationPlayer.play("charge_left")
+			if can_shoot:
+				if sprite.flip_h:
+					$AnimationPlayer.play("charge_right")
+				else:
+					$AnimationPlayer.play("charge_left")
 	if event.is_action_released("attack"):
 		
 		$AnimationPlayer.play("release")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://doku14f0670nt"]
+
+[ext_resource type="Script" path="res://Presurvey.gd" id="1_gehq6"]
+
+[node name="Presurvey" type="Node2D"]
+script = ExtResource("1_gehq6")

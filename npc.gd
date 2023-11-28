@@ -29,6 +29,9 @@ var player
 
 
 func _ready():
+	if get_active_quest() != null and get_active_quest().npc_name == self.name:
+		print(get_active_quest().npc_name)
+		$Exclamation.visible = true
 	if get_parent().name == "Forest" and self.name == "Lucas":
 		if global.quest["chapter1"]["q2"].completed and !global.quest["chapter3"]["q1"].active :
 			self.global_position = get_parent().get_node("Dock").global_position
@@ -56,6 +59,13 @@ func check_completed_quest(chapter):
 			if !global.quest[chapter][i].completed:
 				return false
 		return true
+		
+func get_active_quest():
+	for i in global.quest:
+		for x in global.quest[i]: #get all quest in global
+			var _quest = global.quest[i][x]
+			if _quest.active: #find the active quest
+				return _quest
 
 func open_shop():
 	if is_instance_valid($Shop):
@@ -66,6 +76,12 @@ func _input(event):
 	if event.is_action_pressed("esc") and is_instance_valid($Shop) and $Shop.visible:
 		$Shop.visible = false
 func do_event():
+	if get_active_quest()!= null and get_active_quest().npc_name == self.name:
+		if get_active_quest().req_items != null:
+			if global.items[get_active_quest().req_items[0]] >= get_active_quest().req_items[1]:
+				$Exclamation.visible = true
+		else:
+			$Exclamation.visible = true
 	if chapter_name == "chapter1" and completed_quest == "q2" and global.quest["chapter1"]["q3"].completed == false:
 		if global.quest[chapter_name][completed_quest].completed:
 			return_camera()
@@ -75,6 +91,7 @@ func do_event():
 			screen_trans.play("fade_to_normal")
 
 func talk():
+	$Exclamation.visible = false
 	var dir = global_position.direction_to(player.global_position)
 	if dir.x > 0:
 		$Sprite3D.flip_h = true

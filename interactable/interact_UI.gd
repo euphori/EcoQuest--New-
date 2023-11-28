@@ -28,6 +28,8 @@ signal grow
 
 
 func _ready():
+	if type == "npc":
+		$Arrow.queue_free()
 	visible = false
 	
 	
@@ -116,6 +118,8 @@ func end_dialogue():
 func _on_player_detection_body_entered(_body):
 	if is_instance_valid($Arrow):
 		$Arrow.visible = true
+	if is_instance_valid($Exclamation):
+		$Exclamation.visible = false
 	if _body.is_in_group("player"):
 		player = _body
 		player_near = true

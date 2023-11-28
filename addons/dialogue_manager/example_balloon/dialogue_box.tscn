@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=3 uid="uid://cphw3lfb0vtrf"]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_18lk4"]
+[ext_resource type="Texture2D" uid="uid://baocsyy6nrwqh" path="res://assets/ui/hud/DialogueBox.png" id="2_0tt5u"]
+[ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="3_1jnly"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="4_5n27a"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="5_66nlo"]
+[ext_resource type="Texture2D" uid="uid://c4wwsopl326ra" path="res://assets/ui/modals/arrow icon.png" id="6_kx3ax"]
+[ext_resource type="Texture2D" uid="uid://cd3cttpd7y3u7" path="res://assets/ui/hud/Pickup LabelBG.png" id="7_wys8i"]
+
+[sub_resource type="Theme" id="Theme_y7unw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5cey"]
+texture = ExtResource("2_0tt5u")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ijsa"]
+
+[node name="ExampleBalloon" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_18lk4")
+
+[node name="Balloon" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = -480.0
+offset_right = -200.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_y7unw")
+theme_override_styles/panel = SubResource("StyleBoxTexture_x5cey")
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.131666
+anchor_top = 0.131356
+anchor_right = -0.131666
+anchor_bottom = 0.131356
+offset_left = 247.0
+offset_top = -47.0001
+offset_right = 365.0
+offset_bottom = 2.99986
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.145098, 0.223529, 0.282353, 1)
+theme_override_fonts/normal_font = ExtResource("3_1jnly")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueLabel" parent="Balloon" instance=ExtResource("4_5n27a")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416847
+anchor_top = 0.042517
+anchor_right = 0.978685
+anchor_bottom = 0.770517
+offset_left = 20.681
+offset_top = 27.932
+offset_right = -52.0
+offset_bottom = -18.9
+grow_horizontal = 1
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.172549, 0.207843, 0.223529, 1)
+theme_override_fonts/normal_font = ExtResource("3_1jnly")
+theme_override_font_sizes/normal_font_size = 67
+text = "Dialogue..."
+metadata/_edit_use_anchors_ = true
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="." node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_direction = 2
+offset_left = 520.0
+offset_top = 157.0
+offset_right = 1052.0
+offset_bottom = 677.0
+size_flags_vertical = 8
+theme_override_constants/separation = 70
+script = ExtResource("5_66nlo")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="ResponsesMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_constants/icon_max_width = 31
+theme_override_fonts/font = ExtResource("3_1jnly")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
+text = "Response example"
+icon = ExtResource("6_kx3ax")
+flat = true
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample"]
+z_index = -1
+layout_mode = 2
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 599.0
+offset_bottom = 115.0
+scale = Vector2(1.45, 0.58)
+texture = ExtResource("7_wys8i")
+
+[node name="ResponseExample2" type="Button" parent="ResponsesMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_constants/icon_max_width = 31
+theme_override_fonts/font = ExtResource("3_1jnly")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
+text = "Response example"
+icon = ExtResource("6_kx3ax")
+flat = true
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample2"]
+z_index = -1
+layout_mode = 2
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 599.0
+offset_bottom = 115.0
+scale = Vector2(1.45, 0.58)
+texture = ExtResource("7_wys8i")
+
+[node name="ResponseExample3" type="Button" parent="ResponsesMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_constants/icon_max_width = 31
+theme_override_fonts/font = ExtResource("3_1jnly")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
+text = "Response example"
+icon = ExtResource("6_kx3ax")
+flat = true
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample3"]
+z_index = -1
+layout_mode = 2
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 599.0
+offset_bottom = 115.0
+scale = Vector2(1.45, 0.58)
+texture = ExtResource("7_wys8i")
+
+[node name="ResponseExample4" type="Button" parent="ResponsesMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
+theme_override_constants/icon_max_width = 31
+theme_override_fonts/font = ExtResource("3_1jnly")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
+text = "Response example"
+icon = ExtResource("6_kx3ax")
+flat = true
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample4"]
+z_index = -1
+layout_mode = 2
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 599.0
+offset_bottom = 115.0
+scale = Vector2(1.45, 0.58)
+texture = ExtResource("7_wys8i")
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="focus_entered" from="ResponsesMenu/ResponseExample" to="." method="_on_response_example_focus_entered"]
+[connection signal="focus_entered" from="ResponsesMenu/ResponseExample2" to="." method="_on_response_example_focus_entered"]
+[connection signal="focus_entered" from="ResponsesMenu/ResponseExample3" to="." method="_on_response_example_focus_entered"]
+[connection signal="focus_entered" from="ResponsesMenu/ResponseExample4" to="." method="_on_response_example_focus_entered"]

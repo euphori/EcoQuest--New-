@@ -1431,6 +1431,9 @@ metadata/_edit_group_ = true
 [node name="Charge" parent="CharacterManager/Kid" index="18"]
 texture = SubResource("ViewportTexture_fdet8")
 
+[node name="Bolt" parent="CharacterManager/Kid" index="19"]
+transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
+
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -54.5046, 10.5498, -11.6089)
 visible = false
@@ -3256,7 +3259,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0797176, 2.41578, -2
 
 [node name="Arrow" parent="npc/InteractUI" index="4"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.217436, 1.19237, -2.41194)
-visible = false
 
 [node name="Camera3D" parent="npc" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228783, 3.15506, 6.46422)

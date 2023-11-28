@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6e678nuxcyf5"]
+[gd_scene load_steps=6 format=3 uid="uid://c6e678nuxcyf5"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_52lpt"]
 [ext_resource type="Texture2D" uid="uid://cm45qfqqofb3e" path="res://assets/player/npc.png" id="2_ed8wu"]
 [ext_resource type="PackedScene" uid="uid://b2kbxskgk187s" path="res://interactable/interact_ui.tscn" id="3_2ugsp"]
+[ext_resource type="Texture2D" uid="uid://bjbbdwhho8i5g" path="res://assets/ui/hud/exclamation point.png" id="4_2hr1m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6swl0"]
 height = 2.00353
@@ -34,11 +35,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261353, 0.126029, 0.091702
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.374185, 2.74664, 0)
 flip_h = true
 
+[node name="Arrow" parent="InteractUI" index="4"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.326309, 2.06115, 0)
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228783, 3.30386, 4.42294)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136299, 5.75212, -1.1229)
+
+[node name="Exclamation" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295048, 5.3376, -1.04812)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("4_2hr1m")
 
 [editable path="InteractUI"]
 [editable path="InteractUI/PlayerDetection"]
