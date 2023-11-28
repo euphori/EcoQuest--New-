@@ -1,13 +1,28 @@
 ~ start
 
-???: You have been chosen to be the hero of tomorrow, are you willing to embark on our mission?
+???: You have been chosen to be the hero of tomorrow, are you willing to embark on our mission? This will need your dedication and your commitment.
 - I know my duties for our Mother Earth.
+	set pre_ap["GeneralKnowledge"] += 9
 - What is my duty? Let’s go!
+	set pre_ap["GeneralKnowledge"] += 6
 - Are you sure about that now?
+	set pre_ap["GeneralKnowledge"] += 3
 
-???: Trash is surrounding everywhere! Are you willing to help me in our cause on waste management?
+???: Pollution is steadily increasing every second! What can we do?
 - Surely the government does that already.
-- This needs to be mitigated to decrease greenhouse gasses!
-- We can have one trash can for all.
+	set pre_ap["SolutionAwareness"] += 6
+- This needs to be mitigated to and need to find specific solutions!
+	set pre_ap["SolutionAwareness"] += 9
+- We can let others do it instead.
+	set pre_ap["SolutionAwareness"] += 3
+
+???: It’s getting hot in your house! Do you know the cause of this?
+- Uhuh! Too much pollution!
+	set pre_ap["PollutionAwareness"] += 8
+- Yeah, this is because of greenhouse gasses.
+	set pre_ap["PollutionAwareness"] += 12
+- The sun is killing us!
+	set pre_ap["PollutionAwareness"] += 4
+
 do emit(dialogue_ended)
 => END
