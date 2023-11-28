@@ -8,6 +8,8 @@ extends Control
 func _ready():
 	if global.game_started:
 		queue_free()
+		
+	global.load_player_id()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +25,8 @@ func _on_start_pressed():
 		var loading_screen = load("res://UI/loading_screen.tscn")
 		global.next_scene = "res://levels/presurvey.tscn"
 		get_tree().change_scene_to_packed(loading_screen)
+		global.player_id += 1
+		global.save_player_id()
 	global.game_started = true
 
 func _on_quit_pressed():

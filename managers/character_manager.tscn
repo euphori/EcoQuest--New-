@@ -471,7 +471,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("20_8x8fx")
 
 [node name="Results" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -96.0
@@ -496,10 +495,10 @@ anchor_left = 35.585
 anchor_top = 21.651
 anchor_right = 46.597
 anchor_bottom = 27.869
-offset_left = -605.4
-offset_top = -538.04
-offset_right = -522.88
-offset_bottom = -670.76
+offset_left = -572.4
+offset_top = -551.04
+offset_right = -489.88
+offset_bottom = -683.76
 theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
 theme_override_fonts/font = ExtResource("10_geis5")
 theme_override_font_sizes/font_size = 56

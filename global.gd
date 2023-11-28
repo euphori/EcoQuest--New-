@@ -3,6 +3,8 @@ extends Node
 
 
 var env_condition = 10
+var player_id = 0
+
 
 var awareness_points = {
 	"SolutionAwareness" : 0,
@@ -44,10 +46,13 @@ signal game_saved
 signal update_env
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
+var player_save_path
 var curr_scene
 var curr_scene_name
 var curr_level
 var save_database 
+var _player_id
+
 
 var questStart = false
 var game_started = false
@@ -428,14 +433,20 @@ var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 
 
 
 #Save Data
-var data_path = "res://Data/PlayerChoices.json"
+var question_data = "res://Data/PlayerChoices.json"
+var survey_data = "res://Data/Presurvey.json"
 
 #Player Choice data
-func save_data(val):
+func save_data(type,val):
+	var data_path
+	if type == "survey":
+		data_path = survey_data
+	else:
+		data_path = question_data
 	var file = FileAccess.open(data_path, FileAccess.READ_WRITE)
 	var json_string = FileAccess.get_file_as_string(data_path)
 	var json_dict = JSON.parse_string(json_string)
-	json_dict["1"] = val
+	json_dict[str(player_id)] = val
 	var updated_json = JSON.stringify(json_dict)
 	file.open(data_path, FileAccess.WRITE)
 	file.store_string(updated_json)
@@ -451,6 +462,32 @@ func change_scene():
 
 
 
+
+
+
+func save_player_id():
+	_player_id = player_id
+	var file = FileAccess.open(player_save_path, FileAccess.WRITE)
+	var jstr = JSON.stringify(player_save_path)
+	file.store_line(jstr)
+	file.close()
+	
+func load_player_id():
+	if FileAccess.file_exists(player_save_path):
+			var file = FileAccess.open(player_save_path, FileAccess.READ)
+			if not file:
+				return
+			if file == null:
+				return
+			if FileAccess.file_exists(player_save_path) == true:
+				var json = JSON.new()
+				json.parse(file.get_as_text())
+				var data = json.get_data()
+				player_id = _player_id
+				change_scene()
+				file.close()
+	else:
+		print("no data saved")
 func save(_save_path):
 	emit_signal("game_saved")
 	last_player_pos[curr_scene_name] = str(player.global_position)

@@ -40,6 +40,7 @@ func update_result():
 	
 	awareness.text = result
 	$Comment.text = comment[result]
+	global.save_data("question",global.awareness_points)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

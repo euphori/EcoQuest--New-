@@ -25,4 +25,5 @@
 	set pre_ap["PollutionAwareness"] += 4
 
 do emit(dialogue_ended)
+do save_data("survey" , global.pre_ap)
 => END
