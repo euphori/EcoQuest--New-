@@ -50,7 +50,7 @@ offset_right = 1680.0
 offset_bottom = 1036.0
 theme_override_fonts/font = ExtResource("6_4fgch")
 theme_override_font_sizes/font_size = 45
-text = "Press \"F\" to interact"
+text = "Press ○ to interact"
 
 [node name="Arrow" type="Sprite3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,6 +1,8 @@
 extends Node
 
 
+var _player_id 
+var player_id = 0
 
 var env_condition = 10
 
@@ -429,14 +431,23 @@ var items = {"Wood": 1, "Plastic": 1,"Logs": 3,"Seeds": 0,"Trash": 0, "Wrench": 
 
 
 #Save Data
-var data_path = "res://Data/PlayerChoices.json"
+var choices_path = "res://Data/PlayerChoices.json"
+var survey_path = "res://Data/Presurvey.json"
 
 #Player Choice data
-func save_data(val):
+func save_data(survey):
+	var data_path
+	var val
+	if survey == "pre":
+		data_path = survey_path
+		val = pre_ap
+	else:
+		data_path = choices_path
+		val = awareness_points
 	var file = FileAccess.open(data_path, FileAccess.READ_WRITE)
 	var json_string = FileAccess.get_file_as_string(data_path)
 	var json_dict = JSON.parse_string(json_string)
-	json_dict["1"] = val
+	json_dict[player_id] = val
 	var updated_json = JSON.stringify(json_dict)
 	file.open(data_path, FileAccess.WRITE)
 	file.store_string(updated_json)

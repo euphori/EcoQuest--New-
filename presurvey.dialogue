@@ -24,5 +24,6 @@
 - The sun is killing us!
 	set pre_ap["PollutionAwareness"] += 4
 
+do global.save_data("pre")
 do emit(dialogue_ended)
 => END

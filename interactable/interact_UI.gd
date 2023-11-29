@@ -129,6 +129,11 @@ func _on_player_detection_body_entered(_body):
 			visible = true
 	if self.visible:
 		$Hint.visible = true
+		if type == "movable":
+			$Hint/Label.text = "Hold ○ to move"
+		else:
+			$Hint/Label.text = "Press ○ to interact"
+		
 	
 	if type == "npc":
 		parent.player_in_range = true

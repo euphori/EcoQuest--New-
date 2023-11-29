@@ -40,7 +40,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var jumping = false
 var busy = false
-var active = false
+var active = true
 var pushing = false
 var npc_in_range = false
 var can_dash = true
@@ -57,12 +57,12 @@ var platform = null
 func _ready():
 	if GlobalMusic.status != "neutral":
 		GlobalMusic.change_music("neutral")
-	if default_char:
-		dead = false
-		can_move = true
-		active = true
-		global.player = self
-		HEALTH = 100
+
+	dead = false
+	can_move = true
+	active = true
+	global.player = self
+	HEALTH = 100
 
 
 func jump():
@@ -105,7 +105,8 @@ func _physics_process(delta):
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		
 		
-
+		if input_dir:
+			print("MOVING")
 		
 		if direction.x and active and can_move and !dashing and !global.in_dialogue:
 			jumping = false
