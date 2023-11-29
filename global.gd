@@ -27,7 +27,7 @@ var last_player_pos = {
 	"Lab" : ""  ,
 	}
 var player_hp = 100
-var next_scene
+var next_scene 
 
 var enemy_cleared = { 
 	"Forest": false,
@@ -44,6 +44,7 @@ signal game_saved
 signal update_env
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
+var player_save_path = "user://playerid.txt"
 var curr_scene
 var curr_scene_name
 var curr_level
@@ -451,6 +452,31 @@ func change_scene():
 
 
 
+
+
+
+func save_player_id():
+	_player_id = player_id
+	var file = FileAccess.open(player_save_path, FileAccess.WRITE)
+	var jstr = JSON.stringify(_player_id)
+	file.store_line(jstr)
+	file.close()
+	
+func load_player_id():
+	if FileAccess.file_exists(player_save_path):
+			var file = FileAccess.open(player_save_path, FileAccess.READ)
+			if not file:
+				return
+			if file == null:
+				return
+			if FileAccess.file_exists(player_save_path) == true:
+				var json = JSON.new()
+				json.parse(file.get_as_text())
+				var data = json.get_data()
+				player_id = data
+				file.close()
+	else:
+		print("no data saved")
 func save(_save_path):
 	emit_signal("game_saved")
 	last_player_pos[curr_scene_name] = str(player.global_position)

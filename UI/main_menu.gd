@@ -10,6 +10,7 @@ func _ready():
 		queue_free()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -19,11 +20,14 @@ func _input(event):
 	pass
 
 func _on_start_pressed():
-	if !global.game_started:
-		var loading_screen = load("res://UI/loading_screen.tscn")
-		global.next_scene = "res://levels/presurvey.tscn"
-		get_tree().change_scene_to_packed(loading_screen)
-	global.game_started = true
+	global.next_scene = "res://levels/presurvey.tscn"
+	global.load_player_id()
+	global.player_id += 1
+	global.save_player_id()
+	
+	var loading_screen = load("res://UI/loading_screen.tscn")
+	get_tree().change_scene_to_packed(loading_screen)
+
 
 func _on_quit_pressed():
 	get_tree().quit()
