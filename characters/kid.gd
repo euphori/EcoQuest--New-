@@ -1,4 +1,153 @@
-extends "res://characters/movement_component.gd"
+extends CharacterBody3D
+
+@export_category("STATS")
+@export var SPEED = 10
+@export var JUMP_VELOCITY = 7
+@export var ACCELERATION = 150
+@export var MAX_SPEED = 10
+@export var DASH_SPEED = 50
+@export var HEALTH = 100
+@export var ENERGY = 100
+@export var MAX_HEALTH = 100
+
+@export_category("Dash")
+@export var dash_cooldown = 1
+@export var dash_cost_stamina = false
+@export var dash_cost = 50
+
+@export_category("Others")
+@export var default_char = false
+@export var can_move = true
+@export var attacking = false
+
+@export_category("Other Player")
+@export var path_to_other : NodePath
+
+
+@onready var charge = $Charge
+@onready var console = get_parent().get_node("Console")
+@onready var sprite = $Sprite3D
+@onready var left_muzzle = $LeftMarker
+@onready var right_muzzle = $RightMarker
+@onready var left = $LeftMarker2
+@onready var right = $RightMarker2
+@onready var anim_tree = $AnimationTree
+@onready var anim_state = anim_tree.get("parameters/playback")
+
+
+@onready var attack = $attack
+@onready var dash = $dash
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+var jumping = false
+var busy = false
+var active = true
+var pushing = false
+var npc_in_range = false
+var can_dash = true
+var dashing = false
+var dead
+var can_die = true
+var charging_attack = false
+
+var is_on_platform = false
+var platform = null
+
+
+
+func _ready():
+	if GlobalMusic.status != "neutral":
+		GlobalMusic.change_music("neutral")
+
+	dead = false
+	can_move = true
+	active = true
+	global.player = self
+	HEALTH = 100
+
+
+func jump():
+	velocity.y += JUMP_VELOCITY
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+		#$AnimationPlayer.play("falling")
+
+	if !dead:
+		if npc_in_range == true:
+			if Input.is_action_just_pressed("talk"):
+				DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
+		
+
+		else:
+			busy = false
+
+		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active and !global.in_dialogue:
+			jumping = true
+			velocity.y += JUMP_VELOCITY
+			anim_state.travel("Jump")
+			await $AnimationTree.animation_finished
+			anim_state.travel("Fall")
+			jumping = false
+
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
+		
+		if input_dir != Vector2.ZERO and can_move and !global.in_dialogue:
+
+			velocity.x = direction.x * SPEED
+			anim_tree.set("parameters/Run/blend_position",input_dir.x)
+			anim_tree.set("parameters/Idle/blend_position",input_dir.x)
+			anim_tree.set("parameters/Charge/blend_position",input_dir.x)
+			anim_tree.set("parameters/Shoot/blend_position",input_dir.x)
+			anim_tree.set("parameters/Jump/blend_position",input_dir.x)
+			anim_tree.set("parameters/Dash/blend_position",input_dir.x)
+			anim_tree.set("parameters/Fall/blend_position",input_dir.x)
+			
+			
+			if is_on_floor() and !charging_attack and !jumping and !dashing:
+				anim_state.travel("Run")
+		elif input_dir == Vector2.ZERO:
+			if is_on_floor() and !charging_attack and !jumping and !dashing:
+				anim_state.travel("Idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		
+		if Input.is_action_just_pressed("dash") and can_dash:
+			dash.play()
+			dashing = true
+			anim_state.travel("dash")
+			velocity.x = direction.x * DASH_SPEED
+			can_dash = false
+			$DashTimer.start(0.1)
+			$DashCooldown.start(dash_cooldown)
+
+	if can_move:
+		move_and_slide()
+	
+	if !charging_attack:
+		$Bolt.visible = false
+	if get_parent().energy_bar.value >= 50:
+		get_parent().energy_bar.tint_progress = Color(0.227, 0.514, 0.212)
+	elif get_parent().energy_bar.value < 50 and get_parent().energy_bar.value >= 25:
+		get_parent().energy_bar.tint_progress = Color(0.529, 0.314, 0.125)
+	else:
+		get_parent().energy_bar.tint_progress = Color(0.576, 0.184, 0.106)
+	if Input.is_action_pressed("attack"):
+		$RechargeTimer.start(recharge_time)
+		if can_shoot:
+			if get_parent().energy_bar.value > 0:
+				get_parent().energy_bar.value -= 45 * delta
+				pressed_time += delta 
+				
+
 
 const bolt = preload("res://instanced/bullet.tscn")
 
@@ -22,34 +171,16 @@ func _input(event):
 	if event.is_action_pressed("attack"):
 			charging_attack = true
 			if can_shoot:
-				if sprite.flip_h:
-					$AnimationPlayer.play("charge_right")
-				else:
-					$AnimationPlayer.play("charge_left")
+				anim_state.travel("Charge")
 	if event.is_action_released("attack"):
-		
-		$AnimationPlayer.play("release")
-		$Bolt.visible = false
-		charging_attack = false
 		if can_shoot:
+			anim_state.travel("Shoot")
 			shoot()
+			await $AnimationTree.animation_finished
+			$Bolt.visible = false
+			charging_attack = false
+			
 
-func _process(delta):
-	if !charging_attack:
-		$Bolt.visible = false
-	if get_parent().energy_bar.value >= 50:
-		get_parent().energy_bar.tint_progress = Color(0.227, 0.514, 0.212)
-	elif get_parent().energy_bar.value < 50 and get_parent().energy_bar.value >= 25:
-		get_parent().energy_bar.tint_progress = Color(0.529, 0.314, 0.125)
-	else:
-		get_parent().energy_bar.tint_progress = Color(0.576, 0.184, 0.106)
-	if Input.is_action_pressed("attack"):
-		$RechargeTimer.start(recharge_time)
-		if can_shoot:
-			if get_parent().energy_bar.value > 0:
-				get_parent().energy_bar.value -= 45 * delta
-				pressed_time += delta 
-				
 
 
 		

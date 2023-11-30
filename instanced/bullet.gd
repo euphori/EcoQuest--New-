@@ -7,6 +7,7 @@ enum{
 	DEFAULT,
 	SMALL
 }
+
 var size 
 var dir
 @onready var sprite = $Sprite3D
