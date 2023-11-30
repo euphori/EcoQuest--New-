@@ -5,11 +5,11 @@ if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].co
 	#Question1
 	Lucas: [color=red]Do you understand the impact of climate change, and the importance of our mission?[/color]
 	- This is an urgent matter.
-		set awareness_points["GeneralKnowledge"] += 3
+		set awareness_points["GeneralKnowledge"] += 4
 	- This has somewhat become my duty.
-		set awareness_points["GeneralKnowledge"] += 1
+		set awareness_points["GeneralKnowledge"] += 2
 	- Are you sure you chose the right person for this?
-		set awareness_points["GeneralKnowledge"] += 0
+		set awareness_points["GeneralKnowledge"] += 1
    
 	Lucas: Our world is in peril. The delicate balance of nature has been disrupted by the reckless actions of humankind.
 	Lucas: The fate of our world rests in your hands, young hero.
@@ -90,7 +90,7 @@ if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q
 	#Question4
 	Lucas: [color=red]But first, do you believe that climate change should be taught in schools?[/color]
 	- It is a must. Climate change is a topic widely discussed.
-		set awareness_points["GeneralKnowledge"] += 1
+		set awareness_points["GeneralKnowledge"] += 5
 	- Yes, we need more heroes like us to conserve and protect our environment.
 		set awareness_points["GeneralKnowledge"] += 3
 	- I think we should just let the students learn themselves about it.

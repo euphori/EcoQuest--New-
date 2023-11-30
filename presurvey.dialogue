@@ -56,14 +56,6 @@ Pre Survey: There are few forests left in our world, what’s your thoughts?
 - Yes to more housing areas!
 	set pre_ap["PollutionAwareness"] += 0
 	
-Pre Survey: There are few forests left in our world, what’s your thoughts?
-- Oh no! They help us cool down the planet.
-	set pre_ap["PollutionAwareness"] += 2
-- If deforestation continues, more CO2 ill be trapped in the atmosphere!
-	set pre_ap["PollutionAwareness"] += 4
-- Yes to more housing areas!
-	set pre_ap["PollutionAwareness"] += 0
-	
 Pre Survey: Are you sure you’re willing to save the planet, hero?
 - I am not alone in this journey.
 - We need to start small.

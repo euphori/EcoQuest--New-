@@ -45,7 +45,7 @@ func _ready():
 	
 	
 	if get_parent().name == "Hub" and self.name == "Harper":
-		if global.quest["chapter2"]["q4"].completed == false:
+		if global.quest["chapter2"]["q3"].completed == false:
 			self.queue_free()
 	$InteractUI.connect("talk" , talk)
 	GlobalDialogue.connect("dialogue_ended", return_camera)

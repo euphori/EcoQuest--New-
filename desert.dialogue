@@ -10,9 +10,9 @@ if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].com
 	#Question3
 	Harper: [color=red]Do you know the environmental impact of water conservation?[/color]
 	- We're doing our duties as citizens of our community.
-		set awareness_points["PollutionAwareness"] += 1
+		set awareness_points["PollutionAwareness"] += 2
 	- It ensures that our water supply will not run out.
-		set awareness_points["PollutionAwareness"] += 3
+		set awareness_points["PollutionAwareness"] += 4
 	- I want to use as much water as I can.
 		set awareness_points["PollutionAwareness"] += 0
 	Harper: There are robots that has been polluting the water around the desert. 
