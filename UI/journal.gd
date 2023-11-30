@@ -172,6 +172,7 @@ func update_save_slot():
 
 func show_map():
 	self.visible = true
+	
 	for i in get_child_count():
 		var page = get_child(i)
 		if page.name == "Map":
@@ -179,6 +180,7 @@ func show_map():
 				
 		else:
 			page.visible = false
+	
 
 
 

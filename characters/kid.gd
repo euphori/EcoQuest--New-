@@ -127,7 +127,7 @@ func _on_hurtbox_area_entered(area):
 	if area.get_parent().is_in_group("enemy"):
 		var tween = get_tree().create_tween()
 		print("HIT")
-		HEALTH -= 5
+		HEALTH -= 15
 		hit.play()
 		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.3)
 		if HEALTH <= 0:

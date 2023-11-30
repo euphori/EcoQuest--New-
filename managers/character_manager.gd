@@ -55,6 +55,7 @@ var stop_camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_quest()
+	global.in_dialogue = false
 	kid.connect("player_dead", show_death_screen)
 	global.connect("update_quest", update_quest)
 	global.connect("game_saved" , show_save_icon)

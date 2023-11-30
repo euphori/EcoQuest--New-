@@ -117,7 +117,7 @@ func _physics_process(delta):
 				else:
 					if Input.is_action_just_pressed("jump"):
 						$AnimationPlayer.play("dash")
-						velocity.y += JUMP_VELOCITY - 2
+						velocity.y += JUMP_VELOCITY - 1
 					else:
 						$AnimationPlayer.play("run")
 			if velocity.x  < 0 and !busy and !pushing :
