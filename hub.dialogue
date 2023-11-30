@@ -84,7 +84,7 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].completed == true:
 	Old Tom: You need a electric scooter to go to Polar Pines, there lies the path that holds the final seed.
 	Old Tom: However, the scooter needs repair. Go to the workshop maybe they can help you fix it.
-	#Question6
+	#Question5
 	Old Tom: [color=red]Before you go, are you aware of the environmental impact of fossil fuels and the increasing number of cars?[/color]
 	- Yes. These cars contribute to the greenhouse gases and use non-renewable energy.
 		set awareness_points["PollutionAwareness"] += 3
@@ -157,10 +157,13 @@ if global.quest["chapter5"]["q2"].active == true and quest["chapter5"]["q2"].com
 if quest["chapter5"]["q2"].completed == true:
 	Old Tom: I believe that they are finally gone. Thank you, young hero. 
 	Old Tom: The world is now saved from the dangers of climate change.
-	Old Tom: I have one last question, if everything goes back around, do you think that we can still  save the Earth?
-	- As long as we work as one community, we can.
-	- We need to save ourselves from this by doing minuscule actions.
-	- The Earth will get destroyed eventually. It’s better to let things happen.
+	Old Tom: I have one last question, do you understand how deforestation contributes to climate change?
+	- Our trees cover us from the heat, and help us cool down!
+		set awareness_points["PollutionAwareness"] += 1
+	- Our trees absorb and store carbon dioxide.
+		set awareness_points["PollutionAwareness"] += 3
+	- Our trees can be planted any time.
+		set awareness_points["PollutionAwareness"] += 0
 	set quest["chapter5"]["q3"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)

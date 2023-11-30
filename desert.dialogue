@@ -30,14 +30,6 @@ if global.quest["chapter2"]["q1"].active == true and quest["chapter2"]["q1"].com
 if global.quest["chapter2"]["q2"].completed == true and global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == false :
 	Harper:  I didn’t know you had that power in you, friend! I’m impressed.
 	Harper:  Oh no. We have another problem. Our water supply! It’s tainted. 
-	#Question4
-	Harper: [color=red]Do you think leaving the water running for too long is good for the environment?[/color]
-	- We reduce our carbon footprint.
-		set awareness_points["SolutionAwareness"] += 3
-	- That will increase our water bills. 
-		set awareness_points["SolutionAwareness"] += 1
-	- There are more ways we can get water, that’s fine.
-		set awareness_points["SolutionAwareness"] += 0
 	Harper:  I need to fix this pipe, but I forgot my toolbox! Young hero, please help me!
 	set quest["chapter2"]["q3"].active = true
 	do emit(update_quest)
@@ -45,16 +37,16 @@ if global.quest["chapter2"]["q2"].completed == true and global.quest["chapter2"]
 	do save(save_path["save1"])
 	=> END
 	
-if global.items["Wrench"] >= 1:
-	set global.quest["chapter2"]["q3"].completed = true
-	set global.quest["chapter2"]["q3"].active = false
-	set global.quest["chapter2"]["q4"].active = true
-	do emit(update_quest)
-	do save(save_path["save1"])
-	
-if global.quest["chapter2"]["q3"].active == true and global.quest["chapter2"]["q3"].completed == false:
+if global.quest["chapter2"]["q3"].active == true and global.quest["chapter2"]["q3"].completed == false and global.items["Wrench"] < 1:
 	Harper:  Head to the ancient ruins on the far side of the desert. 
 	Harper: You'll find my toolbox there, and then you can fix the pipeline.
+	do emit(update_quest)
+	do emit(dialogue_ended)
+	do save(save_path["save1"])
+	=> END
+	
+if global.quest["chapter2"]["q3"].active == true and global.quest["chapter2"]["q3"].completed == false and global.items["Wrench"] >= 1:
+	Harper:  Great you found the tool! Go to the pipe and fix it.
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
@@ -69,35 +61,24 @@ if global.quest["chapter2"]["q2"].active == true and quest["chapter2"]["q1"].com
 
 if global.fixed_pipe == true:
 	set global.quest["chapter2"]["q3"].active = false
-	set global.quest["chapter2"]["q4"].active = false
-	set global.quest["chapter2"]["q4"].completed = true
+	set global.quest["chapter2"]["q3"].completed = true
 	do emit(update_quest)
 	do save(save_path["save1"])
 
-if global.quest["chapter2"]["q4"].completed == false and global.quest["chapter2"]["q4"].active == true:
-	Harper: Help me fix the pipe!
-	do emit(dialogue_ended)
-	=> END
 
-if global.quest["chapter2"]["q4"].completed == true and global.quest["chapter2"]["q5"].active == false: 
+if global.quest["chapter2"]["q3"].completed == true and global.quest["chapter2"]["q5"].active == false: 
 	Harper:  You've done it! Thanks, young hero! The water’s cleaner than ever!
 	Harper:  As promised, I'll give you the first magical seed.
 	set items["Seeds"] += 1
 	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
 	set global.quest["chapter2"]["q5"].active = true
-	set global.quest["chapter2"]["q4"].active = false
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])
 	=> END
 
-if global.quest["chapter2"]["q3"].completed == false and global.quest["chapter2"]["q3"].active == true :
-	Harper:  You need to help me fix the pipe.
-	Harper:  Head to the ancient ruins in the far side of the desert. You'll find the tools there
-	do emit(dialogue_ended)
-	=> END
 
-if global.quest["chapter2"]["q4"].completed == true and global.quest["chapter2"]["q5"].active == true:
+if global.quest["chapter2"]["q3"].completed == true and global.quest["chapter2"]["q5"].active == true:
 	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
 	Harper: See you soon.
 	do emit(dialogue_ended)

@@ -234,7 +234,7 @@ func die():
 	if add_on_kill:
 		global.curr_killcount += 1
 		var quest = global.get_active_quest()
-
+		print(global.get_active_quest())
 		if quest != null and quest.has("kill_req"):
 			if quest.kill_req >= global.curr_killcount:
 				quest.active = false

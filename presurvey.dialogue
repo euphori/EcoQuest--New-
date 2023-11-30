@@ -1,28 +1,73 @@
 ~ start
 
-???: You have been chosen to be the hero of tomorrow, are you willing to embark on our mission? This will need your dedication and your commitment.
+Pre Survey: You have been chosen to be the hero of tomorrow, are you willing to embark on our mission?
 - I know my duties for our Mother Earth.
-	set pre_ap["GeneralKnowledge"] += 9
-- What is my duty? Let’s go!
-	set pre_ap["GeneralKnowledge"] += 6
-- Are you sure about that now?
-	set pre_ap["GeneralKnowledge"] += 3
+	set pre_ap["GeneralKnowledge"] += 4
+- What is my duty? I don't know.
+	set pre_ap["GeneralKnowledge"] += 2
+- Wait. I’m scared about that.
+	set pre_ap["GeneralKnowledge"] += 1
 
-???: Pollution is steadily increasing every second! What can we do?
+Pre Survey: Trash is surrounding everywhere! Help me in our cause on waste management.
 - Surely the government does that already.
-	set pre_ap["SolutionAwareness"] += 6
-- This needs to be mitigated to and need to find specific solutions!
-	set pre_ap["SolutionAwareness"] += 9
-- We can let others do it instead.
 	set pre_ap["SolutionAwareness"] += 3
+- This needs to be mitigated to decrease greenhouse gasses!
+	set pre_ap["SolutionAwareness"] += 5
+- We can have one trash can for all.
+	set pre_ap["SolutionAwareness"] += 1
 
-???: It’s getting hot in your house! Do you know the cause of this?
-- Uhuh! Too much pollution!
-	set pre_ap["PollutionAwareness"] += 8
-- Yeah, this is because of greenhouse gasses.
-	set pre_ap["PollutionAwareness"] += 12
-- The sun is killing us!
+Pre Survey: The rate of rising sea levels increases each year. Are you aware of this?
+- This is because of pollution around the world!
+	set pre_ap["PollutionAwareness"] += 2
+- Because of extreme heat, our polar ice caps are melting!
 	set pre_ap["PollutionAwareness"] += 4
+- Oh no! We’ll die!
+	set pre_ap["PollutionAwareness"] += 0
+
+Pre Survey: You notice a group of students are interested in climate change, what will you do?
+- We will gather professionals & teachers
+	set pre_ap["GeneralKnowledge"] += 5
+- We can educate them with what we know.
+	set pre_ap["GeneralKnowledge"] += 3
+- Influence them to not care about the environment.
+	set pre_ap["GeneralKnowledge"] += 0
+	
+Pre Survey: A lot of cars are trafficking the streets, what’s your insights in these?
+- These contribute a lot to our greenhouse gases.
+	set pre_ap["PollutionAwareness"] += 4
+- They emit smoke that is harmful to people.
+	set pre_ap["PollutionAwareness"] += 2
+- They contribute to the traffic for sure.
+	set pre_ap["PollutionAwareness"] += 1
+	
+Pre Survey: A lot of people are using solar panels now, would you too?
+- They are the future and we need to influence more too.
+	set pre_ap["SolutionAwareness"] += 4
+- It’s crazy expensive but i’ll give it a try.
+	set pre_ap["SolutionAwareness"] += 2
+- It relies too much on the sun though.
+	set pre_ap["SolutionAwareness"] += 1
+	
+Pre Survey: There are few forests left in our world, what’s your thoughts?
+- Oh no! They help us cool down the planet.
+	set pre_ap["PollutionAwareness"] += 2
+- If deforestation continues, more CO2 ill be trapped in the atmosphere!
+	set pre_ap["PollutionAwareness"] += 4
+- Yes to more housing areas!
+	set pre_ap["PollutionAwareness"] += 0
+	
+Pre Survey: There are few forests left in our world, what’s your thoughts?
+- Oh no! They help us cool down the planet.
+	set pre_ap["PollutionAwareness"] += 2
+- If deforestation continues, more CO2 ill be trapped in the atmosphere!
+	set pre_ap["PollutionAwareness"] += 4
+- Yes to more housing areas!
+	set pre_ap["PollutionAwareness"] += 0
+	
+Pre Survey: Are you sure you’re willing to save the planet, hero?
+- I am not alone in this journey.
+- We need to start small.
+- Fine.
 
 do global.save_data("pre")
 do emit(dialogue_ended)

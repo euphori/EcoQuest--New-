@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cphw3lfb0vtrf"]
+[gd_scene load_steps=10 format=3 uid="uid://cphw3lfb0vtrf"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_18lk4"]
 [ext_resource type="Texture2D" uid="uid://baocsyy6nrwqh" path="res://assets/ui/hud/DialogueBox.png" id="2_0tt5u"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="4_5n27a"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="5_66nlo"]
 [ext_resource type="Texture2D" uid="uid://c4wwsopl326ra" path="res://assets/ui/modals/arrow icon.png" id="6_kx3ax"]
-[ext_resource type="Texture2D" uid="uid://cd3cttpd7y3u7" path="res://assets/ui/hud/Pickup LabelBG.png" id="7_wys8i"]
 
 [sub_resource type="Theme" id="Theme_y7unw"]
 
@@ -61,10 +60,10 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0416847
-anchor_top = 0.042517
-anchor_right = 0.978685
-anchor_bottom = 0.770517
+anchor_left = 0.042343
+anchor_top = 0.112432
+anchor_right = 0.979343
+anchor_bottom = 0.840432
 offset_left = 20.681
 offset_top = 27.932
 offset_right = -52.0
@@ -91,7 +90,7 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="ResponsesMenu"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
+theme_override_colors/font_color = Color(0.117647, 0.141176, 0.156863, 1)
 theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
 theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
 theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
@@ -108,94 +107,13 @@ alignment = 0
 [node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample"]
 z_index = -1
 layout_mode = 2
-offset_left = -1.0
-offset_top = -20.0
-offset_right = 599.0
-offset_bottom = 115.0
-scale = Vector2(1.45, 0.58)
-texture = ExtResource("7_wys8i")
-
-[node name="ResponseExample2" type="Button" parent="ResponsesMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
-theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_constants/icon_max_width = 31
-theme_override_fonts/font = ExtResource("3_1jnly")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
-text = "Response example"
-icon = ExtResource("6_kx3ax")
-flat = true
-alignment = 0
-
-[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample2"]
-z_index = -1
-layout_mode = 2
-offset_left = -1.0
-offset_top = -20.0
-offset_right = 599.0
-offset_bottom = 115.0
-scale = Vector2(1.45, 0.58)
-texture = ExtResource("7_wys8i")
-
-[node name="ResponseExample3" type="Button" parent="ResponsesMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
-theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_constants/icon_max_width = 31
-theme_override_fonts/font = ExtResource("3_1jnly")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
-text = "Response example"
-icon = ExtResource("6_kx3ax")
-flat = true
-alignment = 0
-
-[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample3"]
-z_index = -1
-layout_mode = 2
-offset_left = -1.0
-offset_top = -20.0
-offset_right = 599.0
-offset_bottom = 115.0
-scale = Vector2(1.45, 0.58)
-texture = ExtResource("7_wys8i")
-
-[node name="ResponseExample4" type="Button" parent="ResponsesMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.933333, 0.945098, 0.952941, 1)
-theme_override_colors/font_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_focus_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.304688, 0.59375, 0.660156, 1)
-theme_override_constants/icon_max_width = 31
-theme_override_fonts/font = ExtResource("3_1jnly")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5ijsa")
-text = "Response example"
-icon = ExtResource("6_kx3ax")
-flat = true
-alignment = 0
-
-[node name="TextureRect" type="TextureRect" parent="ResponsesMenu/ResponseExample4"]
-z_index = -1
-layout_mode = 2
-offset_left = -1.0
-offset_top = -20.0
-offset_right = 599.0
-offset_bottom = 115.0
-scale = Vector2(1.45, 0.58)
-texture = ExtResource("7_wys8i")
+offset_left = -46.0
+offset_top = -28.0
+offset_right = 1426.0
+offset_bottom = 416.0
+scale = Vector2(0.7, 0.2)
+texture = ExtResource("2_0tt5u")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
 [connection signal="focus_entered" from="ResponsesMenu/ResponseExample" to="." method="_on_response_example_focus_entered"]
-[connection signal="focus_entered" from="ResponsesMenu/ResponseExample2" to="." method="_on_response_example_focus_entered"]
-[connection signal="focus_entered" from="ResponsesMenu/ResponseExample3" to="." method="_on_response_example_focus_entered"]
-[connection signal="focus_entered" from="ResponsesMenu/ResponseExample4" to="." method="_on_response_example_focus_entered"]

@@ -87,7 +87,7 @@ if global.quest["chapter3"]["q1"].active == true and global.quest["chapter3"]["q
 	Lucas: Ah, young hero. See how the forest flourishes after planting the first seed? 
 	Lucas: Your efforts are making a difference.
 	Lucas: We must learn more about this forest to ensure its continued growth. 
-	#Question5
+	#Question4
 	Lucas: [color=red]But first, do you believe that climate change should be taught in schools?[/color]
 	- It is a must. Climate change is a topic widely discussed.
 		set awareness_points["GeneralKnowledge"] += 1

@@ -11,6 +11,8 @@ extends Node3D
 var old_pos 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if self.name != "Forest":
+		global.quest["chapter1"]["q1"].active = false
 	if self.name == "Hub":
 		var rand = randi_range(0,2)
 		if rand == 1:
