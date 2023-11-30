@@ -103,8 +103,9 @@ func _input(event):
 				elif parent.name == "Moped" and !global.scooter_repaired and parent.has_dialogue:
 					parent.show_dialogue()
 				else:
-					manager.journal.map.initialize_map()
-					manager.journal.show_map()
+					if parent.visible:
+						manager.journal.map.initialize_map()
+						manager.journal.show_map()
 				global.last_player_pos[global.curr_scene_name] = str(player.global_position)
 			elif type == "observe":
 				if !parent.done:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://chxuot5dj22rf"]
+[gd_scene load_steps=174 format=3 uid="uid://chxuot5dj22rf"]
 
 [ext_resource type="PackedScene" uid="uid://swij4ali5aam" path="res://shaders/WaterVFX.tscn" id="1_heupx"]
 [ext_resource type="Script" path="res://WorldScene.gd" id="1_rwywj"]
@@ -1341,6 +1341,8 @@ data = PackedVector3Array(0.0149, 0.0414, 0.0084, 0.0144, 0.0414, 0.0097, 0.0143
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ll0ti"]
 size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_geicc"]
 
 [node name="Desert" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.11764, 0)
@@ -3336,6 +3338,13 @@ transform = Transform3D(0.122103, -2.01426, 2.21988, 2.9945, 0.181526, 0, -0.134
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(2.9968, 0.0527288, -0.128015, 0.0527279, 2.13017, 2.11177, 0.128015, -2.11177, 2.12698, 1.22398, -0.000400543, 1.46238)
 shape = SubResource("BoxShape3D_ll0ti")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.028, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 13.9457, 34.2804, 3.81521)
+shape = SubResource("BoxShape3D_geicc")
 
 [editable path="CutsceneManager"]
 [editable path="Water/Water"]
