@@ -61,7 +61,7 @@ var quest = {
 
 	"chapter1":{
 		"q1": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Explore the area",
 			"type" : "explore",
 			"req_items" : null,
@@ -72,7 +72,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Collect 5 woods to build a boat",
 			"type" : "gather",
 			"req_items" : ["Wood", 5],
@@ -83,7 +83,7 @@ var quest = {
 			"talk_after" : true
 		},
 		"q3": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Go meet Lucas in the docks",
 			"type" : "explore",
 			"req_items" : null,
@@ -95,7 +95,7 @@ var quest = {
 			
 		},
 		"q4": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Protect Lucas from the Robots",
 			"type" : "defend",
 			"req_items" : null,
@@ -106,7 +106,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q4.5": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Use the boat and go to Briarwood Harbour",
 			"type" : "travel",
 			"req_items" : null,
@@ -117,7 +117,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q5": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Talk to Lucas",
 			"type" : "explore",
 			"req_items" : null,
@@ -129,7 +129,7 @@ var quest = {
 		
 		},
 		"q6": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Find and talk to the OldTom",
 			"type" : "explore",
 			"req_items" : null,
@@ -141,7 +141,7 @@ var quest = {
 		
 		},
 		"q7": {
-			"title": "Adeventure I",
+			"title": "Adventure I",
 			"desc" : "Collect trash that are scattered in the area",
 			"type" : "gather",
 			"req_items" : ["Trash" , 5],
@@ -155,7 +155,7 @@ var quest = {
 	},
 	"chapter2":{
 		"q1": {
-			"title": "Adeventure II",
+			"title": "Adventure II",
 			"desc" : "Go to Rusty Bay and investigate",
 			"type" : "explore",
 			"req_items" : null,
@@ -166,7 +166,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Adeventure II",
+			"title": "Adventure II",
 			"desc" : "Defeat Robots to restore water",
 			"type" : "kill",
 			"req_items" : null,
@@ -178,7 +178,7 @@ var quest = {
 			"kill_req": 3
 		},
 		"q3": {
-			"title": "Adeventure II",
+			"title": "Adventure II",
 			"desc" : "Find the missing tool and fix pipe",
 			"type" : "gather",
 			"req_items" : ["Wrench" , 1],
@@ -189,7 +189,7 @@ var quest = {
 			"talk_after" : false,
 		},
 		"q5": {
-			"title": "Adeventure II",
+			"title": "Adventure II",
 			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
@@ -202,7 +202,7 @@ var quest = {
 	},
 	"chapter3":{
 		"q1": {
-			"title": "Adeventure III",
+			"title": "Adventure III",
 			"desc" : "Go to Whispering Woods and talk to Lucas",
 			"type" : "explore",
 			"req_items" : null,
@@ -213,7 +213,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Adeventure III",
+			"title": "Adventure III",
 			"desc" : "Gather data from the forest",
 			"type" : "gather",
 			"req_items" : ["Data" , 3],
@@ -224,7 +224,7 @@ var quest = {
 			"talk_after" : true
 		},
 		"q3": {
-			"title": "Adeventure III",
+			"title": "Adventure III",
 			"desc" : "Defeat Robots to protect data",
 			"type" : "kill",
 			"req_items" : null,
@@ -235,7 +235,7 @@ var quest = {
 			"talk_after" : false,
 		},
 		"q4": {
-			"title": "Adeventure III",
+			"title": "Adventure III",
 			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
@@ -246,7 +246,7 @@ var quest = {
 			"talk_after" : false,
 		},
 		"q5": {
-			"title": "Adeventure III",
+			"title": "Adventure III",
 			"desc" : "Go to workshop and fix Electric Scooter",
 			"type" : "Fix",
 			"req_items" : ["Scraps" , 5],
@@ -259,7 +259,7 @@ var quest = {
 	},
 	"chapter4":{
 		"q1": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Go to Citadel Heights and talk to Harper",
 			"type" : "explore",
 			"req_items" : null,
@@ -270,7 +270,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Collect parts to build Solar Panel",
 			"type" : "gather",
 			"req_items" : ["Glass", 1, "Metal Frame", 1 , "Metal Sheet", 1 , "Junction Box", 1],
@@ -281,7 +281,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q3": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Go to Polar Pine and talk to the Professor",
 			"type" : "explore",
 			"req_items" : null,
@@ -292,7 +292,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q4": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Protect Professor and defeat Robots",
 			"type" : "kill",
 			"req_items" : null,
@@ -304,7 +304,7 @@ var quest = {
 			"kill_req": 4
 		},
 		"q5": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Go inside the lab to shut down factory",
 			"type" : "explore",
 			"req_items" : null,
@@ -315,7 +315,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q6": {
-			"title": "Adeventure IV",
+			"title": "Adventure IV",
 			"desc" : "Go outside and talk to Professor",
 			"type" : "explore",
 			"req_items" : null,
@@ -328,7 +328,7 @@ var quest = {
 	},
 	"chapter5":{
 		"q1": {
-			"title": "Adeventure V",
+			"title": "Adventure V",
 			"desc" : "Go to Briarwood Harbor and talk to OldTom",
 			"type" : "explore",
 			"req_items" : null,
@@ -339,7 +339,7 @@ var quest = {
 			"talk_after" : false
 		},
 		"q2": {
-			"title": "Adeventure V",
+			"title": "Adventure V",
 			"desc" : "Defeat Robots to protect the Trees",
 			"type" : "kill",
 			"req_items" : null,

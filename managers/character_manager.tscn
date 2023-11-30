@@ -15,12 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://d143nd5tbp3sw" path="res://assets/ui/menus/PauseMenu BG.png" id="14_r2rdb"]
 [ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="15_5d7aw"]
 [ext_resource type="Texture2D" uid="uid://b5asb5gxiksb2" path="res://assets/ui/menus/smallbutton.png" id="17_3bcqj"]
-[ext_resource type="Texture2D" uid="uid://7hhostq7p7ht" path="res://assets/ui/player_stats/Portrait.png" id="17_68gj0"]
 [ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="18_ykw83"]
 [ext_resource type="Texture2D" uid="uid://jcj227n8e8rx" path="res://assets/ui/hud/Journal.png" id="19_apbeu"]
 [ext_resource type="Script" path="res://managers/Results.gd" id="19_bi7sq"]
 [ext_resource type="AudioStream" uid="uid://dtfipawaentik" path="res://assets/sounds/open_journal.mp3" id="20_5g3qf"]
 [ext_resource type="Texture2D" uid="uid://b41jdwqd3bsy6" path="res://assets/ui/hud/RedDot.png" id="20_8x8fx"]
+[ext_resource type="Texture2D" uid="uid://ba40o3tb1ewtk" path="res://assets/npc/charhead.png" id="21_eib6q"]
 [ext_resource type="AudioStream" uid="uid://cveld00t3m37x" path="res://assets/sounds/close_journal.mp3" id="21_o3dfa"]
 [ext_resource type="Texture2D" uid="uid://baocsyy6nrwqh" path="res://assets/ui/hud/DialogueBox.png" id="27_3dqfr"]
 
@@ -117,6 +117,7 @@ offset_bottom = 333.0
 scale = Vector2(0.8, 0.8)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI/Health"]
+modulate = Color(0.588235, 0.137255, 0.137255, 1)
 layout_mode = 0
 offset_left = -211.25
 offset_top = -300.0
@@ -577,8 +578,9 @@ vertical_alignment = 1
 [node name="TrackerTimer" type="Timer" parent="."]
 
 [node name="Portrait" type="Sprite2D" parent="."]
-position = Vector2(59, 61)
-texture = ExtResource("17_68gj0")
+position = Vector2(55, 56)
+scale = Vector2(0.120322, 0.120322)
+texture = ExtResource("21_eib6q")
 
 [node name="Open" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_5g3qf")
