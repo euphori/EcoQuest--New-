@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=24 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
@@ -16,13 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="15_5d7aw"]
 [ext_resource type="Texture2D" uid="uid://b5asb5gxiksb2" path="res://assets/ui/menus/smallbutton.png" id="17_3bcqj"]
 [ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="18_ykw83"]
+[ext_resource type="PackedScene" uid="uid://otwy04a327ys" path="res://UI/results.tscn" id="19_4yopd"]
 [ext_resource type="Texture2D" uid="uid://jcj227n8e8rx" path="res://assets/ui/hud/Journal.png" id="19_apbeu"]
-[ext_resource type="Script" path="res://managers/Results.gd" id="19_bi7sq"]
 [ext_resource type="AudioStream" uid="uid://dtfipawaentik" path="res://assets/sounds/open_journal.mp3" id="20_5g3qf"]
 [ext_resource type="Texture2D" uid="uid://b41jdwqd3bsy6" path="res://assets/ui/hud/RedDot.png" id="20_8x8fx"]
 [ext_resource type="Texture2D" uid="uid://ba40o3tb1ewtk" path="res://assets/npc/charhead.png" id="21_eib6q"]
 [ext_resource type="AudioStream" uid="uid://cveld00t3m37x" path="res://assets/sounds/close_journal.mp3" id="21_o3dfa"]
-[ext_resource type="Texture2D" uid="uid://baocsyy6nrwqh" path="res://assets/ui/hud/DialogueBox.png" id="27_3dqfr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_04ija"]
 viewport_path = NodePath("SubViewport")
@@ -39,7 +38,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.98271, 0, 0)
 collision_mask = 9
 axis_lock_linear_z = true
 
-[node name="Charge" parent="Kid" index="18"]
+[node name="Charge" parent="Kid" index="19"]
 texture = SubResource("ViewportTexture_04ija")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -468,112 +467,7 @@ position = Vector2(102, 960)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("20_8x8fx")
 
-[node name="Results" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -96.0
-offset_top = 30.0
-offset_right = -56.0
-offset_bottom = 70.0
-script = ExtResource("19_bi7sq")
-
-[node name="TextureRect" type="TextureRect" parent="UI/Results"]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 292.0
-offset_right = 1774.0
-offset_bottom = 736.0
-mouse_filter = 2
-texture = ExtResource("27_3dqfr")
-
-[node name="Label3" type="Label" parent="UI/Results"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 35.585
-anchor_top = 21.651
-anchor_right = 46.597
-anchor_bottom = 27.869
-offset_left = -605.4
-offset_top = -538.04
-offset_right = -522.88
-offset_bottom = -670.76
-theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 56
-text = "Congratulations!
-"
-
-[node name="Label4" type="Label" parent="UI/Results"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 35.585
-anchor_top = 21.651
-anchor_right = 46.597
-anchor_bottom = 27.869
-offset_left = -1044.4
-offset_top = -422.04
-offset_right = -1049.88
-offset_bottom = -569.76
-theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 42
-text = "Level of awareness:"
-
-[node name="Comment" type="Label" parent="UI/Results"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 35.585
-anchor_top = 21.651
-anchor_right = 46.597
-anchor_bottom = 27.869
-offset_left = -1046.4
-offset_top = -319.04
-offset_right = -1051.88
-offset_bottom = -466.76
-theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 42
-text = "Needs more improvement"
-
-[node name="Awareness" type="Label" parent="UI/Results"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 35.585
-anchor_top = 21.651
-anchor_right = 46.597
-anchor_bottom = 27.869
-offset_left = -734.4
-offset_top = -433.04
-offset_right = -739.88
-offset_bottom = -580.76
-theme_override_colors/font_color = Color(0.701961, 0.117647, 0.137255, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 56
-text = "Low
-"
-
-[node name="OkayButton" type="TextureButton" parent="UI/Results"]
-layout_mode = 0
-offset_left = 816.0
-offset_top = 658.0
-offset_right = 1251.0
-offset_bottom = 788.0
-texture_normal = ExtResource("15_5d7aw")
-
-[node name="Label5" type="Label" parent="UI/Results/OkayButton"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 8.0
-offset_right = 580.0
-offset_bottom = 156.0
-scale = Vector2(0.75, 0.75)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_geis5")
-theme_override_font_sizes/font_size = 60
-text = "Got it!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Results" parent="UI" instance=ExtResource("19_4yopd")]
 
 [node name="TrackerTimer" type="Timer" parent="."]
 
@@ -603,7 +497,6 @@ pitch_scale = 1.68
 [connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/PausMenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="UI/Results/OkayButton" to="UI/Results" method="_on_okay_button_pressed"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_tracker_timer_timeout"]
 
 [editable path="Console"]

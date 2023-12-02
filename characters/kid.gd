@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var JUMP_VELOCITY = 7
 @export var ACCELERATION = 150
 @export var MAX_SPEED = 10
-@export var DASH_SPEED = 50
+@export var DASH_SPEED = 100
 @export var HEALTH = 100
 @export var ENERGY = 100
 @export var MAX_HEALTH = 100
@@ -36,7 +36,7 @@ extends CharacterBody3D
 
 
 @onready var attack = $attack
-@onready var dash = $dash
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -50,9 +50,11 @@ var dashing = false
 var dead
 var can_die = true
 var charging_attack = false
+var jump_count = 0
 
 var is_on_platform = false
 var platform = null
+
 
 
 
@@ -75,8 +77,11 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		#$AnimationPlayer.play("falling")
-
+		if !dashing and !jumping:
+			anim_state.travel("Fall")
+	else:
+		jump_count = 0
+		jumping = false
 	if !dead:
 		if npc_in_range == true:
 			if Input.is_action_just_pressed("talk"):
@@ -86,13 +91,15 @@ func _physics_process(delta):
 		else:
 			busy = false
 
-		if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active and !global.in_dialogue:
+		if Input.is_action_just_pressed("jump")  and !busy and active and !global.in_dialogue and !dashing and jump_count <= 1:
 			jumping = true
+			jump_count += 1
 			velocity.y += JUMP_VELOCITY
 			anim_state.travel("Jump")
-			await $AnimationTree.animation_finished
-			anim_state.travel("Fall")
 			jumping = false
+			
+		
+		
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -101,8 +108,9 @@ func _physics_process(delta):
 		
 		
 		if input_dir != Vector2.ZERO and can_move and !global.in_dialogue:
-
-			velocity.x = direction.x * SPEED
+			
+			if !dashing:
+				velocity.x = direction.x * SPEED
 			anim_tree.set("parameters/Run/blend_position",input_dir.x)
 			anim_tree.set("parameters/Idle/blend_position",input_dir.x)
 			anim_tree.set("parameters/Charge/blend_position",input_dir.x)
@@ -110,30 +118,45 @@ func _physics_process(delta):
 			anim_tree.set("parameters/Jump/blend_position",input_dir.x)
 			anim_tree.set("parameters/Dash/blend_position",input_dir.x)
 			anim_tree.set("parameters/Fall/blend_position",input_dir.x)
+			anim_tree.set("parameters/Push Idle/blend_position",input_dir.x)
 			
+			if !pushing:
+				anim_tree.set("parameters/Push/blend_position",input_dir.x)
 			
-			if is_on_floor() and !charging_attack and !jumping and !dashing:
+			if is_on_floor() and !charging_attack and !jumping and !dashing and !pushing:
 				anim_state.travel("Run")
+			elif pushing:
+				anim_state.travel("Push")
 		elif input_dir == Vector2.ZERO:
-			if is_on_floor() and !charging_attack and !jumping and !dashing:
+			if is_on_floor() and !charging_attack and !jumping and !dashing and !pushing:
 				anim_state.travel("Idle")
+			elif pushing:
+				anim_state.travel("Push Idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		
 		if Input.is_action_just_pressed("dash") and can_dash:
-			dash.play()
 			dashing = true
-			anim_state.travel("dash")
-			velocity.x = direction.x * DASH_SPEED
-			can_dash = false
-			$DashTimer.start(0.1)
+			$Bolt.visible = true
+			if anim_tree.get("parameters/Dash/blend_position") < 0:
+				$BoltAnim.play("default_left")
+			else:
+				$BoltAnim.play("default_right")
+			if !charging_attack:
+				anim_state.travel("Dash")
+			if direction.x == 0:
+				velocity.x = anim_tree.get("parameters/Dash/blend_position") * DASH_SPEED
+				$DashTimer.start(0.5)
+			else:
+				velocity.x = direction.x * DASH_SPEED 
+				$DashTimer.start(0.08)
+			
 			$DashCooldown.start(dash_cooldown)
+			can_dash = false
 
 	if can_move:
 		move_and_slide()
-	
-	if !charging_attack:
-		$Bolt.visible = false
+
 	if get_parent().energy_bar.value >= 50:
 		get_parent().energy_bar.tint_progress = Color(0.227, 0.514, 0.212)
 	elif get_parent().energy_bar.value < 50 and get_parent().energy_bar.value >= 25:
@@ -169,6 +192,7 @@ signal player_dead
 
 func _input(event):
 	if event.is_action_pressed("attack"):
+			$Bolt.visible = true
 			charging_attack = true
 			if can_shoot:
 				anim_state.travel("Charge")
@@ -176,8 +200,8 @@ func _input(event):
 		if can_shoot:
 			anim_state.travel("Shoot")
 			shoot()
-			await $AnimationTree.animation_finished
 			$Bolt.visible = false
+			await $AnimationTree.animation_finished
 			charging_attack = false
 			
 
@@ -246,7 +270,7 @@ func _on_collision_shape_3d_child_exiting_tree(body):
 
 func _on_dash_timer_timeout():
 	dashing = false
-	velocity.x = move_toward(velocity.x, 0 , SPEED)
+
 	
 
 
@@ -257,7 +281,6 @@ func _on_dash_cooldown_timeout():
 func _on_hurtbox_area_entered(area):
 	if area.get_parent().is_in_group("enemy"):
 		var tween = get_tree().create_tween()
-		print("HIT")
 		HEALTH -= 15
 		hit.play()
 		tween.tween_property(get_parent().health_ui,"value", HEALTH ,.3)

@@ -27,6 +27,7 @@ var last_player_pos = {
 	"City" : "" ,
 	"Snow" : ""  ,
 	"Lab" : ""  ,
+	"Arcade" : ""
 	}
 var player_hp = 100
 var next_scene 

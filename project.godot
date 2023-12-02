@@ -135,6 +135,10 @@ locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://ci
 3d_physics/layer_10="EnemyHurtbox"
 3d_physics/layer_11="EnemyHitbox"
 
+[physics]
+
+3d/default_gravity=15.0
+
 [shader_globals]
 
 specular_smoothness={

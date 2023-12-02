@@ -1,7 +1,219 @@
-[gd_scene load_steps=3 format=3 uid="uid://doku14f0670nt"]
+[gd_scene load_steps=13 format=3 uid="uid://doku14f0670nt"]
 
 [ext_resource type="Script" path="res://Presurvey.gd" id="1_gehq6"]
 [ext_resource type="Texture2D" uid="uid://cbiuhv360illq" path="res://assets/npc/prebg.png" id="2_cuy41"]
+[ext_resource type="Texture2D" uid="uid://baocsyy6nrwqh" path="res://assets/ui/hud/DialogueBox.png" id="3_3fk7l"]
+[ext_resource type="Texture2D" uid="uid://b3csk10penbga" path="res://assets/ui/Screenshot 2023-11-15 222115.png" id="4_0ce61"]
+[ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="4_vk6jt"]
+[ext_resource type="Texture2D" uid="uid://crqyfd2xth7yg" path="res://assets/ui/Screenshot 2023-12-01 213923.png" id="5_al5it"]
+
+[sub_resource type="Animation" id="Animation_omebm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StoryIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(366, 351)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryIcon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3, 0.3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArcadeIcon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1069, 358)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArcadeIcon:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1833, 1080)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ArcadeIcon:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="Animation" id="Animation_kuhjq"]
+resource_name = "arcade_exit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArcadeIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1026, 326), Vector2(1069, 358)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArcadeIcon:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1833, 1080), Vector2(1833, 1080)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArcadeIcon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.35, 0.35), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="Animation" id="Animation_kxe08"]
+resource_name = "arcade_hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArcadeIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1069, 358), Vector2(1026, 326)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArcadeIcon:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1833, 1080), Vector2(1833, 1080)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArcadeIcon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.35, 0.35)]
+}
+
+[sub_resource type="Animation" id="Animation_2lcmt"]
+resource_name = "exit_story"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StoryIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(334, 326), Vector2(372, 354)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryIcon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.35, 0.35), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="Animation" id="Animation_s7tt1"]
+resource_name = "hover_story"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StoryIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(366, 351), Vector2(334, 326)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryIcon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.35, 0.35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cq1u"]
+_data = {
+"RESET": SubResource("Animation_omebm"),
+"arcade_exit": SubResource("Animation_kuhjq"),
+"arcade_hover": SubResource("Animation_kxe08"),
+"exit_story": SubResource("Animation_2lcmt"),
+"hover_story": SubResource("Animation_s7tt1")
+}
 
 [node name="Presurvey" type="Node2D"]
 script = ExtResource("1_gehq6")
@@ -13,3 +225,156 @@ offset_right = 1959.0
 offset_bottom = 1102.0
 texture = ExtResource("2_cuy41")
 expand_mode = 1
+
+[node name="Mode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Mode"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 100.0
+offset_right = 1757.0
+offset_bottom = 1023.0
+texture = ExtResource("3_3fk7l")
+
+[node name="TextureRect2" type="TextureRect" parent="Mode"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+layout_mode = 0
+offset_left = 351.0
+offset_top = 330.0
+offset_right = 1823.0
+offset_bottom = 1253.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_3fk7l")
+
+[node name="StoryIcon" type="TextureRect" parent="Mode"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+clip_contents = true
+layout_mode = 0
+offset_left = 366.0
+offset_top = 351.0
+offset_right = 2199.0
+offset_bottom = 1431.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0ce61")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Mode"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 330.0
+offset_right = 2521.0
+offset_bottom = 1253.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_3fk7l")
+
+[node name="ArcadeIcon" type="TextureRect" parent="Mode"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+clip_contents = true
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 358.0
+offset_right = 2902.0
+offset_bottom = 1438.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_al5it")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Mode"]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 146.0
+offset_right = 1355.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vk6jt")
+theme_override_font_sizes/font_size = 100
+text = "Choose mode"
+
+[node name="Label2" type="Label" parent="Mode"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 709.0
+offset_right = 902.0
+offset_bottom = 858.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vk6jt")
+theme_override_font_sizes/font_size = 75
+text = "Story mode"
+horizontal_alignment = 1
+
+[node name="info" type="Label" parent="Mode"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 796.0
+offset_right = 881.0
+offset_bottom = 945.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vk6jt")
+theme_override_font_sizes/font_size = 45
+text = "test your knowledge and awareness about climate change by helping the citizens of briarwood in saving the world!"
+autowrap_mode = 2
+
+[node name="info2" type="Label" parent="Mode"]
+layout_mode = 0
+offset_left = 1062.0
+offset_top = 796.0
+offset_right = 1576.0
+offset_bottom = 945.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vk6jt")
+theme_override_font_sizes/font_size = 45
+text = "Relax and enjoy some endless 
+mini-games "
+clip_text = true
+
+[node name="Label3" type="Label" parent="Mode"]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 711.0
+offset_right = 1614.0
+offset_bottom = 860.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vk6jt")
+theme_override_font_sizes/font_size = 75
+text = "Arcade mode"
+horizontal_alignment = 1
+
+[node name="StoryButton" type="TextureButton" parent="Mode"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 325.0
+offset_right = 946.0
+offset_bottom = 706.0
+
+[node name="ArcadeButton" type="TextureButton" parent="Mode"]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 317.0
+offset_right = 1643.0
+offset_bottom = 707.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mode"]
+libraries = {
+"": SubResource("AnimationLibrary_2cq1u")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Mode"]
+libraries = {
+"": SubResource("AnimationLibrary_2cq1u")
+}
+
+[connection signal="focus_entered" from="Mode/StoryButton" to="." method="_on_story_button_focus_entered"]
+[connection signal="focus_exited" from="Mode/StoryButton" to="." method="_on_story_button_focus_exited"]
+[connection signal="mouse_entered" from="Mode/StoryButton" to="." method="_on_story_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mode/StoryButton" to="." method="_on_story_button_mouse_exited"]
+[connection signal="pressed" from="Mode/StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="mouse_entered" from="Mode/ArcadeButton" to="." method="_on_arcade_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mode/ArcadeButton" to="." method="_on_arcade_button_mouse_exited"]
+[connection signal="pressed" from="Mode/ArcadeButton" to="." method="_on_arcade_button_pressed"]

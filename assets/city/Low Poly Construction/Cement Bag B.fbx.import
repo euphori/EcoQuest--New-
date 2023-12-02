@@ -32,7 +32,7 @@ _subresources={
 "materials": {
 "Brown": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/wood1.tres"
+"use_external/path": "res://materials/wood_dark.tres"
 },
 "Brown 2": {
 "use_external/enabled": true,

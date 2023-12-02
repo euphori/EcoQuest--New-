@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://e3l2258eb12x"]
+[gd_scene load_steps=96 format=3 uid="uid://e3l2258eb12x"]
 
 [ext_resource type="Script" path="res://characters/kid.gd" id="1_btg3w"]
 [ext_resource type="Texture2D" uid="uid://d0fdgxax3w5sa" path="res://assets/player/new_kid.png" id="2_fmbq7"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b745xkne8htbj" path="res://assets/bullets/greenbolt.png" id="8_7232q"]
 [ext_resource type="AudioStream" uid="uid://b62a3fipobjvg" path="res://assets/sounds/hit.mp3" id="10_it71i"]
 [ext_resource type="AudioStream" uid="uid://6p5nnqas5j6e" path="res://assets/sounds/Dash2.mp3" id="10_ivqpy"]
-[ext_resource type="PackedScene" uid="uid://dqhxa0i6ve5ad" path="res://instanced/bullet.tscn" id="12_glw2k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sbix"]
 
@@ -82,7 +81,31 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_vu15u")
 blend_point_1/pos = 0.9
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2m8bp"]
+animation = &"push_idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7llu7"]
+animation = &"push_idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_gijvd"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2m8bp")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_7llu7")
+blend_point_1/pos = 0.9
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_17btk"]
+animation = &"pushing_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_488nc"]
+animation = &"pushing_right"
+
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_mhyvj"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_17btk")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_488nc")
+blend_point_1/pos = 0.9
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5t2fw"]
 animation = &"run_left"
@@ -141,22 +164,39 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_buv28"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xwkh"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2i7l0"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ojin1"]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ltu4c"]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eynu1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sxvvp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ivdi5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13lch"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xqpkl"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4iqa"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8qej4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_55na7"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ifcp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_86rba"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sy2s1"]
 states/Charge/node = SubResource("AnimationNodeBlendSpace1D_dm8lj")
 states/Charge/position = Vector2(456, 229)
 states/Dash/node = SubResource("AnimationNodeBlendSpace1D_f8t8i")
-states/Dash/position = Vector2(456, -83.0583)
+states/Dash/position = Vector2(456, -166.058)
 states/Fall/node = SubResource("AnimationNodeBlendSpace1D_wi42h")
 states/Fall/position = Vector2(130.407, -46.5831)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_7fdb8")
@@ -164,13 +204,15 @@ states/Idle/position = Vector2(301, 100)
 states/Jump/node = SubResource("AnimationNodeBlendSpace1D_2gcn1")
 states/Jump/position = Vector2(456, 15.0702)
 states/Push/node = SubResource("AnimationNodeBlendSpace1D_mhyvj")
-states/Push/position = Vector2(771, 284)
+states/Push/position = Vector2(735, 224)
+"states/Push Idle/node" = SubResource("AnimationNodeBlendSpace1D_gijvd")
+"states/Push Idle/position" = Vector2(760.407, 33.417)
 states/Run/node = SubResource("AnimationNodeBlendSpace1D_xgsjf")
 states/Run/position = Vector2(634, 100)
 states/Shoot/node = SubResource("AnimationNodeBlendSpace1D_0ie7e")
 states/Shoot/position = Vector2(456, 380.087)
 states/Start/position = Vector2(107, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_20vfe"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_x46ff"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_rl3dp"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_sh6pl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_jenkt"), "Idle", "Charge", SubResource("AnimationNodeStateMachineTransition_po4jc"), "Charge", "Idle", SubResource("AnimationNodeStateMachineTransition_70j7s"), "Run", "Charge", SubResource("AnimationNodeStateMachineTransition_w1j7u"), "Charge", "Run", SubResource("AnimationNodeStateMachineTransition_2hvmm"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_duto5"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_innhl"), "Charge", "Jump", SubResource("AnimationNodeStateMachineTransition_0h7mp"), "Jump", "Charge", SubResource("AnimationNodeStateMachineTransition_0qavl"), "Jump", "Dash", SubResource("AnimationNodeStateMachineTransition_buv28"), "Dash", "Jump", SubResource("AnimationNodeStateMachineTransition_3xwkh"), "Charge", "Shoot", SubResource("AnimationNodeStateMachineTransition_2i7l0"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_ojin1"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ltu4c"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_eynu1")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_20vfe"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_x46ff"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_rl3dp"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_sh6pl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_jenkt"), "Idle", "Charge", SubResource("AnimationNodeStateMachineTransition_po4jc"), "Charge", "Idle", SubResource("AnimationNodeStateMachineTransition_70j7s"), "Run", "Charge", SubResource("AnimationNodeStateMachineTransition_w1j7u"), "Charge", "Run", SubResource("AnimationNodeStateMachineTransition_2hvmm"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_duto5"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_innhl"), "Charge", "Jump", SubResource("AnimationNodeStateMachineTransition_0h7mp"), "Jump", "Charge", SubResource("AnimationNodeStateMachineTransition_0qavl"), "Jump", "Dash", SubResource("AnimationNodeStateMachineTransition_buv28"), "Charge", "Shoot", SubResource("AnimationNodeStateMachineTransition_2i7l0"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_ojin1"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ltu4c"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_eynu1"), "Idle", "Push", SubResource("AnimationNodeStateMachineTransition_sxvvp"), "Run", "Push", SubResource("AnimationNodeStateMachineTransition_ivdi5"), "Push", "Idle", SubResource("AnimationNodeStateMachineTransition_13lch"), "Push", "Push Idle", SubResource("AnimationNodeStateMachineTransition_xqpkl"), "Push Idle", "Push", SubResource("AnimationNodeStateMachineTransition_y4iqa"), "Push Idle", "Idle", SubResource("AnimationNodeStateMachineTransition_8qej4"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_55na7"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_0ifcp"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_86rba")]
 graph_offset = Vector2(-94.5927, -223.583)
 
 [sub_resource type="Animation" id="Animation_vgvm5"]
@@ -295,6 +337,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector3(3, 3, 3)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Bolt:flip_v")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pvrmg"]
 resource_name = "charge_left"
@@ -396,6 +450,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector3(3, 3, 3)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bolt:flip_v")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1ivrf"]
 resource_name = "charge_right"
@@ -447,7 +513,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-2.93616, 3.41935, -0.770139)]
+"values": [Vector3(9.67173, 3.41935, -0.770139)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -485,10 +551,22 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bolt:flip_v")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_p7tga"]
 resource_name = "dash_left"
-length = 0.1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -513,6 +591,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dash")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0812478,
+"start_offset": 0.317032,
+"stream": ExtResource("10_ivqpy")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ay7hh"]
 resource_name = "dash_right"
@@ -541,6 +634,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dash")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.305025,
+"stream": ExtResource("10_ivqpy")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1fmng"]
 resource_name = "death"
@@ -568,35 +676,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bym58"]
-resource_name = "idle_left"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ce25x"]
@@ -737,8 +816,8 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_4c56f"]
-resource_name = "idle_right"
+[sub_resource type="Animation" id="Animation_bym58"]
+resource_name = "idle_left"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -763,12 +842,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_saap6"]
-resource_name = "jump_right"
-length = 0.4
+[sub_resource type="Animation" id="Animation_4c56f"]
+resource_name = "idle_right"
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -776,10 +856,10 @@ tracks/0/path = NodePath("Sprite3D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 15]
+"values": [0, 1, 2, 3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -822,10 +902,9 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_c00x2"]
-resource_name = "pushing_right"
-length = 0.5
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_saap6"]
+resource_name = "jump_right"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -836,94 +915,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [16, 17, 18, 19]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("kid_sound")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_aavsi")
-}],
-"times": PackedFloat32Array(-0.3)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_01ane"]
-resource_name = "pushing_left"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [16, 17, 18, 19]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("kid_sound")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_aavsi")
-}],
-"times": PackedFloat32Array(-0.3)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_6wlwg"]
-resource_name = "release_right"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [21, 21]
+"values": [12, 13, 14, 15]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -936,122 +928,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_uxsm3"]
-resource_name = "release_left"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [21, 21]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_jwhoy"]
-resource_name = "run_right"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10, 11]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("kid_sound")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_r71ce")
-}],
-"times": PackedFloat32Array(-0.2)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_gcey1"]
-resource_name = "run_left"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10, 11]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("kid_sound")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_r71ce")
-}],
-"times": PackedFloat32Array(-0.2)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oeami"]
@@ -1110,6 +986,238 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_01ane"]
+resource_name = "pushing_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("kid_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_aavsi")
+}],
+"times": PackedFloat32Array(-0.3)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_c00x2"]
+resource_name = "pushing_right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("kid_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_aavsi")
+}],
+"times": PackedFloat32Array(-0.3)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uxsm3"]
+resource_name = "release_left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [21, 21]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6wlwg"]
+resource_name = "release_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [21, 21]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gcey1"]
+resource_name = "run_left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("kid_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_r71ce")
+}],
+"times": PackedFloat32Array(-0.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jwhoy"]
+resource_name = "run_right"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("kid_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_r71ce")
+}],
+"times": PackedFloat32Array(-0.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fijb5"]
 _data = {
 "RESET": SubResource("Animation_vgvm5"),
@@ -1139,6 +1247,198 @@ _data = {
 [sub_resource type="ViewportTexture" id="ViewportTexture_wv7yq"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="Animation" id="Animation_go2gq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bolt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-9.55362, 3.41935, -0.770139)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bolt:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bolt:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bolt:flip_v")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f4bf3"]
+resource_name = "default_left"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bolt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.3164, 4.28738, 0.0207758)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bolt:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 8, 25]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bolt:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dash2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.518543,
+"stream": ExtResource("4_cdj05")
+}],
+"times": PackedFloat32Array(-0.5)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bolt:flip_v")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yxkx7"]
+resource_name = "default_right"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bolt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.97971, 3.84527, -0.770139)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bolt:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 8, 26]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bolt:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dash2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.518543,
+"stream": ExtResource("4_cdj05")
+}],
+"times": PackedFloat32Array(-0.5)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bolt:flip_v")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nu160"]
+_data = {
+"RESET": SubResource("Animation_go2gq"),
+"default_left": SubResource("Animation_f4bf3"),
+"default_right": SubResource("Animation_yxkx7")
+}
+
 [node name="Kid" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_btg3w")
@@ -1165,12 +1465,14 @@ texture = ExtResource("3_2sbah")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_sy2s1")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/Charge/blend_position = 0.896296
 parameters/Dash/blend_position = 0
 parameters/Fall/blend_position = 0
 parameters/Idle/blend_position = -0.501852
 parameters/Jump/blend_position = -0.156489
-parameters/Push/blend_position = 0
+parameters/Push/blend_position = -0.96997
+"parameters/Push Idle/blend_position" = 0
 parameters/Run/blend_position = -0.888148
 parameters/Shoot/blend_position = -0.80597
 
@@ -1228,10 +1530,12 @@ texture = SubResource("ViewportTexture_wv7yq")
 
 [node name="Bolt" type="Sprite3D" parent="."]
 transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
+flip_h = true
+flip_v = true
 texture = ExtResource("8_7232q")
 hframes = 6
 vframes = 5
-frame = 10
+frame = 25
 
 [node name="hit" type="AudioStreamPlayer3D" parent="."]
 visible = false
@@ -1239,10 +1543,16 @@ stream = ExtResource("10_it71i")
 pitch_scale = 1.04
 
 [node name="dash" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("10_ivqpy")
 pitch_scale = 1.36
 
-[node name="Bullet" parent="." instance=ExtResource("12_glw2k")]
+[node name="dash2" type="AudioStreamPlayer3D" parent="."]
+pitch_scale = 1.36
+
+[node name="BoltAnim" type="AnimationPlayer" parent="."]
+speed_scale = 1.5
+libraries = {
+"": SubResource("AnimationLibrary_nu160")
+}
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
@@ -1252,4 +1562,3 @@ pitch_scale = 1.36
 [connection signal="timeout" from="GunCooldown" to="." method="_on_gun_cooldown_timeout"]
 
 [editable path="Hurtbox"]
-[editable path="Bullet"]

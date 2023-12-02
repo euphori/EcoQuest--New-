@@ -26,7 +26,8 @@ var commands = {
 	"unlock" : "unlock",
 	"hesoyam" : "hesoyam",
 	"green" : "green",
-	"compall" : "compall"
+	"compall" : "compall",
+	"sv_gravity": "sv_gravity",
 	
 	
 	}
@@ -128,6 +129,9 @@ func apply_command(comm,value1, value2):
 	elif comm == commands["compall"]:
 		for quests in global.quest[value1]: #get the quests in the entered chapter
 			global.quest[value1][quests].completed = true
+	elif comm == commands["sv_gravity"]:
+		ProjectSettings.set_setting("physics/3d/default_gravity", str_to_var(value1))
+		print(ProjectSettings.get_setting("physics/3d/default_gravity"))
 				
 
 func _on_line_edit_text_submitted(new_text):

@@ -1,0 +1,476 @@
+[gd_scene load_steps=10 format=3 uid="uid://otwy04a327ys"]
+
+[ext_resource type="Script" path="res://managers/Results.gd" id="1_6gjkc"]
+[ext_resource type="Texture2D" uid="uid://6qko3tvcmu4v" path="res://assets/ui/hud/ResultsBG.png" id="2_g1afq"]
+[ext_resource type="FontFile" uid="uid://dfvq8tw1j23g3" path="res://assets/fonts/Simple Summer.otf" id="3_0u4ox"]
+[ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="4_6op01"]
+[ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="5_acyin"]
+[ext_resource type="Texture2D" uid="uid://cbv6qaqw50vda" path="res://assets/ui/hud/ResultModal.png" id="6_emqob"]
+[ext_resource type="Texture2D" uid="uid://brupbvg4ayaja" path="res://assets/ui/hud/PercentBG.png" id="7_snxom"]
+[ext_resource type="Texture2D" uid="uid://c3qadwjid8ikc" path="res://assets/ui/hud/ProgUnder.png" id="8_u34bx"]
+[ext_resource type="Texture2D" uid="uid://ild1mgxmf846" path="res://assets/ui/hud/Progress.png" id="9_76wet"]
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -96.0
+offset_top = 30.0
+offset_right = -56.0
+offset_bottom = 70.0
+script = ExtResource("1_6gjkc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 636.0
+offset_top = -37.0
+offset_right = 1454.0
+offset_bottom = 1038.0
+mouse_filter = 2
+texture = ExtResource("2_g1afq")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -633.4
+offset_top = -787.04
+offset_right = -550.88
+offset_bottom = -919.76
+theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 75
+text = "Your results
+
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -688.4
+offset_top = -662.04
+offset_right = -693.88
+offset_bottom = -809.76
+theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 50
+text = "Level of awareness:"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -686.4
+offset_top = -585.04
+offset_right = -691.88
+offset_bottom = -732.76
+theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 35
+text = "Predicted awareness:"
+
+[node name="Prediction" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -455.4
+offset_top = -591.04
+offset_right = -460.88
+offset_bottom = -738.76
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 45
+text = "Low
+"
+
+[node name="Awareness" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -399.4
+offset_top = -678.04
+offset_right = -404.88
+offset_bottom = -825.76
+theme_override_colors/font_color = Color(0.701961, 0.117647, 0.137255, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 75
+text = "Low
+"
+
+[node name="Comment" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 35.585
+anchor_top = 21.651
+anchor_right = 46.597
+anchor_bottom = 27.869
+offset_left = -700.4
+offset_top = -230.04
+offset_right = -705.88
+offset_bottom = -377.76
+theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 42
+text = "Needs more improvement"
+
+[node name="OkayButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 761.0
+offset_top = 758.0
+offset_right = 1196.0
+offset_bottom = 888.0
+texture_normal = ExtResource("4_6op01")
+
+[node name="Label5" type="Label" parent="OkayButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 580.0
+offset_bottom = 156.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_acyin")
+theme_override_font_sizes/font_size = 60
+text = "Got it!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 357.0
+offset_right = 1376.0
+offset_bottom = 933.0
+vertical_scroll_mode = 2
+
+[node name="QuestionStats" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 450
+
+[node name="Question1" type="Control" parent="ScrollContainer/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 188.0
+offset_right = 570.0
+offset_bottom = 223.0
+texture = ExtResource("7_snxom")
+
+[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 191.0
+offset_right = 634.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_acyin")
+theme_override_font_sizes/font_size = 30
+text = "90%"
+
+[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 228.0
+value = 100.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Question2" type="Control" parent="ScrollContainer/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 188.0
+offset_right = 570.0
+offset_bottom = 223.0
+texture = ExtResource("7_snxom")
+
+[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 191.0
+offset_right = 634.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_acyin")
+theme_override_font_sizes/font_size = 30
+text = "90%"
+
+[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 228.0
+value = 100.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Question3" type="Control" parent="ScrollContainer/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 188.0
+offset_right = 570.0
+offset_bottom = 223.0
+texture = ExtResource("7_snxom")
+
+[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 191.0
+offset_right = 634.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_acyin")
+theme_override_font_sizes/font_size = 30
+text = "90%"
+
+[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 228.0
+value = 100.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Question4" type="Control" parent="ScrollContainer/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 188.0
+offset_right = 570.0
+offset_bottom = 223.0
+texture = ExtResource("7_snxom")
+
+[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 191.0
+offset_right = 634.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_acyin")
+theme_override_font_sizes/font_size = 30
+text = "90%"
+
+[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 228.0
+value = 100.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[connection signal="pressed" from="OkayButton" to="." method="_on_okay_button_pressed"]

@@ -43,6 +43,7 @@ var save_path = {
 	"res://levels/desert.tscn" : "user://desert_camera.txt",
 	"res://levels/snow.tscn": "user://snow_camera.txt",
 	"res://levels/city.tscn": "user://city_camera.txt",
+	"res://levels/arcade.tscn" : "user://arcade_camera.txt"
 	}
 var disable_cam_control = false
 var stop_camera
@@ -55,7 +56,6 @@ var stop_camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_quest()
-	global.in_dialogue = false
 	kid.connect("player_dead", show_death_screen)
 	global.connect("update_quest", update_quest)
 	global.connect("game_saved" , show_save_icon)
