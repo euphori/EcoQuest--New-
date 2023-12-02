@@ -24,10 +24,13 @@ if items["Glass"] >= 1 and items["Metal Frame"] >= 1 and items["Metal Sheet"] >=
 	Harper: [color=red]Do you understand the benefits of using renewable energy like solar panels?[/color]
 	- We must stay away from non-renewable energy, they harm the planet.
 		set awareness_points["SolutionAwareness"] += 4
+		set decisions["Question6"] = "a1"
 	- We can use the power of the sun as much as we want, and it’s free!
 		set awareness_points["SolutionAwareness"] += 2
+		set decisions["Question6"] = "a2"
 	- Do we have any cheaper alternatives like the coal-powered ones?
 		set awareness_points["SolutionAwareness"] += 1
+		set decisions["Question6"] = "a3"
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])

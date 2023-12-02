@@ -401,7 +401,7 @@ var comp_text = {"q1": ""}
 
 #var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 #var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
-var decision = {"q1": 0 , "q2": 0, "q3": 0}
+var decision = {"Question1": "a1" ,"Question2": "a1" ,"Question3": "a1" ,"Question4": "a1" ,"Question5": "a1" ,"Question6": "a1" ,"Question7": "a1" ,}
 
 
 # SCENES THAT PLAYERS CAN TRAVEL TO

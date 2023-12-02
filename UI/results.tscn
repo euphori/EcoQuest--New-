@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://otwy04a327ys"]
+[gd_scene load_steps=13 format=3 uid="uid://otwy04a327ys"]
 
 [ext_resource type="Script" path="res://managers/Results.gd" id="1_6gjkc"]
 [ext_resource type="Texture2D" uid="uid://6qko3tvcmu4v" path="res://assets/ui/hud/ResultsBG.png" id="2_g1afq"]
@@ -6,17 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dhmaefb2sg63h" path="res://assets/ui/menus/ButtonTexture.png" id="4_6op01"]
 [ext_resource type="FontFile" uid="uid://bujaeu8fqc4wc" path="res://assets/fonts/SIMPLE PLANNER.otf" id="5_acyin"]
 [ext_resource type="Texture2D" uid="uid://cbv6qaqw50vda" path="res://assets/ui/hud/ResultModal.png" id="6_emqob"]
-[ext_resource type="Texture2D" uid="uid://brupbvg4ayaja" path="res://assets/ui/hud/PercentBG.png" id="7_snxom"]
 [ext_resource type="Texture2D" uid="uid://c3qadwjid8ikc" path="res://assets/ui/hud/ProgUnder.png" id="8_u34bx"]
 [ext_resource type="Texture2D" uid="uid://ild1mgxmf846" path="res://assets/ui/hud/Progress.png" id="9_76wet"]
+[ext_resource type="Texture2D" uid="uid://c3vq55jv6u0ne" path="res://assets/ui/hud/line.png" id="9_u5c5l"]
+[ext_resource type="Texture2D" uid="uid://8tyxm1j1nwvg" path="res://assets/ui/hud/ButtonAccept.png" id="10_ke7qt"]
+[ext_resource type="Texture2D" uid="uid://bggbuucaad13y" path="res://assets/ui/hud/Star.png" id="11_nuy2y"]
+[ext_resource type="Texture2D" uid="uid://0ydy7m62s7dl" path="res://assets/ui/hud/ribbon.png" id="12_paugi"]
 
 [node name="Results" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -96.0
-offset_top = 30.0
-offset_right = -56.0
-offset_bottom = 70.0
+offset_left = -78.0
+offset_top = 19.0
+offset_right = -38.0
+offset_bottom = 59.0
 script = ExtResource("1_6gjkc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -28,7 +31,13 @@ offset_bottom = 1038.0
 mouse_filter = 2
 texture = ExtResource("2_g1afq")
 
-[node name="Title" type="Label" parent="."]
+[node name="Level" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Level"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 35.585
@@ -38,7 +47,7 @@ anchor_bottom = 27.869
 offset_left = -633.4
 offset_top = -787.04
 offset_right = -550.88
-offset_bottom = -919.76
+offset_bottom = -883.76
 theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 75
@@ -47,73 +56,82 @@ text = "Your results
 "
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label4" type="Label" parent="Level"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 35.585
 anchor_top = 21.651
 anchor_right = 46.597
 anchor_bottom = 27.869
-offset_left = -688.4
-offset_top = -662.04
-offset_right = -693.88
-offset_bottom = -809.76
+offset_left = -571.4
+offset_top = -776.04
+offset_right = -576.88
+offset_bottom = -923.76
 theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
-theme_override_font_sizes/font_size = 50
-text = "Level of awareness:"
+theme_override_font_sizes/font_size = 75
+text = "Level of awareness"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label5" type="Label" parent="Level"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 35.585
 anchor_top = 21.651
 anchor_right = 46.597
 anchor_bottom = 27.869
-offset_left = -686.4
-offset_top = -585.04
-offset_right = -691.88
-offset_bottom = -732.76
+offset_left = -671.4
+offset_top = -474.04
+offset_right = -676.88
+offset_bottom = -621.76
 theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 35
 text = "Predicted awareness:"
 
-[node name="Prediction" type="Label" parent="."]
+[node name="Prediction" type="Label" parent="Level"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 35.585
 anchor_top = 21.651
 anchor_right = 46.597
 anchor_bottom = 27.869
-offset_left = -455.4
-offset_top = -591.04
-offset_right = -460.88
-offset_bottom = -738.76
+offset_left = -449.4
+offset_top = -480.04
+offset_right = -454.88
+offset_bottom = -627.76
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 45
 text = "Low
 "
 
-[node name="Awareness" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Level"]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 209.0
+offset_right = 1345.0
+offset_bottom = 329.0
+texture = ExtResource("12_paugi")
+
+[node name="Awareness" type="Label" parent="Level"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 35.585
 anchor_top = 21.651
 anchor_right = 46.597
 anchor_bottom = 27.869
-offset_left = -399.4
-offset_top = -678.04
-offset_right = -404.88
-offset_bottom = -825.76
-theme_override_colors/font_color = Color(0.701961, 0.117647, 0.137255, 1)
+offset_left = -594.4
+offset_top = -654.04
+offset_right = -599.88
+offset_bottom = -801.76
+theme_override_colors/font_color = Color(1, 0.929412, 0.921569, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
-theme_override_font_sizes/font_size = 75
-text = "Low
+theme_override_font_sizes/font_size = 100
+text = "High
 "
+horizontal_alignment = 1
 
-[node name="Comment" type="Label" parent="."]
+[node name="Comment" type="Label" parent="Level"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -130,7 +148,7 @@ theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 42
 text = "Needs more improvement"
 
-[node name="OkayButton" type="TextureButton" parent="."]
+[node name="OkayButton" type="TextureButton" parent="Level"]
 visible = false
 layout_mode = 0
 offset_left = 761.0
@@ -139,7 +157,7 @@ offset_right = 1196.0
 offset_bottom = 888.0
 texture_normal = ExtResource("4_6op01")
 
-[node name="Label5" type="Label" parent="OkayButton"]
+[node name="Label5" type="Label" parent="Level/OkayButton"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 8.0
@@ -153,37 +171,29 @@ text = "Got it!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="Questions" type="ScrollContainer" parent="Level"]
 layout_mode = 0
-offset_left = 745.0
-offset_top = 357.0
-offset_right = 1376.0
-offset_bottom = 933.0
+offset_left = 746.0
+offset_top = 432.0
+offset_right = 1391.0
+offset_bottom = 884.0
 vertical_scroll_mode = 2
 
-[node name="QuestionStats" type="GridContainer" parent="ScrollContainer"]
+[node name="QuestionStats" type="GridContainer" parent="Level/Questions"]
 layout_mode = 2
 theme_override_constants/v_separation = 450
 
-[node name="Question1" type="Control" parent="ScrollContainer/QuestionStats"]
+[node name="Question1" type="Control" parent="Level/Questions/QuestionStats"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question1"]
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question1"]
 layout_mode = 2
 offset_top = -3.0
 offset_right = 619.0
 offset_bottom = 244.0
 texture = ExtResource("6_emqob")
 
-[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question1"]
-layout_mode = 2
-offset_left = 476.0
-offset_top = 188.0
-offset_right = 570.0
-offset_bottom = 223.0
-texture = ExtResource("7_snxom")
-
-[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question1"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
@@ -194,18 +204,7 @@ theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
 text = "Question #1"
 
-[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 191.0
-offset_right = 634.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_acyin")
-theme_override_font_sizes/font_size = 30
-text = "90%"
-
-[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question1"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 74.0
@@ -218,49 +217,65 @@ text = "Do you understand the impact of climate change, and the importance of ou
 autowrap_mode = 2
 clip_text = true
 
-[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question1"]
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question1"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 254.0
 offset_right = 580.0
-offset_bottom = 363.0
+offset_bottom = 297.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
-text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+text = "Your answer:"
 autowrap_mode = 2
 clip_text = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question1"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question1"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 228.0
-value = 100.0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
 texture_under = ExtResource("8_u34bx")
 texture_progress = ExtResource("9_76wet")
 texture_progress_offset = Vector2(8, 8)
 
-[node name="Question2" type="Control" parent="ScrollContainer/QuestionStats"]
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question1"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question2" type="Control" parent="Level/Questions/QuestionStats"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question2"]
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question2"]
 layout_mode = 2
 offset_top = -3.0
 offset_right = 619.0
 offset_bottom = 244.0
 texture = ExtResource("6_emqob")
 
-[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question2"]
-layout_mode = 2
-offset_left = 476.0
-offset_top = 188.0
-offset_right = 570.0
-offset_bottom = 223.0
-texture = ExtResource("7_snxom")
-
-[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question2"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
@@ -269,20 +284,9 @@ offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
-text = "Question #1"
+text = "Question #2"
 
-[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 191.0
-offset_right = 634.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_acyin")
-theme_override_font_sizes/font_size = 30
-text = "90%"
-
-[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question2"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 74.0
@@ -295,49 +299,65 @@ text = "Do you understand the impact of climate change, and the importance of ou
 autowrap_mode = 2
 clip_text = true
 
-[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question2"]
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question2"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 254.0
 offset_right = 580.0
-offset_bottom = 363.0
+offset_bottom = 297.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
-text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+text = "Your answer:"
 autowrap_mode = 2
 clip_text = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question2"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question2"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 228.0
-value = 100.0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
 texture_under = ExtResource("8_u34bx")
 texture_progress = ExtResource("9_76wet")
 texture_progress_offset = Vector2(8, 8)
 
-[node name="Question3" type="Control" parent="ScrollContainer/QuestionStats"]
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question2"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question3" type="Control" parent="Level/Questions/QuestionStats"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question3"]
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question3"]
 layout_mode = 2
 offset_top = -3.0
 offset_right = 619.0
 offset_bottom = 244.0
 texture = ExtResource("6_emqob")
 
-[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question3"]
-layout_mode = 2
-offset_left = 476.0
-offset_top = 188.0
-offset_right = 570.0
-offset_bottom = 223.0
-texture = ExtResource("7_snxom")
-
-[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question3"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
@@ -348,18 +368,7 @@ theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
 text = "Question #1"
 
-[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 191.0
-offset_right = 634.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_acyin")
-theme_override_font_sizes/font_size = 30
-text = "90%"
-
-[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question3"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 74.0
@@ -372,49 +381,65 @@ text = "Do you understand the impact of climate change, and the importance of ou
 autowrap_mode = 2
 clip_text = true
 
-[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question3"]
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question3"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 254.0
 offset_right = 580.0
-offset_bottom = 363.0
+offset_bottom = 297.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
-text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+text = "Your answer:"
 autowrap_mode = 2
 clip_text = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question3"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question3"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 228.0
-value = 100.0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
 texture_under = ExtResource("8_u34bx")
 texture_progress = ExtResource("9_76wet")
 texture_progress_offset = Vector2(8, 8)
 
-[node name="Question4" type="Control" parent="ScrollContainer/QuestionStats"]
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question3"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question4" type="Control" parent="Level/Questions/QuestionStats"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/QuestionStats/Question4"]
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question4"]
 layout_mode = 2
 offset_top = -3.0
 offset_right = 619.0
 offset_bottom = 244.0
 texture = ExtResource("6_emqob")
 
-[node name="PercentBG" type="TextureRect" parent="ScrollContainer/QuestionStats/Question4"]
-layout_mode = 2
-offset_left = 476.0
-offset_top = 188.0
-offset_right = 570.0
-offset_bottom = 223.0
-texture = ExtResource("7_snxom")
-
-[node name="QuestNumber" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question4"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 11.0
@@ -425,18 +450,7 @@ theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
 text = "Question #1"
 
-[node name="Percent" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 191.0
-offset_right = 634.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_acyin")
-theme_override_font_sizes/font_size = 30
-text = "90%"
-
-[node name="Question" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question4"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 74.0
@@ -449,28 +463,353 @@ text = "Do you understand the impact of climate change, and the importance of ou
 autowrap_mode = 2
 clip_text = true
 
-[node name="Question2" type="Label" parent="ScrollContainer/QuestionStats/Question4"]
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question4"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 254.0
 offset_right = 580.0
-offset_bottom = 363.0
+offset_bottom = 297.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 40
-text = "Your answer: I know my duties for our Mother Earth. This is an urgent matter."
+text = "Your answer:"
 autowrap_mode = 2
 clip_text = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ScrollContainer/QuestionStats/Question4"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question4"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 228.0
-value = 100.0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
 texture_under = ExtResource("8_u34bx")
 texture_progress = ExtResource("9_76wet")
 texture_progress_offset = Vector2(8, 8)
 
-[connection signal="pressed" from="OkayButton" to="." method="_on_okay_button_pressed"]
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question4"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question5" type="Control" parent="Level/Questions/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer:"
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question5"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question6" type="Control" parent="Level/Questions/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer:"
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question6"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Question7" type="Control" parent="Level/Questions/QuestionStats"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 619.0
+offset_bottom = 244.0
+texture = ExtResource("6_emqob")
+
+[node name="QuestNumber" type="Label" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Question #1"
+
+[node name="Question" type="Label" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 74.0
+offset_right = 593.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Do you understand the impact of climate change, and the importance of our mission?"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Answer" type="Label" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 580.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.854902, 0.192157, 0.188235, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "I know my duties for our Mother Earth. This is an urgent matter."
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerLabel" type="Label" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 254.0
+offset_right = 580.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Your answer:"
+autowrap_mode = 2
+clip_text = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 180.0
+offset_right = 446.0
+offset_bottom = 224.0
+value = 50.0
+texture_under = ExtResource("8_u34bx")
+texture_progress = ExtResource("9_76wet")
+texture_progress_offset = Vector2(8, 8)
+
+[node name="Percent" type="Label" parent="Level/Questions/QuestionStats/Question7"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 25
+text = "50% had similiar answer"
+
+[node name="Line" type="TextureRect" parent="Level"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 155.0
+offset_right = 1190.0
+offset_bottom = 189.0
+texture = ExtResource("9_u5c5l")
+
+[node name="NextButton" type="TextureButton" parent="Level"]
+visible = false
+layout_mode = 0
+offset_left = 892.0
+offset_top = 897.0
+offset_right = 1349.0
+offset_bottom = 1020.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("10_ke7qt")
+
+[node name="Label" type="Label" parent="Level/NextButton"]
+offset_left = 157.0
+offset_top = 14.0
+offset_right = 337.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 100
+text = "Next"
+
+[node name="Comment2" type="Label" parent="Level"]
+offset_left = 747.0
+offset_top = 905.0
+offset_right = 1312.0
+offset_bottom = 1014.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0u4ox")
+theme_override_font_sizes/font_size = 40
+text = "Recommendation: Participate in environmental projects"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Stars" type="TextureProgressBar" parent="Level"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 312.0
+offset_right = 1152.0
+offset_bottom = 368.0
+value = 100.0
+texture_progress = ExtResource("11_nuy2y")
+
+[node name="Comments" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Level/OkayButton" to="." method="_on_okay_button_pressed"]

@@ -7,10 +7,13 @@ if global.quest["chapter1"]["q6"].active == true and quest["chapter1"]["q6"].com
 	Old Tom: [color=red]Are you aware about the environmental impact of improper waste management?[/color]
 	- I have seen people throwing their waste into sections.
 		set awareness_points["SolutionAwareness"] += 3
+		set decisions["Question2"] = "a1"
 	- This is a haphazard action, it increases greenhouse gases.
 		set awareness_points["SolutionAwareness"] += 5
+		set decisions["Question2"] = "a2"
 	- Why would we even have that?
 		set awareness_points["SolutionAwareness"] += 1
+		set decisions["Question2"] = "a3"
 	Old Tom: Now help me clean out the place by picking up the trash around the area.
 	set quest["chapter1"]["q6"].completed = true
 	set quest["chapter1"]["q6"].active = false
@@ -88,10 +91,13 @@ if global.quest["chapter3"]["q4"].active == true and quest["chapter3"]["q4"].com
 	Old Tom: [color=red]Before you go, are you aware of the environmental impact of fossil fuels and the increasing number of cars?[/color]
 	- Yes. These cars contribute to the greenhouse gases and use non-renewable energy.
 		set awareness_points["PollutionAwareness"] += 4
+		set decisions["Question5"] = "a1"
 	- Yes. They emit smoke that is harmful to people.
 		set awareness_points["PollutionAwareness"] += 2
+		set decisions["Question5"] = "a2"
 	- Yes. They contribute to the traffic.
 		set awareness_points["PollutionAwareness"] += 1
+		set decisions["Question5"] = "a3"
 	set global.quest["chapter3"]["q4"].active = false
 	set global.quest["chapter3"]["q5"].active = true
 	set env_condition += 30 #update the environment
@@ -160,10 +166,13 @@ if quest["chapter5"]["q2"].completed == true:
 	Old Tom: I have one last question, do you understand how deforestation contributes to climate change?
 	- Our trees cover us from the heat, and help us cool down!
 		set awareness_points["PollutionAwareness"] += 2
+		set decisions["Question7"] = "a1"
 	- Our trees absorb and store carbon dioxide.
 		set awareness_points["PollutionAwareness"] += 4
+		set decisions["Question7"] = "a2"
 	- Our trees can be planted any time.
 		set awareness_points["PollutionAwareness"] += 0
+		set decisions["Question7"] = "a3"
 	set quest["chapter5"]["q3"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)

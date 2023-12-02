@@ -1,0 +1,54 @@
+{
+  "Question1":
+  {
+	"question": " Do you understand the impact of climate change, and the importance of our mission?",
+	"a1": "I know my duties for our Mother Earth. This is an urgent matter.",
+	"a2": "This has somewhat become my duty.",
+	"a3": "Are you sure you chose the right person for this?"
+  },
+  "Question2":
+  {
+	"question": "Are you aware about the environmental impact of improper waste management?",
+	"a1": "I have seen people throwing their waste differently into sections.",
+	"a2": "This is a haphazard action and increases greenhouse gasses.",
+	"a3": "Why would we even have that?"
+  },
+  "Question3":
+  {
+	"question": "Do you know the environmental impact of water conservation?",
+	"a1": "We are doing our duties as citizens of our community.",
+	"a2": "This will ensure that our water supply will not run out in our ecosystems.",
+	"a3": "I want to use as much water as I can."
+  },
+  "Question4":
+  {
+	"question": "Do you believe that climate change should be taught in schools?",
+	"a1": "It is a must. Climate change is a topic widely discussed.",
+	"a2": "It is a must. We need more heroes like us to conserve and protect our environment.",
+	"a3": "I think we should just let the students learn themselves about it."
+  },
+  "Question5":
+  {
+	"question": "Are you aware of the environmental impact of fossil fuels and the increasing number of cars driving?",
+	"a1": "Yes. These cars contribute to the greenhouse gases and use non-renewable energy.",
+	"a2": "Yes. They emit smoke that is harmful to people.",
+	"a3": "Yes. They contribute to the traffic."
+  },
+  "Question6":
+  {
+	"question": "Do you understand the benefits of using renewable energy like solar panels?",
+	"a1": "We need to stay away from non-renewable energy as they harm the planet more.",
+	"a2": "We can use the power of the sun as much as we want, and it’s free!",
+	"a3": "Do we have any cheaper alternatives like the coal-powered ones?"
+  },
+  "Question7":
+  {
+	"question": "Do you understand how deforestation contributes to climate change?",
+	"a1": "Our trees cover us from the heat, and help us cool down!",
+	"a2": "Our trees absorb and store carbon dioxide, if deforestation continues, more CO2 will be trapped in the atmosphere!",
+	"a3": "Our trees can be planted any time and replenish quickly."
+  }
+  
+  
+
+}
