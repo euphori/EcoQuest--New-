@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://otwy04a327ys"]
+[gd_scene load_steps=14 format=3 uid="uid://otwy04a327ys"]
 
 [ext_resource type="Script" path="res://managers/Results.gd" id="1_6gjkc"]
 [ext_resource type="Texture2D" uid="uid://6qko3tvcmu4v" path="res://assets/ui/hud/ResultsBG.png" id="2_g1afq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vq55jv6u0ne" path="res://assets/ui/hud/line.png" id="9_u5c5l"]
 [ext_resource type="Texture2D" uid="uid://8tyxm1j1nwvg" path="res://assets/ui/hud/ButtonAccept.png" id="10_ke7qt"]
 [ext_resource type="Texture2D" uid="uid://bggbuucaad13y" path="res://assets/ui/hud/Star.png" id="11_nuy2y"]
+[ext_resource type="Texture2D" uid="uid://c17teay2ciwj3" path="res://assets/ui/hud/Star-under.png" id="12_adnuw"]
 [ext_resource type="Texture2D" uid="uid://0ydy7m62s7dl" path="res://assets/ui/hud/ribbon.png" id="12_paugi"]
 
 [node name="Results" type="Control"]
@@ -131,23 +132,6 @@ text = "High
 "
 horizontal_alignment = 1
 
-[node name="Comment" type="Label" parent="Level"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 35.585
-anchor_top = 21.651
-anchor_right = 46.597
-anchor_bottom = 27.869
-offset_left = -700.4
-offset_top = -230.04
-offset_right = -705.88
-offset_bottom = -377.76
-theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
-theme_override_fonts/font = ExtResource("3_0u4ox")
-theme_override_font_sizes/font_size = 42
-text = "Needs more improvement"
-
 [node name="OkayButton" type="TextureButton" parent="Level"]
 visible = false
 layout_mode = 0
@@ -176,7 +160,7 @@ layout_mode = 0
 offset_left = 746.0
 offset_top = 432.0
 offset_right = 1391.0
-offset_bottom = 884.0
+offset_bottom = 883.0
 vertical_scroll_mode = 2
 
 [node name="QuestionStats" type="GridContainer" parent="Level/Questions"]
@@ -776,6 +760,7 @@ scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("10_ke7qt")
 
 [node name="Label" type="Label" parent="Level/NextButton"]
+layout_mode = 0
 offset_left = 157.0
 offset_top = 14.0
 offset_right = 337.0
@@ -785,7 +770,8 @@ theme_override_fonts/font = ExtResource("3_0u4ox")
 theme_override_font_sizes/font_size = 100
 text = "Next"
 
-[node name="Comment2" type="Label" parent="Level"]
+[node name="Comment" type="Label" parent="Level"]
+layout_mode = 0
 offset_left = 747.0
 offset_top = 905.0
 offset_right = 1312.0
@@ -799,11 +785,13 @@ clip_text = true
 
 [node name="Stars" type="TextureProgressBar" parent="Level"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 312.0
-offset_right = 1152.0
-offset_bottom = 368.0
-value = 100.0
+offset_left = 955.0
+offset_top = 307.0
+offset_right = 1147.0
+offset_bottom = 363.0
+step = 33.0
+value = 99.0
+texture_under = ExtResource("12_adnuw")
 texture_progress = ExtResource("11_nuy2y")
 
 [node name="Comments" type="Control" parent="."]

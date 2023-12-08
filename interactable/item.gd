@@ -47,7 +47,8 @@ func show_item():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sprite.texture = load(global.item_texture[item_name])
+	if item_name != "":
+		sprite.texture = load(global.item_texture[item_name])
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	

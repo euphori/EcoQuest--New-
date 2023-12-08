@@ -1,6 +1,6 @@
 extends Control
 
-@onready var awareness = $Awareness
+@onready var awareness = $Level/Awareness
 
 var result = ""
 
@@ -8,7 +8,9 @@ var comment = {"Low" : "Needs more improvements" , "Average": "Getting there, sl
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	prediction()
 	initialize_questions()
+	update_result()
 	global.connect("update_quest" , update_result)
 
 
@@ -18,33 +20,59 @@ func _input(event):
 			self.visible = false
 
 
+func prediction():
+	var sa = global.pre_ap["SolutionAwareness"]
+	var gk = global.pre_ap["GeneralKnowledge"]
+	var pa =  global.pre_ap["PollutionAwareness"]
+	var total = sa + gk + pa 
+	
+	if gk >= 7 and pa >= 10 and sa >= 7 and total >= 24:
+		result = "High"
+	elif (gk >= 5 and gk < 7) or (pa >= 7 and pa < 10) or (sa >= 5 and sa < 7) and total >= 17:
+		result = "Average"
+	elif gk <= 4 or pa <= 6 or sa <=4 and total >= 14:
+		result = "Low"
+	else:
+		result = "Invalid"
+	$Level/Prediction.text = result
+
 func update_result():
 
-	if global.quest["chapter5"]["q3"].active:
+	if global.quest["chapter5"]["q3"].active or global.quest["chapter1"]["q1"].active:
 		self.visible = true
 		var sa = global.awareness_points["SolutionAwareness"]
 		var gk = global.awareness_points["GeneralKnowledge"]
 		var pa =  global.awareness_points["PollutionAwareness"]
+		var total
 		print(sa," " , gk , " ", pa)
-		if gk >= 4:
-			result = "Average"
-		elif sa+gk+pa >= 15:
-			result = "Average"
-		elif gk < 3 or pa <= 3 or sa <= 3:
-			result = "Low"
-		elif gk >= 5 and gk < 8 or pa < 10 or sa < 8:
-			result = "Average"
-		elif gk >= 8 and pa >= 10 and sa >= 8:
+		if gk >= 7 and pa >= 10 and sa >= 7 and total >= 24:
 			result = "High"
+		elif (gk >= 5 and gk < 7) or (pa >= 7 and pa < 10) or (sa > 5 and sa < 7) and total >= 17:
+			result = "Average"
+		elif gk <= 4 or pa <= 6 or sa <=4 and total >= 14:
+			result = "Low"
 		else:
 			result = "Invalid"
 		
+		print(sa," ",gk," ",pa)
 		awareness.text = result
-		$Comment.text = comment[result]
+		$Level/Comment.text = str("Recommendation: \n" ,comment[result])
+		#Star UI
+		match result:
+			"Average":
+				$Level/Stars.value = 66
+			"High":
+				$Level/Stars.value = 99
+			"Low":
+				$Level/Stars.value = 33
+		
+		initialize_questions()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
 
 
 func get_data(path):
@@ -64,16 +92,15 @@ func initialize_questions():
 		var json_as_text = FileAccess.get_file_as_string(file)
 		var data = JSON.parse_string(json_as_text)
 		quest_label.text = data[question.name]["question"]
-		answer_label.text = data[question.name][global.decision[question.name]]
+		answer_label.text = data[question.name][global.decisions[question.name]]
 		
 		#Find similar choices
 		var dataset = "res://Data/ChoicesDataset.json"
 		var text = FileAccess.get_file_as_string(dataset)
 		var choices_data = JSON.parse_string(text)
 		
-		
 		for choices in choices_data:
-			if choices[question.name] == global.decision[question.name]:
+			if choices[question.name] == global.decisions[question.name]:
 				similar_amount[question.name] += 1
 				
 		

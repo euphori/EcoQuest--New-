@@ -9,10 +9,14 @@ extends Node3D
 @onready var marker_sprite = $Marker3D/Sprite3D
 @export var player : CharacterBody3D
 
+@export var has_spawner = false
+@export var spawner : Array[NodePath]
 @export_category("Quest Requirement")
 @export var chapter_name : String = ""
 @export var completed_quest: String = ""
 @export var active_quest: String = ""
+
+
  
 var old_camera_pos
 var dia_started = false
@@ -32,6 +36,10 @@ func _process(delta):
 func show_dialogue():
 	dia_started = true
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, title)
+	if has_spawner:
+		for i in spawner.size():
+			print(get_node(spawner[i]))
+			get_node(spawner[i]).spawn()
 	
 
 func finish_cutscene():
@@ -41,6 +49,7 @@ func finish_cutscene():
 		await pan_camera(old_camera_pos)
 	$PlayerDetection/CollisionShape3D.disabled = true
 	player_manager.in_cutscene = false
+	
 
 
 func pan_camera(_location):

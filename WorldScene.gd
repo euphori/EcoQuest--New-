@@ -21,6 +21,8 @@ func _ready():
 		else:
 			$DirectionalLight3D2.visible = false
 			$DirectionalLight3D.visible = true
+	if self.name == "Desert" or self.name == "City":
+		manager.kid.JUMP_VELOCITY += 2
 	global.curr_scene_name = self.name
 	global.curr_scene = self.scene_file_path
 	global.curr_level = self
@@ -33,7 +35,7 @@ func _ready():
 	if global.quest["chapter2"]["q1"].completed and self.name == "Forest":
 		manager.kid.global_position = $Dock.global_position
 	
-	if global.last_player_pos[global.curr_scene_name] != "":
+	if global.last_player_pos.has(global.curr_scene_name) and global.last_player_pos[global.curr_scene_name] != "":
 		manager.kid.global_position = str_to_var("Vector3" + global.last_player_pos[global.curr_scene_name])
 	#global.save(global.save_path["save1"])
 

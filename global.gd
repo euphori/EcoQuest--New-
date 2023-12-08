@@ -7,15 +7,15 @@ var player_id = 0
 var env_condition = 10
 
 var awareness_points = {
-	"SolutionAwareness" : 0,
-	"GeneralKnowledge": 0,
-	"PollutionAwareness": 0
+	"SolutionAwareness" : 10,
+	"GeneralKnowledge": 5,
+	"PollutionAwareness": 7
 }
 
 var pre_ap = {
-	"SolutionAwareness" : 0,
-	"GeneralKnowledge": 0,
-	"PollutionAwareness": 0
+	"SolutionAwareness" : 1,
+	"GeneralKnowledge": 1,
+	"PollutionAwareness": 1
 }
 
 var scooter_repaired = false
@@ -27,7 +27,8 @@ var last_player_pos = {
 	"City" : "" ,
 	"Snow" : ""  ,
 	"Lab" : ""  ,
-	"Arcade" : ""
+	"Arcade" : "",
+	"Wave": ""
 	}
 var player_hp = 100
 var next_scene 
@@ -401,7 +402,7 @@ var comp_text = {"q1": ""}
 
 #var active_quest = {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
 #var completed_quest =  {"tutorial":false, "q1":false,"q2":false,"q3":false,"q4":false, "q5":false}
-var decision = {"Question1": "a1" ,"Question2": "a1" ,"Question3": "a1" ,"Question4": "a1" ,"Question5": "a1" ,"Question6": "a1" ,"Question7": "a1" ,}
+var decisions = {"Question1": "a1" ,"Question2": "a3" ,"Question3": "a2" ,"Question4": "a1" ,"Question5": "a3" ,"Question6": "a1" ,"Question7": "a1" ,}
 
 
 # SCENES THAT PLAYERS CAN TRAVEL TO

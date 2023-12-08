@@ -243,7 +243,7 @@ func die():
 	queue_free()
 
 func hurt():
-	health -= 25
+	health -= player.DAMAGE
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar, "value", health, 0.5)
 	#knockback()

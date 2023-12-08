@@ -43,7 +43,8 @@ var save_path = {
 	"res://levels/desert.tscn" : "user://desert_camera.txt",
 	"res://levels/snow.tscn": "user://snow_camera.txt",
 	"res://levels/city.tscn": "user://city_camera.txt",
-	"res://levels/arcade.tscn" : "user://arcade_camera.txt"
+	"res://levels/arcade.tscn" : "user://arcade_camera.txt",
+	"res://levels/wave.tscn" :  "user://wave_camera.txt"
 	}
 var disable_cam_control = false
 var stop_camera
@@ -151,7 +152,7 @@ func _process(delta):
 
 
 func load_camera():
-	if save_path[global.curr_scene] != null:
+	if save_path.has(global.curr_scene):
 		load_save(save_path[global.curr_scene])
 	z_slider.value = old_camera_offset["z"]
 	x_slider.value = old_camera_offset["x"]
@@ -190,6 +191,8 @@ func _on_y_slider_value_changed(value):
 
 
 func _on_save_button_pressed():
+	if !save_path.has(global.curr_scene):
+		save_path[global.curr_scene] = str("user://",global.curr_scene_name,"_camera.txt")
 	save(save_path[global.curr_scene])
 
 func _on_reset_button_pressed():

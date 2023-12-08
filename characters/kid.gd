@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var HEALTH = 100
 @export var ENERGY = 100
 @export var MAX_HEALTH = 100
+@export var DAMAGE = 10
 
 @export_category("Dash")
 @export var dash_cooldown = 1
@@ -77,7 +78,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		if !dashing and !jumping:
+		if !dashing and !jumping and !charging_attack:
 			anim_state.travel("Fall")
 	else:
 		jump_count = 0
@@ -93,9 +94,13 @@ func _physics_process(delta):
 
 		if Input.is_action_just_pressed("jump")  and !busy and active and !global.in_dialogue and !dashing and jump_count <= 1:
 			jumping = true
-			jump_count += 1
+			if global.curr_scene_name == "Arcade":
+				jump_count += 1
+			else:
+				jump_count += 2
 			velocity.y += JUMP_VELOCITY
-			anim_state.travel("Jump")
+			if !charging_attack:
+				anim_state.travel("Jump")
 			jumping = false
 			
 		
@@ -105,6 +110,7 @@ func _physics_process(delta):
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
 		
 		
 		if input_dir != Vector2.ZERO and can_move and !global.in_dialogue:
@@ -135,7 +141,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		
-		if Input.is_action_just_pressed("dash") and can_dash:
+		if Input.is_action_just_pressed("dash") and can_dash and !global.in_dialogue:
 			dashing = true
 			$Bolt.visible = true
 			if anim_tree.get("parameters/Dash/blend_position") < 0:
@@ -191,18 +197,19 @@ signal player_dead
 
 
 func _input(event):
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("attack") and !global.in_dialogue:
 			$Bolt.visible = true
 			charging_attack = true
 			if can_shoot:
 				anim_state.travel("Charge")
-	if event.is_action_released("attack"):
+	if event.is_action_released("attack") and !global.in_dialogue:
 		if can_shoot:
 			anim_state.travel("Shoot")
 			shoot()
 			$Bolt.visible = false
-			await $AnimationTree.animation_finished
 			charging_attack = false
+			await $AnimationTree.animation_finished
+		
 			
 
 
@@ -223,13 +230,16 @@ func shoot():
 	get_parent().get_parent().add_child(bullet)
 	bullet.global_position = muzzle.global_position
 	if pressed_time >= 1.5:
+		DAMAGE = 25
 		bullet.size = "big"
 		$GunCooldown.start(2)
 		can_shoot = false
 	elif pressed_time <= 0.5:
+		DAMAGE = 15
 		bullet.size = "small"
 		$GunCooldown.start(1)
 	else:
+		DAMAGE = 10
 		bullet.size = "default"
 		$GunCooldown.start(1)
 	attack.play()

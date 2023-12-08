@@ -18,17 +18,15 @@ func _ready():
 	global.connect("update_quest" , spawn)
 
 func spawn():
-	if global.quest[chapter_name][quest_to_complete].completed and !spawned[spawn_id] and global.quest[chapter_name][active_quest].active:
+	if global.quest[chapter_name][quest_to_complete].completed and spawned[spawn_id] == false and global.quest[chapter_name][active_quest].active:
 		for i in ammount:
-			
 			var object = scene.instantiate()
 			object.global_position = $Marker3D.global_position
 			get_parent().add_child(object)
-			print("ENEMY SPAWNED: ", object)
-			spawned[spawn_id]= true 
+		
 			object.death_quest_trigger[0] = chapter_name
 			object.death_quest_trigger[1] = quest_fulfilled
-
+		spawned[spawn_id]= true 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

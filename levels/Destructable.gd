@@ -9,6 +9,7 @@ extends Node3D
 
 @onready var hp_bar = $SubViewport/HealthProgress
 @onready var item = load("res://interactable/item.tscn")
+@onready var player = get_parent().get_node("CharacterManager/Kid")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,7 +25,7 @@ func spawn():
 
 func _on_hurtbox_area_entered(area):
 	if HP > 0:
-		HP -= 50
+		HP -= player.DAMAGE * 2
 		var tween = get_tree().create_tween()
 		tween.tween_property(hp_bar , "value" , HP , .5)
 		if HP <= 0 :
