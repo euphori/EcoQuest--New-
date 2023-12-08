@@ -76,6 +76,8 @@ func jump():
 
 func _physics_process(delta):
 	# Add the gravity.
+	if !Input.is_action_pressed("attack"):
+		charging_attack = false
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		if !dashing and !jumping and !charging_attack:
@@ -203,7 +205,7 @@ func _input(event):
 			if can_shoot:
 				anim_state.travel("Charge")
 	if event.is_action_released("attack") and !global.in_dialogue:
-		if can_shoot:
+		if can_shoot and charging_attack:
 			anim_state.travel("Shoot")
 			shoot()
 			$Bolt.visible = false

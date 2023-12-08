@@ -12,6 +12,8 @@ extends Control
 @onready var particles = get_parent().get_node("Particles")
 @onready var big_tree = get_parent().get_node("BigTree")
 var val = 0
+var probability_of_rain = 0.3
+var is_raining = false
 
 var can_grow = false
 var grass_multi_mesh = []
@@ -37,40 +39,50 @@ func update_all():
 		update_particles(global.env_condition)
 	if is_instance_valid(get_parent().get_node("Rain")):
 		var rain = get_parent().get_node("Rain")
-		var rand = randi_range(0,3)
-		if global.env_condition > 50:
-			if rand >= 1:
-				rain.visible = true
-			else:
-				rain.visible = false
-		elif global.env_condition <= 50:
-			if rand == 1:
-				rain.visible = true
-			else:
-				rain.visible = false
+		var probability_threshold = float(global.env_condition)/100 # Adjust this threshold as needed
+		
+		var random_values = []  # Array to store random values
+		var total_iterations = 1000  # Number of Monte Carlo iterations
+
+		# Generate random values for Monte Carlo simulation
+		for i in range(total_iterations):
+			random_values.append(randf())
+
+		# Calculate rain visibility based on the Monte Carlo simulation
+		var visible_count = 0
+		for value in random_values:
+			if value < probability_threshold:
+				visible_count += 1
+
+		# Set rain visibility based on the proportion of visible iterations
+		var visibility_percentage = float(visible_count) / float(total_iterations)
+		print(visibility_percentage)
+		if visibility_percentage > 0.5:  # Adjust visibility threshold as needed
+			rain.visible = true
+		else:
+			rain.visible = false
 
 
 func update_trees(value):
 	if tree_manager != null:
-		for i in tree_manager.get_child_count():
-			if tree_manager.get_child(i) is StaticBody3D and !tree_manager.get_child(i).start_as_seed:
-				var rand = randi_range(0,value + 1)
-				if rand <= 10 and value < 98:
-					tree_manager.get_child(i).curr_state = "bald"
-					tree_manager.get_child(i).update_state()
-				elif rand >= 11 and rand <= 70 and  value < 98:
-					tree_manager.get_child(i).curr_state = "trim"
-					tree_manager.get_child(i).update_state()
-				elif rand > 70:
-					tree_manager.get_child(i).curr_state = "full"
-					tree_manager.get_child(i).update_state()
-				elif value >= 98:
-					tree_manager.get_child(i).curr_state = "full"
-					tree_manager.get_child(i).update_state()
+		var growth_prob = float(value) / 100  # Probability of tree growth
+
+		for i in tree_manager.get_children():
+			if i is StaticBody3D and !i.start_as_seed:
+				var rand = randf()  # Random value between 0 and 1
+				if rand < growth_prob:  # Using Monte Carlo method to determine growth
+					if rand < growth_prob * 0.2:  # Adjust probability thresholds as needed
+						i.curr_state = "bald"
+					elif rand < growth_prob * 0.7:
+						i.curr_state = "trim"
+					else:
+						i.curr_state = "full"
+
+				i.update_state()
+
 				await get_tree().create_timer(0.5).timeout
 	else:
 		print("Tree Manager Doesn't Exist")
-
 
 
 
