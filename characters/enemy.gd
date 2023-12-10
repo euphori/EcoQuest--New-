@@ -64,6 +64,7 @@ enum{
 
 
 func _ready():
+	$Sprite3D.flip_h = false
 	if related_chapter != "" and !related_quest == null and global.quest[related_chapter][related_quest].completed:
 		print("ENEMY DESPAWNED")
 		queue_free()
@@ -99,7 +100,8 @@ func _physics_process(delta):
 	if player.dead and dead:
 		GlobalMusic.change_music("neutral")
 		state = IDLE
-	
+	if global.in_dialogue:
+		state = IDLE
 	match state:
 		IDLE:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -108,7 +110,7 @@ func _physics_process(delta):
 		CHASE:
 			
 			$Label3D.text = str("State: CHASE")
-			if is_on_floor():
+			if is_on_floor() and !global.in_dialogue:
 				var destination = self.global_position.direction_to(player.global_position)
 				var distance = self.global_position - player.global_position
 				if  abs(distance.z) > .5 and is_on_floor() and can_move:
@@ -238,13 +240,15 @@ func die():
 		var quest = global.get_active_quest()
 		print(global.get_active_quest())
 		if quest != null and quest.has("kill_req"):
-			if quest.kill_req >= global.curr_killcount:
+			if quest.kill_req >= global.curr_killcount: 	
 				quest.active = false
 				quest.completed = true
 				global.emit_signal("update_quest")
 	queue_free()
 
 func hurt():
+	print(health)
+	print(player.DAMAGE)
 	health -= player.DAMAGE
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar, "value", health, 0.5)

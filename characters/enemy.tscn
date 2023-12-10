@@ -301,7 +301,8 @@ collision_layer = 4
 collision_mask = 9
 axis_lock_linear_z = true
 script = ExtResource("1_514o1")
-AGGRO_RANGE = 20
+_amount = 15
+AGGRO_RANGE = 30
 ATTACK_RANGE = 6
 MIN_ATTACK_RANGE = 4
 

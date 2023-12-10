@@ -23,7 +23,7 @@ func spawn():
 			var object = scene.instantiate()
 			object.global_position = $Marker3D.global_position
 			get_parent().add_child(object)
-		
+			object.get_node("Sprite3D").flip_h = true
 			object.death_quest_trigger[0] = chapter_name
 			object.death_quest_trigger[1] = quest_fulfilled
 		spawned[spawn_id]= true 

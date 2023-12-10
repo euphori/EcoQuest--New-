@@ -4,13 +4,15 @@ extends Control
 
 var result = ""
 
-var comment = {"Low" : "Needs more improvements" , "Average": "Getting there, slight improvements", "High" : "Influence and educate others." , "Invalid": "Insuficient Data"}
+var comment = {
+	"Low" : "Needs more improvements" , 
+	"Average": "Getting there, slight improvements", 
+	"High" : "Influence and educate others." , 
+	"Invalid": "Insuficient Data"}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	prediction()
-	initialize_questions()
-	update_result()
+
 	global.connect("update_quest" , update_result)
 
 
@@ -39,11 +41,13 @@ func prediction():
 func update_result():
 
 	if global.quest["chapter5"]["q3"].active or global.quest["chapter1"]["q1"].active:
+		prediction()
+		initialize_questions()
 		self.visible = true
 		var sa = global.awareness_points["SolutionAwareness"]
 		var gk = global.awareness_points["GeneralKnowledge"]
 		var pa =  global.awareness_points["PollutionAwareness"]
-		var total
+		var total = sa + gk + pa
 		print(sa," " , gk , " ", pa)
 		if gk >= 7 and pa >= 10 and sa >= 7 and total >= 24:
 			result = "High"
