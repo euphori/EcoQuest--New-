@@ -127,6 +127,7 @@ if global.quest["chapter3"]["q3"].active == false and global.quest["chapter3"]["
 	Lucas: The forest owes you its life.
 	Lucas: As promised, here’s the second magical seed.
 	set items["Seeds"] += 1
+	do emit(seed_added)
 	set global.quest["chapter3"]["q4"].active = true
 	do emit(update_quest)
 	do emit(dialogue_ended)

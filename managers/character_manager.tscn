@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dvqnpbbdix25h"]
+[gd_scene load_steps=29 format=3 uid="uid://dvqnpbbdix25h"]
 
 [ext_resource type="PackedScene" uid="uid://e3l2258eb12x" path="res://characters/kid.tscn" id="1_idrav"]
 [ext_resource type="Script" path="res://managers/character_manager.gd" id="1_yd4ht"]
@@ -22,9 +22,111 @@
 [ext_resource type="Texture2D" uid="uid://b41jdwqd3bsy6" path="res://assets/ui/hud/RedDot.png" id="20_8x8fx"]
 [ext_resource type="Texture2D" uid="uid://ba40o3tb1ewtk" path="res://assets/npc/charhead.png" id="21_eib6q"]
 [ext_resource type="AudioStream" uid="uid://cveld00t3m37x" path="res://assets/sounds/close_journal.mp3" id="21_o3dfa"]
+[ext_resource type="AudioStream" uid="uid://du4aodkcleugq" path="res://assets/sounds/complete sound effectfree.mp3" id="23_ml6gf"]
+[ext_resource type="Texture2D" uid="uid://cfwjly000gq6k" path="res://assets/item_textures/elf_seed.png" id="24_7slov"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_04ija"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Animation" id="Animation_wc081"]
+resource_name = "got_seed"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SeedUnlock/Seed:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SeedUnlock/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0744218,
+"stream": ExtResource("23_ml6gf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SeedUnlock/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SeedUnlock:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3rfxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SeedUnlock/Seed:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SeedUnlock/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SeedUnlock:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fo26"]
+_data = {
+"RESET": SubResource("Animation_3rfxl"),
+"got_seed": SubResource("Animation_wc081")
+}
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_yd4ht")
@@ -40,9 +142,6 @@ axis_lock_linear_z = true
 
 [node name="Charge" parent="Kid" index="19"]
 texture = SubResource("ViewportTexture_04ija")
-
-[node name="Bolt" parent="Kid" index="20"]
-transform = Transform3D(0.083768, -2.99883, 0, 2.99883, 0.083768, 0, 0, 0, 3, -9.55362, 3.41935, -0.770139)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.989016, 0.147809, 0, -0.147809, 0.989016, 1.781, -0.162395, 4.25197)
@@ -486,6 +585,50 @@ stream = ExtResource("20_5g3qf")
 [node name="Close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_o3dfa")
 pitch_scale = 1.68
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4fo26")
+}
+
+[node name="SeedUnlock" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Seed" type="TextureRect" parent="SeedUnlock"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.2
+anchor_top = -2.725
+anchor_right = -1.2
+anchor_bottom = -2.725
+offset_left = 626.0
+offset_top = 298.0
+offset_right = 1426.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(416, 404)
+texture = ExtResource("24_7slov")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="SeedUnlock"]
+visible = false
+layout_mode = 2
+offset_left = 613.0
+offset_top = 335.0
+offset_right = 1413.0
+offset_bottom = 435.0
+theme_override_colors/font_color = Color(0.941176, 0.94902, 0.941176, 1)
+theme_override_fonts/font = ExtResource("18_ykw83")
+theme_override_font_sizes/font_size = 100
+text = "Seed unlocked!"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SeedUnlock"]
 
 [connection signal="value_changed" from="Widgets/CameraController/ZSlider" to="." method="_on_z_slider_value_changed"]
 [connection signal="value_changed" from="Widgets/CameraController/XSlider" to="." method="_on_x_slider_value_changed"]

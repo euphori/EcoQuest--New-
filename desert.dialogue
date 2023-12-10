@@ -73,6 +73,7 @@ if global.quest["chapter2"]["q3"].completed == true and global.quest["chapter2"]
 	Harper:  You've done it! Thanks, young hero! The water’s cleaner than ever!
 	Harper:  As promised, I'll give you the first magical seed.
 	set items["Seeds"] += 1
+	do emit(seed_added)
 	Harper:  Now, I believe Old Tom knows where to plant it. He’ll guide you!
 	set global.quest["chapter2"]["q5"].active = true
 	do emit(update_quest)

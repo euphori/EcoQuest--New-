@@ -60,6 +60,7 @@ func _ready():
 	kid.connect("player_dead", show_death_screen)
 	global.connect("update_quest", update_quest)
 	global.connect("game_saved" , show_save_icon)
+	global.connect("seed_added" , show_seed)
 	camera.position += adjust_camera_pos
 	health_ui.value = kid.HEALTH
 	
@@ -86,7 +87,13 @@ func _input(event):
 			$Journal/Map.visible = false
 
 
+
+func show_seed():
+	$SeedUnlock.visible
+	$AnimationPlayer.play("got_seed")
+
 func update_quest():
+	
 
 	for i in global.quest:
 		for x in global.quest[i]: #get all quest in global

@@ -46,6 +46,7 @@ signal pickup_item(item,ammount)
 signal item_added
 signal game_saved
 signal update_env
+signal seed_added
 
 var save_path = {"save1" : "user://save1.txt", "save2" : "user://save2.save", "save3" : "user://save3.save" }
 var player_save_path = "user://playerid.txt"

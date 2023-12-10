@@ -35,6 +35,7 @@ if global.quest["chapter4"]["q6"].active == true and quest["chapter4"]["q6"].com
 	Victor: You did it! You've stopped the factory. Thank you!
 	Victor: I believe you're looking for this.
 	set items["Seeds"] += 1
+	do emit(seed_added)
 	Victor: Take the final seed back to the Briarwood Harbour.
 	set quest["chapter4"]["q6"].active = false 
 	set quest["chapter4"]["q6"].completed = true 
