@@ -20,6 +20,7 @@ if global.quest["chapter1"]["q2"].active == false and quest["chapter1"]["q2"].co
 	set global.quest["chapter1"]["q1"].completed = true
 	set global.quest["chapter1"]["q2"].active = true
 	set global.quest["chapter1"]["q1"].active = false
+
 	do emit(update_quest)
 	do emit(dialogue_ended)
 	do save(save_path["save1"])

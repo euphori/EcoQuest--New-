@@ -98,7 +98,9 @@ func update_quest():
 				if curr_quest != prev_quest:
 					notif.visible = true
 					tracker.visible = true
+					
 					#$TrackerTimer.start(30)
+				GlobalMusic.ding()
 				tracker_title.text = curr_quest
 
 				if _quest.req_items != null: #shows the req items if there is one
@@ -107,6 +109,7 @@ func update_quest():
 					var curr_quant = global.items[_quest.req_items[0]]
 					
 					if _quest.talk_after and req_quant <= curr_quant:
+						GlobalMusic.ding()
 						tracker_info.text = str("Talk to " , _quest.npc_name)
 					else:
 						if _quest.req_items.size() > 2:

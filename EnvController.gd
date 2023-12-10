@@ -59,6 +59,7 @@ func update_all():
 		print(visibility_percentage)
 		if visibility_percentage > 0.5:  # Adjust visibility threshold as needed
 			rain.visible = true
+			rain.get_node("AudioStreamPlayer").play()
 		else:
 			rain.visible = false
 

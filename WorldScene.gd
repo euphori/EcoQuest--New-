@@ -38,7 +38,8 @@ func _ready():
 	if global.last_player_pos.has(global.curr_scene_name) and global.last_player_pos[global.curr_scene_name] != "":
 		manager.kid.global_position = str_to_var("Vector3" + global.last_player_pos[global.curr_scene_name])
 	#global.save(global.save_path["save1"])
-
+	
+	GlobalMusic.change_music("neutral")
 
 func play_intro():
 	if map_label != null and map_label.text != "" and _play_intro:

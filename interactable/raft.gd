@@ -17,11 +17,13 @@ var charged = false
 func _ready():
 	global.connect("update_quest", charge)
 func _process(delta):
+	
 	if hide:
 		if global.quest["chapter1"]["q4.5"].active or global.quest["chapter2"]["q1"].completed:
 			self.visible = true
 		else:
 			self.visible = false
+
 
 func charge():
 	if global.quest["chapter4"]["q3"].active and global.curr_scene_name == "City":

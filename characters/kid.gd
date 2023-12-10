@@ -60,8 +60,7 @@ var platform = null
 
 
 func _ready():
-	if GlobalMusic.status != "neutral":
-		GlobalMusic.change_music("neutral")
+
 
 	dead = false
 	can_move = true

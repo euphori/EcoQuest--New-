@@ -1154,11 +1154,11 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
+"end_offset": 0.10233,
+"start_offset": 0.195357,
 "stream": ExtResource("3_r71ce")
 }],
-"times": PackedFloat32Array(-0.2)
+"times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -1198,11 +1198,11 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
+"end_offset": 0.10233,
+"start_offset": 0.20466,
 "stream": ExtResource("3_r71ce")
 }],
-"times": PackedFloat32Array(-0.2)
+"times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -1503,6 +1503,7 @@ volume_db = -7.207
 pitch_scale = 2.23
 
 [node name="kid_sound" type="AudioStreamPlayer3D" parent="."]
+volume_db = 41.626
 
 [node name="DashTimer" type="Timer" parent="."]
 

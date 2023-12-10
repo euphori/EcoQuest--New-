@@ -219,6 +219,8 @@ func dash():
 	
 
 func die():
+	if GlobalMusic.status != "neutral":
+		GlobalMusic.change_music("neutral")
 	dead = true
 	if drop_item:
 		spawn()
