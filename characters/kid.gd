@@ -232,16 +232,15 @@ func shoot():
 	get_parent().get_parent().add_child(bullet)
 	bullet.global_position = muzzle.global_position
 	if pressed_time >= 1.5:
-		DAMAGE = 25
+		DAMAGE = DAMAGE * 3
 		bullet.size = "big"
 		$GunCooldown.start(2)
 		can_shoot = false
 	elif pressed_time <= 0.5:
-		DAMAGE = 15
+		DAMAGE = DAMAGE * 2
 		bullet.size = "small"
 		$GunCooldown.start(1)
 	else:
-		DAMAGE = 10
 		bullet.size = "default"
 		$GunCooldown.start(1)
 	attack.play()

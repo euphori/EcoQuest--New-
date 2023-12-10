@@ -94,6 +94,7 @@ func play_cutscene():
 
 func _on_player_detection_body_entered(body):
 	if body.is_in_group("player"):
+		player = body
 		player_near = true
 		play_cutscene()
 		

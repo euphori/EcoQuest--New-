@@ -17,7 +17,9 @@ func _process(delta):
 
 
 func _input(event):
-	pass
+	if event.is_action_pressed("esc") and $OptionsTab.visible:
+		$OptionsTab.visible = false
+		$Menu.visible = true
 
 func _on_start_pressed():
 	global.next_scene = "res://levels/presurvey.tscn"
@@ -34,6 +36,7 @@ func _on_quit_pressed():
 
 
 func _on_options_pressed():
+	
 	$Menu.visible = false
 	$OptionsTab.visible = true
 

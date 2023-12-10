@@ -465,6 +465,8 @@ viewport_path = NodePath("SubViewport")
 [node name="SawRobot" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 4
 script = ExtResource("1_75fnr")
+_amount = 10
+AGGRO_RANGE = 25
 ATTACK_RANGE = 7
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -539,6 +541,11 @@ one_shot = true
 [node name="DashTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Health" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.383678, 4.59195, -0.546734)
+alpha_cut = 2
+texture = SubResource("ViewportTexture_g4rfh")
+
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(1920, 1080)
@@ -553,11 +560,6 @@ texture_under = ExtResource("7_8ieh6")
 texture_progress = ExtResource("8_1inao")
 texture_progress_offset = Vector2(5, 5)
 tint_under = Color(0.886275, 0.886275, 0.886275, 1)
-
-[node name="Health" type="Sprite3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.383678, 4.59195, -0.546734)
-alpha_cut = 2
-texture = SubResource("ViewportTexture_g4rfh")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="timeout" from="JumpCooldown" to="." method="_on_jump_cooldown_timeout"]
